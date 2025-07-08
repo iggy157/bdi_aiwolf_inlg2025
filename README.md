@@ -1,3 +1,5 @@
+[README in English](/README.en.md)
+
 # aiwolf-nlp-agent
 
 人狼知能コンテスト（自然言語部門） のサンプルエージェントです。
