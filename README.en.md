@@ -9,7 +9,7 @@ This is a sample agent for the AIWolf Competition (Natural Language Division).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-## Table of Contents
+## 目次
 
 - [Environment Setup](#environment-setup)
 - [How to Run](#how-to-run)
