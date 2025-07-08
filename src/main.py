@@ -25,7 +25,6 @@ def execute(config_path: Path) -> None:
         logger.info("設定ファイルを読み込みました")
 
     agent_num = int(config["agent"]["num"])
-    logger.info("エージェント数を %d に設定しました", agent_num)
     threads: list[multiprocessing.Process] = []
     for i in range(agent_num):
         thread = multiprocessing.Process(
@@ -50,16 +49,19 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    multiprocessing.set_start_method("spawn")
-    threads: list[multiprocessing.Process] = []
+    paths: list[Path] = []
     for config_path in args.config:
         glob_path = Path(config_path)
-        for path in Path.glob(glob_path.parent, glob_path.name):
-            thread = multiprocessing.Process(
-                target=execute,
-                args=(Path(path),),
-            )
-            threads.append(thread)
-            thread.start()
+        paths.extend([path for path in Path.glob(glob_path.parent, glob_path.name) if path.is_file()])
+
+    multiprocessing.set_start_method("spawn")
+    threads: list[multiprocessing.Process] = []
+    for path in paths:
+        thread = multiprocessing.Process(
+            target=execute,
+            args=(Path(path),),
+        )
+        threads.append(thread)
+        thread.start()
     for thread in threads:
         thread.join()

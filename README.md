@@ -9,28 +9,31 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## 目次
 
-- [環境構築](#%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89)
-- [実行方法](#%E5%AE%9F%E8%A1%8C%E6%96%B9%E6%B3%95)
-  - [エージェントの実行](#%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%AE%E5%AE%9F%E8%A1%8C)
-  - [ローカル環境での実行](#%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AE%E5%AE%9F%E8%A1%8C)
-  - [予選の対戦方法](#%E4%BA%88%E9%81%B8%E3%81%AE%E5%AF%BE%E6%88%A6%E6%96%B9%E6%B3%95)
-  - [本戦の対戦方法](#%E6%9C%AC%E6%88%A6%E3%81%AE%E5%AF%BE%E6%88%A6%E6%96%B9%E6%B3%95)
-- [設定 (config/config.yml)](#%E8%A8%AD%E5%AE%9A-configconfigyml)
-  - [web_socket](#web_socket)
-  - [agent](#agent)
-  - [log](#log)
-    - [log.requests](#logrequests)
-- [エージェントのカスタマイズ方法](#%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E6%96%B9%E6%B3%95)
-  - [全役職共通 (src/agent/agent.py)](#%E5%85%A8%E5%BD%B9%E8%81%B7%E5%85%B1%E9%80%9A-srcagentagentpy)
-    - [リクエストに対応するメソッド](#%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%AB%E5%AF%BE%E5%BF%9C%E3%81%99%E3%82%8B%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89)
-  - [人狼 (src/agent/werewolf.py)](#%E4%BA%BA%E7%8B%BC-srcagentwerewolfpy)
-  - [狂人 (src/agent/possessed.py)](#%E7%8B%82%E4%BA%BA-srcagentpossessedpy)
-  - [占い師 (src/agent/seer.py)](#%E5%8D%A0%E3%81%84%E5%B8%AB-srcagentseerpy)
-    - [占い結果の取得方法](#%E5%8D%A0%E3%81%84%E7%B5%90%E6%9E%9C%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)
-  - [騎士 (src/agent/bodyguard.py)](#%E9%A8%8E%E5%A3%AB-srcagentbodyguardpy)
-  - [村人 (src/agent/villager.py)](#%E6%9D%91%E4%BA%BA-srcagentvillagerpy)
-  - [霊媒師 (src/agent/medium.py)](#%E9%9C%8A%E5%AA%92%E5%B8%AB-srcagentmediumpy)
-    - [霊媒結果の取得方法](#%E9%9C%8A%E5%AA%92%E7%B5%90%E6%9E%9C%E3%81%AE%E5%8F%96%E5%BE%97%E6%96%B9%E6%B3%95)
+- [aiwolf-nlp-agent](#aiwolf-nlp-agent)
+  - [目次](#目次)
+  - [環境構築](#環境構築)
+  - [実行方法](#実行方法)
+    - [エージェントの実行](#エージェントの実行)
+      - [設定ファイルを指定して起動する方法](#設定ファイルを指定して起動する方法)
+    - [ローカル環境での実行](#ローカル環境での実行)
+    - [予選の対戦方法](#予選の対戦方法)
+    - [本戦の対戦方法](#本戦の対戦方法)
+  - [設定 (config/config.yml)](#設定-configconfigyml)
+    - [web\_socket](#web_socket)
+    - [agent](#agent)
+    - [log](#log)
+      - [log.requests](#logrequests)
+  - [エージェントのカスタマイズ方法](#エージェントのカスタマイズ方法)
+    - [全役職共通 (src/agent/agent.py)](#全役職共通-srcagentagentpy)
+      - [リクエストに対応するメソッド](#リクエストに対応するメソッド)
+    - [人狼 (src/agent/werewolf.py)](#人狼-srcagentwerewolfpy)
+    - [狂人 (src/agent/possessed.py)](#狂人-srcagentpossessedpy)
+    - [占い師 (src/agent/seer.py)](#占い師-srcagentseerpy)
+      - [占い結果の取得方法](#占い結果の取得方法)
+    - [騎士 (src/agent/bodyguard.py)](#騎士-srcagentbodyguardpy)
+    - [村人 (src/agent/villager.py)](#村人-srcagentvillagerpy)
+    - [霊媒師 (src/agent/medium.py)](#霊媒師-srcagentmediumpy)
+      - [霊媒結果の取得方法](#霊媒結果の取得方法)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -65,6 +68,17 @@ pip install -e .
 
 ```bash
 python src/main.py
+```
+
+#### 設定ファイルを指定して起動する方法
+
+デフォルトでは`config/config.yml`の設定を参照して起動します。\
+指定して起動する方法や複数の設定ファイルを同時に実行する方法は以下のとおりです。
+
+```bash
+python src/main.py -c config/config_1.yml # config/config_1.ymlを指定する場合
+python src/main.py -c config/config_1.yml config/config_2.yml # config/config_1.ymlとconfig/config_2.ymlを指定する場合
+python src/main.py -c config/config_*.yml # config/config_*.ymlを指定する場合
 ```
 
 ### ローカル環境での実行
@@ -121,7 +135,7 @@ python src/main.py
 
 | メソッド名         | 変更推奨度 | 処理                                         |
 | ------------------ | ---------- | -------------------------------------------- |
-| `name`             | **非推奨** | 名前リクエストに対する応答を返す.            |
+| `name`             | **非推奨** | 名前リクエストに対する応答を返す             |
 | `initialize`       | **中**     | ゲーム開始リクエストに対する初期化処理を行う |
 | `daily_initialize` | **中**     | 昼開始リクエストに対する処理を行う           |
 | `talk`             | **高**     | トークリクエストに対する応答を返す           |
