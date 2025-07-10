@@ -12,3 +12,8 @@ jobs:
       - uses: technote-space/toc-generator@v4
         with:
           TOC_TITLE: "## 目次"
+          TARGET_PATHS: "README.md"
+      - uses: technote-space/toc-generator@v4
+        with:
+          TOC_TITLE: "## Table of Contents"
+          TARGET_PATHS: "README.en.md"

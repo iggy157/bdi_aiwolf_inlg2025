@@ -1,6 +1,6 @@
-[README in Japanese](/README.md)
-
 # aiwolf-nlp-agent
+
+[README in Japanese](/README.md)
 
 This is a sample agent for the AIWolf Competition (Natural Language Division).
 
@@ -11,29 +11,31 @@ This is a sample agent for the AIWolf Competition (Natural Language Division).
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## 目次
 
-- [Environment Setup](#environment-setup)
-- [How to Run](#how-to-run)
-  - [Running the Agent](#running-the-agent)
-    - [How to Start with a Specific Configuration File](#how-to-start-with-a-specific-configuration-file)
-  - [Running in Local Environment](#running-in-local-environment)
-  - [How to Battle in Preliminaries](#how-to-battle-in-preliminaries)
-  - [How to Battle in Finals](#how-to-battle-in-finals)
-- [Configuration (config/config.yml)](#configuration-configconfigyml)
-  - [web_socket](#web_socket)
-  - [agent](#agent)
-  - [log](#log)
-    - [log.requests](#logrequests)
-- [How to Customize Agents](#how-to-customize-agents)
-  - [Common to All Roles (src/agent/agent.py)](#common-to-all-roles-srcagentagentpy)
-    - [Methods Corresponding to Requests](#methods-corresponding-to-requests)
-  - [Werewolf (src/agent/werewolf.py)](#werewolf-srcagentwerewolfpy)
-  - [Possessed (src/agent/possessed.py)](#possessed-srcagentpossessedpy)
-  - [Seer (src/agent/seer.py)](#seer-srcagentseerpy)
-    - [How to Get Divination Results](#how-to-get-divination-results)
-  - [Bodyguard (src/agent/bodyguard.py)](#bodyguard-srcagentbodyguardpy)
-  - [Villager (src/agent/villager.py)](#villager-srcagentvillagerpy)
-  - [Medium (src/agent/medium.py)](#medium-srcagentmediumpy)
-    - [How to Get Medium Results](#how-to-get-medium-results)
+- [aiwolf-nlp-agent](#aiwolf-nlp-agent)
+  - [目次](#目次)
+  - [Environment Setup](#environment-setup)
+  - [How to Run](#how-to-run)
+    - [Running the Agent](#running-the-agent)
+      - [How to Start with a Specific Configuration File](#how-to-start-with-a-specific-configuration-file)
+    - [Running in Local Environment](#running-in-local-environment)
+    - [How to Battle in Preliminaries](#how-to-battle-in-preliminaries)
+    - [How to Battle in Finals](#how-to-battle-in-finals)
+  - [Configuration (config/config.yml)](#configuration-configconfigyml)
+    - [web\_socket](#web_socket)
+    - [agent](#agent)
+    - [log](#log)
+      - [log.requests](#logrequests)
+  - [How to Customize Agents](#how-to-customize-agents)
+    - [Common to All Roles (src/agent/agent.py)](#common-to-all-roles-srcagentagentpy)
+      - [Methods Corresponding to Requests](#methods-corresponding-to-requests)
+    - [Werewolf (src/agent/werewolf.py)](#werewolf-srcagentwerewolfpy)
+    - [Possessed (src/agent/possessed.py)](#possessed-srcagentpossessedpy)
+    - [Seer (src/agent/seer.py)](#seer-srcagentseerpy)
+      - [How to Get Divination Results](#how-to-get-divination-results)
+    - [Bodyguard (src/agent/bodyguard.py)](#bodyguard-srcagentbodyguardpy)
+    - [Villager (src/agent/villager.py)](#villager-srcagentvillagerpy)
+    - [Medium (src/agent/medium.py)](#medium-srcagentmediumpy)
+      - [How to Get Medium Results](#how-to-get-medium-results)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -133,26 +135,26 @@ This file defines behaviors common to all roles.
 
 Methods corresponding to requests sent from the game server are as follows:
 
-| Method Name        | Change Recommendation | Process                                      |
-| ------------------ | --------------------- | -------------------------------------------- |
-| `name`             | **Not Recommended**   | Returns response to name request             |
+| Method Name        | Change Recommendation | Process                                        |
+| ------------------ | --------------------- | ---------------------------------------------- |
+| `name`             | **Not Recommended**   | Returns response to name request               |
 | `initialize`       | **Medium**            | Performs initialization for game start request |
-| `daily_initialize` | **Medium**            | Performs processing for day start request    |
-| `talk`             | **High**              | Returns response to talk request             |
-| `daily_finish`     | **Medium**            | Performs processing for day end request      |
-| `divine`           | **High**              | Returns response to divination request       |
-| `vote`             | **High**              | Returns response to vote request             |
-| `finish`           | **Medium**            | Performs processing for game end request     |
+| `daily_initialize` | **Medium**            | Performs processing for day start request      |
+| `talk`             | **High**              | Returns response to talk request               |
+| `daily_finish`     | **Medium**            | Performs processing for day end request        |
+| `divine`           | **High**              | Returns response to divination request         |
+| `vote`             | **High**              | Returns response to vote request               |
+| `finish`           | **Medium**            | Performs processing for game end request       |
 
 ### Werewolf (src/agent/werewolf.py)
 
 This file defines the behavior of werewolves.
 In addition to behaviors common to all roles, it has the following methods:
 
-| Method Name | Change Recommendation | Process                                |
-| ----------- | --------------------- | -------------------------------------- |
-| `whisper`   | **High**              | Returns response to whisper request    |
-| `attack`    | **High**              | Returns response to attack request     |
+| Method Name | Change Recommendation | Process                             |
+| ----------- | --------------------- | ----------------------------------- |
+| `whisper`   | **High**              | Returns response to whisper request |
+| `attack`    | **High**              | Returns response to attack request  |
 
 ### Possessed (src/agent/possessed.py)
 
@@ -177,9 +179,9 @@ For details, please refer to [judge.py](https://github.com/aiwolfdial/aiwolf-nlp
 This file defines the behavior of the bodyguard.
 In addition to behaviors common to all roles, it has the following methods:
 
-| Method Name | Change Recommendation | Process                              |
-| ----------- | --------------------- | ------------------------------------ |
-| `guard`     | **High**              | Returns response to guard request    |
+| Method Name | Change Recommendation | Process                           |
+| ----------- | --------------------- | --------------------------------- |
+| `guard`     | **High**              | Returns response to guard request |
 
 ### Villager (src/agent/villager.py)
 
