@@ -1,5 +1,7 @@
 # aiwolf-nlp-agent-llm
 
+[README in English](/README.en.md)
+
 人狼知能コンテスト（自然言語部門） のLLMを用いたサンプルエージェントです。
 
 ## 環境構築
