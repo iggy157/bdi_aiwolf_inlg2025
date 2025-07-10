@@ -4,7 +4,7 @@
 
 This is a sample agent using LLM for the AIWolf Competition (Natural Language Division).
 
-## 環境構築
+## Environment Setup
 
 > [!IMPORTANT]
 > Python 3.11 or higher is required.
