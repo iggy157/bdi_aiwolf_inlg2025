@@ -23,7 +23,7 @@ T = TypeVar("T")
 
 class Agent:
     """Base class for agents.
-    
+
     エージェントの基底クラス.
     """
 
@@ -35,9 +35,9 @@ class Agent:
         role: Role,
     ) -> None:
         """Initialize the agent.
-        
+
         エージェントの初期化を行う.
-        
+
         Args:
             config (dict[str, Any]): Configuration dictionary / 設定辞書
             name (str): Agent name / エージェント名
@@ -64,12 +64,12 @@ class Agent:
     @staticmethod
     def timeout(func: Callable[P, T]) -> Callable[P, T]:
         """Decorator to set action timeout.
-        
+
         アクションタイムアウトを設定するデコレータ.
-        
+
         Args:
             func (Callable[P, T]): Function to be decorated / デコレート対象の関数
-            
+
         Returns:
             Callable[P, T]: Function with timeout functionality / タイムアウト機能を追加した関数
         """
@@ -113,9 +113,9 @@ class Agent:
 
     def set_packet(self, packet: Packet) -> None:
         """Set packet information.
-        
+
         パケット情報をセットする.
-        
+
         Args:
             packet (Packet): Received packet / 受信したパケット
         """
@@ -135,9 +135,9 @@ class Agent:
 
     def get_alive_agents(self) -> list[str]:
         """Get the list of alive agents.
-        
+
         生存しているエージェントのリストを取得する.
-        
+
         Returns:
             list[str]: List of alive agent names / 生存エージェント名のリスト
         """
@@ -147,9 +147,9 @@ class Agent:
 
     def name(self) -> str:
         """Return response to name request.
-        
+
         名前リクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name / エージェント名
         """
@@ -157,21 +157,21 @@ class Agent:
 
     def initialize(self) -> None:
         """Perform initialization for game start request.
-        
+
         ゲーム開始リクエストに対する初期化処理を行う.
         """
 
     def daily_initialize(self) -> None:
         """Perform processing for daily initialization request.
-        
+
         昼開始リクエストに対する処理を行う.
         """
 
     def whisper(self) -> str:
         """Return response to whisper request.
-        
+
         囁きリクエストに対する応答を返す.
-        
+
         Returns:
             str: Whisper message / 囁きメッセージ
         """
@@ -179,9 +179,9 @@ class Agent:
 
     def talk(self) -> str:
         """Return response to talk request.
-        
+
         トークリクエストに対する応答を返す.
-        
+
         Returns:
             str: Talk message / 発言メッセージ
         """
@@ -189,15 +189,15 @@ class Agent:
 
     def daily_finish(self) -> None:
         """Perform processing for daily finish request.
-        
+
         昼終了リクエストに対する処理を行う.
         """
 
     def divine(self) -> str:
         """Return response to divine request.
-        
+
         占いリクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name to divine / 占い対象のエージェント名
         """
@@ -205,9 +205,9 @@ class Agent:
 
     def guard(self) -> str:
         """Return response to guard request.
-        
+
         護衛リクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name to guard / 護衛対象のエージェント名
         """
@@ -215,9 +215,9 @@ class Agent:
 
     def vote(self) -> str:
         """Return response to vote request.
-        
+
         投票リクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name to vote / 投票対象のエージェント名
         """
@@ -225,9 +225,9 @@ class Agent:
 
     def attack(self) -> str:
         """Return response to attack request.
-        
+
         襲撃リクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name to attack / 襲撃対象のエージェント名
         """
@@ -235,16 +235,16 @@ class Agent:
 
     def finish(self) -> None:
         """Perform processing for game finish request.
-        
+
         ゲーム終了リクエストに対する処理を行う.
         """
 
     @timeout
     def action(self) -> str | None:  # noqa: C901, PLR0911
         """Execute action according to request type.
-        
+
         リクエストの種類に応じたアクションを実行する.
-        
+
         Returns:
             str | None: Action result string or None / アクションの結果文字列またはNone
         """

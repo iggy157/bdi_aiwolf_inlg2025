@@ -23,9 +23,9 @@ console_handler.setFormatter(formatter)
 
 def execute(config_path: Path) -> None:
     """Execute based on the configuration file.
-    
+
     設定ファイルをもとに実行する.
-    
+
     Args:
         config_path (Path): Path to the configuration file / 設定ファイルのパス
     """

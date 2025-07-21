@@ -14,7 +14,7 @@ from agent.agent import Agent
 
 class Villager(Agent):
     """Villager agent class.
-    
+
     村人のエージェントクラス.
     """
 
@@ -26,22 +26,22 @@ class Villager(Agent):
         role: Role,  # noqa: ARG002
     ) -> None:
         """Initialize the villager agent.
-        
+
         村人のエージェントを初期化する.
-        
+
         Args:
             config (dict[str, Any]): Configuration dictionary / 設定辞書
             name (str): Agent name / エージェント名
             game_id (str): Game ID / ゲームID
-            role (Role): Role (ignored, always set to VILLAGER) / 役職（無視され、常にVILLAGERに設定）
+            role (Role): Role (ignored, always set to VILLAGER) / 役職(無視され、常にVILLAGERに設定)
         """
         super().__init__(config, name, game_id, Role.VILLAGER)
 
     def talk(self) -> str:
         """Return response to talk request.
-        
+
         トークリクエストに対する応答を返す.
-        
+
         Returns:
             str: Talk message / 発言メッセージ
         """
@@ -49,9 +49,9 @@ class Villager(Agent):
 
     def vote(self) -> str:
         """Return response to vote request.
-        
+
         投票リクエストに対する応答を返す.
-        
+
         Returns:
             str: Agent name to vote / 投票対象のエージェント名
         """

@@ -30,12 +30,12 @@ logger.addHandler(console_handler)
 
 def create_client(config: dict[str, Any]) -> Client:
     """Create a client.
-    
+
     クライアントの作成.
-    
+
     Args:
         config (dict[str, Any]): Configuration dictionary / 設定辞書
-        
+
     Returns:
         Client: Created client instance / 作成されたクライアントインスタンス
     """
@@ -47,9 +47,9 @@ def create_client(config: dict[str, Any]) -> Client:
 
 def connect_to_server(client: Client, name: str) -> None:
     """Handle connection to the server.
-    
+
     サーバーへの接続処理.
-    
+
     Args:
         client (Client): Client instance / クライアントインスタンス
         name (str): Agent name / エージェント名
@@ -75,9 +75,9 @@ def handle_game_session(
     name: str,
 ) -> None:
     """Handle game session.
-    
+
     ゲームセッションの処理.
-    
+
     Args:
         client (Client): Client instance / クライアントインスタンス
         config (dict[str, Any]): Configuration dictionary / 設定辞書
@@ -104,9 +104,9 @@ def handle_game_session(
 
 def connect(config: dict[str, Any], idx: int = 1) -> None:
     """Launch an agent.
-    
+
     エージェントを起動する.
-    
+
     Args:
         config (dict[str, Any]): Configuration dictionary / 設定辞書
         idx (int): Agent index (default: 1) / エージェントインデックス (デフォルト: 1)

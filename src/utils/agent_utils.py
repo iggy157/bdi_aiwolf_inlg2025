@@ -41,7 +41,9 @@ def init_agent_from_packet(
         packet (Packet): Packet containing game information / ゲーム情報を含むパケット
 
     Returns:
-        Agent: Initialized agent instance for the specified role / 指定された役職用に初期化されたエージェントインスタンス
+        Agent: Initialized agent instance for the specified role /
+                指定された役職用に初期化されたエージェントインスタンス
+
 
     Raises:
         ValueError: If packet info or role is not found / パケット情報またはロールが見つからない場合
