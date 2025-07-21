@@ -1,4 +1,7 @@
-"""エージェントの基底クラスを定義するモジュール."""
+"""Module that defines the base class for agents.
+
+エージェントの基底クラスを定義するモジュール.
+"""
 
 from __future__ import annotations
 
@@ -19,7 +22,10 @@ T = TypeVar("T")
 
 
 class Agent:
-    """エージェントの基底クラス."""
+    """Base class for agents.
+    
+    エージェントの基底クラス.
+    """
 
     def __init__(
         self,
@@ -28,7 +34,16 @@ class Agent:
         game_id: str,
         role: Role,
     ) -> None:
-        """エージェントの初期化を行う."""
+        """Initialize the agent.
+        
+        エージェントの初期化を行う.
+        
+        Args:
+            config (dict[str, Any]): Configuration dictionary / 設定辞書
+            name (str): Agent name / エージェント名
+            game_id (str): Game ID / ゲームID
+            role (Role): Role / 役職
+        """
         self.config = config
         self.agent_name = name
         self.agent_logger = AgentLogger(config, name, game_id)
@@ -48,7 +63,16 @@ class Agent:
 
     @staticmethod
     def timeout(func: Callable[P, T]) -> Callable[P, T]:
-        """アクションタイムアウトを設定するデコレータ."""
+        """Decorator to set action timeout.
+        
+        アクションタイムアウトを設定するデコレータ.
+        
+        Args:
+            func (Callable[P, T]): Function to be decorated / デコレート対象の関数
+            
+        Returns:
+            Callable[P, T]: Function with timeout functionality / タイムアウト機能を追加した関数
+        """
 
         def _wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
             res: T | Exception = Exception("No result")
@@ -88,7 +112,13 @@ class Agent:
         return _wrapper
 
     def set_packet(self, packet: Packet) -> None:
-        """パケット情報をセットする."""
+        """Set packet information.
+        
+        パケット情報をセットする.
+        
+        Args:
+            packet (Packet): Received packet / 受信したパケット
+        """
         self.request = packet.request
         if packet.info:
             self.info = packet.info
@@ -104,54 +134,120 @@ class Agent:
         self.agent_logger.logger.debug(packet)
 
     def get_alive_agents(self) -> list[str]:
-        """生存しているエージェントのリストを取得する."""
+        """Get the list of alive agents.
+        
+        生存しているエージェントのリストを取得する.
+        
+        Returns:
+            list[str]: List of alive agent names / 生存エージェント名のリスト
+        """
         if not self.info:
             return []
         return [k for k, v in self.info.status_map.items() if v == Status.ALIVE]
 
     def name(self) -> str:
-        """名前リクエストに対する応答を返す."""
+        """Return response to name request.
+        
+        名前リクエストに対する応答を返す.
+        
+        Returns:
+            str: Agent name / エージェント名
+        """
         return self.agent_name
 
     def initialize(self) -> None:
-        """ゲーム開始リクエストに対する初期化処理を行う."""
+        """Perform initialization for game start request.
+        
+        ゲーム開始リクエストに対する初期化処理を行う.
+        """
 
     def daily_initialize(self) -> None:
-        """昼開始リクエストに対する処理を行う."""
+        """Perform processing for daily initialization request.
+        
+        昼開始リクエストに対する処理を行う.
+        """
 
     def whisper(self) -> str:
-        """囁きリクエストに対する応答を返す."""
+        """Return response to whisper request.
+        
+        囁きリクエストに対する応答を返す.
+        
+        Returns:
+            str: Whisper message / 囁きメッセージ
+        """
         return random.choice(self.comments)  # noqa: S311
 
     def talk(self) -> str:
-        """トークリクエストに対する応答を返す."""
+        """Return response to talk request.
+        
+        トークリクエストに対する応答を返す.
+        
+        Returns:
+            str: Talk message / 発言メッセージ
+        """
         return random.choice(self.comments)  # noqa: S311
 
     def daily_finish(self) -> None:
-        """昼終了リクエストに対する処理を行う."""
+        """Perform processing for daily finish request.
+        
+        昼終了リクエストに対する処理を行う.
+        """
 
     def divine(self) -> str:
-        """占いリクエストに対する応答を返す."""
+        """Return response to divine request.
+        
+        占いリクエストに対する応答を返す.
+        
+        Returns:
+            str: Agent name to divine / 占い対象のエージェント名
+        """
         return random.choice(self.get_alive_agents())  # noqa: S311
 
     def guard(self) -> str:
-        """護衛リクエストに対する応答を返す."""
+        """Return response to guard request.
+        
+        護衛リクエストに対する応答を返す.
+        
+        Returns:
+            str: Agent name to guard / 護衛対象のエージェント名
+        """
         return random.choice(self.get_alive_agents())  # noqa: S311
 
     def vote(self) -> str:
-        """投票リクエストに対する応答を返す."""
+        """Return response to vote request.
+        
+        投票リクエストに対する応答を返す.
+        
+        Returns:
+            str: Agent name to vote / 投票対象のエージェント名
+        """
         return random.choice(self.get_alive_agents())  # noqa: S311
 
     def attack(self) -> str:
-        """襲撃リクエストに対する応答を返す."""
+        """Return response to attack request.
+        
+        襲撃リクエストに対する応答を返す.
+        
+        Returns:
+            str: Agent name to attack / 襲撃対象のエージェント名
+        """
         return random.choice(self.get_alive_agents())  # noqa: S311
 
     def finish(self) -> None:
-        """ゲーム終了リクエストに対する処理を行う."""
+        """Perform processing for game finish request.
+        
+        ゲーム終了リクエストに対する処理を行う.
+        """
 
     @timeout
     def action(self) -> str | None:  # noqa: C901, PLR0911
-        """リクエストの種類に応じたアクションを実行する."""
+        """Execute action according to request type.
+        
+        リクエストの種類に応じたアクションを実行する.
+        
+        Returns:
+            str | None: Action result string or None / アクションの結果文字列またはNone
+        """
         match self.request:
             case Request.NAME:
                 return self.name()

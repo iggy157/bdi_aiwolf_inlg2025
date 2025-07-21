@@ -1,4 +1,7 @@
-"""エージェントのログを出力するクラスを定義するモジュール."""
+"""Module defining agent logging functionality.
+
+エージェントのログを出力するクラスを定義するモジュール.
+"""
 
 from __future__ import annotations
 
@@ -14,7 +17,10 @@ if TYPE_CHECKING:
 
 
 class AgentLogger:
-    """エージェントのログを出力するクラス."""
+    """A class for handling agent logging.
+
+    エージェントのログを出力するクラス.
+    """
 
     def __init__(
         self,
@@ -22,7 +28,15 @@ class AgentLogger:
         name: str,
         game_id: str,
     ) -> None:
-        """エージェントのログを初期化する."""
+        """Initialize the agent logger.
+
+        エージェントのログを初期化する.
+
+        Args:
+            config (dict[str, Any]): Configuration dictionary containing logging settings / ログ設定を含む設定辞書
+            name (str): Name of the agent for logging / ログ用のエージェント名
+            game_id (str): Game ID for log file organization / ログファイル整理用のゲームID
+        """
         self.config = config
         self.name = name
         self.logger = logging.getLogger(name)
@@ -63,7 +77,14 @@ class AgentLogger:
             self.logger.addHandler(handler)
 
     def packet(self, req: Request | None, res: str | None) -> None:
-        """パケットのログを出力."""
+        """Log packet information.
+
+        パケットのログを出力.
+
+        Args:
+            req (Request | None): Request packet to log / ログ出力するリクエストパケット
+            res (str | None): Response string to log / ログ出力するレスポンス文字列
+        """
         if not req:
             return
         if req.lower() not in self.config["log"]["request"]:

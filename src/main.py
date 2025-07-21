@@ -1,4 +1,7 @@
-"""設定に応じたエージェントを起動するスクリプト."""
+"""Script to launch agents according to configuration.
+
+設定に応じたエージェントを起動するスクリプト.
+"""
 
 import argparse
 import logging
@@ -19,7 +22,13 @@ console_handler.setFormatter(formatter)
 
 
 def execute(config_path: Path) -> None:
-    """設定ファイルをもとに実行する."""
+    """Execute based on the configuration file.
+    
+    設定ファイルをもとに実行する.
+    
+    Args:
+        config_path (Path): Path to the configuration file / 設定ファイルのパス
+    """
     with Path.open(config_path) as f:
         config = yaml.safe_load(f)
         logger.info("設定ファイルを読み込みました")
