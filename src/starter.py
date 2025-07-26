@@ -1,4 +1,7 @@
-"""エージェントを起動するためのモジュール."""
+"""Module for launching agents.
+
+エージェントを起動するためのモジュール.
+"""
 
 from __future__ import annotations
 
@@ -26,7 +29,16 @@ logger.addHandler(console_handler)
 
 
 def create_client(config: dict[str, Any]) -> Client:
-    """クライアントの作成."""
+    """Create a client.
+
+    クライアントの作成.
+
+    Args:
+        config (dict[str, Any]): Configuration dictionary / 設定辞書
+
+    Returns:
+        Client: Created client instance / 作成されたクライアントインスタンス
+    """
     return Client(
         url=str(config["web_socket"]["url"]),
         token=(str(config["web_socket"]["token"]) if config["web_socket"]["token"] else None),
@@ -34,7 +46,14 @@ def create_client(config: dict[str, Any]) -> Client:
 
 
 def connect_to_server(client: Client, name: str) -> None:
-    """サーバーへの接続処理."""
+    """Handle connection to the server.
+
+    サーバーへの接続処理.
+
+    Args:
+        client (Client): Client instance / クライアントインスタンス
+        name (str): Agent name / エージェント名
+    """
     while True:
         try:
             client.connect()
@@ -55,7 +74,15 @@ def handle_game_session(
     config: dict[str, Any],
     name: str,
 ) -> None:
-    """ゲームセッションの処理."""
+    """Handle game session.
+
+    ゲームセッションの処理.
+
+    Args:
+        client (Client): Client instance / クライアントインスタンス
+        config (dict[str, Any]): Configuration dictionary / 設定辞書
+        name (str): Agent name / エージェント名
+    """
     agent: Agent | None = None
     while True:
         packet = client.receive()
@@ -76,7 +103,14 @@ def handle_game_session(
 
 
 def connect(config: dict[str, Any], idx: int = 1) -> None:
-    """エージェントを起動する."""
+    """Launch an agent.
+
+    エージェントを起動する.
+
+    Args:
+        config (dict[str, Any]): Configuration dictionary / 設定辞書
+        idx (int): Agent index (default: 1) / エージェントインデックス (デフォルト: 1)
+    """
     name = str(config["agent"]["team"]) + str(idx)
     while True:
         try:

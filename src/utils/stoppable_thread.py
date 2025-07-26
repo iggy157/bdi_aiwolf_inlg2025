@@ -1,19 +1,35 @@
-"""スレッドを停止できるようにするためのクラスを定義するモジュール."""
+"""Module defining a stoppable thread class.
+
+スレッドを停止できるようにするためのクラスを定義するモジュール.
+"""
 
 import ctypes
 import threading
 
 
 class StoppableThread(threading.Thread):
-    """スレッドを停止できるようにするためのクラス."""
+    """A thread class that can be stopped gracefully.
+
+    スレッドを停止できるようにするためのクラス.
+    """
 
     def __init__(self, *args, **kwargs) -> None:  # type: ignore[arg-type]  # noqa: ANN002, ANN003
-        """スレッドを停止できるようにするためのクラス."""
+        """Initialize a stoppable thread.
+
+        スレッドを停止できるようにするためのクラスを初期化する.
+
+        Args:
+            *args: Variable length argument list for threading.Thread / threading.Thread用の可変長引数リスト
+            **kwargs: Arbitrary keyword arguments for threading.Thread / threading.Thread用の任意のキーワード引数
+        """
         super().__init__(*args, **kwargs)  # type: ignore[arg-type]
         self._stop_event = threading.Event()
 
     def stop(self) -> None:
-        """スレッドを停止するためのメソッド."""
+        """Stop the thread execution.
+
+        スレッドを停止するためのメソッド.
+        """
         if not self.is_alive():
             return
 
@@ -35,5 +51,11 @@ class StoppableThread(threading.Thread):
         self._stop_event.set()
 
     def stopped(self) -> bool:
-        """スレッドが停止要求を受けたかどうかを確認するメソッド."""
+        """Check if the thread has received a stop request.
+
+        スレッドが停止要求を受けたかどうかを確認するメソッド.
+
+        Returns:
+            bool: True if stop has been requested, False otherwise / 停止要求を受けた場合True、それ以外はFalse
+        """
         return self._stop_event.is_set()
