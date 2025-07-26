@@ -162,6 +162,16 @@ class Agent:
         return [k for k, v in self.info.status_map.items() if v == Status.ALIVE]
 
     def _send_message_to_llm(self, request: Request | None) -> str | None:
+        """Send message to LLM and get response.
+
+        LLMにメッセージを送信して応答を取得する.
+
+        Args:
+            request (Request | None): The request type to process / 処理するリクエストタイプ
+
+        Returns:
+            str | None: LLM response or None if error occurred / LLMの応答またはエラー時はNone
+        """
         if request is None:
             return None
         if request.lower() not in self.config["prompt"]:
