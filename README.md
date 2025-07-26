@@ -12,11 +12,20 @@
 ```bash
 git clone https://github.com/aiwolfdial/aiwolf-nlp-agent-llm.git
 cd aiwolf-nlp-agent-llm
-cp config/config.yml.example config/config.yml
 cp config/.env.example config/.env
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
+```
+
+### 日本語のプロンプトを使用したい場合
+```bash
+cp config/config.jp.yml.example config/config.yml
+```
+
+### 英語のプロンプトを使用したい場合
+```bash
+cp config/config.en.yml.example config/config.yml
 ```
 
 ## その他

@@ -12,11 +12,20 @@ This is a sample agent using LLM for the AIWolf Competition (Natural Language Di
 ```bash
 git clone https://github.com/aiwolfdial/aiwolf-nlp-agent-llm.git
 cd aiwolf-nlp-agent-llm
-cp config/config.yml.example config/config.yml
 cp config/.env.example config/.env
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
+```
+
+### If you would like to use prompts written in Japanese
+```bash
+cp config/config.jp.yml.example config/config.yml
+```
+
+### If you would like to use prompts written in English
+```bash
+cp config/config.en.yml.example config/config.yml
 ```
 
 ## Others
