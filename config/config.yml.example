@@ -80,6 +80,10 @@ prompt:
     {% endfor %}
   daily_finish: |-
     昼終了リクエスト
+    履歴:
+    {% for w in talk_history[sent_talk_count:] -%}
+    {{ w.agent }}: {{ w.text }}
+    {% endfor %}
     {{ info.day }}日目
     {% if info.medium_result is not none -%}
     霊能結果: {{ info.medium_result }}
