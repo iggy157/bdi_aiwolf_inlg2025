@@ -28,6 +28,7 @@ from aiwolf_nlp_common.packet import Info, Packet, Request, Role, Setting, Statu
 
 from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
+from utils.bdi.macro_bdi.mbti_inference import infer_and_save_mbti
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -247,6 +248,12 @@ class Agent:
                 raise ValueError(model_type, "Unknown LLM type")
         self.llm_model = self.llm_model
         self._send_message_to_llm(self.request)
+        
+        if self.info and self.info.profile:
+            try:
+                infer_and_save_mbti(self.config, self.info.profile, self.info.agent, self.info.game_id)
+            except Exception as e:
+                self.agent_logger.logger.error(f"Failed to infer MBTI parameters: {e}")
 
     def daily_initialize(self) -> None:
         """Perform processing for daily initialization request.
