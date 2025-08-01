@@ -1,0 +1,13 @@
+liking_tendency:
+  attractive_expression: 0.275
+  emotional_resonance: 0.22
+  friendliness: 0.24166666666666667
+statement_bias:
+  clarity_and_conciseness: 0.7200000000000001
+  intuitive_depth: 0.69
+  logical_consistency: 0.71
+  specificity_and_detail: 0.5
+trust_tendency:
+  consistency: 0.6485714285714286
+  honesty: 0.6325
+  social_proof: 0.41200000000000003
