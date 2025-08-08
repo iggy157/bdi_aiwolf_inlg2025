@@ -29,6 +29,7 @@ from aiwolf_nlp_common.packet import Info, Packet, Request, Role, Setting, Statu
 from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
+from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -267,6 +268,19 @@ class Agent:
                     role_en=role_en
                 )
                 self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
+                
+                # Generate macro desire based on macro belief
+                try:
+                    macro_desire_data = generate_macro_desire(
+                        game_id=self.info.game_id,
+                        agent=self.info.agent,
+                        model=self.config.get("openai", {}).get("model", "gpt-4o"),
+                        dry_run=False,
+                        overwrite=True  # Allow overwrite during initialization
+                    )
+                    self.agent_logger.logger.info(f"Generated macro desire for agent: {self.info.agent}")
+                except Exception as e:
+                    self.agent_logger.logger.error(f"Failed to generate macro desire: {e}")
             except Exception as e:
                 self.agent_logger.logger.error(f"Failed to generate macro belief: {e}")
 

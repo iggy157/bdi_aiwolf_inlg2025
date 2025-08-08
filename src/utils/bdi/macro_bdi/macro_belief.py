@@ -24,7 +24,7 @@ def generate_macro_belief(
     profile: str,
     agent_name: str,
     game_id: str,
-    out_root: str | Path = "info/bdi_info/macro_bdi/macro_belief",
+    out_root: str | Path = "info/bdi_info/macro_bdi",
     role_en: str | None = None
 ) -> Path:
     """Generate consolidated macro belief YAML file.
@@ -82,9 +82,8 @@ def generate_macro_belief(
         "meta": create_meta_dict(game_id, agent_name),
     }
     
-    # Step 8: Write to file atomically (using get_game_timestamp)
-    game_timestamp = get_game_timestamp(game_id)
-    out_dir = Path(out_root) / game_timestamp / agent_name
+    # Step 8: Write to file atomically (using game_id directly)
+    out_dir = Path(out_root) / game_id / agent_name
     return write_macro_belief(payload, out_dir)
 
 
@@ -98,7 +97,7 @@ def main():
     parser.add_argument("--profile", required=True, help="Profile text for MBTI inference")
     parser.add_argument(
         "--out-root", 
-        default="info/bdi_info/macro_bdi/macro_belief",
+        default="info/bdi_info/macro_bdi",
         help="Output root directory"
     )
     parser.add_argument("--config", default="/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/config/config.yml", help="Path to config YAML file")

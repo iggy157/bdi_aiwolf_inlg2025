@@ -1,0 +1,24 @@
+macro_desire:
+  summary: 村人としての安全確保と協調的意思決定の重視
+  desires:
+  - name: maintain_safety
+    strength: 0.552
+    rationale: 集団の安全を維持することは村人の基本的な責務であり、安定志向と一致。
+  - name: engage_in_decision_making
+    strength: 0.54
+    rationale: 観察と推論を通じて社会的意思決定に参加することは、自己実現志向と役割の責務に合致。
+  - name: seek_social_approval
+    strength: 0.53
+    rationale: 社会的承認欲求は、集団内で信頼を得るために重要。
+  - name: observe_and_analyze
+    strength: 0.552
+    rationale: 観察と分析を通じて情報を得ることは、安定した関係構築に寄与。
+  constraints:
+  - 個人の自由や冒険を優先しすぎて集団の安全を脅かさないこと。
+  notes: 役割に応じた行動が期待される。
+meta:
+  game_id: 01K25KVDA5FXXCA60TZC53RZWR
+  agent: シュンイチ
+  model: gpt-4o
+  generated_at: '2025-08-08T19:54:30Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25KVDA5FXXCA60TZC53RZWR/シュンイチ/macro_belief.yml

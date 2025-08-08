@@ -1,0 +1,24 @@
+macro_desire:
+  summary: 村人としての役割を果たし、集団の安定を維持する
+  desires:
+  - name: observe_and_infer
+    strength: 0.78
+    rationale: 村人としての観察と推論による意思決定への参加が求められるため
+  - name: ensure_stability
+    strength: 0.768
+    rationale: 安定志向が高く、集団の安定を維持することが重要であるため
+  - name: foster_trust
+    strength: 0.63
+    rationale: 安定した人間関係を重視し、愛と親密さの欲求が関与するため
+  - name: seek_social_approval
+    strength: 0.37
+    rationale: 社会的承認欲求が存在し、集団の一員としての評価が重要であるため
+  constraints:
+  - 役割を逸脱しない範囲での行動を維持すること
+  notes: 村人としての役割を果たしつつ、個人の安定と集団の信頼を重視
+meta:
+  game_id: 01K25M98X48BNT6M5VKT77JZ9Y
+  agent: ダイスケ
+  model: gpt-4o
+  generated_at: '2025-08-08T20:00:00Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25M98X48BNT6M5VKT77JZ9Y/ダイスケ/macro_belief.yml

@@ -1,0 +1,24 @@
+macro_desire:
+  summary: 人狼としての役割を果たし、自由と冒険を求めつつ社会的承認を得る
+  desires:
+  - name: conceal_identity
+    strength: 0.75
+    rationale: 人狼として正体を隠すことが重要であり、自由と冒険の欲求がそれを補強する。
+  - name: collaborate_with_allies
+    strength: 0.65
+    rationale: 仲間と協力することが役割の一環であり、社会的承認の欲求が関与する。
+  - name: explore_opportunities
+    strength: 0.62
+    rationale: 自由と冒険を求める欲求が、機会探索とリスク許容の姿勢を強める。
+  - name: manage_perceptions
+    strength: 0.58
+    rationale: 社会的承認を得るために、他者からの認識を操作する必要がある。
+  constraints:
+  - 役割に反する行動を避けること
+  notes: 安定性の低さを補うために、計画的かつ柔軟な戦略が求められる。
+meta:
+  game_id: 01K25M98X48BNT6M5VKT77JZ9Y
+  agent: ミヅキ
+  model: gpt-4o
+  generated_at: '2025-08-08T19:59:59Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25M98X48BNT6M5VKT77JZ9Y/ミヅキ/macro_belief.yml

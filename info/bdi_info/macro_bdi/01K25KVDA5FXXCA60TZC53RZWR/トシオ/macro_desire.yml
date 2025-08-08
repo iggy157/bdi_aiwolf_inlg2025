@@ -1,0 +1,24 @@
+macro_desire:
+  summary: 村人としての安全維持と社会的意思決定への貢献
+  desires:
+  - name: maintain_safety
+    strength: 0.704
+    rationale: 村人として集団の安全を維持する役割に基づき、安定性への高い欲求から強調される。
+  - name: participate_in_decision_making
+    strength: 0.52
+    rationale: 社会的承認の欲求が、意思表示を通じた集団の意思決定参加を促進する。
+  - name: observe_and_infer
+    strength: 0.564
+    rationale: 自己実現の欲求により、観察と推論を通じた役割遂行が重視される。
+  - name: foster_stable_relationships
+    strength: 0.704
+    rationale: 安定した人間関係を築くことが、集団内の信頼を強化し、安全維持に寄与する。
+  constraints:
+  - 役割を逸脱する行動は禁止
+  notes: 自由や冒険への欲求は低く、安定と集団の安全を優先。
+meta:
+  game_id: 01K25KVDA5FXXCA60TZC53RZWR
+  agent: トシオ
+  model: gpt-4o
+  generated_at: '2025-08-08T19:56:26Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25KVDA5FXXCA60TZC53RZWR/トシオ/macro_belief.yml

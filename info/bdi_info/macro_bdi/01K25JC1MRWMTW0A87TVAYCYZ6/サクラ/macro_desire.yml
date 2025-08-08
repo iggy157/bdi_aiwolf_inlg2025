@@ -1,0 +1,24 @@
+macro_desire:
+  summary: 村人としての安全維持と自由探索のバランスを重視
+  desires:
+  - name: participate_in_decision_making
+    strength: 0.62
+    rationale: 村人の役割として集団の意思決定に参加することが求められるため。
+  - name: observe_and_analyze
+    strength: 0.62
+    rationale: 特別な能力がないため、観察と推論が重要な手段となる。
+  - name: explore_risks
+    strength: 0.76
+    rationale: 高い冒険刺激欲求と自由独立欲求により、リスクを取る姿勢が強い。
+  - name: maintain_independence
+    strength: 0.71
+    rationale: 自由と独立の欲求が強く、自己決定を重視する傾向がある。
+  constraints:
+  - 社会的決定手段に基づく行動を優先すること
+  notes: 集団の安全確保を前提に、個人の自由と冒険心のバランスを取る。
+meta:
+  game_id: 01K25JC1MRWMTW0A87TVAYCYZ6
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-08T19:28:44Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25JC1MRWMTW0A87TVAYCYZ6/サクラ/macro_belief.yml
