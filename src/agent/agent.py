@@ -251,11 +251,20 @@ class Agent:
         
         if self.info and self.info.profile:
             try:
+                # Get role from info.role_map or use self.role as fallback
+                role_en = None
+                if hasattr(self.info, 'role_map') and self.info.agent in self.info.role_map:
+                    role_obj = self.info.role_map[self.info.agent]
+                    role_en = role_obj.name if hasattr(role_obj, 'name') else str(role_obj)
+                elif self.role:
+                    role_en = self.role.name if hasattr(self.role, 'name') else str(self.role)
+                
                 macro_belief_path = generate_macro_belief(
                     config=self.config,
                     profile=self.info.profile,
                     agent_name=self.info.agent,
-                    game_id=self.info.game_id
+                    game_id=self.info.game_id,
+                    role_en=role_en
                 )
                 self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
             except Exception as e:

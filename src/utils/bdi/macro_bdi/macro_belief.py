@@ -9,12 +9,14 @@ import argparse
 from pathlib import Path
 from typing import Any, Dict
 
-from .mbti_inference import infer_mbti
+from .mbti_inference import infer_mbti, get_game_timestamp
 from .enneagram_inference import infer_enneagram
 from .cognitive_bias import infer_cognitive_bias
 from .desire_tendency import infer_desire_tendency
 from .behavior_tendency import infer_behavior_tendency
 from ._writer import write_macro_belief, create_meta_dict
+from ._config import load_config
+from ._roles import to_japanese_role
 
 
 def generate_macro_belief(
@@ -22,7 +24,8 @@ def generate_macro_belief(
     profile: str,
     agent_name: str,
     game_id: str,
-    out_root: str | Path = "info/bdi_info/macro_bdi/macro_belief"
+    out_root: str | Path = "info/bdi_info/macro_bdi/macro_belief",
+    role_en: str | None = None
 ) -> Path:
     """Generate consolidated macro belief YAML file.
     
@@ -51,20 +54,37 @@ def generate_macro_belief(
     # Step 5: Calculate behavior tendency
     behavior_tendency_data = infer_behavior_tendency(mbti_data, enneagram_data)
     
-    # Step 6: Consolidate all data
+    # Step 6: Prepare role social duties
+    role_social_duties = {}
+    if role_en:
+        role_ja = to_japanese_role(role_en)
+        duties_cfg = config.get("role_social_duties", {})
+        
+        if role_ja and role_ja in duties_cfg:
+            role_social_duties = {"role": role_ja, "duties": duties_cfg[role_ja]}
+        elif role_ja:
+            role_social_duties = {"role": role_ja, "duties": {"note": "role duties not found in config"}}
+    else:
+        role_social_duties = {"role": None, "duties": {"note": "role not provided"}}
+    
+    # Step 7: Consolidate all data (role_social_duties first)
+    macro_belief_data = {
+        "role_social_duties": role_social_duties,
+        "mbti": mbti_data,
+        "enneagram": enneagram_data,
+        "cognitive_bias": cognitive_bias_data,
+        "desire_tendency": desire_tendency_data,
+        "behavior_tendency": behavior_tendency_data,
+    }
+    
     payload = {
-        "macro_belief": {
-            "mbti": mbti_data,
-            "enneagram": enneagram_data,
-            "cognitive_bias": cognitive_bias_data,
-            "desire_tendency": desire_tendency_data,
-            "behavior_tendency": behavior_tendency_data,
-        },
+        "macro_belief": macro_belief_data,
         "meta": create_meta_dict(game_id, agent_name),
     }
     
-    # Step 7: Write to file atomically
-    out_dir = Path(out_root) / game_id / agent_name
+    # Step 8: Write to file atomically (using get_game_timestamp)
+    game_timestamp = get_game_timestamp(game_id)
+    out_dir = Path(out_root) / game_timestamp / agent_name
     return write_macro_belief(payload, out_dir)
 
 
@@ -81,24 +101,13 @@ def main():
         default="info/bdi_info/macro_bdi/macro_belief",
         help="Output root directory"
     )
-    parser.add_argument("--config", help="Path to config YAML file (optional)")
+    parser.add_argument("--config", default="/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/config/config.yml", help="Path to config YAML file")
+    parser.add_argument("--role-en", default=None, help="SEER/WEREWOLF/VILLAGER/POSSESSED/BODYGUARD/MEDIUM")
     
     args = parser.parse_args()
     
-    # Load config if provided, otherwise use minimal config
-    if args.config:
-        import yaml
-        with open(args.config, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
-    else:
-        # Minimal default config for CLI usage
-        config = {
-            "llm": {"type": "openai"},
-            "openai": {"model": "gpt-3.5-turbo", "temperature": 0.7},
-            "prompt": {
-                "mbti_inference": "Analyze the following profile and provide MBTI parameters (0-1 range):\n{{ profile }}\n\nAgent: {{ agent_name }}\n\nProvide scores for: extroversion, introversion, sensing, intuition, thinking, feeling, judging, perceiving"
-            }
-        }
+    # Load config using the new loader
+    config = load_config(Path(args.config))
     
     try:
         output_path = generate_macro_belief(
@@ -106,7 +115,8 @@ def main():
             profile=args.profile,
             agent_name=args.agent,
             game_id=args.game_id,
-            out_root=args.out_root
+            out_root=args.out_root,
+            role_en=args.role_en
         )
         print(f"Generated macro belief: {output_path}")
         
