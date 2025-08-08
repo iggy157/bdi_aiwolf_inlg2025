@@ -23,6 +23,8 @@ from ulid import ULID
 
 from .enneagram_inference import infer_and_save_enneagram
 from .cognitive_bias import calculate_and_save_cognitive_bias
+from .desire_tendency import calculate_and_save_desire_tendency
+from .behavior_tendency import calculate_and_save_behavior_tendency
 
 load_dotenv()
 
@@ -191,6 +193,8 @@ class MBTIInference:
                 enneagram_path = output_dir / "enneagram.yml"
                 if enneagram_path.exists():
                     calculate_and_save_cognitive_bias(file_path, enneagram_path, output_dir)
+                    calculate_and_save_desire_tendency(file_path, enneagram_path, output_dir)
+                    calculate_and_save_behavior_tendency(file_path, enneagram_path, output_dir)
             except Exception as e:
                 print(f"Error calculating Enneagram parameters or cognitive bias: {e}")
 

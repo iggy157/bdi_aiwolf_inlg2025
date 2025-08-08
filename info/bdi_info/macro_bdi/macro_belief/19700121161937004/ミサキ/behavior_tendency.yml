@@ -1,0 +1,8 @@
+behavior_tendencies:
+  adaptability: 0.5
+  aggressive_behavior: 0.29600000000000004
+  assertiveness: 0.264
+  avoidant_behavior: 0.752
+  empathy: 0.572
+  extroversion: 0.2
+  introversion: 0.8
