@@ -334,6 +334,23 @@ class CognitiveBias:
             self.statement_bias_history = []
 
 
+def infer_cognitive_bias(
+    mbti_params: Dict[str, float],
+    enneagram_params: Dict[str, float]
+) -> Dict[str, Any]:
+    """Pure function to calculate cognitive bias from MBTI and Enneagram parameters without file I/O.
+    
+    Args:
+        mbti_params: MBTI parameters dictionary
+        enneagram_params: Enneagram parameters dictionary
+        
+    Returns:
+        Cognitive bias data dictionary
+    """
+    bias_calculator = CognitiveBias()
+    return bias_calculator.get_core_biases(mbti_params, enneagram_params)
+
+
 def calculate_and_save_cognitive_bias(
     mbti_file_path: Path, 
     enneagram_file_path: Path, 

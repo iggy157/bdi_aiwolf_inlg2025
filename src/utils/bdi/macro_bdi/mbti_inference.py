@@ -202,6 +202,21 @@ class MBTIInference:
             print(f"Error saving MBTI parameters: {e}")
 
 
+def infer_mbti(config: dict[str, Any], profile: str, agent_name: str) -> dict[str, float]:
+    """Pure function to infer MBTI parameters without file I/O.
+
+    Args:
+        config: Configuration dictionary
+        profile: Profile text
+        agent_name: Agent name
+
+    Returns:
+        MBTI parameters dictionary
+    """
+    inference = MBTIInference(config)
+    return inference.infer_mbti_parameters(profile, agent_name)
+
+
 def infer_and_save_mbti(config: dict[str, Any], profile: str, agent_name: str, game_id: str) -> dict[str, float]:
     """Convenience function to infer and save MBTI parameters.
 

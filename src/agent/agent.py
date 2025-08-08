@@ -28,7 +28,7 @@ from aiwolf_nlp_common.packet import Info, Packet, Request, Role, Setting, Statu
 
 from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
-from utils.bdi.macro_bdi.mbti_inference import infer_and_save_mbti
+from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -251,9 +251,15 @@ class Agent:
         
         if self.info and self.info.profile:
             try:
-                infer_and_save_mbti(self.config, self.info.profile, self.info.agent, self.info.game_id)
+                macro_belief_path = generate_macro_belief(
+                    config=self.config,
+                    profile=self.info.profile,
+                    agent_name=self.info.agent,
+                    game_id=self.info.game_id
+                )
+                self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
             except Exception as e:
-                self.agent_logger.logger.error(f"Failed to infer MBTI parameters: {e}")
+                self.agent_logger.logger.error(f"Failed to generate macro belief: {e}")
 
     def daily_initialize(self) -> None:
         """Perform processing for daily initialization request.

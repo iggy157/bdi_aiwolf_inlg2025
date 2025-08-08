@@ -148,6 +148,19 @@ def process_all_mbti_files(base_dir: str = "info/bdi_info/macro_bdi/macro_belief
             print(f"  Failed to process: {mbti_file}")
 
 
+def infer_enneagram(mbti_params: dict[str, float]) -> dict[str, float]:
+    """Pure function to infer Enneagram parameters from MBTI parameters without file I/O.
+    
+    Args:
+        mbti_params: MBTI parameters dictionary
+        
+    Returns:
+        Enneagram parameters dictionary
+    """
+    inference = EnneagramInference()
+    return inference.calculate_enneagram_parameters(mbti_params)
+
+
 def infer_and_save_enneagram(mbti_file_path: str | Path) -> dict[str, float] | None:
     """Convenience function to infer and save Enneagram parameters from MBTI file.
     

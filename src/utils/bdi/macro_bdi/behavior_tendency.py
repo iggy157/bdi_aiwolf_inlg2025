@@ -226,6 +226,23 @@ class BehaviorTendency:
             self.behavior_tendency_history = []
 
 
+def infer_behavior_tendency(
+    mbti_params: Dict[str, float],
+    enneagram_params: Dict[str, float]
+) -> Dict[str, Any]:
+    """Pure function to calculate behavior tendency from MBTI and Enneagram parameters without file I/O.
+    
+    Args:
+        mbti_params: MBTI parameters dictionary
+        enneagram_params: Enneagram parameters dictionary
+        
+    Returns:
+        Behavior tendency data dictionary
+    """
+    behavior_calculator = BehaviorTendency()
+    return behavior_calculator.get_core_behaviors(mbti_params, enneagram_params)
+
+
 def calculate_and_save_behavior_tendency(
     mbti_file_path: Path, 
     enneagram_file_path: Path, 
