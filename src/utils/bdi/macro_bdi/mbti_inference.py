@@ -26,7 +26,8 @@ from .cognitive_bias import calculate_and_save_cognitive_bias
 from .desire_tendency import calculate_and_save_desire_tendency
 from .behavior_tendency import calculate_and_save_behavior_tendency
 
-load_dotenv()
+# Load environment variables from config/.env
+load_dotenv(Path(__file__).parent.parent.parent.parent.parent / "config" / ".env")
 
 
 def get_game_timestamp(game_id: str) -> str:
