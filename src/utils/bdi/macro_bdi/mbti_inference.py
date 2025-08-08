@@ -25,6 +25,7 @@ from .enneagram_inference import infer_and_save_enneagram
 from .cognitive_bias import calculate_and_save_cognitive_bias
 from .desire_tendency import calculate_and_save_desire_tendency
 from .behavior_tendency import calculate_and_save_behavior_tendency
+from ._mbti_parser import parse_mbti_output_robust
 
 # Load environment variables from config/.env
 load_dotenv(Path(__file__).parent.parent.parent.parent.parent / "config" / ".env")
@@ -108,7 +109,7 @@ class MBTIInference:
             return self._get_default_mbti_parameters()
 
     def _parse_mbti_response(self, response: str) -> dict[str, float]:
-        """Parse LLM response to extract MBTI parameters.
+        """Parse LLM response to extract MBTI parameters using robust parser.
 
         Args:
             response: LLM response containing MBTI parameters
@@ -117,39 +118,9 @@ class MBTIInference:
             Dictionary with MBTI parameters
         """
         try:
-            lines = response.strip().split('\n')
-            mbti_params = {}
-
-            for line in lines:
-                if ':' in line:
-                    key, value = line.split(':', 1)
-                    key = key.strip()
-                    value = value.strip()
-
-                    try:
-                        float_value = float(value)
-                        float_value = max(0.0, min(1.0, float_value))
-                        mbti_params[key] = float_value
-                    except ValueError:
-                        continue
-
-            required_params = {
-                "extroversion": 0.5,
-                "introversion": 0.5,
-                "sensing": 0.5,
-                "intuition": 0.5,
-                "thinking": 0.5,
-                "feeling": 0.5,
-                "judging": 0.5,
-                "perceiving": 0.5
-            }
-
-            for param in required_params:
-                if param not in mbti_params:
-                    mbti_params[param] = required_params[param]
-
-            return mbti_params
-        except Exception:
+            return parse_mbti_output_robust(response)
+        except Exception as e:
+            print(f"Error parsing MBTI response: {e}")
             return self._get_default_mbti_parameters()
 
     def _get_default_mbti_parameters(self) -> dict[str, float]:
