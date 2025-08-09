@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 集団の利益を優先しつつ、情報の信憑性と開示タイミングを管理する
+  description: シュンイチは、占い師としての役割を重視し、情報の信憑性と開示タイミングを適切に管理することを目指す。彼の安定欲求と安定した人間関係志向（それぞれ0.552）は、集団の利益を最優先に考える行動を促進する。自己実現（0.540）と社会的承認（0.530）も比較的高いため、彼は自分の能力を最大限に活用し、仲間からの信頼を得ることを望む。ただし、自由独立（0.460）や冒険刺激（0.440）の欲求は低いため、斬新な方法よりも安全で確実なアプローチを好む可能性が高い。
+meta:
+  game_id: 01K26GSBPXNKD021A7BR4SNNFP
+  agent: シュンイチ
+  model: gpt-4o
+  generated_at: '2025-08-09T04:18:06Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K26GSBPXNKD021A7BR4SNNFP/シュンイチ/macro_belief.yml

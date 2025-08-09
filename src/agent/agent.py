@@ -30,6 +30,7 @@ from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
+from utils.bdi.macro_bdi.macro_plan import generate_macro_plan
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -281,6 +282,19 @@ class Agent:
                     self.agent_logger.logger.info(f"Generated macro desire for agent: {self.info.agent}")
                 except Exception as e:
                     self.agent_logger.logger.error(f"Failed to generate macro desire: {e}")
+                
+                # Generate macro plan based on behavior tendencies
+                try:
+                    macro_plan_data = generate_macro_plan(
+                        game_id=self.info.game_id,
+                        agent=self.info.agent,
+                        model=self.config.get("openai", {}).get("model", "gpt-4o"),
+                        dry_run=False,
+                        overwrite=True  # Allow overwrite during initialization
+                    )
+                    self.agent_logger.logger.info(f"Generated macro plan for agent: {self.info.agent}")
+                except Exception as e:
+                    self.agent_logger.logger.error(f"Failed to generate macro plan: {e}")
             except Exception as e:
                 self.agent_logger.logger.error(f"Failed to generate macro belief: {e}")
 

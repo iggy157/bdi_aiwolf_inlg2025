@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Macro desire generation from role_social_duties and desire_tendency.
+"""Macro plan generation from behavior_tendencies.
 
-役職責任と欲求傾向からマクロ欲求を生成するスクリプト.
+行動傾向からマクロプランを生成するスクリプト.
 """
 
 from __future__ import annotations
@@ -25,33 +25,50 @@ from jinja2 import Template
 load_dotenv(Path(__file__).parent.parent.parent.parent.parent / "config" / ".env")
 
 # Default fallback prompt template (used when config.yml is not available)
-FALLBACK_PROMPT_TEMPLATE = """あなたは社会的役割と欲求傾向にもとづき、エージェントの上位欲求（macro_desire）をYAMLで設計する専門家です。  
-以下の入力を読み、**YAMLのみ**で `macro_desire` を出力してください。
+FALLBACK_PROMPT_TEMPLATE = """あなたは人狼ゲームにおけるエージェントのマクロ視点(ゲーム全体を通して)の行動計画を設計する戦略プランナーです。
+出力は有効な YAML のみとし、説明やマークダウンは含めないでください。
 
-[context]
-- game_id: {{ game_id }}
-- agent: {{ agent }}
+# Context
+game_id: {{ game_id }}
+agent: {{ agent }}
 
-[role_social_duties]
-- role: {{ role }}
-- 定義: {{ role_definition }}
+# Macro Desires
+Summary: {{ desire_summary }}
+Description: {{ desire_description }}
 
-[desire_tendency]
-次は {{ agent }} の欲求傾向（0–1）。値が高いほど志向が強い想定です。
-{% for key, value in desire_tendencies.items() -%}
-  - {{ key }}: {{ "%.3f"|format(value) }}
+# Behavior Tendencies
+{% for key, value in behavior_tendencies.items() -%}
+{{ key }}: {{ "%.3f"|format(value) }}
 {% endfor %}
 
-[要件]
-1) 出力は**YAMLのみ**で、以下のスキーマに沿ってください。
-2) 今回のゲームにおいてrole_social_dutiesを達成する上で、どのような願望を抱くと考えられるかdesire_tendencyを参考にして記述してください。
-3) role_social_dutiesをどれだけ重視するかはdesire_tendencyの値に左右されます。
+# Task
+上記のマクロ欲求（macro desires）を達成するための具体的なプランを考えてください。またその際には行動傾向（behavior tendencies）に矛盾することない現実的なプランとなるようにしてください。
+人狼ゲームを通してのマクロな視点でのプランを YAML で作成してください。
 
-[出力フォーマット]
+[要件]
+- 各プランは次の項目を含む:
+  - ラベル: "プランの名前"
+  - トリガ・イベント: プラン実行の条件
+  - 前提条件: そのプランが選ばれる条件
+  - 本体: 副目標あるいは基本行為の列（順に達成する）
+    - 副目標: その目標を生成し、手段を再帰的に選んで達成
+    - 基本行為: 実行
+- 3〜6件程度のプランを提示
+- 人狼ゲームにおける村陣営・人狼陣営どちらでも汎用的に解釈できる macro な目標にする
+- 役割逸脱・反ゲーム的行動は禁止
+
+[出力スキーマ]
 ```yaml
-macro_desire:
-  summary: "<短い要約>"
-  description: "<詳細な説明>"
+macro_plan:
+  plans:
+    - label: "<プラン名>"
+      trigger_event: "<条件>"
+      preconditions:
+        - "<条件1>"
+      body:
+        - type: "subgoal" | "basic_action"
+          description: "<説明>"
+  notes: "<任意の補足>"
 ```
 
 厳守: 出力は**YAMLのみ**。余計なテキストやコードブロック記号は不要。"""
@@ -117,9 +134,9 @@ def build_prompt(
     template: str,
     game_id: str,
     agent: str,
-    role: str,
-    role_definition: str,
-    desire_tendencies: Dict[str, float]
+    behavior_tendencies: Dict[str, float],
+    desire_summary: str,
+    desire_description: str
 ) -> str:
     """Build prompt using Jinja2 template.
     
@@ -127,9 +144,9 @@ def build_prompt(
         template: Jinja2 template string
         game_id: Game ID
         agent: Agent name
-        role: Role name (Japanese)
-        role_definition: Role definition text
-        desire_tendencies: Desire tendency values
+        behavior_tendencies: Behavior tendency values
+        desire_summary: Summary of desires
+        desire_description: Description of desires
         
     Returns:
         Built prompt string
@@ -138,9 +155,9 @@ def build_prompt(
     prompt = jinja_template.render(
         game_id=game_id,
         agent=agent,
-        role=role,
-        role_definition=role_definition,
-        desire_tendencies=desire_tendencies
+        behavior_tendencies=behavior_tendencies,
+        desire_summary=desire_summary,
+        desire_description=desire_description
     ).strip()
     
     return prompt
@@ -361,45 +378,79 @@ def extract_yaml_from_response(response: str) -> Dict[str, Any]:
     
     # Fallback: create minimal structure
     return {
-        "macro_desire": {
-            "summary": "Failed to parse LLM response",
-            "description": f"Original response: {response[:200]}..."
+        "macro_plan": {
+            "plans": [
+                {
+                    "label": "default_plan",
+                    "trigger_event": "Default due to parse failure",
+                    "preconditions": ["Parse failed"],
+                    "body": [
+                        {
+                            "type": "basic_action",
+                            "description": "Default action due to parsing failure"
+                        }
+                    ]
+                }
+            ],
+            "notes": f"Original response: {response[:200]}..."
         }
     }
 
 
-def normalize_macro_desire(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Normalize macro_desire data and fix numeric values.
+def normalize_macro_plan(data: Dict[str, Any]) -> Dict[str, Any]:
+    """Normalize macro_plan data and fix structure.
     
     Args:
-        data: Raw macro desire data
+        data: Raw macro plan data
         
     Returns:
         Normalized data
     """
-    if "macro_desire" not in data:
-        data = {"macro_desire": data}
+    if "macro_plan" not in data:
+        data = {"macro_plan": data}
     
-    macro_desire = data["macro_desire"]
+    macro_plan = data["macro_plan"]
     
-    # Ensure required fields exist for new format
-    if "summary" not in macro_desire:
-        macro_desire["summary"] = "Generated macro desires"
+    # Ensure required fields exist
+    if "plans" not in macro_plan:
+        macro_plan["plans"] = []
     
-    if "description" not in macro_desire:
-        macro_desire["description"] = "No detailed description provided"
+    # Normalize plan entries
+    for plan in macro_plan["plans"]:
+        if "label" not in plan:
+            plan["label"] = "unnamed_plan"
+        
+        if "trigger_event" not in plan:
+            plan["trigger_event"] = "No trigger specified"
+            
+        if "preconditions" not in plan:
+            plan["preconditions"] = []
+            
+        if "body" not in plan:
+            plan["body"] = []
+            
+        # Normalize body entries
+        for body_item in plan["body"]:
+            if "type" not in body_item:
+                body_item["type"] = "basic_action"
+            if "description" not in body_item:
+                body_item["description"] = "No description"
+    
+    # Ensure notes exist
+    if "notes" not in macro_plan:
+        macro_plan["notes"] = "Generated automatically"
     
     return data
 
 
-def generate_macro_desire(
+def generate_macro_plan(
     game_id: str,
     agent: str,
     model: str,
     dry_run: bool = False,
     overwrite: bool = False
 ) -> Dict[str, Any]:
-    """Generate macro desire from macro_belief data.
+    """Generate macro plan from macro_belief behavior_tendencies and macro_desire data.
     
     Args:
         game_id: Game ID
@@ -409,13 +460,14 @@ def generate_macro_desire(
         overwrite: If True, overwrite existing files
         
     Returns:
-        Generated macro desire data
+        Generated macro plan data
     """
     # Define paths
     base_path = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
     macro_belief_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_belief.yml"
+    macro_desire_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_desire.yml"
     config_path = base_path / "config" / "config.yml"
-    output_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_desire.yml"
+    output_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_plan.yml"
     
     # Check if output already exists
     if output_path.exists() and not overwrite and not dry_run:
@@ -425,6 +477,9 @@ def generate_macro_desire(
     print(f"Loading macro_belief from: {macro_belief_path}")
     macro_belief_data = load_yaml_file(macro_belief_path)
     
+    print(f"Loading macro_desire from: {macro_desire_path}")
+    macro_desire_data = load_yaml_file(macro_desire_path)
+    
     print(f"Loading config from: {config_path}")
     try:
         config_data = load_yaml_file(config_path)
@@ -433,19 +488,18 @@ def generate_macro_desire(
         config_data = {}
     
     # Extract required data
-    role_data = macro_belief_data["macro_belief"]["role_social_duties"]
-    role = role_data["role"]
-    role_definition = role_data["duties"]["定義"]
-    desire_tendencies = macro_belief_data["macro_belief"]["desire_tendency"]["desire_tendencies"]
+    behavior_tendencies = macro_belief_data["macro_belief"]["behavior_tendency"]["behavior_tendencies"]
+    desire_summary = macro_desire_data["macro_desire"].get("summary", "")
+    desire_description = macro_desire_data["macro_desire"].get("description", "")
     
     # Get prompt template from config
-    prompt_template = config_data.get("prompt", {}).get("macro_desire", FALLBACK_PROMPT_TEMPLATE)
+    prompt_template = config_data.get("prompt", {}).get("macro_plan", FALLBACK_PROMPT_TEMPLATE)
     if not prompt_template:
         prompt_template = FALLBACK_PROMPT_TEMPLATE
         print("Warning: Using fallback prompt template")
     
     # Build prompt
-    prompt = build_prompt(prompt_template, game_id, agent, role, role_definition, desire_tendencies)
+    prompt = build_prompt(prompt_template, game_id, agent, behavior_tendencies, desire_summary, desire_description)
     
     if dry_run:
         print("\n" + "="*50)
@@ -466,7 +520,7 @@ def generate_macro_desire(
     
     # Parse response
     parsed_data = extract_yaml_from_response(response)
-    normalized_data = normalize_macro_desire(parsed_data)
+    normalized_data = normalize_macro_plan(parsed_data)
     
     # Add metadata
     final_data = {
@@ -476,7 +530,8 @@ def generate_macro_desire(
             "agent": agent,
             "model": model,
             "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-            "source_macro_belief": str(macro_belief_path)
+            "source_macro_belief": str(macro_belief_path),
+            "source_macro_desire": str(macro_desire_path)
         }
     }
     
@@ -488,7 +543,7 @@ def generate_macro_desire(
     
     # Save result atomically
     _atomic_write_yaml(final_data, output_path)
-    print(f"Saved macro_desire: {output_path}")
+    print(f"Saved macro_plan: {output_path}")
     
     return final_data
 
@@ -496,7 +551,7 @@ def generate_macro_desire(
 def main():
     """Main CLI function."""
     parser = argparse.ArgumentParser(
-        description="Generate macro_desire from role_social_duties and desire_tendency"
+        description="Generate macro_plan from behavior_tendencies"
     )
     parser.add_argument("--game_id", required=True, help="Game ID")
     parser.add_argument("--agent", required=True, help="Agent name")
@@ -507,7 +562,7 @@ def main():
     args = parser.parse_args()
     
     try:
-        result = generate_macro_desire(
+        result = generate_macro_plan(
             game_id=args.game_id,
             agent=args.agent,
             model=args.model,
@@ -518,7 +573,7 @@ def main():
         if args.dry_run:
             print("\n✅ Dry run completed successfully!")
         else:
-            print("✅ Macro desire generation completed successfully!")
+            print("✅ Macro plan generation completed successfully!")
             
     except Exception as e:
         print(f"❌ Error: {e}")

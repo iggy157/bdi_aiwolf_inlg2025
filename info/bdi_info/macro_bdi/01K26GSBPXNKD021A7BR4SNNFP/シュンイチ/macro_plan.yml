@@ -1,0 +1,48 @@
+macro_plan:
+  plans:
+  - label: 情報開示のタイミング管理
+    trigger_event: ゲーム開始後、初めて占い結果を得たとき
+    preconditions:
+    - シュンイチが占い師である
+    body:
+    - type: basic_action
+      description: 最初の占い結果は即座に開示せず、信頼できる相手を見極める
+    - type: subgoal
+      description: 信頼できる相手を見つける
+    - type: basic_action
+      description: 信頼できる相手にのみ結果を共有する
+  - label: 集団利益の優先
+    trigger_event: ゲーム序盤の議論フェーズ中
+    preconditions:
+    - 集団の利益を考慮する必要がある
+    body:
+    - type: subgoal
+      description: 村人陣営の勝利に貢献する行動を選択
+    - type: basic_action
+      description: 他のプレイヤーと協力して情報を整理
+  - label: 安定した人間関係の構築
+    trigger_event: 初期のコミュニケーション
+    preconditions:
+    - 信頼関係を構築する必要性がある
+    body:
+    - type: basic_action
+      description: 他のプレイヤーに対して誠実かつ慎重に振る舞う
+    - type: subgoal
+      description: 議論に積極的に参加し、信頼を得る
+  - label: 情報の信憑性を高める
+    trigger_event: 疑惑が集まったとき
+    preconditions:
+    - 自身の信頼性が疑われる
+    body:
+    - type: basic_action
+      description: 過去の行動と整合性のある新たな証拠を提示
+    - type: subgoal
+      description: これまでの行動を振り返り、矛盾を解消する
+  notes: これらのプランはシュンイチの行動傾向を考慮し、彼の安定欲求と信頼性を重視する。
+meta:
+  game_id: 01K26GSBPXNKD021A7BR4SNNFP
+  agent: シュンイチ
+  model: gpt-4o
+  generated_at: '2025-08-09T04:18:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K26GSBPXNKD021A7BR4SNNFP/シュンイチ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K26GSBPXNKD021A7BR4SNNFP/シュンイチ/macro_desire.yml
