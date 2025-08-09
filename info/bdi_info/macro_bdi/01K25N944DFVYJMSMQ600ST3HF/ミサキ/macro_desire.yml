@@ -1,0 +1,21 @@
+macro_desire:
+  summary: 集団内での安定したポジション維持と正体の秘匿
+  desires:
+  - name: maintain_stability
+    strength: 0.684
+    rationale: 安定性への欲求が高く、集団内での立場を維持しつつ、正体を隠す必要があるため。
+  - name: foster_stable_relationships
+    strength: 0.684
+    rationale: 安定した関係性を築くことにより、仲間との協力が円滑になると考えられる。
+  - name: conceal_identity
+    strength: 0.575
+    rationale: 愛情や親密さへの欲求が高めであり、他者との関係を悪化させないように正体を隠す必要がある。
+  constraints:
+  - 自己実現や自由の欲求は抑えられるべきである。
+  notes: ミサキは安定性と正体の秘匿を優先し、他者との関係を適切に管理することが望ましい。自由や冒険を求める欲求は低めであることから、計画的な行動が重要。
+meta:
+  game_id: 01K25N944DFVYJMSMQ600ST3HF
+  agent: ミサキ
+  model: gpt-4o
+  generated_at: '2025-08-08T20:17:22Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25N944DFVYJMSMQ600ST3HF/ミサキ/macro_belief.yml

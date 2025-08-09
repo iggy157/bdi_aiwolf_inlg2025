@@ -1,0 +1,21 @@
+macro_desire:
+  summary: ダイスケは安定した関係を維持しつつ、狂人としての役割を果たすことを望む。
+  desires:
+  - name: maintain_stability
+    strength: 0.784
+    rationale: 安定を重視する欲求が強いため、ゲーム内での立ち位置を揺るがさない行動を選ぶ傾向がある。
+  - name: fulfill_role_as_madman
+    strength: 0.6
+    rationale: 狂人としての役割を果たすことが重要であり、情報を攪乱する行動をとる。
+  - name: seek_love_and_intimacy
+    strength: 0.625
+    rationale: 愛や親密さへの欲求が強いため、他のプレイヤーとの親しい関係を築きたいと考える。
+  constraints:
+  - 他のプレイヤーとの信頼関係を崩さずに情報を攪乱する必要がある。
+  notes: 自由や冒険の欲求は低いため、リスクを伴う行動に出る可能性は低い。
+meta:
+  game_id: 01K25N944DFVYJMSMQ600ST3HF
+  agent: ダイスケ
+  model: gpt-4o
+  generated_at: '2025-08-08T20:17:23Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25N944DFVYJMSMQ600ST3HF/ダイスケ/macro_belief.yml

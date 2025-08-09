@@ -1,0 +1,21 @@
+macro_desire:
+  summary: 村の安全を優先しながらも、個人の安定と社会的承認を求める
+  desires:
+  - name: maintain_village_safety
+    strength: 0.62
+    rationale: 役割として集団の安全を維持する義務があるため、安定志向と一致する。
+  - name: seek_social_approval
+    strength: 0.59
+    rationale: 社会的承認欲求が強く、集団の意思決定に積極的に参加することで承認を得たいと考える。
+  - name: ensure_personal_stability
+    strength: 0.62
+    rationale: 安定した人間関係と個人の安定を重視する傾向が強いため。
+  constraints:
+  - 集団の安全を最優先し、個人の欲求を犠牲にする必要がある場合がある。
+  notes: ミナコは冒険や刺激を求める傾向が低いため、保守的な行動を取る可能性が高い。
+meta:
+  game_id: 01K25N944DFVYJMSMQ600ST3HF
+  agent: ミナコ
+  model: gpt-4o
+  generated_at: '2025-08-08T20:17:25Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K25N944DFVYJMSMQ600ST3HF/ミナコ/macro_belief.yml
