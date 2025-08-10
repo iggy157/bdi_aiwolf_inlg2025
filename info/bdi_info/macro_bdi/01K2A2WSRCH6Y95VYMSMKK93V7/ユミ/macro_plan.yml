@@ -1,0 +1,54 @@
+macro_plan:
+  plans:
+  - label: 情報収集と共有
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - ゲームが初期段階である
+    body:
+    - type: basic_action
+      description: 他のプレイヤーと積極的に会話を始める
+    - type: basic_action
+      description: 議論の内容を観察し、重要な情報をメモする
+    - type: subgoal
+      description: 得た情報を整理し、有用な意見を形成する
+  - label: 意見の発信と連携
+    trigger_event: 情報がある程度集まった段階
+    preconditions:
+    - 情報収集フェーズが完了している
+    body:
+    - type: basic_action
+      description: 自身の観察結果と意見を共有する
+    - type: basic_action
+      description: 他のプレイヤーの意見を尊重し、議論をリードする
+    - type: subgoal
+      description: 集団の合意形成に貢献する
+  - label: リスク評価と対応
+    trigger_event: 疑わしい行動を観察したとき
+    preconditions:
+    - 他のプレイヤーが不自然な行動を取った
+    body:
+    - type: basic_action
+      description: 疑わしい行動を分析しリスクを評価する
+    - type: subgoal
+      description: 他のプレイヤーと協力してリスク対応策を考える
+    - type: basic_action
+      description: リスクに対する自分の考えを積極的に発信する
+  - label: 集団の安全の確保
+    trigger_event: ゲームの中盤から終盤
+    preconditions:
+    - プレイヤー数が減少し、状況が緊迫している
+    body:
+    - type: subgoal
+      description: 信頼できるプレイヤーとの協力関係を強化する
+    - type: basic_action
+      description: 残ったプレイヤーの行動を慎重に監視する
+    - type: subgoal
+      description: 最終的な勝利に向けた戦略を策定する
+  notes: ユミは自由と冒険を大切にしつつ、社会的承認を得るための行動を心がける。
+meta:
+  game_id: 01K2A2WSRCH6Y95VYMSMKK93V7
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:32:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/ユミ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/ユミ/macro_desire.yml

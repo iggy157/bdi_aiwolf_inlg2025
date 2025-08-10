@@ -1,0 +1,18 @@
+# Request 1
+1:
+  content: 皆さん、こんにちは。今日は良い天気ですね。
+  type: null
+  from: エージェント1
+  to: null
+  request_count: 1
+  credibility: 0.0
+
+2:
+  content: Over
+  type: null
+  from: エージェント2
+  to: null
+  request_count: 1
+  credibility: 0.0
+
+

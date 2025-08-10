@@ -1,0 +1,54 @@
+macro_plan:
+  plans:
+  - label: 初期情報収集と信頼構築
+    trigger_event: ゲーム開始時
+    preconditions:
+    - ゲームが開始された
+    body:
+    - type: basic_action
+      description: 他のプレイヤーの発言を注意深く観察する
+    - type: basic_action
+      description: 軽い会話を通じて、特定のプレイヤーと信頼関係を築く
+    - type: basic_action
+      description: 自分の役職を隠しつつ、情報を交換する姿勢を見せる
+  - label: 情報攪乱と偽情報の流布
+    trigger_event: 初期情報収集と信頼構築後
+    preconditions:
+    - 信頼関係を築けたプレイヤーがいる
+    body:
+    - type: subgoal
+      description: 信頼関係を利用して誤情報を流す
+    - type: basic_action
+      description: 他のプレイヤーの疑念を煽るような発言をする
+    - type: basic_action
+      description: 自然な形で自分から注意を逸らす
+  - label: 周囲との調和と支援
+    trigger_event: 複数のプレイヤー間で疑心暗鬼が生まれたとき
+    preconditions:
+    - 自分への疑いが低い
+    body:
+    - type: basic_action
+      description: 積極的に議論に参加し、他のプレイヤーをサポートする姿勢を見せる
+    - type: basic_action
+      description: 適度に他のプレイヤーへの疑いを示し、バランスを保つ
+    - type: subgoal
+      description: 狼陣営が有利になるように議論を誘導する
+  - label: 柔軟な戦略変更
+    trigger_event: 状況が大きく変化した場合
+    preconditions:
+    - 新たな情報や状況の変化が発生
+    body:
+    - type: basic_action
+      description: 迅速に新しい情報を分析し、行動方針を調整する
+    - type: subgoal
+      description: 必要に応じて、信頼関係を再構築または変更
+    - type: basic_action
+      description: 新たな状況に応じた情報攪乱を実施
+  notes: シズエは情報攪乱を主軸にしつつも、社会的承認を得るための行動を優先する。
+meta:
+  game_id: 01K2A1R1G8KDGAD1J15016EXMY
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:12:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/シズエ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/シズエ/macro_desire.yml

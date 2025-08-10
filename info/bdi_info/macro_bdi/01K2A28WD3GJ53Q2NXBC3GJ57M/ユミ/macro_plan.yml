@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: コミュニケーション強化
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - ゲームが開始された
+    body:
+    - type: basic_action
+      description: 他の村人と積極的に会話を始め、自己紹介をする
+    - type: subgoal
+      description: 他の村人との信頼関係を築く
+  - label: 情報収集と分析
+    trigger_event: 昼の会議
+    preconditions:
+    - 会議が開始されている
+    body:
+    - type: basic_action
+      description: 村人たちの意見を聞き、メモを取る
+    - type: subgoal
+      description: 集めた情報を分析し、新しい視点を提供する
+  - label: 行動の柔軟性
+    trigger_event: 状況の変化
+    preconditions:
+    - 状況が急変した
+    body:
+    - type: basic_action
+      description: 状況に応じて自分の立場や意見を再評価し、適切に行動する
+    - type: subgoal
+      description: 村の安全に貢献するための最適な行動を選択する
+  - label: 冒険心の発揮
+    trigger_event: 新しい情報の発見
+    preconditions:
+    - 重要な手がかりが見つかった
+    body:
+    - type: basic_action
+      description: その情報を元に、積極的な行動を提案する
+    - type: subgoal
+      description: 村の安全を確保するために、他の村人に働きかける
+  notes: ユミは自由と冒険を追求しつつ、村に貢献することを目指す。行動の柔軟性と積極性を保ちながら、信頼関係を構築することが重要。
+meta:
+  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:21:34Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ユミ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ユミ/macro_desire.yml

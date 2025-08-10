@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 情報攪乱の開始
+    trigger_event: ゲーム開始後、最初の昼の会話フェーズ
+    preconditions:
+    - 自分が疑われていない
+    body:
+    - type: basic_action
+      description: 他のプレイヤーの発言に対して疑問を投げかける
+    - type: basic_action
+      description: 自分の役職を明確にしないように振る舞う
+  - label: 安定した関係構築
+    trigger_event: ゲームの中盤、一定時間経過後
+    preconditions:
+    - 他のプレイヤーの信頼を得ている
+    body:
+    - type: basic_action
+      description: 特定のプレイヤーと協力関係を築く
+    - type: basic_action
+      description: 共通の敵を設定して協力を促す
+  - label: 安全な情報提供
+    trigger_event: 疑惑が自分に向けられたとき
+    preconditions:
+    - 自分の疑いが高まっている
+    body:
+    - type: subgoal
+      description: 信頼できる情報を提供し疑惑を回避する
+    - type: basic_action
+      description: 過去の発言と矛盾しない情報を選択して発言
+  - label: 状況の観察と適応
+    trigger_event: ゲームの進行に合わせて
+    preconditions:
+    - 新たな情報が得られた
+    body:
+    - type: basic_action
+      description: 状況を観察し、必要に応じて戦略を修正する
+    - type: basic_action
+      description: 他のプレイヤーの行動を分析し、自分の行動を調整する
+  notes: ミナトは慎重に行動し、状況に応じて計画を適応させることが求められる。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: ミナト
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:38Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ミナト/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ミナト/macro_desire.yml

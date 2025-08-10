@@ -1,0 +1,55 @@
+macro_plan:
+  plans:
+  - label: 初期観察と情報収集
+    trigger_event: ゲーム開始
+    preconditions:
+    - ゲームが始まったばかり
+    body:
+    - type: basic_action
+      description: 全員の発言を注意深く観察し、メモを取る
+    - type: basic_action
+      description: 他プレイヤーの行動パターンを分析する
+  - label: 推論と仮説形成
+    trigger_event: 情報が十分に集まったと判断したとき
+    preconditions:
+    - 全員の発言が一巡した
+    body:
+    - type: subgoal
+      description: 集めた情報を基に推論を展開し、仮説を立てる
+    - type: basic_action
+      description: 仮説に基づいた質問を他のプレイヤーに投げかける
+  - label: 自由な視点での提案
+    trigger_event: 議論が停滞したとき
+    preconditions:
+    - 村の議論が停滞している
+    body:
+    - type: basic_action
+      description: 新しい視点やアイデアを提案し、議論を活性化させる
+    - type: subgoal
+      description: 他プレイヤーの反応を観察し、仮説を修正する
+  - label: 協力と柔軟な対応
+    trigger_event: 他プレイヤーが協力を求めてきたとき
+    preconditions:
+    - 他のプレイヤーから協力の要請がある
+    body:
+    - type: basic_action
+      description: 協力を表明し、情報を共有する
+    - type: subgoal
+      description: 状況に応じて柔軟に戦略を調整する
+  - label: 最終判断と行動
+    trigger_event: 投票前の最終議論
+    preconditions:
+    - 投票が近づいている
+    body:
+    - type: subgoal
+      description: これまでの情報と推論を基に最終的な判断を行う
+    - type: basic_action
+      description: 自分の意見を明確にし、投票を行う
+  notes: セルヴァスは好奇心を活かし、柔軟かつ新しい視点を提供することで村に貢献する。
+meta:
+  game_id: 01K2A407R0809K72RTFMXS92NT
+  agent: セルヴァス
+  model: gpt-4o
+  generated_at: '2025-08-10T13:51:49Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/セルヴァス/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/セルヴァス/macro_desire.yml

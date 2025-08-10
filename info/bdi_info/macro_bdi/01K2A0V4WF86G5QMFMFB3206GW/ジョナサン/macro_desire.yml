@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 安定性を維持しつつ、集団内での役割を慎重に果たす
+  description: ジョナサンは、安定性と安定した関係性を重視するため、他の構成員を排除する際には計画的かつ慎重に行動し、疑われないようにすることを望む。彼はまた、愛と親密さの欲求も高いため、信頼できる仲間との協力を通じて自らの役割を果たすことを目指す。社会的承認を求める傾向はやや低いため、目立たずに行動することで、集団内の安定を維持しようとする。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: ジョナサン
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:26Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ジョナサン/macro_belief.yml

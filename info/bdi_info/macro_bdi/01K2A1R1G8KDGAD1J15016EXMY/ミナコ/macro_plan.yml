@@ -1,0 +1,54 @@
+macro_plan:
+  plans:
+  - label: 初期観察と情報収集
+    trigger_event: ゲーム開始
+    preconditions:
+    - ゲームが開始された時点である
+    body:
+    - type: basic_action
+      description: 全員の発言を注意深く聞く
+    - type: basic_action
+      description: プレイヤーの初期の行動を記録
+    - type: subgoal
+      description: 怪しい行動のパターンを識別
+  - label: 集団意思決定への貢献
+    trigger_event: 議論フェーズの開始
+    preconditions:
+    - 他のプレイヤーが意見を述べ始めた
+    body:
+    - type: basic_action
+      description: 冷静に意見を述べる
+    - type: basic_action
+      description: 多数派の意見を支持する
+    - type: subgoal
+      description: 集団の意見を一つにまとめる
+  - label: 危険因子の慎重な観察
+    trigger_event: 疑わしい行動が見られた場合
+    preconditions:
+    - 特定のプレイヤーの行動が怪しいと感じた
+    body:
+    - type: basic_action
+      description: 疑わしいプレイヤーについて他の人の意見を求める
+    - type: subgoal
+      description: そのプレイヤーの行動の動機を分析
+    - type: basic_action
+      description: 集団にその分析結果を報告
+  - label: 安定した関係の構築
+    trigger_event: ゲームの進行中
+    preconditions:
+    - ゲームが中盤に差し掛かっている
+    body:
+    - type: basic_action
+      description: 信頼できるプレイヤーと連携を取る
+    - type: subgoal
+      description: 協力関係を強化
+    - type: basic_action
+      description: 協力相手と情報を共有
+  notes: ミナコは観察と冷静な推論を重視し、集団の調和を乱さないよう注意を払いながら意見を述べる。
+meta:
+  game_id: 01K2A1R1G8KDGAD1J15016EXMY
+  agent: ミナコ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:12:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/ミナコ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/ミナコ/macro_desire.yml

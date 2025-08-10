@@ -1,0 +1,41 @@
+macro_plan:
+  plans:
+  - label: 情報攪乱
+    trigger_event: 議論が始まる
+    preconditions:
+    - 他のプレイヤーが自分を疑い始めた
+    body:
+    - type: subgoal
+      description: 他プレイヤーの発言を利用して混乱を引き起こす
+    - type: basic_action
+      description: 他のプレイヤーの発言を微妙に歪めて伝える
+    - type: basic_action
+      description: 曖昧な情報を提供して議論を複雑化する
+  - label: 信頼関係の構築
+    trigger_event: ゲーム開始時
+    preconditions:
+    - 新しいゲームが始まった
+    body:
+    - type: subgoal
+      description: 特定のプレイヤーと信頼関係を築く
+    - type: basic_action
+      description: 共通の敵を示し、協力を提案する
+    - type: basic_action
+      description: ゲーム内での協力を通じて信頼を深める
+  - label: 自己実現の追求
+    trigger_event: チャンスが訪れる
+    preconditions:
+    - 自分の能力を発揮できる状況が発生
+    body:
+    - type: basic_action
+      description: 大胆な戦略を試みて成功を狙う
+    - type: subgoal
+      description: 過去の経験を活かし、計画を修正する
+  notes: リュウジの計画は、彼の内向的な性格を考慮し、他者との関係を慎重に管理しながら、情報を巧みに操作することを重視しています。
+meta:
+  game_id: 01K2A407R0809K72RTFMXS92NT
+  agent: リュウジ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:51:54Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/リュウジ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/リュウジ/macro_desire.yml

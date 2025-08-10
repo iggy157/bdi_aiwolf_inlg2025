@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 仲間と協力しつつ、慎重にゲームを進める
+  description: シズエは自由と冒険を求める傾向が比較的強く、社会的承認や愛情もほどほどに重視している。このため、人狼としての役割を果たしつつも、他者との関係を完全に断ち切ることなく、巧妙に立ち回ることを望む。彼女は仲間と協力しながらも、個人の自由を保ちつつ、冒険心を満たすために状況に応じて大胆な行動を取ることも辞さない。役割を完遂するためには、他者に自分の真意を悟られないよう、言動を慎重に管理することが必要だが、完全な安定よりは刺激を求める傾向が強いため、計画的に排除する際も新たな方法を模索する。
+meta:
+  game_id: 01K2A407R0809K72RTFMXS92NT
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:51:44Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/シズエ/macro_belief.yml

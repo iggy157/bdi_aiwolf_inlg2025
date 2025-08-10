@@ -31,6 +31,7 @@ from utils.stoppable_thread import StoppableThread
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 from utils.bdi.macro_bdi.macro_plan import generate_macro_plan
+from utils.bdi.micro_bdi.analysis_tracker import AnalysisTracker
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -76,6 +77,9 @@ class Agent:
         self.sent_whisper_count: int = 0
         self.llm_model: BaseChatModel | None = None
         self.llm_message_history: list[BaseMessage] = []
+        
+        # AnalysisTrackerの初期化
+        self.analysis_tracker: AnalysisTracker | None = None
 
         load_dotenv(Path(__file__).parent.joinpath("./../../config/.env"))
 
@@ -200,8 +204,13 @@ class Agent:
             self.llm_message_history.append(HumanMessage(content=prompt))
             response = (self.llm_model | StrOutputParser()).invoke(self.llm_message_history)
             self.llm_message_history.append(AIMessage(content=response))
-            self.agent_logger.logger.info(["LLM", prompt, response])
-        except Exception:
+            
+            # Comprehensive LLM interaction logging
+            model_info = f"{type(self.llm_model).__name__}"
+            self.agent_logger.llm_interaction("agent_main", prompt, response, model_info)
+            
+        except Exception as e:
+            self.agent_logger.llm_error("agent_main", str(e), prompt if 'prompt' in locals() else None)
             self.agent_logger.logger.exception("Failed to send message to LLM")
             return None
         else:
@@ -266,7 +275,8 @@ class Agent:
                     profile=self.info.profile,
                     agent_name=self.info.agent,
                     game_id=self.info.game_id,
-                    role_en=role_en
+                    role_en=role_en,
+                    agent_logger=self.agent_logger
                 )
                 self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
                 
@@ -297,6 +307,20 @@ class Agent:
                     self.agent_logger.logger.error(f"Failed to generate macro plan: {e}")
             except Exception as e:
                 self.agent_logger.logger.error(f"Failed to generate macro belief: {e}")
+        
+        # AnalysisTrackerの初期化
+        try:
+            # info.agentのカタカナ名を使用（利用可能な場合）、そうでなければself.agent_nameを使用
+            analysis_agent_name = self.info.agent if self.info and hasattr(self.info, 'agent') else self.agent_name
+            self.analysis_tracker = AnalysisTracker(
+                config=self.config,
+                agent_name=analysis_agent_name,
+                game_id=self.info.game_id if self.info else "",
+                agent_logger=self.agent_logger
+            )
+            self.agent_logger.logger.info(f"AnalysisTracker initialized successfully with agent_name: {analysis_agent_name}")
+        except Exception as e:
+            self.agent_logger.logger.error(f"Failed to initialize AnalysisTracker: {e}")
 
     def daily_initialize(self) -> None:
         """Perform processing for daily initialization request.
@@ -304,6 +328,21 @@ class Agent:
         昼開始リクエストに対する処理を行う.
         """
         self._send_message_to_llm(self.request)
+        
+        # AnalysisTrackerでトーク履歴を分析
+        if self.analysis_tracker and self.info:
+            try:
+                # 現在のリクエストカウントを取得（daily_initializeはdayを使用）
+                request_count = self.info.day if hasattr(self.info, 'day') else 0
+                self.analysis_tracker.analyze_talk(
+                    talk_history=self.talk_history,
+                    info=self.info,
+                    request_count=request_count
+                )
+                self.analysis_tracker.save_analysis()
+                self.agent_logger.logger.info(f"Analysis saved for day {request_count}")
+            except Exception as e:
+                self.agent_logger.logger.error(f"Failed to analyze talk history: {e}")
 
     def whisper(self) -> str:
         """Return response to whisper request.
@@ -327,6 +366,21 @@ class Agent:
         """
         response = self._send_message_to_llm(self.request)
         self.sent_talk_count = len(self.talk_history)
+        
+        # AnalysisTrackerでトーク履歴を分析（talkリクエスト毎に実行）
+        if self.analysis_tracker and self.info:
+            try:
+                # 現在のリクエストカウントを取得
+                request_count = len([h for h in self.talk_history if h.agent == self.agent_name])
+                self.analysis_tracker.analyze_talk(
+                    talk_history=self.talk_history,
+                    info=self.info,
+                    request_count=request_count
+                )
+                # talkリクエストでは毎回保存せず、適切なタイミングで保存
+            except Exception as e:
+                self.agent_logger.logger.error(f"Failed to analyze talk in talk(): {e}")
+        
         return response or ""
 
     def daily_finish(self) -> None:
@@ -335,6 +389,21 @@ class Agent:
         昼終了リクエストに対する処理を行う.
         """
         self._send_message_to_llm(self.request)
+        
+        # AnalysisTrackerで最終的なトーク分析と保存
+        if self.analysis_tracker and self.info:
+            try:
+                # 現在のリクエストカウントを取得
+                request_count = self.info.day if hasattr(self.info, 'day') else 0
+                self.analysis_tracker.analyze_talk(
+                    talk_history=self.talk_history,
+                    info=self.info,
+                    request_count=request_count
+                )
+                self.analysis_tracker.save_analysis()
+                self.agent_logger.logger.info(f"Final analysis saved for day {request_count}")
+            except Exception as e:
+                self.agent_logger.logger.error(f"Failed to save final analysis: {e}")
 
     def divine(self) -> str:
         """Return response to divine request.
@@ -389,6 +458,19 @@ class Agent:
 
         ゲーム終了リクエストに対する処理を行う.
         """
+        # ゲーム終了時に最終的な分析を保存
+        if self.analysis_tracker and self.info:
+            try:
+                # 最終的なトーク分析と保存
+                self.analysis_tracker.analyze_talk(
+                    talk_history=self.talk_history,
+                    info=self.info,
+                    request_count=999  # ゲーム終了時の特別なリクエストカウント
+                )
+                self.analysis_tracker.save_analysis()
+                self.agent_logger.logger.info("Game finish analysis saved")
+            except Exception as e:
+                self.agent_logger.logger.error(f"Failed to save game finish analysis: {e}")
 
     @timeout
     def action(self) -> str | None:  # noqa: C901, PLR0911

@@ -1,0 +1,47 @@
+macro_plan:
+  plans:
+  - label: 初日の行動計画
+    trigger_event: ゲーム開始
+    preconditions:
+    - メイが占い師である
+    body:
+    - type: basic_action
+      description: 自己紹介と役割をオープンにする
+    - type: basic_action
+      description: 他のプレイヤーの反応を観察し、初期印象を形成
+  - label: 情報開示タイミングの調整
+    trigger_event: 重要な情報を得た
+    preconditions:
+    - 情報が即座に集団に利益をもたらす
+    body:
+    - type: basic_action
+      description: 情報をタイムリーに開示し、信頼を構築
+    - type: subgoal
+      description: 情報の信憑性を強化する手段を模索
+  - label: 積極的な情報収集
+    trigger_event: 他のプレイヤーが怪しい行動をした
+    preconditions:
+    - その行動がメイの推理に影響を与える
+    body:
+    - type: basic_action
+      description: 積極的に質問し、他者の意見を収集
+    - type: subgoal
+      description: 得た情報を基に新たな仮説を立てる
+  - label: リスクを取る決断
+    trigger_event: ゲーム中盤
+    preconditions:
+    - 状況が行き詰まっている
+    - リスクを取ることで打開の可能性がある
+    body:
+    - type: basic_action
+      description: 新しいアプローチや戦略を試みる
+    - type: subgoal
+      description: 他者の協力を得る手段を考える
+  notes: メイの行動は積極性と独立性に基づき、信頼と協力を通じて成功を目指す。
+meta:
+  game_id: 01K2A1R1G8KDGAD1J15016EXMY
+  agent: メイ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:12:26Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/メイ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/メイ/macro_desire.yml

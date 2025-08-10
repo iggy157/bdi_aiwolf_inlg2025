@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 情報の攪乱を通じて、ゲーム内での安定を図る
+  description: ミナトは、安定性と安定した人間関係を重視する傾向があるため、狂人としての役割を果たす際には、情報を攪乱しつつも自らの立場を危険にさらさないよう慎重に行動する。自己実現の欲求も比較的高いため、ゲーム内での自らの存在感を示しつつ、特定の陣営に有利な状況を作り出すことを目指す。社会的承認への欲求は低いため、他者からの評価に過度に依存することなく、自分の策略を実行することが可能である。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: ミナト
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:27Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ミナト/macro_belief.yml

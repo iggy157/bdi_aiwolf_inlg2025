@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 初期攪乱作戦
+    trigger_event: ゲーム開始
+    preconditions:
+    - ゲームが始まったばかり
+    body:
+    - type: basic_action
+      description: 初日に積極的に発言し、軽い冗談や曖昧な情報を提供する
+    - type: subgoal
+      description: 他のプレイヤーの注意を散らし、混乱を引き起こす
+  - label: 信頼構築と破壊
+    trigger_event: 初期攪乱作戦の後
+    preconditions:
+    - 初期の混乱が成功している
+    body:
+    - type: basic_action
+      description: 特定のプレイヤーと親密になり、信頼を得る
+    - type: subgoal
+      description: 信頼を利用し、意図的に誤情報を流す
+  - label: 攻撃的な展開
+    trigger_event: ゲーム中盤
+    preconditions:
+    - ある程度の信頼を得ている
+    body:
+    - type: subgoal
+      description: 他のプレイヤーを攻撃し、疑惑を向ける
+    - type: basic_action
+      description: 議論を積極的にリードし、自己の立場を強化する
+  - label: 最終攪乱作戦
+    trigger_event: ゲーム終盤
+    preconditions:
+    - ゲームが終盤に差し掛かっている
+    body:
+    - type: subgoal
+      description: 自身の正体を隠しつつ、最終的な混乱を引き起こす
+    - type: basic_action
+      description: 大胆な行動を起こし、最後の疑いを他者に向ける
+  notes: サクラの計画は、自由で冒険的な性格を活かし、積極的にゲームを攪乱することを目的とする。行動指針は、外向的かつ攻撃的な傾向に合ったもので、他者への影響を最大化するよう設計されている。
+meta:
+  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:21:35Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/サクラ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/サクラ/macro_desire.yml

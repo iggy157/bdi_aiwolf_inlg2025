@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 初期情報収集と自己表現の準備
+    trigger_event: ゲーム開始時
+    preconditions:
+    - ゲームが開始された
+    body:
+    - type: basic_action
+      description: 初日から自由に会話に参加し、他プレイヤーの特徴を観察
+    - type: basic_action
+      description: 自己紹介を通じて占い師としての立場をほのめかす
+  - label: 占い結果の戦略的開示
+    trigger_event: 占い結果が得られた時
+    preconditions:
+    - 占い師としての役割を果たす
+    body:
+    - type: subgoal
+      description: 信頼性を維持しつつ、占い結果を慎重に開示
+    - type: basic_action
+      description: 集団の状況を観察し、適切なタイミングで占い結果を発表
+  - label: 自由な対話による関係構築
+    trigger_event: 日中の会話フェーズ
+    preconditions:
+    - 他プレイヤーとの関係を深める必要がある
+    body:
+    - type: basic_action
+      description: 積極的に会話をリードし、他プレイヤーとの信頼関係を構築
+    - type: basic_action
+      description: 進行状況に応じてアドリブで対応を調整
+  - label: 緊急時の柔軟な対応
+    trigger_event: 予期しない事態の発生
+    preconditions:
+    - 自身や集団の危機
+    body:
+    - type: subgoal
+      description: 迅速に状況を分析し、最適な行動を選択
+    - type: basic_action
+      description: 他者の反応を見ながら、戦略を即座に修正
+  notes: リンはコミュニケーションを通じて冒険心を満たしつつ、占い師としての役割を確実に遂行する。信頼性を保ちつつ、自由な発想で柔軟に行動することを心がける。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:38Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/リン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/リン/macro_desire.yml

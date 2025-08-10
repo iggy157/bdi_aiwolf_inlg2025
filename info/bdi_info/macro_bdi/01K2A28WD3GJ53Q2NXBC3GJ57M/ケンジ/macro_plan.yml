@@ -1,0 +1,52 @@
+macro_plan:
+  plans:
+  - label: 占い師としての信頼構築
+    trigger_event: ゲーム開始時
+    preconditions:
+    - ケンジが占い師として行動する
+    body:
+    - type: basic_action
+      description: 初日の夜に村人の一人を占う
+    - type: basic_action
+      description: 翌朝に占い結果を公表し、占い師であることを宣言
+    - type: subgoal
+      description: 他のプレイヤーからの信頼を獲得する
+  - label: 情報開示のタイミング調整
+    trigger_event: 他の占い師が対抗した場合
+    preconditions:
+    - 対抗占い師が現れる
+    body:
+    - type: subgoal
+      description: 信憑性を高めるための行動
+    - type: basic_action
+      description: 自分の占い結果を詳細に説明し、合理性を示す
+    - type: basic_action
+      description: 他のプレイヤーの行動を観察し、矛盾点を指摘
+  - label: 冒険心の発揮
+    trigger_event: ゲーム中盤
+    preconditions:
+    - ケンジが信頼を得ている
+    body:
+    - type: subgoal
+      description: 大胆な行動でゲームの流れを変える
+    - type: basic_action
+      description: 疑わしいプレイヤーを積極的に指摘
+    - type: basic_action
+      description: 占い結果を基に、他の占い師を追求
+  - label: 柔軟な対応
+    trigger_event: 予期せぬ展開が発生した場合
+    preconditions:
+    - 予定外の状況が発生
+    body:
+    - type: basic_action
+      description: 冷静に状況を分析し、新たな戦略を構築
+    - type: basic_action
+      description: 必要に応じて占い結果を再評価
+  notes: ケンジは冒険心と社会的承認を求めるため、積極的な情報提供と柔軟な対応でゲームを楽しむことが重要。
+meta:
+  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
+  agent: ケンジ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:21:33Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ケンジ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ケンジ/macro_desire.yml

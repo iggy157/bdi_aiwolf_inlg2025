@@ -1,0 +1,55 @@
+macro_plan:
+  plans:
+  - label: 協力的な議論の推進
+    trigger_event: ゲーム開始
+    preconditions:
+    - 村人としての役割
+    body:
+    - type: basic_action
+      description: 他プレイヤーの意見を聞く
+    - type: subgoal
+      description: 村の安全と安定を確保するための議論に貢献
+  - label: 信頼関係の構築
+    trigger_event: ゲーム初期
+    preconditions:
+    - 村人としての役割
+    body:
+    - type: basic_action
+      description: 信頼できるプレイヤーを見つける
+    - type: basic_action
+      description: 継続的なコミュニケーションを維持
+  - label: 慎重な情報収集
+    trigger_event: 疑わしい行動を目撃
+    preconditions:
+    - 情報が不足している場合
+    body:
+    - type: basic_action
+      description: 他プレイヤーの行動を観察
+    - type: subgoal
+      description: 他者の意図を推測
+  - label: 適切な判断
+    trigger_event: 投票前
+    preconditions:
+    - 十分な情報が集まった場合
+    body:
+    - type: subgoal
+      description: 最も疑わしい人物を特定
+    - type: basic_action
+      description: 自分の考えを基に投票
+  - label: グループの安定維持
+    trigger_event: 村の調和が乱れる兆候
+    preconditions:
+    - グループ内で不和が発生
+    body:
+    - type: basic_action
+      description: 仲裁役として行動
+    - type: subgoal
+      description: 集団の調和を取り戻す
+  notes: ヴィクトリアは安全と安定を重視し、観察力と推論力を活かして村人として貢献します。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: ヴィクトリア
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:37Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ヴィクトリア/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ヴィクトリア/macro_desire.yml

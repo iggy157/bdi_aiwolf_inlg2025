@@ -1,0 +1,48 @@
+macro_plan:
+  plans:
+  - label: 仲間との協力と自己防衛
+    trigger_event: ゲーム開始
+    preconditions:
+    - 自身が人狼である
+    body:
+    - type: subgoal
+      description: 仲間の人狼と連携を強化
+    - type: subgoal
+      description: 自分への疑いを最小限にする
+    - type: basic_action
+      description: 日常会話で他プレイヤーの信頼を得る
+  - label: 慎重な攻撃
+    trigger_event: 夜のターン
+    preconditions:
+    - 他のプレイヤーに注目されていない
+    body:
+    - type: subgoal
+      description: ターゲットを選定する
+    - type: basic_action
+      description: 選定したターゲットを排除する
+  - label: 大胆な行動
+    trigger_event: 疑いが自身に向けられたとき
+    preconditions:
+    - 議論中に自分への疑いが高まった
+    body:
+    - type: subgoal
+      description: 疑いを他のプレイヤーに転嫁
+    - type: basic_action
+      description: 積極的に議論をリードして敵を混乱させる
+  - label: 新たな方法の模索
+    trigger_event: 前の手法が失敗したとき
+    preconditions:
+    - これまで使用した手法が効果を失った
+    body:
+    - type: subgoal
+      description: 新しい策略を立てる
+    - type: basic_action
+      description: 新しい手法を試みる
+  notes: 仲間との協力を維持しつつ、柔軟な戦略を展開することが重要。計画に失敗があった場合は迅速に新たな方法を考案する。
+meta:
+  game_id: 01K2A407R0809K72RTFMXS92NT
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:51:56Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/シズエ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/シズエ/macro_desire.yml

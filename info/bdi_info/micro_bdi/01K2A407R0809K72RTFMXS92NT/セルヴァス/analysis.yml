@@ -1,0 +1,10 @@
+# Request 0
+1:
+  content: "皆さん、おはようございます！今日は特に何か気になることがあれば教えてくださいね。僕も情報を集めて、みんなの役に立ちたいと思います！"
+  type: null
+  from: ケンジ
+  to: all
+  request_count: 0
+  credibility: 0.58
+
+

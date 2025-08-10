@@ -1,0 +1,45 @@
+macro_plan:
+  plans:
+  - label: 安定した関係構築
+    trigger_event: ゲーム開始
+    preconditions:
+    - リュウジが村人である
+    body:
+    - type: basic_action
+      description: 初日に自己紹介し、村人としての立場を明確にする
+    - type: subgoal
+      description: 信頼できる仲間を見つける
+    - type: basic_action
+      description: 他のプレイヤーの発言を注意深く観察し、分析する
+    - type: basic_action
+      description: 他のプレイヤーに質問を投げかけ、情報を収集する
+  - label: 情報分析と推論
+    trigger_event: 他のプレイヤーの発言があったとき
+    preconditions:
+    - リュウジが他のプレイヤーの意見に耳を傾けている
+    body:
+    - type: basic_action
+      description: 発言内容を分析し、矛盾を探す
+    - type: subgoal
+      description: 村の安全を考慮した推論を行う
+    - type: basic_action
+      description: 推論結果を村の会話に反映させる
+  - label: 協調的な意思決定
+    trigger_event: 議論が進行中
+    preconditions:
+    - リュウジが状況を把握している
+    body:
+    - type: subgoal
+      description: 村の意思決定に積極的に参加する
+    - type: basic_action
+      description: 自分の意見を述べ、他の意見を尊重する
+    - type: basic_action
+      description: 投票時に自分の推論を基にした判断を行う
+  notes: リュウジは内向的な性格を活かしつつ、観察と推論を重視する。積極的な自己表現は避けるが、必要な場面では意見を述べる。
+meta:
+  game_id: 01K2A08NGY7DDDVS933AH0W70K
+  agent: リュウジ
+  model: gpt-4o
+  generated_at: '2025-08-10T12:46:37Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/リュウジ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/リュウジ/macro_desire.yml

@@ -1,0 +1,53 @@
+macro_plan:
+  plans:
+  - label: 初日の占い結果公開
+    trigger_event: ゲーム開始後、最初の昼
+    preconditions:
+    - 自身が占い師であること
+    body:
+    - type: basic_action
+      description: 占い結果を公表し、村人陣営の信頼を得る
+  - label: 情報の収集と分析
+    trigger_event: 昼の議論中
+    preconditions:
+    - 議論が活発であること
+    body:
+    - type: subgoal
+      description: 他プレイヤーの発言から情報を収集し分析する
+    - type: basic_action
+      description: 怪しい行動や発言をするプレイヤーを観察する
+  - label: 占い先の選定
+    trigger_event: 夜の行動前
+    preconditions:
+    - 次の占いのための選定が必要
+    body:
+    - type: subgoal
+      description: 前回の議論で怪しまれた人物を占う
+    - type: basic_action
+      description: 占い結果を次の日に備える
+  - label: リスクの回避
+    trigger_event: 自身が疑われた時
+    preconditions:
+    - 村人たちから疑いをかけられている
+    body:
+    - type: subgoal
+      description: 冷静に自己弁護を行い、信頼を回復する
+    - type: basic_action
+      description: 他の怪しいプレイヤーを指摘する
+  - label: 人間関係の構築
+    trigger_event: ゲームの進行中
+    preconditions:
+    - 信頼できるプレイヤーが現れた
+    body:
+    - type: subgoal
+      description: 信頼できるプレイヤーと協力関係を築く
+    - type: basic_action
+      description: 意見交換を通じて連携を深める
+  notes: ベンジャミンは、安定性と自己成長を重視しつつ、集団の利益を考慮した行動を心がける。
+meta:
+  game_id: 01K2A2WSRCH6Y95VYMSMKK93V7
+  agent: ベンジャミン
+  model: gpt-4o
+  generated_at: '2025-08-10T13:32:34Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/ベンジャミン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/ベンジャミン/macro_desire.yml

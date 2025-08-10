@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由と冒険を求めつつ、村の安全に貢献する
+  description: ユミは自由と冒険を強く求める性格であるため、村人としての責務を果たしつつも、自分らしさを大切にして行動する。彼女は集団の意思決定に積極的に参加し、新しい視点や刺激を提供することで村の安全を守るプロセスをより活性化させる。社会的承認を得ることにも関心があるため、他の村人とのコミュニケーションを大切にし、信頼を築きながら、役割を柔軟に果たすことを望む。
+meta:
+  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:21:24Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ユミ/macro_belief.yml

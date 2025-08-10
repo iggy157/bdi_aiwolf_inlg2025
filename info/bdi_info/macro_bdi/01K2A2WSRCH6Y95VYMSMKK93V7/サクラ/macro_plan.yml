@@ -1,0 +1,39 @@
+macro_plan:
+  plans:
+  - label: 情報探索と分析
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - ゲームが始まったばかりである
+    body:
+    - type: subgoal
+      description: 他のプレイヤーの行動を観察し、情報を集める
+    - type: basic_action
+      description: 自由に行動し、新しい情報を積極的に探し出す
+    - type: subgoal
+      description: 集めた情報を分析し、脅威を特定する
+  - label: 協力とコミュニケーション
+    trigger_event: 情報を集めた後
+    preconditions:
+    - 十分な情報を収集した
+    body:
+    - type: subgoal
+      description: 村の安全に貢献するために他のプレイヤーと情報を共有する
+    - type: basic_action
+      description: 他のプレイヤーに自分の推論を説明し協力を呼びかける
+  - label: 独立した行動
+    trigger_event: 他のプレイヤーとの意見が合わない場合
+    preconditions:
+    - 自分の推論が他のプレイヤーの意見と異なる
+    body:
+    - type: basic_action
+      description: 自分の信念に基づいた行動を選択する
+    - type: subgoal
+      description: 独自の推論をさらに深め、村の安全を守るための新たな戦略を考える
+  notes: サクラの行動は自由と冒険を重視しつつも、村の安全を守るために他のプレイヤーと協力することを目指す。しかし、最終的には自分の信念に基づいた行動を選ぶ。
+meta:
+  game_id: 01K2A2WSRCH6Y95VYMSMKK93V7
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:32:29Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/サクラ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/サクラ/macro_desire.yml

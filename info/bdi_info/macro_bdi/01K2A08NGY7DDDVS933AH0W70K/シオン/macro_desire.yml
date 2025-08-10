@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 集団の安全を維持しつつ、自己実現を目指す
+  description: シオンは村人としての役割を果たし、集団の安全を優先するものの、自己実現や安定した人間関係を重視する傾向がある。観察と推論を通じて、脅威を特定し、社会的決定に積極的に参加する。しかし、自由や冒険を求める欲求は低いため、リスクを取るよりも安定を求め、慎重に行動する。社会的承認を得ることも重要だが、自己の価値観や目標を失わないようにバランスを取ることを意識する。
+meta:
+  game_id: 01K2A08NGY7DDDVS933AH0W70K
+  agent: シオン
+  model: gpt-4o
+  generated_at: '2025-08-10T12:46:21Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/シオン/macro_belief.yml

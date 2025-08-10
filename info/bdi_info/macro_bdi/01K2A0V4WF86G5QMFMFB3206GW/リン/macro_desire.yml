@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由と冒険を重視しつつ占い師としての役割を果たす
+  description: リンは、占い師として他者の正体に関する情報を集団の利益に沿って開示する義務を持つが、自由と冒険を重視する傾向が強い。そのため、情報の開示タイミングを工夫し、集団の中での自己表現を大切にしながら役割を果たす。情報の信憑性を維持しつつ、自由で柔軟なアプローチを取ることでゲーム内での自分の存在意義を高めたいと考えている。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:24Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/リン/macro_belief.yml

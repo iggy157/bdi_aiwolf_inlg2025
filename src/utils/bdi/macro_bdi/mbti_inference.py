@@ -48,14 +48,16 @@ def get_game_timestamp(game_id: str) -> str:
 class MBTIInference:
     """MBTI parameter inference from profile text."""
 
-    def __init__(self, config: dict[str, Any]):
+    def __init__(self, config: dict[str, Any], agent_logger=None):
         """Initialize MBTI inference.
 
         Args:
             config: Configuration dictionary
+            agent_logger: AgentLogger instance for LLM interaction logging
         """
         self.config = config
         self.llm_model = None
+        self.agent_logger = agent_logger
         self._initialize_llm()
 
     def _initialize_llm(self) -> None:
@@ -94,6 +96,8 @@ class MBTIInference:
             Dictionary containing MBTI parameters (0-1 range)
         """
         if not profile or self.llm_model is None:
+            if self.agent_logger:
+                self.agent_logger.llm_error("mbti_inference", "Profile empty or LLM model not available")
             return self._get_default_mbti_parameters()
 
         try:
@@ -103,8 +107,20 @@ class MBTIInference:
             message = HumanMessage(content=prompt)
             response = (self.llm_model | StrOutputParser()).invoke([message])
 
-            return self._parse_mbti_response(response)
+            # LLMやり取りをログ出力
+            if self.agent_logger:
+                model_info = f"{type(self.llm_model).__name__}"
+                self.agent_logger.llm_interaction("mbti_inference", prompt, response, model_info)
+
+            result = self._parse_mbti_response(response)
+            
+            if self.agent_logger:
+                self.agent_logger.logger.info(f"MBTI inference result for {agent_name}: {result}")
+            
+            return result
         except Exception as e:
+            if self.agent_logger:
+                self.agent_logger.llm_error("mbti_inference", str(e), prompt if 'prompt' in locals() else None)
             print(f"Error during MBTI inference: {e}")
             return self._get_default_mbti_parameters()
 
@@ -174,22 +190,23 @@ class MBTIInference:
             print(f"Error saving MBTI parameters: {e}")
 
 
-def infer_mbti(config: dict[str, Any], profile: str, agent_name: str) -> dict[str, float]:
+def infer_mbti(config: dict[str, Any], profile: str, agent_name: str, agent_logger=None) -> dict[str, float]:
     """Pure function to infer MBTI parameters without file I/O.
 
     Args:
         config: Configuration dictionary
         profile: Profile text
         agent_name: Agent name
+        agent_logger: AgentLogger instance for LLM interaction logging
 
     Returns:
         MBTI parameters dictionary
     """
-    inference = MBTIInference(config)
+    inference = MBTIInference(config, agent_logger)
     return inference.infer_mbti_parameters(profile, agent_name)
 
 
-def infer_and_save_mbti(config: dict[str, Any], profile: str, agent_name: str, game_id: str) -> dict[str, float]:
+def infer_and_save_mbti(config: dict[str, Any], profile: str, agent_name: str, game_id: str, agent_logger=None) -> dict[str, float]:
     """Convenience function to infer and save MBTI parameters.
 
     Args:
@@ -197,11 +214,12 @@ def infer_and_save_mbti(config: dict[str, Any], profile: str, agent_name: str, g
         profile: Profile text
         agent_name: Agent name
         game_id: ULID-based game ID
+        agent_logger: AgentLogger instance for LLM interaction logging
 
     Returns:
         MBTI parameters dictionary
     """
-    inference = MBTIInference(config)
+    inference = MBTIInference(config, agent_logger)
     mbti_params = inference.infer_mbti_parameters(profile, agent_name)
     
     inference.save_mbti_parameters(mbti_params, agent_name, game_id)

@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 大胆な情報攪乱
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - ミオが村人側であること
+    body:
+    - type: basic_action
+      description: 初日の会話で大胆な発言を行い、他のプレイヤーの注目を集める
+    - type: subgoal
+      description: 他プレイヤーの行動を攪乱するために、根拠のない推測を提案
+  - label: 感情的な混乱の創出
+    trigger_event: 他プレイヤーがミオを疑い始めたとき
+    preconditions:
+    - ミオの発言が他プレイヤーに疑念を持たれている
+    body:
+    - type: basic_action
+      description: 自己防衛のために感情的な反応を示し、他プレイヤーを混乱させる
+    - type: subgoal
+      description: 他プレイヤー間の対立を引き起こすように誘導する
+  - label: 冒険的な推理の提案
+    trigger_event: ゲームの中盤
+    preconditions:
+    - ミオが村人側の可能性が高いと認識されている
+    body:
+    - type: basic_action
+      description: 大胆な推理を提案し、ゲーム進行を大きく変える可能性を生む
+    - type: subgoal
+      description: 他プレイヤーを巻き込んで議論を活発化させる
+  - label: 個人的な満足感の追求
+    trigger_event: ゲームが終盤に差し掛かる
+    preconditions:
+    - ミオが勝利条件に近づいている
+    body:
+    - type: basic_action
+      description: 個人的な満足感を得るために、最後まで大胆な行動を続ける
+    - type: subgoal
+      description: 最終的な勝利に向けて積極的に行動する
+  notes: ミオの行動は一貫して大胆で、他プレイヤーの心理を揺さぶることを目的とする。
+meta:
+  game_id: 01K2A08NGY7DDDVS933AH0W70K
+  agent: ミオ
+  model: gpt-4o
+  generated_at: '2025-08-10T12:46:38Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/ミオ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/ミオ/macro_desire.yml

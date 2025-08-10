@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由と冒険を求めつつ、社会的承認を得るために占い師の役割を活用する
+  description: ケンジは自由と冒険を強く求める傾向があり、占い師としての役割を通じてこれを実現しようとする。情報開示のタイミングと方法を自身の裁量で決めることで、自由を感じつつ、集団の信頼を得ることを目指す。社会的承認への欲求が高いため、他者の信頼を得ることに重点を置き、情報の信憑性を保ちつつ、集団の利益に貢献することで評価を得ようとする。安定性や安定した人間関係への欲求は低いため、柔軟な対応を心掛け、状況に応じた積極的な情報提供を行うことで、ゲームのダイナミズムを楽しむ。
+meta:
+  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
+  agent: ケンジ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:21:25Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ケンジ/macro_belief.yml

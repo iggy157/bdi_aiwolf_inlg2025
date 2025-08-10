@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 初期安定化
+    trigger_event: ゲーム開始時
+    preconditions:
+    - ジョナサンが疑われていない
+    body:
+    - type: basic_action
+      description: 控えめに自己紹介し、親しみやすい印象を与える
+    - type: subgoal
+      description: 信頼できる仲間を見つける
+  - label: 信頼構築
+    trigger_event: 初期安定化完了後
+    preconditions:
+    - 信頼できる仲間が存在する
+    body:
+    - type: basic_action
+      description: 仲間と密かに連携を図る
+    - type: basic_action
+      description: 他のメンバーの発言を観察し、情報を収集する
+  - label: 疑惑回避
+    trigger_event: 疑われ始めた場合
+    preconditions:
+    - 他のメンバーから疑惑が向けられる
+    body:
+    - type: basic_action
+      description: 冷静に根拠のない疑惑を否定する
+    - type: subgoal
+      description: 他の人物に疑念を向ける準備をする
+  - label: 計画的排除
+    trigger_event: 信頼構築が成功した場合
+    preconditions:
+    - 他のメンバーの信頼を得た
+    body:
+    - type: subgoal
+      description: 集団内での役割を果たしつつ、計画的に他メンバーを排除する
+    - type: basic_action
+      description: 排除対象を慎重に選び、仲間と協力して実行
+  notes: 計画はジョナサンの内向的な性格に合わせ、目立たずに進めることを重視する。
+meta:
+  game_id: 01K2A0V4WF86G5QMFMFB3206GW
+  agent: ジョナサン
+  model: gpt-4o
+  generated_at: '2025-08-10T12:56:33Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ジョナサン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A0V4WF86G5QMFMFB3206GW/ジョナサン/macro_desire.yml

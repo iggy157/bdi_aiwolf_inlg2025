@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由と冒険を重視しつつ、村の安全を守る
+  description: サクラは自由と冒険を求める傾向が強いため、村人としての役割を果たしつつも、積極的に新しい情報を探し出し、独自の推論で脅威を特定することを望む。社会的承認も一定程度重視しているが、それ以上に、自分の独立した考えを持ち、集団の安全に貢献することを目指す。安定や親密さよりも、刺激と自由を追求し、他の村人と協力しながらも、自らの信念に基づいた決定を行う。
+meta:
+  game_id: 01K2A2WSRCH6Y95VYMSMKK93V7
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-10T13:32:17Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A2WSRCH6Y95VYMSMKK93V7/サクラ/macro_belief.yml

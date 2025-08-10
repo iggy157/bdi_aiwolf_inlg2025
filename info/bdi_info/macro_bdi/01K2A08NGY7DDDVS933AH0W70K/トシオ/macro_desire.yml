@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 安定した関係を保ちつつ、正体を隠しきる
+  description: トシオは、安定性と安定した関係性を重視する傾向が強いため、ゲーム中では他のメンバーとの信頼関係を築きながら、巧妙に正体を隠し続けることを目指す。彼の自分実現欲求も比較的高いため、自身の役割を確実に果たし、他者からの疑惑を巧みにかわすことに注力する。社会的承認はあまり求めないため、仲間内での協力を密かに進めつつ、目立たないように行動する戦略をとる。
+meta:
+  game_id: 01K2A08NGY7DDDVS933AH0W70K
+  agent: トシオ
+  model: gpt-4o
+  generated_at: '2025-08-10T12:46:21Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/トシオ/macro_belief.yml

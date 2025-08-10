@@ -31,3 +31,16 @@ cp config/config.en.yml.example config/config.yml
 ## その他
 
 実行方法や設定などその他については[aiwolf-nlp-agent](https://github.com/aiwolfdial/aiwolf-nlp-agent)をご確認ください。
+
+## サーバー起動
+### 🐧 Linux
+
+```bash
+curl -LO https://github.com/aiwolfdial/aiwolf-nlp-server/releases/latest/download/aiwolf-nlp-server-linux-amd64
+curl -LO https://github.com/aiwolfdial/aiwolf-nlp-server/releases/latest/download/default_5.yml
+curl -LO https://github.com/aiwolfdial/aiwolf-nlp-server/releases/latest/download/default_13.yml
+curl -Lo .env https://github.com/aiwolfdial/aiwolf-nlp-server/releases/latest/download/example.env
+chmod u+x ./aiwolf-nlp-server-linux-amd64
+./aiwolf-nlp-server-linux-amd64 -c ./default_5.yml # 5人ゲーム
+# ./aiwolf-nlp-server-linux-amd64 -c ./default_13.yml # 13人ゲーム
+```
