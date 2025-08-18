@@ -29,6 +29,9 @@ from aiwolf_nlp_common.packet import Info, Packet, Request, Role, Setting, Statu
 from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
 from utils.bdi.micro_bdi.extract_pairs import extract_pairs_for_agent
+from utils.bdi.micro_bdi.affinity_trust_updater import update_affinity_trust_for_agent
+from utils.bdi.micro_bdi.talk_history_init import init_talk_history_for_agent
+from utils.bdi.micro_bdi.credibility_adjuster import apply_affinity_to_analysis
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 from utils.bdi.macro_bdi.macro_plan import generate_macro_plan
@@ -322,6 +325,26 @@ class Agent:
             self.agent_logger.logger.info(f"AnalysisTracker initialized successfully with agent_name: {analysis_agent_name}")
         except Exception as e:
             self.agent_logger.logger.error(f"Failed to initialize AnalysisTracker: {e}")
+        
+        # Talk history initialization for all peers
+        if self.info and self.info.status_map:
+            peers = list(self.info.status_map.keys())
+        else:
+            peers = []  # フォールバック（極端なケース）
+        try:
+            base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            init_talk_history_for_agent(
+                base_dir=base_dir,
+                game_id=self.info.game_id,
+                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                peers=peers,
+                default_score=0.5,
+                overwrite=False,
+                logger_obj=self.agent_logger.logger,
+            )
+            self.agent_logger.logger.info(f"Talk history files initialized for {len(peers)} peers")
+        except Exception:
+            self.agent_logger.logger.exception("Failed to init talk_history files")
 
     def daily_initialize(self) -> None:
         """Perform processing for daily initialization request.
@@ -346,6 +369,8 @@ class Agent:
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
                     self._update_talk_logs()  # トーク履歴の更新
+                    self._update_affinity_trust()  # liking/creditabilityスコアの更新
+                    self._apply_affinity_to_analysis()  # 信頼度調整の適用
                     self.agent_logger.logger.info(f"Analysis saved for day {request_count} (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-daily-initialize save failed: {e}")
@@ -376,11 +401,42 @@ class Agent:
                 agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
                 out_subdir="トーク履歴",
                 skip_pending=False,   # pending も含める（必要なら True に）
+                flat_output=True,     # トーク履歴ディレクトリ直下に出力
                 exclude_self=True,    # 自分の from は除外
                 append=True,          # 追記モード
             )
         except Exception:
             self.agent_logger.logger.exception("Failed to update talk logs")
+    
+    def _update_affinity_trust(self) -> None:
+        """トーク履歴ファイルにliking/creditabilityスコアを更新する"""
+        if not self.info:
+            return
+        try:
+            update_affinity_trust_for_agent(
+                config=self.config,
+                game_id=self.info.game_id,
+                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                agent_logger=self.agent_logger,
+                talk_dir_name="トーク履歴"
+            )
+        except Exception:
+            self.agent_logger.logger.exception("Failed to update affinity/trust headers in talk history")
+    
+    def _apply_affinity_to_analysis(self) -> None:
+        """analysis.ymlのcredibilityスコアにliking/creditabilityを係数として適用する"""
+        if not self.info:
+            return
+        try:
+            base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            apply_affinity_to_analysis(
+                base_dir=base_dir,
+                game_id=self.info.game_id,
+                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                logger_obj=self.agent_logger.logger
+            )
+        except Exception:
+            self.agent_logger.logger.exception("Failed to apply affinity to analysis")
 
     def talk(self) -> str:
         """Return response to talk request.
@@ -409,6 +465,8 @@ class Agent:
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
                     self._update_talk_logs()  # トーク履歴の更新
+                    self._update_affinity_trust()  # liking/creditabilityスコアの更新
+                    self._apply_affinity_to_analysis()  # 信頼度調整の適用
                     self.agent_logger.logger.info(f"Talk analysis saved (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-talk save failed: {e}")
@@ -440,6 +498,8 @@ class Agent:
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
                     self._update_talk_logs()  # トーク履歴の更新
+                    self._update_affinity_trust()  # liking/creditabilityスコアの更新
+                    self._apply_affinity_to_analysis()  # 信頼度調整の適用
                     self.agent_logger.logger.info(f"Final analysis saved for day {request_count} (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-daily-finish save failed: {e}")
@@ -514,6 +574,8 @@ class Agent:
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
                     self._update_talk_logs()  # トーク履歴の更新
+                    self._update_affinity_trust()  # liking/creditabilityスコアの更新
+                    self._apply_affinity_to_analysis()  # 信頼度調整の適用
                     self.agent_logger.logger.info(f"Game finish analysis saved (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-game-finish save failed: {e}")

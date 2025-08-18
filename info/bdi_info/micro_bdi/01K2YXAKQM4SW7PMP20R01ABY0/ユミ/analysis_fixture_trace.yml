@@ -1,0 +1,45 @@
+0:0:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T00:40:19.521345'
+0:2:18a63f55:
+  from_agent: ミナコ
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T00:44:04.251122'
+0:3:3da47453:
+  from_agent: ケンジ
+  original: Skip
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T00:44:27.499135'
+meta:heartbeat:stub_saved_fixture:1755531604:3531:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:40:04.340053'
+meta:heartbeat:stub_saved_fixture:1755531827:5395:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:43:47.376257'
+meta:heartbeat:stub_saved_fixture:1755531844:2030:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:44:04.275881'
+meta:heartbeat:stub_saved_fixture:1755531867:5349:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:44:27.519758'
+meta:tracker_init:1755531558:2491:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-19T00:39:18.371515'

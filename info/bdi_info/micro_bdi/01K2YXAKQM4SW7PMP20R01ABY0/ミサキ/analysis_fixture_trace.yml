@@ -1,0 +1,34 @@
+0:1:18a63f55:
+  from_agent: ユミ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T00:44:02.408134'
+0:2:18a63f55:
+  from_agent: ミナコ
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T00:44:21.764036'
+meta:heartbeat:stub_saved_fixture:1755531822:8943:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:43:42.782907'
+meta:heartbeat:stub_saved_fixture:1755531842:3783:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:44:02.434311'
+meta:heartbeat:stub_saved_fixture:1755531861:8772:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T00:44:21.786978'
+meta:tracker_init:1755531553:5038:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-19T00:39:13.314045'
