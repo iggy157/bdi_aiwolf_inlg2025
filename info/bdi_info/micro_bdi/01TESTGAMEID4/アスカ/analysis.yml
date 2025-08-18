@@ -1,0 +1,30 @@
+1:
+  content: 皆さん、今日も頑張りましょう！
+  type: greet
+  from: シズエ
+  to: all
+  credibility: 0.7
+2:
+  content: 怪しい行動がありました
+  type: accusation
+  from: テスト太郎
+  to: all
+  credibility: 0.2
+3:
+  content: 占い結果は白でした
+  type: divination
+  from: リン
+  to: all
+  credibility: 0.9
+4:
+  content: 今日は静かですね
+  type: comment
+  from: ケンジ
+  to: all
+  credibility: 0.1
+5:
+  content: 投票の時間が近いです
+  type: announcement
+  from: サクラ
+  to: all
+  credibility: 0.3

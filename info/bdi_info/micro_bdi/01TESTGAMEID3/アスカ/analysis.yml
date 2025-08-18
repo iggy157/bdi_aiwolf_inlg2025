@@ -1,0 +1,42 @@
+1:
+  content: 皆さん、今日も頑張りましょう！
+  type: greet
+  from: シズエ
+  to: all
+  credibility: 0.7
+2:
+  content: アスカさんの行動が怪しいです
+  type: accusation
+  from: テスト太郎
+  to: all
+  credibility: 0.3
+3:
+  content: アスカさん、どう思いますか？
+  type: question
+  from: リン
+  to: アスカ
+  credibility: 0.8
+4:
+  content: 私は村人です
+  type: claim
+  from: アスカ
+  to: all
+  credibility: 0.9
+5:
+  content: アスカさんを信じます
+  type: support
+  from: ユミ
+  to: アスカ
+  credibility: 0.5
+6:
+  content: 占い結果を教えてください
+  type: request
+  from: ケンジ
+  to: all
+  credibility: 0.4
+7:
+  content: アスカさん、投票先は決めましたか？
+  type: question
+  from: サクラ
+  to: アスカ
+  credibility: 0.6
