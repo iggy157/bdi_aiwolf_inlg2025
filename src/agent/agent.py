@@ -334,15 +334,21 @@ class Agent:
             try:
                 # 現在のリクエストカウントを取得（daily_initializeはdayを使用）
                 request_count = self.info.day if hasattr(self.info, 'day') else 0
-                self.analysis_tracker.analyze_talk(
+                added = self.analysis_tracker.analyze_talk(
                     talk_history=self.talk_history,
                     info=self.info,
                     request_count=request_count
                 )
-                self.analysis_tracker.save_analysis()
-                self.agent_logger.logger.info(f"Analysis saved for day {request_count}")
-            except Exception as e:
-                self.agent_logger.logger.error(f"Failed to analyze talk history: {e}")
+                # 追加0件でも必ず保存（空ファイル生成を保証）
+                try:
+                    self.analysis_tracker.save_analysis()
+                    # 同期処理でトレースファイルとの整合性を保証
+                    self.analysis_tracker.sync_with_trace()
+                    self.agent_logger.logger.info(f"Analysis saved for day {request_count} (added={added})")
+                except Exception as e:
+                    self.agent_logger.logger.exception(f"Post-daily-initialize save failed: {e}")
+            except Exception:
+                self.agent_logger.logger.exception("Failed to analyze talk history")
 
     def whisper(self) -> str:
         """Return response to whisper request.
@@ -372,14 +378,21 @@ class Agent:
             try:
                 # 現在のリクエストカウントを取得
                 request_count = len([h for h in self.talk_history if h.agent == self.agent_name])
-                self.analysis_tracker.analyze_talk(
+                added = self.analysis_tracker.analyze_talk(
                     talk_history=self.talk_history,
                     info=self.info,
                     request_count=request_count
                 )
-                # talkリクエストでは毎回保存せず、適切なタイミングで保存
-            except Exception as e:
-                self.agent_logger.logger.error(f"Failed to analyze talk in talk(): {e}")
+                # 追加0件でも必ず保存（空ファイル生成を保証）
+                try:
+                    self.analysis_tracker.save_analysis()
+                    # 同期処理でトレースファイルとの整合性を保証
+                    self.analysis_tracker.sync_with_trace()
+                    self.agent_logger.logger.info(f"Talk analysis saved (added={added})")
+                except Exception as e:
+                    self.agent_logger.logger.exception(f"Post-talk save failed: {e}")
+            except Exception:
+                self.agent_logger.logger.exception("Failed to analyze talk in talk()")
         
         return response or ""
 
@@ -395,15 +408,21 @@ class Agent:
             try:
                 # 現在のリクエストカウントを取得
                 request_count = self.info.day if hasattr(self.info, 'day') else 0
-                self.analysis_tracker.analyze_talk(
+                added = self.analysis_tracker.analyze_talk(
                     talk_history=self.talk_history,
                     info=self.info,
                     request_count=request_count
                 )
-                self.analysis_tracker.save_analysis()
-                self.agent_logger.logger.info(f"Final analysis saved for day {request_count}")
-            except Exception as e:
-                self.agent_logger.logger.error(f"Failed to save final analysis: {e}")
+                # 追加0件でも必ず保存（空ファイル生成を保証）
+                try:
+                    self.analysis_tracker.save_analysis()
+                    # 同期処理でトレースファイルとの整合性を保証
+                    self.analysis_tracker.sync_with_trace()
+                    self.agent_logger.logger.info(f"Final analysis saved for day {request_count} (added={added})")
+                except Exception as e:
+                    self.agent_logger.logger.exception(f"Post-daily-finish save failed: {e}")
+            except Exception:
+                self.agent_logger.logger.exception("Failed to save final analysis")
 
     def divine(self) -> str:
         """Return response to divine request.
@@ -462,15 +481,21 @@ class Agent:
         if self.analysis_tracker and self.info:
             try:
                 # 最終的なトーク分析と保存
-                self.analysis_tracker.analyze_talk(
+                added = self.analysis_tracker.analyze_talk(
                     talk_history=self.talk_history,
                     info=self.info,
                     request_count=999  # ゲーム終了時の特別なリクエストカウント
                 )
-                self.analysis_tracker.save_analysis()
-                self.agent_logger.logger.info("Game finish analysis saved")
-            except Exception as e:
-                self.agent_logger.logger.error(f"Failed to save game finish analysis: {e}")
+                # 追加0件でも必ず保存（空ファイル生成を保証）
+                try:
+                    self.analysis_tracker.save_analysis()
+                    # 同期処理でトレースファイルとの整合性を保証
+                    self.analysis_tracker.sync_with_trace()
+                    self.agent_logger.logger.info(f"Game finish analysis saved (added={added})")
+                except Exception as e:
+                    self.agent_logger.logger.exception(f"Post-game-finish save failed: {e}")
+            except Exception:
+                self.agent_logger.logger.exception("Failed to save game finish analysis")
 
     @timeout
     def action(self) -> str | None:  # noqa: C901, PLR0911

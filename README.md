@@ -44,3 +44,10 @@ chmod u+x ./aiwolf-nlp-server-linux-amd64
 ./aiwolf-nlp-server-linux-amd64 -c ./default_5.yml # 5人ゲーム
 # ./aiwolf-nlp-server-linux-amd64 -c ./default_13.yml # 13人ゲーム
 ```
+
+## ビュアー起動
+
+```bash
+cd aiwolf-nlp-viewer/
+pnpm run dev --open
+```

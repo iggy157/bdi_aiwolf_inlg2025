@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定した人間関係を維持しながら、集団の安全を確保する
-  description: ダイスケは安定性と安定した人間関係を重視するため、村人としての社会的義務を忠実に果たし、安全で調和の取れた環境を作り出すことを望む。脅威の排除には慎重にアプローチし、観察と推論を通じて集団の意思決定に貢献する。これにより、自身と他者との信頼関係を強化し、長期的な安定を追求する。
-meta:
-  game_id: 01K2A407R0809K72RTFMXS92NT
-  agent: ダイスケ
-  model: gpt-4o
-  generated_at: '2025-08-10T13:51:37Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/ダイスケ/macro_belief.yml

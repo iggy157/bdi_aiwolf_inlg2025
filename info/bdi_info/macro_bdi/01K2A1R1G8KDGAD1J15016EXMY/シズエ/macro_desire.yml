@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 情報攪乱役としてのバランス重視
-  description: シズエは自由と刺激を求める傾向が強く、狂人としての役割を果たすため、積極的に情報を攪乱しつつも、過度に目立たないように行動する。社会的承認も重視するため、周囲との調和を保ちながら、密かに人狼陣営を有利にするサポートを行う。愛と親密さの欲求から、特定のプレイヤーと信頼関係を築き、その関係を利用して誤情報を流す可能性もある。安定性や安定した関係への欲求は低めであるため、状況に応じて柔軟に戦略を変えることを厭わない。
-meta:
-  game_id: 01K2A1R1G8KDGAD1J15016EXMY
-  agent: シズエ
-  model: gpt-4o
-  generated_at: '2025-08-10T13:12:12Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A1R1G8KDGAD1J15016EXMY/シズエ/macro_belief.yml

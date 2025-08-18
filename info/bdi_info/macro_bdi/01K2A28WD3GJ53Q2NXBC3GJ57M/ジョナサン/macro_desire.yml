@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定性を重視しつつ、愛着を育む形で役割を果たす
-  description: ジョナサンは高い安定志向と愛着欲求に基づき、人狼としての役割を果たす際には慎重かつ計画的な行動を心掛ける。安定した人間関係を維持しつつ、仲間との連携を深め、正体を隠しながらも集団内での安定を保つことを重視する。愛着を育みつつ、他者からの信頼を得ることで、役割を隠蔽し続けることを望む。
-meta:
-  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
-  agent: ジョナサン
-  model: gpt-4o
-  generated_at: '2025-08-10T13:21:26Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/ジョナサン/macro_belief.yml

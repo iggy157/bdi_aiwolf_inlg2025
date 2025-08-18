@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定しつつも自己実現を追求する村人としての役割
-  description: リュウジは村人として、集団の安全を確保するための社会的責務を重視しつつ、自己実現を追求します。観察と推論を駆使して、村の意思決定に積極的に参加し、安定した人間関係を築くことを目指します。彼は特に安定と自己実現に強い欲求を持っているため、村人としての役割を果たしながら、自身の能力を発揮し、集団全体の安定に寄与することを望んでいます。
-meta:
-  game_id: 01K2A08NGY7DDDVS933AH0W70K
-  agent: リュウジ
-  model: gpt-4o
-  generated_at: '2025-08-10T12:46:24Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A08NGY7DDDVS933AH0W70K/リュウジ/macro_belief.yml

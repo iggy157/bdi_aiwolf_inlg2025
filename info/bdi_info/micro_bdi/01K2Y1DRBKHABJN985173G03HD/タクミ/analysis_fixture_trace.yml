@@ -1,0 +1,34 @@
+0:0:3da47453:
+  from_agent: アスカ
+  original: Skip
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-18T16:34:47.049862'
+0:1:18a63f55:
+  from_agent: ミナト
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-18T16:35:02.508344'
+meta:heartbeat:stub_saved_fixture:1755502460:1085:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-18T16:34:20.954419'
+meta:heartbeat:stub_saved_fixture:1755502487:5722:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-18T16:34:47.077194'
+meta:heartbeat:stub_saved_fixture:1755502502:5794:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-18T16:35:02.525719'
+meta:tracker_init:1755502332:9374:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-18T16:32:12.805977'

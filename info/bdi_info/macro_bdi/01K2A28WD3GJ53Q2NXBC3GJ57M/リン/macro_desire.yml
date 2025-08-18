@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 冒険を求めつつ村の安全を確保したい
-  description: リンは冒険心と自由を重んじる傾向が強く、村人としての役割を果たしつつも、新しい刺激を求めている。村の安全を維持するための意思決定には積極的に参加するが、過度に安定を求めることなく、新しい可能性を探ることを重視する。社会的承認や愛情よりも、個人の独立性と刺激を優先し、村の安全を確保しつつも、常に新たな挑戦や変化を追求する。
-meta:
-  game_id: 01K2A28WD3GJ53Q2NXBC3GJ57M
-  agent: リン
-  model: gpt-4o
-  generated_at: '2025-08-10T13:21:23Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A28WD3GJ53Q2NXBC3GJ57M/リン/macro_belief.yml

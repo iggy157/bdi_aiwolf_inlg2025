@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 自由と冒険を重視しつつ、情報を活用して集団に貢献したい
-  description: ケンジは自由と冒険を求める欲求が強いため、占い師としての情報を積極的に活用し、新しい方法で集団に貢献することを望む。彼は情報の信憑性を保ちながら、タイミングの管理を工夫し、集団の利益を考慮しつつも、自身の独立性を保つことを優先する。社会的承認も重要視するため、結果的に集団の信頼を得ることを目指す。
-meta:
-  game_id: 01K2A407R0809K72RTFMXS92NT
-  agent: ケンジ
-  model: gpt-4o
-  generated_at: '2025-08-10T13:51:37Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2A407R0809K72RTFMXS92NT/ケンジ/macro_belief.yml
