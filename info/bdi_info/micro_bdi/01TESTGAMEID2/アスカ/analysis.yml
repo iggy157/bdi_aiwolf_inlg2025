@@ -1,0 +1,20 @@
+1:
+  content: 自分の発話です
+  type: co
+  from: アスカ
+  credibility: 0.9
+2:
+  content: 他者の発話です
+  type: question
+  from: シズエ
+  credibility: 0.6
+3:
+  content: もう一つ自分の発話
+  type: talk
+  from: アスカ
+  credibility: 0.8
+4:
+  content: シズエからの新しい発話
+  type: co
+  from: シズエ
+  credibility: 0.7

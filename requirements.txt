@@ -1,0 +1,4 @@
+# Python dependencies for INLG 2025 BDI AIWolf project
+
+# YAML processing for analysis data
+PyYAML>=6.0

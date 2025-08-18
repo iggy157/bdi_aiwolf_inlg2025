@@ -28,6 +28,7 @@ from aiwolf_nlp_common.packet import Info, Packet, Request, Role, Setting, Statu
 
 from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
+from utils.bdi.micro_bdi.extract_pairs import extract_pairs_for_agent
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 from utils.bdi.macro_bdi.macro_plan import generate_macro_plan
@@ -344,6 +345,7 @@ class Agent:
                     self.analysis_tracker.save_analysis()
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
+                    self._update_talk_logs()  # トーク履歴の更新
                     self.agent_logger.logger.info(f"Analysis saved for day {request_count} (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-daily-initialize save failed: {e}")
@@ -361,6 +363,24 @@ class Agent:
         response = self._send_message_to_llm(self.request)
         self.sent_whisper_count = len(self.whisper_history)
         return response or ""
+
+    def _update_talk_logs(self) -> None:
+        """analysis.yml(またはanalysis_test.yml)からfrom別にcontent+creditabilityを抽出し、トーク履歴/<from>.yml に追記する"""
+        if not self.info:
+            return
+        try:
+            base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            extract_pairs_for_agent(
+                base_dir=base_dir,
+                game_id=self.info.game_id,
+                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                out_subdir="トーク履歴",
+                skip_pending=False,   # pending も含める（必要なら True に）
+                exclude_self=True,    # 自分の from は除外
+                append=True,          # 追記モード
+            )
+        except Exception:
+            self.agent_logger.logger.exception("Failed to update talk logs")
 
     def talk(self) -> str:
         """Return response to talk request.
@@ -388,6 +408,7 @@ class Agent:
                     self.analysis_tracker.save_analysis()
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
+                    self._update_talk_logs()  # トーク履歴の更新
                     self.agent_logger.logger.info(f"Talk analysis saved (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-talk save failed: {e}")
@@ -418,6 +439,7 @@ class Agent:
                     self.analysis_tracker.save_analysis()
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
+                    self._update_talk_logs()  # トーク履歴の更新
                     self.agent_logger.logger.info(f"Final analysis saved for day {request_count} (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-daily-finish save failed: {e}")
@@ -491,6 +513,7 @@ class Agent:
                     self.analysis_tracker.save_analysis()
                     # 同期処理でトレースファイルとの整合性を保証
                     self.analysis_tracker.sync_with_trace()
+                    self._update_talk_logs()  # トーク履歴の更新
                     self.agent_logger.logger.info(f"Game finish analysis saved (added={added})")
                 except Exception as e:
                     self.agent_logger.logger.exception(f"Post-game-finish save failed: {e}")
