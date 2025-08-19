@@ -1,0 +1,20 @@
+1:
+  content: '[PENDING] Analyzing: Hi everyone! Let''s work together today and catch
+    t...'
+  type: pending_analysis
+  from: Mio
+  to: all
+  credibility: 0.0
+2:
+  content: Hi everyone! Let's work together today and catch the werewolves! Any thoughts?
+  type: 'null'
+  from: Mio
+  to: all
+  credibility: 0.41
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.867
+    creditability: 0.5
+    from: Mio

@@ -106,9 +106,13 @@ def generate_micro_intention_for_agent(
     # Setup paths
     agent_micro_dir = base_micro_dir / game_id / agent
     agent_macro_dir = base_macro_dir / game_id / agent
-    
-    micro_desire_path = agent_macro_dir / "micro_desire.yml"
+
+    # micro_desire は micro_bdi 側に保存される
+    micro_desire_path = agent_micro_dir / "micro_desire.yml"
     macro_belief_path = agent_macro_dir / "macro_belief.yml"
+    macro_desire_path = agent_macro_dir / "macro_desire.yml"
+    macro_plan_path = agent_macro_dir / "macro_plan.yml"
+    analysis_path = agent_micro_dir / "analysis.yml"
     micro_intention_path = agent_micro_dir / "micro_intention.yml"
     
     # Check if we should skip regeneration
@@ -119,14 +123,21 @@ def generate_micro_intention_for_agent(
     
     # Collect data
     try:
-        # Load micro_desire
+        # Load latest micro_desire (append-only format expected)
         micro_desire_text = ""
+        latest_micro_desire: Dict[str, Any] = {}
         if micro_desire_path.exists():
             micro_desire_text = micro_desire_path.read_text(encoding='utf-8')
+            try:
+                md_all = yaml.safe_load(micro_desire_text) or {}
+                if isinstance(md_all, dict) and isinstance(md_all.get("micro_desires"), list) and md_all["micro_desires"]:
+                    latest_micro_desire = md_all["micro_desires"][-1]
+            except Exception:
+                pass
         else:
             if logger_obj:
                 logger_obj.logger.warning(f"micro_desire.yml not found: {micro_desire_path}")
-        
+
         # Load behavior_tendency from macro_belief
         behavior_tendency = {}
         macro_belief_data = load_yaml_safe(macro_belief_path)
@@ -135,14 +146,51 @@ def generate_micro_intention_for_agent(
             behavior_tendency = mb.get("behavior_tendency", {})
             if isinstance(behavior_tendency, dict) and "behavior_tendencies" in behavior_tendency:
                 behavior_tendency = behavior_tendency["behavior_tendencies"]
-        
-        if not behavior_tendency and logger_obj:
-            logger_obj.logger.warning(f"No behavior_tendency found in: {macro_belief_path}")
-        
+
+        # Load macro_desire/macro_plan for fallback
+        macro_desire_data = load_yaml_safe(macro_desire_path)
+        macro_plan_data = load_yaml_safe(macro_plan_path)
+        macro_desire_summary = ""
+        macro_desire_description = ""
+        if isinstance(macro_desire_data.get("macro_desire"), dict):
+            macro_desire_summary = str(macro_desire_data["macro_desire"].get("summary", ""))
+            macro_desire_description = str(macro_desire_data["macro_desire"].get("description", ""))
+        macro_plan_text = yaml.safe_dump(macro_plan_data, allow_unicode=True, sort_keys=False)
+
+        # analysis tail (末尾12件) を簡易抽出
+        analysis_tail = ""
+        try:
+            if analysis_path.exists():
+                adata = load_yaml_safe(analysis_path)
+                if isinstance(adata, dict) and "items" in adata:
+                    items = adata.get("items") or []
+                    tail = items[-12:] if len(items) > 12 else items
+                    lines = []
+                    for i, it in enumerate(tail, 1):
+                        if isinstance(it, dict):
+                            lines.append(f"{i}. {it.get('from','unknown')}: {it.get('content','')}")
+                    analysis_tail = "\n".join(lines)
+                else:
+                    # 数値キー型にも緩く対応
+                    keys = [int(k) for k in adata.keys() if str(k).isdigit()]
+                    keys.sort()
+                    tail_keys = keys[-12:] if len(keys) > 12 else keys
+                    lines = []
+                    for i, k in enumerate(tail_keys, 1):
+                        it = adata.get(k) or adata.get(str(k)) or {}
+                        if isinstance(it, dict):
+                            lines.append(f"{i}. {it.get('from','unknown')}: {it.get('content','')}")
+                    analysis_tail = "\n".join(lines)
+        except Exception:
+            analysis_tail = ""
+
         if logger_obj:
-            logger_obj.logger.info(f"Collected data: micro_desire_len={len(micro_desire_text)}, "
-                                 f"behavior_tendency_keys={len(behavior_tendency)}")
-        
+            logger_obj.logger.info(
+                f"Collected data: latest_micro_desire={bool(latest_micro_desire)}, "
+                f"behavior_tendency_keys={len(behavior_tendency)}, "
+                f"analysis_tail_len={len(analysis_tail)}"
+            )
+
     except Exception as e:
         if logger_obj:
             logger_obj.logger.exception(f"Failed to collect reference data: {e}")
@@ -158,7 +206,12 @@ def generate_micro_intention_for_agent(
         "game_id": game_id,
         "agent": agent,
         "micro_desire_text": micro_desire_text,
+        "latest_micro_desire": latest_micro_desire,
         "behavior_tendency": behavior_tendency,
+        "macro_desire_summary": macro_desire_summary,
+        "macro_desire_description": macro_desire_description,
+        "macro_plan_text": macro_plan_text,
+        "analysis_tail": analysis_tail,
         "char_limits": {
             "base_length": 125,
             "mention_length": 125
@@ -206,113 +259,63 @@ def generate_micro_intention_for_agent(
             logger_obj.logger.exception(f"LLM call failed: {e}")
         response_data = _create_fallback_micro_intention()
     
-    # Add metadata
+    # 構築：保存用の最小エントリ（2項目のみ）
     model_name = type(agent_obj.llm_model).__name__ if agent_obj and hasattr(agent_obj, 'llm_model') and agent_obj.llm_model else "unknown"
     micro_desire_sha1 = get_file_sha1(micro_desire_path)
     micro_desire_mtime = get_file_mtime(micro_desire_path)
-    
-    response_data["meta"] = {
-        "generated_at": datetime.now().isoformat(),
-        "trigger": trigger or "unknown",
-        "model": model_name,
-        "source_micro_desire_mtime": micro_desire_mtime,
-        "source_micro_desire_sha1": micro_desire_sha1,
-        "game_id": game_id,
-        "agent": agent
+    mi_obj = response_data.get("micro_intention", {}) if isinstance(response_data, dict) else {}
+    entry = {
+        "consist": str(mi_obj.get("consist", "Mention target briefly then state one-line plan.")),
+        "content": str(mi_obj.get("content", ""))
     }
     
     # Save to file
     try:
         micro_intention_path.parent.mkdir(parents=True, exist_ok=True)
-        
-        with open(micro_intention_path, 'w', encoding='utf-8') as f:
-            f.write("# generated by utils.bdi.micro_bdi.micro_intention_generator\n")
-            yaml.safe_dump(response_data, f, allow_unicode=True, sort_keys=False)
-        
+        # 既存読込
+        existing: Dict[str, Any] = load_yaml_safe(micro_intention_path) if micro_intention_path.exists() else {}
+        if not isinstance(existing, dict):
+            existing = {}
+        if "micro_intentions" not in existing or not isinstance(existing.get("micro_intentions"), list):
+            existing["micro_intentions"] = []
+        if "meta" not in existing or not isinstance(existing.get("meta"), dict):
+            existing["meta"] = {
+                "game_id": game_id,
+                "agent": agent,
+                "char_limits": {"mention": 125, "base": 125}
+            }
+        # SHA1/mtime を meta に更新（skip 判定のため最新を保持）
+        existing["meta"]["source_micro_desire_sha1"] = micro_desire_sha1
+        existing["meta"]["source_micro_desire_mtime"] = micro_desire_mtime
+        existing["meta"]["generated_at"] = datetime.now().isoformat()
+        existing["meta"]["trigger"] = (trigger or "unknown")
+        existing["meta"]["model"] = model_name
+        # 追記
+        existing["micro_intentions"].append(entry)
+        # 原子的書込み
+        tmp = micro_intention_path.with_suffix(".yml.tmp")
+        with open(tmp, "w", encoding="utf-8") as f:
+            f.write("# generated by utils.bdi.micro_bdi.micro_intention_generator (append-only)\n")
+            yaml.safe_dump(existing, f, allow_unicode=True, sort_keys=False)
+        os.replace(tmp, micro_intention_path)
+
         if logger_obj:
-            logger_obj.logger.info(f"Saved micro_intention to: {micro_intention_path}")
-        
-        # Append to log
-        log_path = agent_micro_dir / "micro_intention_log.yml"
-        try:
-            # micro_intention.yml に書いた内容（response_data）をそのまま1件としてログにも積む
-            _append_to_log(log_path, response_data)
-            if logger_obj:
-                logger_obj.logger.info(f"Appended micro_intention to log: {log_path}")
-        except Exception as e:
-            if logger_obj:
-                logger_obj.logger.warning(f"Failed to append micro_intention to log: {e}")
-        
+            logger_obj.logger.info(f"Appended micro_intention -> {micro_intention_path} (total={len(existing['micro_intentions'])})")
+
         return micro_intention_path
-        
     except Exception as e:
         if logger_obj:
             logger_obj.logger.exception(f"Failed to save micro_intention: {e}")
         return None
 
 
-def _append_to_log(log_path: Path, entry: Dict[str, Any]) -> None:
-    """Append one micro_intention entry to micro_intention_log.yml as items[]."""
-    data: Dict[str, Any] = load_yaml_safe(log_path)
-    if not isinstance(data, dict):
-        data = {}
-    items = data.get("items")
-    if not isinstance(items, list):
-        items = []
-    # 最小限の整形（将来の後方互換のため shallow copy 推奨）
-    items.append(entry)
-    data["items"] = items
-
-    log_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(log_path, "w", encoding="utf-8") as f:
-        f.write("# generated by utils.bdi.micro_bdi.micro_intention_generator (log)\n")
-        yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False)
-
 
 def _create_fallback_micro_intention() -> Dict[str, Any]:
     """Create fallback micro_intention structure when LLM fails."""
     return {
         "micro_intention": {
-            "summary": "fallback intention",
-            "structure": {
-                "use_both": False,
-                "char_limits": {
-                    "base_length": 125,
-                    "mention_length": 125
-                },
-                "base": {
-                    "phases": [
-                        {
-                            "label": "communicate",
-                            "objective": "Share basic information"
-                        }
-                    ]
-                },
-                "mention": {
-                    "targets": [],
-                    "phases": []
-                }
-            },
-            "content": [
-                {
-                    "mode": "base",
-                    "phase": "communicate",
-                    "include": [
-                        "Express current thoughts",
-                        "Maintain group harmony"
-                    ]
-                }
-            ],
-            "priorities": [
-                {
-                    "item": "Basic communication",
-                    "priority": 0.5
-                }
-            ],
-            "alignment": {
-                "behavior_tendency_ok": True
-            },
-            "rationale": "LLM generation failed, using safe fallback"
+            "consist": "Direct communication without specific targeting",
+            "content": "I will share my current thoughts and observe others"
         }
     }
 

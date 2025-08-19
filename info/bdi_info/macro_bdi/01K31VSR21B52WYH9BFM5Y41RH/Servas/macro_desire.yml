@@ -1,0 +1,18 @@
+macro_desire:
+  summary: Servas seeks enjoyable freedom and sufficient decision impact as a socially
+    aware villager.
+  description: Servas aims to balance personal desires with the responsibilities of
+    a villager. While they value freedom and adventure (0.658, 0.660), they moderately
+    seek self-realization (0.584) and social approval (0.500). Thus, they're keen
+    on participating in discussions to influence outcomes, aligning with the villager
+    duty to identify threats. However, their lower emphasis on stability (0.332) and
+    stable relationships (0.332) suggests they might not prioritize long-term alliances,
+    focusing instead on strategic adaptability. Servas will likely leverage social
+    interactions for both personal satisfaction and effective community protection,
+    though not at the cost of compromising their desire for independence and stimulation.
+meta:
+  game_id: 01K31VSR21B52WYH9BFM5Y41RH
+  agent: Servas
+  model: gpt-4o
+  generated_at: '2025-08-19T19:10:02Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31VSR21B52WYH9BFM5Y41RH/Servas/macro_belief.yml

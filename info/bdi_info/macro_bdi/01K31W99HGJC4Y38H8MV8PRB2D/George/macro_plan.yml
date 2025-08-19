@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 信頼性を重視し、他のプレイヤーと調和を保ちながら疑惑を避ける。
+  mid_game: 慎重に協力関係を模索し、主要な役割を果たしてチームとしての結束を強める。
+  late_game: 最小限のリスクで目標達成に向けて作戦を実行し、人狼の勝利を目指す。
+  format: simplified_3line
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: George
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:35Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/George/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/George/macro_desire.yml

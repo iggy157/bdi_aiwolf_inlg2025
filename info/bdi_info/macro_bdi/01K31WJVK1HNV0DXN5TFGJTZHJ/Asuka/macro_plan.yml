@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 会話を制御しつつ信頼できる関係を築き、疑惑を避ける。
+  mid_game: 慎重に情報を操作し、他のプレイヤーへの疑いを誘導する。
+  late_game: 確立した信頼を利用して残りのプレイヤーを排除し勝利を目指す。
+  format: simplified_3line
+meta:
+  game_id: 01K31WJVK1HNV0DXN5TFGJTZHJ
+  agent: Asuka
+  model: gpt-4o
+  generated_at: '2025-08-19T19:23:48Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Asuka/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Asuka/macro_desire.yml

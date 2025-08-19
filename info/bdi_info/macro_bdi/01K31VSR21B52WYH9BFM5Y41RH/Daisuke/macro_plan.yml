@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 観察を重点に置き、グループの安全を守るために情報を集めつつ仲間との関係を構築する。
+  mid_game: 集めた情報を元に論理的な推論を行い、信頼できる仲間と連携して人狼の特定を進める。
+  late_game: 信頼関係を活かして村人の一致団結を促し、安全と成長を確保しつつ最終決定を下す。
+  format: simplified_3line
+meta:
+  game_id: 01K31VSR21B52WYH9BFM5Y41RH
+  agent: Daisuke
+  model: gpt-4o
+  generated_at: '2025-08-19T19:10:10Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31VSR21B52WYH9BFM5Y41RH/Daisuke/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31VSR21B52WYH9BFM5Y41RH/Daisuke/macro_desire.yml

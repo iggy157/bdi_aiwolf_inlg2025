@@ -1,0 +1,80 @@
+1:
+  content: '[PENDING] Analyzing: Agreed, Shion. Let''s pay attention to any inconsis...'
+  type: pending_analysis
+  from: Asuka
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Let''s keep a steady pace and see who might slip
+    up...'
+  type: pending_analysis
+  from: George
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Got it! Let''s keep talking and see if anyone tries...'
+  type: pending_analysis
+  from: Kenji
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: Sounds good! Let''s also remember to give new ideas...'
+  type: pending_analysis
+  from: Mio
+  to: all
+  credibility: 0.0
+5:
+  content: Agreed, Shion. Let's pay attention to any inconsistencies or suspicious
+    behavior.
+  type: positive
+  from: Asuka
+  to: Shion
+  credibility: 0.429
+  credibility_raw: 0.66
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Asuka
+6:
+  content: Let's keep a steady pace and see who might slip up under the pressure.
+  type: negative
+  from: George
+  to: all
+  credibility: 0.326
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.517
+    liking: 0.467
+    creditability: 0.567
+    from: George
+7:
+  content: Got it! Let's keep talking and see if anyone tries to steer the conversation
+    away.
+  type: 'null'
+  from: Kenji
+  to: all
+  credibility: 0.355
+  credibility_raw: 0.52
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Kenji
+8:
+  content: Sounds good! Let's also remember to give new ideas a chance and work as
+    a team.
+  type: positive
+  from: Mio
+  to: all
+  credibility: 0.469
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Mio

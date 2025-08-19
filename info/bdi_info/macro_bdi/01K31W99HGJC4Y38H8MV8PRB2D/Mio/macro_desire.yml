@@ -1,0 +1,18 @@
+macro_desire:
+  summary: Balance personal freedom with group safety in a stimulating environment.
+  description: Mio aims to maintain a balance between personal freedom and the socio-political
+    responsibilities as a '村人'. The high value for adventure_stimulation (0.720) and
+    freedom_independence (0.692) suggest Mio desires to explore new strategies and
+    maintain independence within the group. Despite these tendencies, the role requires
+    social engagement to ensure group safety, which aligns with her moderate desire
+    for social_approval (0.460) and love_intimacy (0.475). Her relatively lower tendencies
+    for stability and stable_relationships indicate a focus on dynamic interactions
+    over stable, enduring connections. Mio will approach her role by contributing
+    through observation and reasoning, taking calculated risks to stimulate the game's
+    dynamics while adapting to social expectations.
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: Mio
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:30Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Mio/macro_belief.yml

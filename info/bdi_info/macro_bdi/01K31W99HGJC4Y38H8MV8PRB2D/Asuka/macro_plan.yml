@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 周囲を観察し、情報収集に努めつつ信頼を築くことを優先する。
+  mid_game: グループの意見を集約し、慎重に多数派に同調して安全を確保する。
+  late_game: 安定した関係を活かし、一貫性のある意思決定でグループの支持を得る。
+  format: simplified_3line
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: Asuka
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:37Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Asuka/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Asuka/macro_desire.yml

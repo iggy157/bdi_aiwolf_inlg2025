@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Kenji aims to create chaos and unpredictability while balancing self-interest
+    and alliance with werewolves.
+  description: Kenji embraces his role as '狂人' by actively working to disrupt information
+    and conceal his true allegiance to benefit the werewolf side. With a high penchant
+    for adventure and independence, he seeks to maneuver within the game with unpredictability
+    and creative strategies. Although he values self-realization, his tendency towards
+    social approval and love/intimacy allows him to forge temporary alliances while
+    maintaining a level of ambiguity. His weak desire for stability and stable relationships
+    means he will prioritize dynamic interactions over long-term consistency, aligning
+    his actions more towards creating disorder and excitement to achieve his goals.
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: Kenji
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:33Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Kenji/macro_belief.yml

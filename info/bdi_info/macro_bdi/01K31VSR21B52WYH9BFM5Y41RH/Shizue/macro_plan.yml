@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 序盤は積極的に村人として振る舞い、信頼を獲得することに努める。
+  mid_game: 中盤は場の状況を観察しながら、鋭い指摘で他の疑わしいプレイヤーに焦点を移す。
+  late_game: 終盤は慎重に票をコントロールし、最終盤でも信頼を維持できるよう動く。
+  format: simplified_3line
+meta:
+  game_id: 01K31VSR21B52WYH9BFM5Y41RH
+  agent: Shizue
+  model: gpt-4o
+  generated_at: '2025-08-19T19:10:09Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31VSR21B52WYH9BFM5Y41RH/Shizue/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31VSR21B52WYH9BFM5Y41RH/Shizue/macro_desire.yml

@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 仲間と協力して初期の疑惑を分散させつつ、情報収集を進める。
+  mid_game: 敵対者に対する策略を展開しながら、仲間内で結束を強め動向を操作する。
+  late_game: 最終局面でしっかりと狙いを定め、果敢にリーダーとして勝利を目指す。
+  format: simplified_3line
+meta:
+  game_id: 01K31WJVK1HNV0DXN5TFGJTZHJ
+  agent: Rin
+  model: gpt-4o
+  generated_at: '2025-08-19T19:24:00Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Rin/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Rin/macro_desire.yml

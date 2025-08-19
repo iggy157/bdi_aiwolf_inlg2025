@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 自由な発言を積極的に行い、観察を通じて人間関係を築く。
+  mid_game: 集団の安全を重視しつつも、自らの推理に基づいて重要な決定を下す。
+  late_game: 柔軟な思考で最適な結論を導きつつ、自身の冒険心を活かして勝利に貢献する。
+  format: simplified_3line
+meta:
+  game_id: 01K31WJVK1HNV0DXN5TFGJTZHJ
+  agent: Sakura
+  model: gpt-4o
+  generated_at: '2025-08-19T19:23:53Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Sakura/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Sakura/macro_desire.yml

@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 積極的に交流し情報を集めながら独立性を維持する。
+  mid_game: 推理力を活かして疑わしい動きを分析し、グループの安全を図る。
+  late_game: 得た情報と直感を元に、リスクを取って勝利を目指す行動を選択する。
+  format: simplified_3line
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: Mio
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:35Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Mio/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Mio/macro_desire.yml

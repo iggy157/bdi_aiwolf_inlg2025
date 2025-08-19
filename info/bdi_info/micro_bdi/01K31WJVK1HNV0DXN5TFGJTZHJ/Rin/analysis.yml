@@ -1,0 +1,7 @@
+1:
+  content: '[PENDING] Analyzing: Good morning, everyone. Let''s work together and
+    fi...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0

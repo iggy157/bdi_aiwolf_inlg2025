@@ -1,0 +1,19 @@
+macro_desire:
+  summary: Asuka seeks to maintain stability and form stable relationships while concealing
+    her identity.
+  description: With a strong inclination towards stability and stable relationships,
+    Asuka prioritizes maintaining a composed and stable presence in the game. Her
+    moderate desire for social approval informs her approach to carefully managing
+    interactions, ensuring others perceive her favorably without drawing undue attention.
+    The critical requirement of her role as a 人狼 to conceal her identity aligns with
+    her dominant tendencies, leading her to focus on establishing and maintaining
+    trust without revealing her true intentions. Despite a lower tendency towards
+    freedom and adventure, she cautiously balances strategic risks to achieve her
+    objectives, carefully navigating social dynamics to systematically eliminate others
+    in coordination with her allies.
+meta:
+  game_id: 01K31WJVK1HNV0DXN5TFGJTZHJ
+  agent: Asuka
+  model: gpt-4o
+  generated_at: '2025-08-19T19:23:44Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31WJVK1HNV0DXN5TFGJTZHJ/Asuka/macro_belief.yml

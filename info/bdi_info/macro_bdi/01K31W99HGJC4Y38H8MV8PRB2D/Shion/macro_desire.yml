@@ -1,0 +1,16 @@
+macro_desire:
+  summary: Balancing revelation of identities with personal goals.
+  description: Shion, as an 占い師, aims to utilize her definitive insights into others'
+    identities primarily to aid the group, but will also carefully weigh the timing
+    and credibility of these revelations. Her strong tendencies towards self_realization
+    and stability mean she aims to fulfill her role while ensuring personal growth
+    and maintaining a controlled game environment. Shion is moderately motivated by
+    social approval and stable relationships, suggesting she will seek to build trust
+    within the group but may not prioritize it over her strategic interests or personal
+    development goals.
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: Shion
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/Shion/macro_belief.yml

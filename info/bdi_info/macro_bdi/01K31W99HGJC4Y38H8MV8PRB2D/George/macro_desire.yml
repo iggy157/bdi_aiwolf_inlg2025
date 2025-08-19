@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Balancing role duties while seeking stability and approval.
+  description: George prioritizes stability and social approval, aligning with his
+    role as '人狼', where he must conceal his identity while coordinating with allies
+    to systematically eliminate others. His desire for stability and approval means
+    he will focus on maintaining trustworthiness and avoiding suspicion, while his
+    moderate self-realization and social tendencies will push him to fulfill his role
+    diligently. Love and intimacy play a minor part, suggesting limited involvement
+    in deep personal connections. Freedom and adventure are not significant drivers,
+    indicating George will adhere to plans and strategies that promote role success
+    and group objectives.
+meta:
+  game_id: 01K31W99HGJC4Y38H8MV8PRB2D
+  agent: George
+  model: gpt-4o
+  generated_at: '2025-08-19T19:18:31Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31W99HGJC4Y38H8MV8PRB2D/George/macro_belief.yml

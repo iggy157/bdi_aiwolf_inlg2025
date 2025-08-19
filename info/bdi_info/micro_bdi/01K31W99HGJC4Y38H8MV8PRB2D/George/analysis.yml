@@ -1,0 +1,121 @@
+1:
+  content: '[PENDING] Analyzing: Let''s focus on finding the werewolves today; stay
+    ...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Agreed, Shion. Let''s pay attention to any inconsis...'
+  type: pending_analysis
+  from: Asuka
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Got it! Let''s keep talking and see if anyone tries...'
+  type: pending_analysis
+  from: Kenji
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: Sounds good! Let''s also remember to give new ideas...'
+  type: pending_analysis
+  from: Mio
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: Let''s be cautious of any distractions that lead
+    us...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+6:
+  content: '[PENDING] Analyzing: Absolutely, staying focused and open to all possib...'
+  type: pending_analysis
+  from: Asuka
+  to: all
+  credibility: 0.0
+7:
+  content: Let's focus on finding the werewolves today; stay sharp and observant,
+    everyone.
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.478
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Shion
+8:
+  content: Agreed, Shion. Let's pay attention to any inconsistencies or suspicious
+    behavior.
+  type: positive
+  from: Asuka
+  to: Shion
+  credibility: 0.455
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Asuka
+9:
+  content: Got it! Let's keep talking and see if anyone tries to steer the conversation
+    away.
+  type: 'null'
+  from: Kenji
+  to: all
+  credibility: 0.21
+  credibility_raw: 0.42
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Kenji
+10:
+  content: Sounds good! Let's also remember to give new ideas a chance and work as
+    a team.
+  type: positive
+  from: Mio
+  to: all
+  credibility: 0.532
+  credibility_raw: 0.71
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.767
+    creditability: 0.733
+    from: Mio
+11:
+  content: Let's be cautious of any distractions that lead us away from our goal.
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.444
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Shion
+12:
+  content: Absolutely, staying focused and open to all possibilities will be crucial
+    for us.
+  type: positive
+  from: Asuka
+  to: all
+  credibility: 0.462
+  credibility_raw: 0.66
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Asuka
