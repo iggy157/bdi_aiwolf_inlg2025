@@ -1,0 +1,76 @@
+1:
+  content: '[PENDING] Analyzing: Morning, all. Let’s stay calm and share any suspic...'
+  type: pending_analysis
+  from: George
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Morning! I''m excited to figure things out! Any ide...'
+  type: pending_analysis
+  from: Rin
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Morning. Let''s be observant and not rush into accu...'
+  type: pending_analysis
+  from: Toshio
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: Morning. No suspicions yet, but I''m ready to analy...'
+  type: pending_analysis
+  from: Shunichi
+  to: all
+  credibility: 0.0
+5:
+  content: Morning, all. Let’s stay calm and share any suspicions we might have.
+  type: 'null'
+  from: George
+  to: all
+  credibility: 0.305
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: George
+6:
+  content: Morning! I'm excited to figure things out! Any ideas on who seems suspicious?
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.308
+  credibility_raw: 0.42
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.8
+    creditability: 0.667
+    from: Rin
+7:
+  content: Morning. Let's be observant and not rush into accusations prematurely.
+  type: 'null'
+  from: Toshio
+  to: all
+  credibility: 0.483
+  credibility_raw: 0.69
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.733
+    creditability: 0.667
+    from: Toshio
+8:
+  content: Morning. No suspicions yet, but I'm ready to analyze evidence rationally.
+  type: 'null'
+  from: Shunichi
+  to: 'null'
+  credibility: 0.397
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.533
+    creditability: 0.767
+    from: Shunichi

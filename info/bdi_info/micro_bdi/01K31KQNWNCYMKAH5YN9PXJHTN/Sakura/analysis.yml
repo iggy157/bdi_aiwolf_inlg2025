@@ -1,0 +1,103 @@
+items:
+- content: '[PENDING] Analyzing:  @Kenji  why did you vote for @Sakura? Seems suspi...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  is suspicious for voting innocent @Sakura...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  your vote for @Sakura seems off; are you
+    ...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Kenji might be a werewolf. Your vote for  @Sakura...'
+  type: pending_analysis
+  from: Kenji
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  why did you vote for @Sakura? Your action...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  why vote for @Sakura? Your actions seem
+    o...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  why did you vote for @Sakura? You''re look...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Daisuke is suspect for voting against innocents.
+    ...'
+  type: pending_analysis
+  from: Kenji
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Kenji  is a werewolf because you suspiciously vo...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+- content: ' @Kenji  why did you vote for @Sakura? Seems suspicious - are you a werewolf
+    targeting an innocent?'
+  type: question
+  from: Shion
+  to: Kenji
+  credibility: 0.66
+- content: ' @Kenji  your vote for @Sakura seems off; are you targeting a villager
+    as a werewolf?'
+  type: negative
+  from: Daisuke
+  to: Kenji
+  credibility: 0.64
+- content: '@Kenji might be a werewolf. Your vote for  @Sakura  seems odd. Why did
+    you vote for her?'
+  type: question
+  from: Kenji
+  to: Kenji,Sakura
+  credibility: 0.55
+- content: ' @Kenji  why did you vote for @Sakura? Your actions seem off making you
+    look like a werewolf.'
+  type: question
+  from: Takumi
+  to: Kenji
+  credibility: 0.66
+- content: ' @Kenji  why vote for @Sakura? Your actions seem off; voted suspiciously
+    for an innocent. Are you a werewolf targeting villagers?'
+  type: negative
+  from: Shion
+  to: Kenji
+  credibility: 0.65
+- content: ' @Kenji  why did you vote for @Sakura? You''re looking suspicious. Are
+    you targeting an innocent as a werewolf?'
+  type: question
+  from: Daisuke
+  to: Kenji
+  credibility: 0.65
+- content: '@Daisuke is suspect for voting against innocents. Why did you target  @Sakura
+    ? Your actions make you look like a werewolf.'
+  type: negative
+  from: Kenji
+  to: Daisuke
+  credibility: 0.65
+- content: ' @Kenji  is a werewolf because you suspiciously voted for innocent @Sakura.
+    Why did you make that move?'
+  type: negative
+  from: Takumi
+  to: Kenji
+  credibility: 0.48
+- content: ' @Kenji  is suspicious for voting innocent @Sakura. Why did you choose
+    her? Are you trying to mislead us as a werewolf?'
+  type: negative
+  from: Shion
+  to: Kenji
+  credibility: 0.66

@@ -32,7 +32,6 @@ from utils.bdi.micro_bdi.extract_pairs import extract_pairs_for_agent
 from utils.bdi.micro_bdi.affinity_trust_updater import update_affinity_trust_for_agent
 from utils.bdi.micro_bdi.talk_history_init import init_talk_history_for_agent, determine_talk_dir
 from utils.bdi.micro_bdi.credibility_adjuster import apply_affinity_to_analysis
-from utils.bdi.micro_bdi.select_sentence import update_select_sentence_for_agent
 from utils.bdi.micro_bdi.micro_desire_generator import generate_micro_desire_for_agent
 from utils.bdi.micro_bdi.micro_intention_generator import generate_micro_intention_for_agent
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
@@ -416,7 +415,6 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
-                    self._update_select_sentence()  # 1件発話選択・保存
                     self._generate_micro_desire(trigger="daily_initialize")  # micro_desire生成
                     self._generate_micro_intention(trigger="daily_initialize")  # micro_intention生成
                     self.agent_logger.logger.info(f"Analysis saved for day {request_count} (added={added})")
@@ -497,23 +495,6 @@ class Agent:
         except Exception:
             self.agent_logger.logger.exception("Failed to apply affinity to analysis")
     
-    def _update_select_sentence(self) -> None:
-        """analysis.ymlから1件の発話を選択してselect_sentence.ymlに保存する"""
-        if not self.info:
-            return
-        try:
-            base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
-            update_select_sentence_for_agent(
-                base_dir=base_dir,
-                game_id=self.info.game_id,
-                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
-                window_size=5,
-                prefer_to_self=True,
-                skip_pending=True,
-                logger_obj=self.agent_logger.logger,
-            )
-        except Exception:
-            self.agent_logger.logger.exception("Failed to update select_sentence.yml")
     
     def _generate_micro_desire(self, *, trigger: str) -> None:
         """Generate micro_desire based on current situation."""
@@ -737,7 +718,6 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
-                    self._update_select_sentence()  # 1件発話選択・保存
                     self._generate_micro_desire(trigger="talk")  # micro_desire生成
                     self._generate_micro_intention(trigger="talk")  # micro_intention生成
                     self.agent_logger.logger.info(f"Talk analysis saved (added={added})")
@@ -779,7 +759,6 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
-                    self._update_select_sentence()  # 1件発話選択・保存
                     self._generate_micro_desire(trigger="daily_finish")  # micro_desire生成
                     self._generate_micro_intention(trigger="daily_finish")  # micro_intention生成
                     self.agent_logger.logger.info(f"Final analysis saved for day {request_count} (added={added})")
@@ -858,7 +837,6 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
-                    self._update_select_sentence()  # 1件発話選択・保存
                     self._generate_micro_desire(trigger="finish")  # micro_desire生成
                     self._generate_micro_intention(trigger="finish")  # micro_intention生成
                     self.agent_logger.logger.info(f"Game finish analysis saved (added={added})")

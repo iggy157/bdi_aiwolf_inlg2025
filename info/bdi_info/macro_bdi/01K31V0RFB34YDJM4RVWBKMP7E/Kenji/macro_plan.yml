@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 自由を求めつつ、占い結果を慎重に選び信頼を築く。
+  mid_game: 冒険心を発揮しつつ、占い情報を積極的に共有し議論をリードする。
+  late_game: 社会的責任を全うしつつ、最終決断に向けて情報を整合し他者を説得する。
+  format: simplified_3line
+meta:
+  game_id: 01K31V0RFB34YDJM4RVWBKMP7E
+  agent: Kenji
+  model: gpt-4o
+  generated_at: '2025-08-19T18:56:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/Kenji/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/Kenji/macro_desire.yml

@@ -74,24 +74,141 @@ def extract_analysis_tail(analysis_path: Path, max_items: int = 12) -> str:
     return "\n".join(lines)
 
 
-def get_latest_select_sentence(select_sentence_path: Path) -> str:
-    """Get the latest sentence from select_sentence.yml."""
-    data = load_yaml_safe(select_sentence_path)
+def get_latest_micro_desire(micro_desire_path: Path) -> Dict[str, Any]:
+    """Get the latest micro_desire entry from append-only format file."""
+    data = load_yaml_safe(micro_desire_path)
     
-    # Handle different possible structures
-    if isinstance(data, dict):
-        if "sentence" in data:
-            return str(data["sentence"])
-        elif "latest_sentence" in data:
-            return str(data["latest_sentence"])
-        elif "content" in data:
-            return str(data["content"])
-        elif "selected" in data:
-            selected = data["selected"]
-            if isinstance(selected, dict) and "content" in selected:
-                return str(selected["content"])
+    if isinstance(data, dict) and "micro_desires" in data and data["micro_desires"]:
+        return data["micro_desires"][-1]  # Return latest entry
     
-    return ""
+    return {}
+
+
+def _is_pending_text(text: str) -> bool:
+    """Check if text starts with [PENDING]."""
+    return isinstance(text, str) and text.strip().startswith("[PENDING]")
+
+
+def _extract_cred(entry: dict) -> float:
+    """Extract creditability/credibility score from entry."""
+    for k in ("creditability", "credibility"):
+        v = entry.get(k)
+        try:
+            return float(v)
+        except (TypeError, ValueError):
+            pass
+    return 0.5  # Default
+
+
+def _parse_to_targets(val) -> set[str]:
+    """Parse 'to' field value into set of target names."""
+    if val is None:
+        return set()
+    if isinstance(val, list):
+        return {str(x).strip() for x in val if str(x).strip()}
+    s = str(val).strip()
+    if not s:
+        return set()
+    if "," in s:
+        return {t.strip() for t in s.split(",") if t.strip()}
+    return {s}
+
+
+def _is_addressed_to_self(to_val, agent_name: str) -> bool:
+    """Check if message is addressed to self (excluding 'all'/'null')."""
+    targets = _parse_to_targets(to_val)
+    if not targets:  # Empty is not considered addressed to self
+        return False
+    specials = {"all", "null"}
+    if targets <= specials:
+        return False
+    # Normalize names for comparison
+    def _norm(s: str) -> str:
+        return str(s).strip()
+    a = _norm(agent_name)
+    return any(_norm(t) == a for t in targets)
+
+
+def _load_latest5_entries(analysis_path: Path) -> list[dict]:
+    """Load latest 5 entries from analysis.yml, supporting both formats."""
+    data = load_yaml_safe(analysis_path)
+    entries: list[dict] = []
+    if not data:
+        return entries
+    
+    if isinstance(data.get("items"), list):
+        # Format A: {"items": [...]}
+        entries = [e for e in data["items"] if isinstance(e, dict)]
+    else:
+        # Format B: numeric key dictionary {1:{...}, 2:{...}}
+        numeric_keys = []
+        for k in data.keys():
+            try:
+                numeric_keys.append(int(k))
+            except Exception:
+                continue
+        numeric_keys.sort()
+        for k in numeric_keys:
+            e = data.get(k) or data.get(str(k))
+            if isinstance(e, dict):
+                entries.append(e)
+    
+    # Return latest 5 entries
+    return entries[-5:]
+
+
+def select_sentence_content_from_analysis(analysis_path: Path, agent_name: str) -> str:
+    """Select sentence content from latest 5 analysis entries.
+    
+    Priority:
+    1. Messages addressed to self (excluding 'all'/'null')
+    2. If none, messages with minimum creditability (newer if tied)
+    
+    Returns:
+        Content string (guaranteed non-empty if analysis has any entries)
+    """
+    latest5 = _load_latest5_entries(analysis_path)
+    if not latest5:
+        return ""  # Only return empty if no analysis exists
+    
+    # Filter valid utterances (non-empty content, not pending)
+    candidates = []
+    for e in latest5:
+        content = e.get("content")
+        if not isinstance(content, str) or not content.strip():
+            continue
+        if _is_pending_text(content):
+            continue
+        candidates.append(e)
+    
+    if not candidates:
+        # If no valid candidates, pick last non-empty content from any entry
+        for e in reversed(latest5):
+            c = e.get("content")
+            if isinstance(c, str) and c.strip():
+                return c.strip()
+        # Worst case: empty (rare if analysis exists)
+        return ""
+    
+    # Priority 1: Messages addressed to self
+    to_self = [e for e in candidates if _is_addressed_to_self(e.get("to"), agent_name)]
+    
+    def sort_key(e, recency_idx):
+        # Sort by creditability (ascending), then by recency (descending)
+        return (_extract_cred(e), -recency_idx)
+    
+    if to_self:
+        # Sort messages to self by creditability, prefer newer if tied
+        ranked = sorted([(e, i) for i, e in enumerate(candidates) if e in to_self], 
+                       key=lambda x: sort_key(x[0], x[1]))
+        chosen = ranked[0][0]
+        return str(chosen.get("content", "")).strip()
+    
+    # Priority 2: All candidates by minimum creditability
+    ranked = sorted([(e, i) for i, e in enumerate(candidates)], 
+                   key=lambda x: sort_key(x[0], x[1]))
+    chosen = ranked[0][0]
+    return str(chosen.get("content", "")).strip()
 
 
 def generate_micro_desire_for_agent(
@@ -128,7 +245,6 @@ def generate_micro_desire_for_agent(
     agent_macro_dir = base_macro_dir / game_id / agent
     
     analysis_path = agent_micro_dir / "analysis.yml"
-    select_sentence_path = agent_micro_dir / "select_sentence.yml"
     macro_desire_path = agent_macro_dir / "macro_desire.yml"
     macro_belief_path = agent_macro_dir / "macro_belief.yml"
     macro_plan_path = agent_macro_dir / "macro_plan.yml"
@@ -143,13 +259,17 @@ def generate_micro_desire_for_agent(
         if not analysis_tail and logger_obj:
             logger_obj.logger.warning(f"No analysis data found: {analysis_path}")
         
-        # Latest select sentence
-        latest_sentence = get_latest_select_sentence(select_sentence_path)
-        if not latest_sentence and logger_obj:
-            logger_obj.logger.info(f"No select sentence found: {select_sentence_path}")
-        
         # Affinity trust data
         affinity_trust = collect_affinity_trust_data(talk_dir, logger_obj)
+        
+        # ★ Simple sentence selection from latest 5 analysis entries
+        selected_sentence_text = select_sentence_content_from_analysis(analysis_path, agent)
+        # Ensure we never pass None (always string)
+        if selected_sentence_text is None:
+            selected_sentence_text = ""
+        
+        if logger_obj:
+            logger_obj.logger.info(f"Selected sentence content: '{selected_sentence_text[:50]}...'" if selected_sentence_text else "No content selected")
         
         # Macro data
         macro_desire_data = load_yaml_safe(macro_desire_path)
@@ -174,7 +294,7 @@ def generate_micro_desire_for_agent(
         if logger_obj:
             analysis_count = len(analysis_tail.split('\n')) if analysis_tail else 0
             logger_obj.logger.info(f"Collected data: analysis_items={analysis_count}, "
-                                 f"sentence_len={len(latest_sentence)}, affinity_agents={len(affinity_trust)}")
+                                 f"selected_sentence_len={len(selected_sentence_text)}, affinity_agents={len(affinity_trust)}")
         
     except Exception as e:
         if logger_obj:
@@ -195,7 +315,7 @@ def generate_micro_desire_for_agent(
         "desire_tendency": desire_tendency,
         "macro_plan_text": macro_plan_text,
         "analysis_tail": analysis_tail,
-        "latest_sentence": latest_sentence,
+        "selected_sentence_text": selected_sentence_text,  # ← Important: content only
         "affinity_trust": affinity_trust,
         "max_analysis_items": max_analysis_items
     }
@@ -210,7 +330,7 @@ def generate_micro_desire_for_agent(
         if not response:
             if logger_obj:
                 logger_obj.logger.warning("LLM returned empty response for micro_desire")
-            response_data = _create_fallback_micro_desire()
+            new_desire = _create_fallback_minimal_desire()
         else:
             try:
                 # Remove code blocks if present
@@ -224,44 +344,75 @@ def generate_micro_desire_for_agent(
                 clean_response = clean_response.strip()
                 
                 response_data = yaml.safe_load(clean_response)
-                if not isinstance(response_data, dict) or "micro_desire" not in response_data:
+                if not isinstance(response_data, dict):
                     if logger_obj:
                         logger_obj.logger.warning("Invalid LLM response format, using fallback")
-                    response_data = _create_fallback_micro_desire()
+                    new_desire = _create_fallback_minimal_desire()
                 else:
+                    # Extract minimal fields directly from response
+                    # Handle null values properly for content and response_to_selected
+                    content = response_data.get("content")
+                    response_to_selected = response_data.get("response_to_selected")
+                    current_desire = response_data.get("current_desire", "")
+                    
+                    # Ensure current_desire is never null/empty
+                    if not current_desire or str(current_desire).strip() == "":
+                        current_desire = "状況に応じて適切に行動する"
+                    
+                    new_desire = {
+                        "content": None if content is None or str(content).lower() in ["null", "none", ""] else str(content),
+                        "response_to_selected": None if response_to_selected is None or str(response_to_selected).lower() in ["null", "none", ""] else str(response_to_selected),
+                        "current_desire": str(current_desire),
+                        "timestamp": datetime.now().isoformat(),
+                        "trigger": trigger or "unknown"
+                    }
                     if logger_obj:
-                        logger_obj.logger.info("Successfully parsed LLM response")
+                        logger_obj.logger.info(f"Successfully parsed minimal micro_desire (content: {'found' if new_desire['content'] else 'null'})")
             except yaml.YAMLError as e:
                 if logger_obj:
                     logger_obj.logger.warning(f"Failed to parse LLM response as YAML: {e}, using fallback")
-                response_data = _create_fallback_micro_desire()
+                new_desire = _create_fallback_minimal_desire()
         
     except Exception as e:
         if logger_obj:
             logger_obj.logger.exception(f"LLM call failed: {e}")
-        response_data = _create_fallback_micro_desire()
+        new_desire = _create_fallback_minimal_desire()
     
-    # Add metadata
+    # Add metadata to the new desire entry
     model_name = type(agent_obj.llm_model).__name__ if agent_obj and hasattr(agent_obj, 'llm_model') and agent_obj.llm_model else "unknown"
-    response_data["meta"] = {
-        "generated_at": datetime.now().isoformat(),
-        "trigger": trigger or "unknown",
+    new_desire.update({
         "model": model_name,
         "game_id": game_id,
         "agent": agent
-    }
+    })
     
-    # Save to file
+    # Save to file with append-only format
     output_path = agent_micro_dir / "micro_desire.yml"
     try:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         
+        # Load existing data or create new structure
+        existing_data = {}
+        if output_path.exists():
+            existing_data = load_yaml_safe(output_path)
+        
+        # Ensure micro_desires list exists
+        if "micro_desires" not in existing_data:
+            existing_data["micro_desires"] = []
+        
+        # Append new desire
+        existing_data["micro_desires"].append(new_desire)
+        
+        # Keep only last 20 entries to prevent file bloat
+        if len(existing_data["micro_desires"]) > 20:
+            existing_data["micro_desires"] = existing_data["micro_desires"][-20:]
+        
         with open(output_path, 'w', encoding='utf-8') as f:
-            f.write("# generated by utils.bdi.micro_bdi.micro_desire_generator\n")
-            yaml.safe_dump(response_data, f, allow_unicode=True, sort_keys=False)
+            f.write("# generated by utils.bdi.micro_bdi.micro_desire_generator (append-only format)\n")
+            yaml.safe_dump(existing_data, f, allow_unicode=True, sort_keys=False)
         
         if logger_obj:
-            logger_obj.logger.info(f"Saved micro_desire to: {output_path}")
+            logger_obj.logger.info(f"Appended micro_desire to: {output_path} (total entries: {len(existing_data['micro_desires'])})")
         
         return output_path
         
@@ -271,8 +422,21 @@ def generate_micro_desire_for_agent(
         return None
 
 
+def _create_fallback_minimal_desire() -> Dict[str, Any]:
+    """Create fallback minimal micro_desire structure when LLM fails."""
+    return {
+        "content": None,  # No content found
+        "response_to_selected": None,  # No response since no content
+        "current_desire": "ゲーム進行への貢献",  # Always required
+        "timestamp": datetime.now().isoformat(),
+        "trigger": "fallback"
+    }
+
+
+
+
 def _create_fallback_micro_desire() -> Dict[str, Any]:
-    """Create fallback micro_desire structure when LLM fails."""
+    """Create fallback micro_desire structure when LLM fails (legacy compatibility)."""
     return {
         "micro_desire": {
             "summary": "fallback",

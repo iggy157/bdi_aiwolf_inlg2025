@@ -1,0 +1,59 @@
+1:
+  content: '[PENDING] Analyzing: Good morning, everyone! Let''s work together and
+    fi...'
+  type: pending_analysis
+  from: Kenji
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Morning, all. Let’s stay calm and share any suspic...'
+  type: pending_analysis
+  from: George
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Morning! I''m excited to figure things out! Any ide...'
+  type: pending_analysis
+  from: Rin
+  to: all
+  credibility: 0.0
+4:
+  content: Good morning, everyone! Let's work together and figure out who the werewolves
+    are!
+  type: 'null'
+  from: Kenji
+  to: all
+  credibility: 0.456
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Kenji
+5:
+  content: Morning, all. Let’s stay calm and share any suspicions we might have.
+  type: 'null'
+  from: George
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: George
+6:
+  content: Morning! I'm excited to figure things out! Any ideas on who seems suspicious?
+  type: question
+  from: Rin
+  to: all
+  credibility: 0.357
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.767
+    creditability: 0.633
+    from: Rin

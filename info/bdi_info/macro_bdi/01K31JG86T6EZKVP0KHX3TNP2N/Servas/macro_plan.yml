@@ -1,0 +1,50 @@
+macro_plan:
+  plans:
+  - label: Maintain Identity Stealth
+    trigger_event: Game Start
+    preconditions:
+    - Role assigned as 人狼
+    body:
+    - type: subgoal
+      description: Blend into the village crowd
+    - type: subgoal
+      description: Monitor villagers' behavior to identify potential threats.
+    - type: basic_action
+      description: Engage in routine conversations to avoid suspicion.
+  - label: Incrementally Eliminate Threats
+    trigger_event: Identified potential threat
+    preconditions:
+    - Threat level of villager assessed as high
+    body:
+    - type: subgoal
+      description: Plan discreet action to eliminate the threat.
+    - type: basic_action
+      description: Carry out the plan without revealing identity.
+  - label: Adapt and Survive
+    trigger_event: Changes in village dynamics
+    preconditions:
+    - Shift in suspicion among villagers
+    body:
+    - type: subgoal
+      description: Modify behavior to align with changes in village dynamics.
+    - type: basic_action
+      description: Leverage relationships to solidify cover.
+  - label: Pursue Self-Fulfillment
+    trigger_event: Opportunities for self-growth
+    preconditions:
+    - Low threat to identity
+    body:
+    - type: subgoal
+      description: Engage in activities that offer personal growth and adventure.
+    - type: basic_action
+      description: Take risks that align with fulfilling desires without compromising
+        identity.
+  notes: Plans prioritize identity concealment while pursuing adventurous strategies,
+    aligning with Servas' behavior tendencies.
+meta:
+  game_id: 01K31JG86T6EZKVP0KHX3TNP2N
+  agent: Servas
+  model: gpt-4o
+  generated_at: '2025-08-19T16:27:47Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Servas/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Servas/macro_desire.yml

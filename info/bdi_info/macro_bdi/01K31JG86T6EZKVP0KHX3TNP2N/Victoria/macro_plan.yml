@@ -1,0 +1,45 @@
+macro_plan:
+  plans:
+  - label: Initial Alliances and Foundation
+    trigger_event: game start
+    preconditions:
+    - game state is early
+    body:
+    - type: subgoal
+      description: identify potential allies
+    - type: basic_action
+      description: establish stable relationships with key players
+    - type: subgoal
+      description: gather information on other players’ roles
+  - label: Strategic Disruption
+    trigger_event: mid-game progress identified
+    preconditions:
+    - agents have been identified
+    - alliances have been established
+    body:
+    - type: subgoal
+      description: create a narrative that supports allies and sows doubt among competitors
+    - type: basic_action
+      description: leak selective information to create misunderstandings
+    - type: subgoal
+      description: protect key allies discreetly
+  - label: Maintaining Stability and Repute
+    trigger_event: suspicion arises
+    preconditions:
+    - Victoria's reputation is threatened
+    body:
+    - type: subgoal
+      description: neutralize threats to reputation
+    - type: basic_action
+      description: act in alignment with group interests to gain approval
+    - type: subgoal
+      description: reaffirm alliances through strategic communication
+  notes: Aligns with Victoria's tendencies to maintain stability, avoid confrontation,
+    and subtly manipulate narratives.
+meta:
+  game_id: 01K31JG86T6EZKVP0KHX3TNP2N
+  agent: Victoria
+  model: gpt-4o
+  generated_at: '2025-08-19T16:27:40Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Victoria/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Victoria/macro_desire.yml

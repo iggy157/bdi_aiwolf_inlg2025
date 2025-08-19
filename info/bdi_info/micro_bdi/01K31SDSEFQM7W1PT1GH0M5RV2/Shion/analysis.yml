@@ -1,0 +1,61 @@
+1:
+  content: '[PENDING] Analyzing: Let''s focus on gathering information. We have to
+    b...'
+  type: pending_analysis
+  from: Asuka
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Great plan, Asuka! Let''s keep our eyes peeled for
+    ...'
+  type: pending_analysis
+  from: May
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Agreed! Observing interactions closely might shed
+    ...'
+  type: pending_analysis
+  from: Benjamin
+  to: all
+  credibility: 0.0
+4:
+  content: Let's focus on gathering information. We have to be strategic in our discussions.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Asuka
+5:
+  content: Great plan, Asuka! Let's keep our eyes peeled for any suspicious behaviors.
+  type: positive
+  from: May
+  to: Asuka
+  credibility: 0.437
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: May
+6:
+  content: Agreed! Observing interactions closely might shed light on the culprits.
+    Let’s proceed.
+  type: positive
+  from: Benjamin
+  to: all
+  credibility: 0.37
+  credibility_raw: 0.74
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Benjamin

@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Jonathan seeks stability and self-realization while fulfilling social duties
+    as 占い師.
+  description: Jonathan aims to maintain stability by balancing personal desires with
+    role obligations. With a primary focus on stability (0.784) and stable relationships
+    (0.784), Jonathan will leverage definitive insights prudently, fostering trust
+    and credibility. Self-realization (0.552) influences the pursuit of being an effective
+    and recognized 占い師, while social approval (0.360) is a moderate motivator in his
+    disclosure strategy. Emphasizing accuracy and timing, Jonathan aims to stabilize
+    group dynamics, ensuring personal and communal security while managing his duties
+    with calculated transparency.
+meta:
+  game_id: 01K31JG86T6EZKVP0KHX3TNP2N
+  agent: Jonathan
+  model: gpt-4o
+  generated_at: '2025-08-19T16:27:34Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Jonathan/macro_belief.yml

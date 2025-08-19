@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 他のプレイヤーに自然に溶け込むようにし、情報を観察して混乱を最小限にする。
+  mid_game: 自分が狂人であることを隠しつつ、さりげなく人狼の味方をし、村人の意見が割れるように仕向ける。
+  late_game: 信頼されている村人をミスリードし、最終的に人狼側に有利な流れを作り出す。
+  format: simplified_3line
+meta:
+  game_id: 01K31SDSEFQM7W1PT1GH0M5RV2
+  agent: Benjamin
+  model: gpt-4o
+  generated_at: '2025-08-19T18:28:46Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/Benjamin/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/Benjamin/macro_desire.yml

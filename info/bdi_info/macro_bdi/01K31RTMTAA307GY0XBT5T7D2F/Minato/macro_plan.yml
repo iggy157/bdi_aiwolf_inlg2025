@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: プレイヤー間の信頼を築きつつ、目立たずに情報を収集する。
+  mid_game: ターゲットを絞り込み、サブリーダーとして巧みに影響力を行使する。
+  late_game: 大胆な一撃で決定的な勝利を狙い、残りの敵を静かに排除する。
+  format: simplified_3line
+meta:
+  game_id: 01K31RTMTAA307GY0XBT5T7D2F
+  agent: Minato
+  model: gpt-4o
+  generated_at: '2025-08-19T18:18:15Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31RTMTAA307GY0XBT5T7D2F/Minato/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31RTMTAA307GY0XBT5T7D2F/Minato/macro_desire.yml

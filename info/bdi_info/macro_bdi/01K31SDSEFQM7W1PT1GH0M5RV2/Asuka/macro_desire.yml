@@ -1,0 +1,16 @@
+macro_desire:
+  summary: Balance social approval and stability while concealing identity.
+  description: Asuka aims to fulfill the social duties of the '人狼' role by maintaining
+    a harmonious relationship with allies and carefully managing interactions to avoid
+    suspicion from others while pursuing stability and approval. Asuka will prioritize
+    building stable relationships to ensure long-term success and manage her true
+    identity's concealment. Her approach will include balancing the desire for stability
+    and social approval with strategic actions that reflect her role obligations,
+    ensuring that actions align with her tendencies for stability and consistent social
+    bonds.
+meta:
+  game_id: 01K31SDSEFQM7W1PT1GH0M5RV2
+  agent: Asuka
+  model: gpt-4o
+  generated_at: '2025-08-19T18:28:31Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/Asuka/macro_belief.yml

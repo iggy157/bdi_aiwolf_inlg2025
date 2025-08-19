@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 自らの占い結果を慎重に明かしながら、他のプレイヤーの発言を観察して情報を集める。
+  mid_game: 集めた情報を基に大胆な発言を行い、グループの方向性を柔軟に調整する。
+  late_game: 最も信頼できるプレイヤーと連携して、最終的な勝利への道を築く。
+  format: simplified_3line
+meta:
+  game_id: 01K31SDSEFQM7W1PT1GH0M5RV2
+  agent: May
+  model: gpt-4o
+  generated_at: '2025-08-19T18:28:37Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/May/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/May/macro_desire.yml

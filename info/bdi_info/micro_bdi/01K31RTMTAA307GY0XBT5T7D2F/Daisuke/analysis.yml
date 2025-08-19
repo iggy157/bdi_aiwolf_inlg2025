@@ -1,0 +1,21 @@
+1:
+  content: '[PENDING] Analyzing: I hope everyone is having a good time. Let''s try
+    t...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+2:
+  content: I hope everyone is having a good time. Let's try to work together and keep
+    calm!
+  type: positive
+  from: Minato
+  to: all
+  credibility: 0.431
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Minato

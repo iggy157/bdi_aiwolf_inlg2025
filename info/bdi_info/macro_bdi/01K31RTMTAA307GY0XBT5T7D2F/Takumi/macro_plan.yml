@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 初日に占い結果を慎重に公開し、村人の信頼を構築する。
+  mid_game: 状況を見極めつつ、確信を持った場面で重要情報を公開し、村の方向性をリードする。
+  late_game: 個人の洞察力を最大限に発揮し、村の勝利に向けた決断を下す。
+  format: simplified_3line
+meta:
+  game_id: 01K31RTMTAA307GY0XBT5T7D2F
+  agent: Takumi
+  model: gpt-4o
+  generated_at: '2025-08-19T18:18:18Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31RTMTAA307GY0XBT5T7D2F/Takumi/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31RTMTAA307GY0XBT5T7D2F/Takumi/macro_desire.yml

@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Achieve group safety through balanced social interaction and decision-making.
+  description: George aims to fulfill his role by contributing to group safety and
+    making informed decisions to eliminate threats, reflecting his moderate tendency
+    for social approval (0.570) and stable relationships (0.636). His approach includes
+    gathering information, observing interactions, and reasoning to cast well-judged
+    votes. With his strong desire for stability (0.636), George prioritizes maintaining
+    a cohesive environment while balancing his personal desires for self-realization
+    (0.472) and love_intimacy (0.500). Although George's desire for freedom_independence
+    (0.384) and adventure_stimulation (0.340) is lower, he values stability within
+    his role, focusing on maintaining harmony and promoting group security.
+meta:
+  game_id: 01K31V0RFB34YDJM4RVWBKMP7E
+  agent: George
+  model: gpt-4o
+  generated_at: '2025-08-19T18:56:23Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/George/macro_belief.yml

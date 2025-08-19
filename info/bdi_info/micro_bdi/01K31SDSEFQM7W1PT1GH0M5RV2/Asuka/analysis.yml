@@ -1,0 +1,82 @@
+1:
+  content: '[PENDING] Analyzing: Great plan, Asuka! Let''s keep our eyes peeled for
+    ...'
+  type: pending_analysis
+  from: May
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Agreed! Observing interactions closely might shed
+    ...'
+  type: pending_analysis
+  from: Benjamin
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: Staying vigilant indeed. Let’s keep challenging an...'
+  type: pending_analysis
+  from: Shion
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: Let''s remain logical and examine facts carefully;
+    ...'
+  type: pending_analysis
+  from: Misaki
+  to: all
+  credibility: 0.0
+5:
+  content: Great plan, Asuka! Let's keep our eyes peeled for any suspicious behaviors.
+  type: positive
+  from: May
+  to: Asuka
+  credibility: 0.445
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.767
+    liking: 0.767
+    creditability: 0.767
+    from: May
+6:
+  content: Agreed! Observing interactions closely might shed light on the culprits.
+    Let’s proceed.
+  type: positive
+  from: Benjamin
+  to: all
+  credibility: 0.487
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Benjamin
+7:
+  content: Staying vigilant indeed. Let’s keep challenging any inconsistencies we
+    observe.
+  type: positive
+  from: Shion
+  to: all
+  credibility: 0.485
+  credibility_raw: 0.71
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Shion
+8:
+  content: Let's remain logical and examine facts carefully; any contradictions might
+    be key.
+  type: 'null'
+  from: Misaki
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Misaki

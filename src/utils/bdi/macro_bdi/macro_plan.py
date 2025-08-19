@@ -249,24 +249,12 @@ def extract_yaml_from_response(response: str) -> Dict[str, Any]:
             except json.JSONDecodeError:
                 continue
     
-    # Fallback: create minimal structure
+    # Fallback: create minimal simplified structure
     return {
-        "macro_plan": {
-            "plans": [
-                {
-                    "label": "default_plan",
-                    "trigger_event": "Default due to parse failure",
-                    "preconditions": ["Parse failed"],
-                    "body": [
-                        {
-                            "type": "basic_action",
-                            "description": "Default action due to parsing failure"
-                        }
-                    ]
-                }
-            ],
-            "notes": f"Original response: {response[:200]}..."
-        }
+        "early_game": "安全第一で情報収集",
+        "mid_game": "状況に応じて適切に行動",
+        "late_game": "勝利に向けて最善を尽くす",
+        "_parse_error": f"Original response: {response[:200]}..."
     }
 
 
@@ -279,39 +267,75 @@ def normalize_macro_plan(data: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         Normalized data
     """
+    # Check if this is the new simplified 3-line format
+    if all(key in data for key in ["early_game", "mid_game", "late_game"]):
+        # This is the new simplified format - wrap it properly
+        return {
+            "macro_plan": {
+                "early_game": str(data.get("early_game", "序盤戦略未定義")),
+                "mid_game": str(data.get("mid_game", "中盤戦略未定義")),
+                "late_game": str(data.get("late_game", "終盤戦略未定義")),
+                "format": "simplified_3line"
+            }
+        }
+    
+    # Legacy format handling
     if "macro_plan" not in data:
-        data = {"macro_plan": data}
+        # Check if data itself has the simplified format
+        if all(key in data for key in ["early_game", "mid_game", "late_game"]):
+            return {
+                "macro_plan": {
+                    "early_game": str(data.get("early_game", "序盤戦略未定義")),
+                    "mid_game": str(data.get("mid_game", "中盤戦略未定義")),
+                    "late_game": str(data.get("late_game", "終盤戦略未定義")),
+                    "format": "simplified_3line"
+                }
+            }
+        else:
+            # Old complex format
+            data = {"macro_plan": data}
     
     macro_plan = data["macro_plan"]
     
-    # Ensure required fields exist
-    if "plans" not in macro_plan:
-        macro_plan["plans"] = []
-    
-    # Normalize plan entries
-    for plan in macro_plan["plans"]:
-        if "label" not in plan:
-            plan["label"] = "unnamed_plan"
+    # Handle legacy complex format
+    if "plans" in macro_plan:
+        # Ensure required fields exist for complex format
+        if "plans" not in macro_plan:
+            macro_plan["plans"] = []
         
-        if "trigger_event" not in plan:
-            plan["trigger_event"] = "No trigger specified"
+        # Normalize plan entries
+        for plan in macro_plan["plans"]:
+            if "label" not in plan:
+                plan["label"] = "unnamed_plan"
             
-        if "preconditions" not in plan:
-            plan["preconditions"] = []
-            
-        if "body" not in plan:
-            plan["body"] = []
-            
-        # Normalize body entries
-        for body_item in plan["body"]:
-            if "type" not in body_item:
-                body_item["type"] = "basic_action"
-            if "description" not in body_item:
-                body_item["description"] = "No description"
-    
-    # Ensure notes exist
-    if "notes" not in macro_plan:
-        macro_plan["notes"] = "Generated automatically"
+            if "trigger_event" not in plan:
+                plan["trigger_event"] = "No trigger specified"
+                
+            if "preconditions" not in plan:
+                plan["preconditions"] = []
+                
+            if "body" not in plan:
+                plan["body"] = []
+                
+            # Normalize body entries
+            for body_item in plan["body"]:
+                if "type" not in body_item:
+                    body_item["type"] = "basic_action"
+                if "description" not in body_item:
+                    body_item["description"] = "No description"
+        
+        # Ensure notes exist
+        if "notes" not in macro_plan:
+            macro_plan["notes"] = "Generated automatically"
+    else:
+        # Convert to simplified format if neither format is detected
+        macro_plan = {
+            "early_game": "情報収集と信頼関係構築",
+            "mid_game": "戦略的な発言と投票",
+            "late_game": "勝利条件に向けた行動",
+            "format": "simplified_3line"
+        }
+        data["macro_plan"] = macro_plan
     
     return data
 
@@ -486,20 +510,10 @@ def generate_macro_plan(
                 
                 fallback_data = {
                     "macro_plan": {
-                        "plans": [
-                            {
-                                "label": "fallback_plan",
-                                "trigger_event": "startup",
-                                "preconditions": [],
-                                "body": [
-                                    {
-                                        "type": "basic_action",
-                                        "description": "Fallback due to error"
-                                    }
-                                ]
-                            }
-                        ],
-                        "notes": "auto-generated fallback"
+                        "early_game": "安全第一で情報収集",
+                        "mid_game": "状況に応じて適切に行動",
+                        "late_game": "勝利に向けて最善を尽くす",
+                        "format": "simplified_3line"
                     },
                     "meta": {
                         "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",

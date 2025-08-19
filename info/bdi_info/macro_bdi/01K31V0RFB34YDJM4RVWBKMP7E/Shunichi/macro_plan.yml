@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 信頼を築きつつ、観察を通じて他者の行動パターンを分析する。
+  mid_game: 冷静な判断を下し、信頼できる仲間と連携して発言力を高める。
+  late_game: 最終局面では合理的判断を優先し、安定した立ち回りで生存を図る。
+  format: simplified_3line
+meta:
+  game_id: 01K31V0RFB34YDJM4RVWBKMP7E
+  agent: Shunichi
+  model: gpt-4o
+  generated_at: '2025-08-19T18:56:25Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/Shunichi/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/Shunichi/macro_desire.yml

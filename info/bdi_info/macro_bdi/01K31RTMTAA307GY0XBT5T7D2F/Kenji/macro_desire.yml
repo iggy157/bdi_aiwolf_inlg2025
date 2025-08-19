@@ -1,0 +1,14 @@
+macro_desire:
+  summary: Seek excitement while ensuring group safety through observation and reasoning.
+  description: Kenji aims to balance his strong desires for freedom, independence,
+    and adventure with his social responsibilities as 村人. Although he prioritizes
+    stimulation and independence, he recognizes the importance of contributing to
+    group safety by actively observing and reasoning during decision-making processes.
+    While he may value new experiences, he remains committed to removing threats through
+    thoughtful participation in social duties.
+meta:
+  game_id: 01K31RTMTAA307GY0XBT5T7D2F
+  agent: Kenji
+  model: gpt-4o
+  generated_at: '2025-08-19T18:18:08Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31RTMTAA307GY0XBT5T7D2F/Kenji/macro_belief.yml

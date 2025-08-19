@@ -1,0 +1,64 @@
+macro_plan:
+  plans:
+  - label: Initial Role Engagement
+    trigger_event: Game Start
+    preconditions:
+    - Minato is healthy and active
+    body:
+    - type: basic_action
+      description: Introduce self to group and express eagerness to participate actively.
+    - type: basic_action
+      description: Join group discussions to understand others' perceptions and current
+        strategies.
+  - label: Social Duty Fulfillment
+    trigger_event: Daily Voting Phase
+    preconditions:
+    - Minato is part of an active voting round
+    body:
+    - type: subgoal
+      description: Analyze group dynamics and align with majority if it promotes group
+        safety.
+    - type: basic_action
+      description: Cast vote strategically, considering both personal insights and
+        group consensus.
+  - label: Novel Contribution
+    trigger_event: Discussion Phase
+    preconditions:
+    - Group strategy appears increasingly conventional
+    - Minato desires more dynamic involvement
+    body:
+    - type: basic_action
+      description: Propose unconventional strategies or ideas to invigorate group
+        discussion.
+    - type: subgoal
+      description: Gather support for innovative ideas to enhance group safety.
+  - label: Flexible Adaptation
+    trigger_event: Unexpected Game Events
+    preconditions:
+    - New significant information alters game conditions
+    body:
+    - type: subgoal
+      description: Reassess current role and strategies to align with altered game
+        state.
+    - type: basic_action
+      description: Engage with allies to adapt collective strategies, maintaining
+        independence where possible.
+  - label: Endgame Strategy
+    trigger_event: Approaching Game Conclusion
+    preconditions:
+    - Minato is still in play and influential
+    body:
+    - type: subgoal
+      description: Ensure personal survival aligns with the group’s endgame tactics.
+    - type: basic_action
+      description: Utilize assertiveness to negotiate group outcomes favorably.
+  notes: Plans support a balance between social duties and personal desires for independence
+    and stimulation, aligning actions with behavior tendencies like empathy and adaptability
+    while managing assertiveness and avoiding excessive aggression.
+meta:
+  game_id: 01K31JG86T6EZKVP0KHX3TNP2N
+  agent: Minato
+  model: gpt-4o
+  generated_at: '2025-08-19T16:27:43Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Minato/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31JG86T6EZKVP0KHX3TNP2N/Minato/macro_desire.yml

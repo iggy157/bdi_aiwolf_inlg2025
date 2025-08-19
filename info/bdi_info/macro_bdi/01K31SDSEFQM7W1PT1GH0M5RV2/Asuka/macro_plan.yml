@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 味方と協力し合い疑われないように静かに信頼関係を築く。
+  mid_game: 自分や味方が危険にさらされないように慎重に情報を操作する。
+  late_game: 最終的な疑惑を避けつつ仲間と共に勝利へ導くために協力する。
+  format: simplified_3line
+meta:
+  game_id: 01K31SDSEFQM7W1PT1GH0M5RV2
+  agent: Asuka
+  model: gpt-4o
+  generated_at: '2025-08-19T18:28:35Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/Asuka/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31SDSEFQM7W1PT1GH0M5RV2/Asuka/macro_desire.yml

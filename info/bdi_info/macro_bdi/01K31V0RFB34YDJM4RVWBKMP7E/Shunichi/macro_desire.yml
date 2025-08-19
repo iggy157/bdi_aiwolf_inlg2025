@@ -1,0 +1,13 @@
+macro_desire:
+  summary: Aiming for stability and effective social contribution
+  description: Shunichi prioritizes maintaining stability and fostering stable relationships
+    within the group. While he values self-realization and social approval, he focuses
+    his efforts on fulfilling his role responsibilities by keen observation and reasoned
+    decision-making. His approach balances the need for group safety with personal
+    tendencies, favoring a stable game environment over adventures.
+meta:
+  game_id: 01K31V0RFB34YDJM4RVWBKMP7E
+  agent: Shunichi
+  model: gpt-4o
+  generated_at: '2025-08-19T18:56:20Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/Shunichi/macro_belief.yml

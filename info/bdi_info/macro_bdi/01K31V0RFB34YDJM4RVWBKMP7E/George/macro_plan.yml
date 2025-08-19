@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 情報収集を重視し、他者の言動を観察しながら信頼できる味方を見極める。
+  mid_game: 謙虚な姿勢で議論に参加し、集団の意見を考慮しつつ理性的な投票を行う。
+  late_game: 集団の安全性を維持しつつ、最後の判断を誤らないように冷静に分析する。
+  format: simplified_3line
+meta:
+  game_id: 01K31V0RFB34YDJM4RVWBKMP7E
+  agent: George
+  model: gpt-4o
+  generated_at: '2025-08-19T18:56:29Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/George/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31V0RFB34YDJM4RVWBKMP7E/George/macro_desire.yml

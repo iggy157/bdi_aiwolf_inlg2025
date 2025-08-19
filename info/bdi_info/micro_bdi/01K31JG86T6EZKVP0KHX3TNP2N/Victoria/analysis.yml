@@ -1,0 +1,501 @@
+items:
+- content: '[PENDING] Analyzing: Good morning, everyone. Let’s calmly share our tho...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Let’s maintain careful observation,  @Victoria ,
+    @...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Great plan  @Victoria , @Jonathan! Let’s keep exch...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: I agree, @Yumi,  @Victoria . Sharing ideas helps
+    u...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, learning
+    t...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Let''s stay united,  @Victoria , @Yumi, @Minato,
+    @S...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Absolutely  @Jonathan ! Together, we can uncover
+    t...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Yes, @Yumi,  @Jonathan . Let''s support each other
+    ...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, unified an...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Hey @Jonathan and  @Victoria ! I''m all ears for
+    yo...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Hi @Jonathan,  @Victoria , @Yumi! I''m curious to
+    h...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Good day, @Jonathan,  @Victoria , @Yumi, and @Mina...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Victoria , @Yumi, @Minato, @Servas — let’s obser...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Minato,  @Servas , let’s stay positive and keep
+    a...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Yes, @Yumi,  @Servas . Observing quietly can revea...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, wise thoug...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: Good morning, everyone. Let’s calmly share our thoughts today.
+  type: 'null'
+  from: Jonathan
+  to: all
+  credibility: 0.53
+- content: Absolutely  @Victoria ! Let’s be extra observant of actions not matching
+    words today!
+  type: positive
+  from: Yumi
+  to: Victoria
+  credibility: 0.64
+- content: Agreed,  @Yumi . Observing consistency in actions and words is key to finding
+    clues.
+  type: positive
+  from: Minato
+  to: Yumi
+  credibility: 0.71
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, consistency unveils truth. Let''s
+    trust our instincts.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.6
+- content: Let’s rely on our observations,  @Victoria , @Yumi, @Minato, @Servas. Trust
+    your instincts.
+  type: positive
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.64
+- content: Thanks, @Minato, @Servas, @Jonathan,  @Victoria ! Let’s keep our discussions
+    lively and insightful!
+  type: positive
+  from: Yumi
+  to: Jonathan,Minato,Servas,Victoria
+  credibility: 0.48
+- content: Sad about @Yumi's loss. Let's remain focused, @Jonathan,  @Victoria , @Minato,
+    and stay wise.
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria
+  credibility: 0.7
+- content: '@Minato,  @Servas  is a werewolf. We must act swiftly and cautiously today.'
+  type: negative
+  from: Jonathan
+  to: Servas
+  credibility: 0.47
+- content: '@Jonathan,  @Servas  seemed supportive before. Let''s discuss what changed
+    his behavior.'
+  type: 'null'
+  from: Minato
+  to: Jonathan,Servas
+  credibility: 0.63
+- content: '@Jonathan,  @Victoria , @Minato, I assure you, my intentions remain genuine
+    and true.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria
+  credibility: 0.65
+- content: ' @Minato , I trust the divinations. Let’s focus and make the right choice
+    for survival.'
+  type: positive
+  from: Jonathan
+  to: Minato
+  credibility: 0.52
+- content: '@Jonathan, I understand. We should carefully review  @Servas ''s actions
+    and decide.'
+  type: 'null'
+  from: Minato
+  to: Servas
+  credibility: 0.64
+- content: ' @Jonathan , @Minato, consider each action and word closely. I''m here
+    for truth and safety.'
+  type: 'null'
+  from: Servas
+  to: Jonathan,Minato
+  credibility: 0.59
+- content: The truth is clear,  @Minato . We must act on it for our survival and safety.
+  type: negative
+  from: Jonathan
+  to: Minato
+  credibility: 0.57
+- content: Let's proceed carefully,  @Jonathan . Our choices now can change everything.
+  type: 'null'
+  from: Minato
+  to: Jonathan
+  credibility: 0.7
+- content: ' @Jonathan , @Minato, let''s make decisions rooted in logic and shared
+    insights. Stay prudent.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato
+  credibility: 0.68
+- content: ' @Minato , let’s stay firm. Our decision now ensures a safe future for
+    all.'
+  type: positive
+  from: Jonathan
+  to: Minato
+  credibility: 0.62
+- content: I understand,  @Jonathan . Let's take this step together with clear understanding.
+  type: positive
+  from: Minato
+  to: Jonathan
+  credibility: 0.63
+- content: '[PENDING] Analyzing: Morning @Servas, @Jonathan,  @Victoria , @Yumi! Ha...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Morning,  @Minato . I''ve observed calm, but let''s
+    ...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Yumi,  @Servas , being open and truthful will hel...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, unity thro...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Stay honest,  @Victoria , @Yumi, @Minato, @Servas....'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Absolutely  @Victoria ! Let’s be extra observant
+    o...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Agreed,  @Yumi . Observing consistency in actions
+    ...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, consistenc...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Let’s rely on our observations,  @Victoria , @Yumi...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Thanks, @Minato, @Servas, @Jonathan,  @Victoria !
+    ...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Morning all.  @Minato  is human. Let''s trust our
+    i...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Morning @Minato, @Servas, @Jonathan,  @Victoria !
+    ...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Thanks  @Jonathan ! Let''s share any little details...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Yumi, @Minato, let''s heed...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Let’s keep sharing our views openly,  @Victoria ,
+    ...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Minato,  @Servas , I’m ready to listen and piece
+    ...'
+  type: pending_analysis
+  from: Yumi
+  to: all
+  credibility: 0.0
+- content: Hey @Jonathan and  @Victoria ! I'm all ears for your thoughts and I'm watching
+    closely too!
+  type: positive
+  from: Yumi
+  to: Jonathan,Victoria
+  credibility: 0.57
+- content: Hi @Jonathan,  @Victoria , @Yumi! I'm curious to hear everyone's thoughts
+    and learn today.
+  type: 'null'
+  from: Minato
+  to: Jonathan,Victoria,Yumi
+  credibility: 0.57
+- content: Good day, @Jonathan,  @Victoria , @Yumi, and @Minato. Patience reveals
+    truths; share and listen well today.
+  type: 'null'
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.66
+- content: ' @Victoria , @Yumi, @Minato, @Servas — let’s observe behaviors today for
+    clues.'
+  type: 'null'
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.69
+- content: '[PENDING] Analyzing: Sad about @Yumi''s loss. Let''s remain focused, @Jon...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Minato,  @Servas  is a werewolf. We must act swif...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Minato , let’s stay firm. Our decision now ensur...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: I understand,  @Jonathan . Let''s take this step
+    to...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Servas  seemed supportive before. Let...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan,  @Victoria , @Minato, I assure you, my
+    ...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Minato , I trust the divinations. Let’s focus an...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: @Jonathan, I understand. We should carefully revie...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Jonathan , @Minato, consider each action and wor...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: The truth is clear,  @Minato . We must act on it
+    f...'
+  type: pending_analysis
+  from: Jonathan
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing: Let''s proceed carefully,  @Jonathan . Our choices
+    ...'
+  type: pending_analysis
+  from: Minato
+  to: all
+  credibility: 0.0
+- content: '[PENDING] Analyzing:  @Jonathan , @Minato, let''s make decisions rooted
+    ...'
+  type: pending_analysis
+  from: Servas
+  to: all
+  credibility: 0.0
+- content: '@Minato,  @Servas , let’s stay positive and keep a close eye on the quiet
+    ones too!'
+  type: positive
+  from: Yumi
+  to: Minato,Servas
+  credibility: 0.59
+- content: Yes, @Yumi,  @Servas . Observing quietly can reveal much. Let's stay attentive.
+  type: positive
+  from: Minato
+  to: Servas,Yumi
+  credibility: 0.62
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, wise thoughts. Every silence speaks;
+    remain mindful.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.66
+- content: Let’s maintain careful observation,  @Victoria , @Yumi, @Minato, @Servas.
+    Knowledge is key.
+  type: 'null'
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.64
+- content: Great plan  @Victoria , @Jonathan! Let’s keep exchanging our thoughts actively
+    too!
+  type: positive
+  from: Yumi
+  to: Jonathan,Victoria
+  credibility: 0.6
+- content: I agree, @Yumi,  @Victoria . Sharing ideas helps us understand each other
+    better.
+  type: positive
+  from: Minato
+  to: Victoria,Yumi
+  credibility: 0.59
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, learning together bridges gaps.
+    Let''s continue.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.7
+- content: Let's stay united,  @Victoria , @Yumi, @Minato, @Servas. Our insights will
+    protect us.
+  type: positive
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.59
+- content: Absolutely  @Jonathan ! Together, we can uncover the truth. Let's stay
+    strong, team!
+  type: positive
+  from: Yumi
+  to: Jonathan
+  credibility: 0.56
+- content: Yes, @Yumi,  @Jonathan . Let's support each other and keep focused on our
+    goal.
+  type: positive
+  from: Minato
+  to: Jonathan,Yumi
+  credibility: 0.59
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, unified and vigilant, we''ll navigate
+    wisely.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.68
+- content: Morning @Servas, @Jonathan,  @Victoria , @Yumi! Has anyone noticed anything
+    odd?
+  type: question
+  from: Minato
+  to: Jonathan,Servas,Victoria,Yumi
+  credibility: 0.59
+- content: Morning,  @Minato . I've observed calm, but let's watch for any subtle
+    shifts today.
+  type: 'null'
+  from: Servas
+  to: Minato
+  credibility: 0.68
+- content: Morning all.  @Minato  is human. Let's trust our insights and stay vigilant
+    together.
+  type: positive
+  from: Jonathan
+  to: Minato
+  credibility: 0.57
+- content: Morning @Minato, @Servas, @Jonathan,  @Victoria ! Let's discuss observations
+    and trust instincts!
+  type: 'null'
+  from: Yumi
+  to: Jonathan,Minato,Servas,Victoria
+  credibility: 0.54
+- content: Thanks  @Jonathan ! Let's share any little details; they might be important
+    later.
+  type: positive
+  from: Minato
+  to: Jonathan
+  credibility: 0.54
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, let''s heed all details, however
+    small, today.'
+  type: 'null'
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.71
+- content: Let’s keep sharing our views openly,  @Victoria , @Yumi, @Minato, @Servas.
+    Trust is key.
+  type: positive
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.64
+- content: '@Minato,  @Servas , I’m ready to listen and piece things together with
+    you all!'
+  type: positive
+  from: Yumi
+  to: Minato,Servas
+  credibility: 0.52
+- content: '@Yumi,  @Servas , being open and truthful will help us find the werewolves.
+    Let''s do this!'
+  type: positive
+  from: Minato
+  to: Servas,Yumi
+  credibility: 0.61
+- content: '@Jonathan,  @Victoria , @Yumi, @Minato, unity through truth keeps us strong.
+    Let''s proceed wisely.'
+  type: positive
+  from: Servas
+  to: Jonathan,Minato,Victoria,Yumi
+  credibility: 0.72
+- content: Stay honest,  @Victoria , @Yumi, @Minato, @Servas. Our clarity will reveal
+    the truth.
+  type: positive
+  from: Jonathan
+  to: Minato,Servas,Victoria,Yumi
+  credibility: 0.59
