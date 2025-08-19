@@ -1,0 +1,38 @@
+macro_plan:
+  plans:
+  - label: 村内情報の積極的共有
+    trigger_event: ゲーム開始からの初日
+    preconditions:
+    - 村人である
+    body:
+    - type: basic_action
+      description: 自分の持っている情報や推測を積極的に共有する
+    - type: subgoal
+      description: 他プレイヤーの意見を聞き、集団の信頼を得る
+  - label: 怪しい行動の警告
+    trigger_event: 怪しい発言や行動を発見
+    preconditions:
+    - 自分が信頼されている
+    - 怪しい行動がある
+    body:
+    - type: basic_action
+      description: 怪しい行動をしたプレイヤーを指摘し、他のプレイヤーと議論を始める
+    - type: subgoal
+      description: そのプレイヤーへの投票を引き出す
+  - label: 独自の推理を提案
+    trigger_event: 情報が集まり状況が明確になる
+    preconditions:
+    - ある程度の証拠が集まった
+    body:
+    - type: basic_action
+      description: 自分なりの推理を組み立て、村全体に提案する
+    - type: subgoal
+      description: その推理に基づき他のプレイヤーと積極的に協力
+  notes: リンは行動力と意思表示の強さを活かし、独自の視点で積極的に村に貢献することを目指す。そのため、重要なタイミングで発言し、集団の支持を集められるようにする。
+meta:
+  game_id: 01K30F2F48FGHSDYE0HNMZAM34
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T06:08:31Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/リン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/リン/macro_desire.yml

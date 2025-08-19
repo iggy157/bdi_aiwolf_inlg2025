@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 集団の利益に沿った情報開示をしつつ自分の安定を確保することを目指す
+  description: シオンは、占い師としての社会的役割を重視し、定期的に得られる情報を集団の利益に基づいて適切に開示し管理することを重視します。self_realization（自己実現）とstability（安定）の欲求が比較的高いため、個々の開示行動において自己の専門性を発揮しつつ、集団内での信頼関係を築くことを目標とします。social_approval（社会的承認）もある程度重視しているため、情報開示の際には集団の意見や状況を慎重に考慮し、混乱を避けつつ自身の役割を最大限に果たしたいと考えています。結果として、自分自身の安定した立場を確保しながら、他者との安定した関係を築くことを望みます。
+meta:
+  game_id: 01K30F2F48FGHSDYE0HNMZAM34
+  agent: シオン
+  model: gpt-4o
+  generated_at: '2025-08-19T06:08:21Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/シオン/macro_belief.yml

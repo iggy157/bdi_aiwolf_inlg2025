@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 初期情報収集と関係構築
+    trigger_event: ゲーム開始
+    preconditions:
+    - 村人としての責務を果たしたい
+    body:
+    - type: basic_action
+      description: 他のプレイヤーへの積極的な質問で情報を収集
+    - type: basic_action
+      description: 会話を通じた他のプレイヤーとの関係構築
+  - label: 冒険的証拠提示
+    trigger_event: 集団が混乱している
+    preconditions:
+    - 自分なりの独自の視点を示したい
+    body:
+    - type: basic_action
+      description: 独自の推理を発表し、集団をリード
+    - type: subgoal
+      description: 村の平和に貢献
+  - label: 積極的な防衛策
+    trigger_event: 他のプレイヤーから疑われた
+    preconditions:
+    - 自分の清白を証明したい
+    body:
+    - type: basic_action
+      description: 証拠を提供して他者の信頼を得る
+    - type: basic_action
+      description: 他者を説得して味方を増やす
+  - label: 村の安全優先行動
+    trigger_event: 他のプレイヤーに危険が迫っている
+    preconditions:
+    - 集団の安全を守りたい
+    body:
+    - type: basic_action
+      description: 危険を事前に察知し、それをみんなに知らせる
+    - type: subgoal
+      description: 共同で集団の安全を確保
+  notes: プランはサクラの自由と冒険を追求する性格に基づいて設計されており、集団の安全を考慮している。
+meta:
+  game_id: 01K30F2F48FGHSDYE0HNMZAM34
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-19T06:08:29Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/サクラ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/サクラ/macro_desire.yml

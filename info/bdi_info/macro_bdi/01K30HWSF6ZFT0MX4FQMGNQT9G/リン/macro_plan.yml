@@ -1,0 +1,44 @@
+macro_plan:
+  plans:
+  - label: 慎重な立ち上がり
+    trigger_event: ゲーム開始
+    preconditions:
+    - リンが自由な発言を許されている
+    body:
+    - type: subgoal
+      description: 周囲の信頼を確立する
+    - type: basic_action
+      description: 自分のロールを明らかにせず、友好的な振る舞いをする
+  - label: 緊張感の調整
+    trigger_event: 集団内の反感が高まる
+    preconditions:
+    - 特定のプレイヤーが疑われている
+    body:
+    - type: basic_action
+      description: 疑惑をコントロールし他に注意を向ける
+    - type: subgoal
+      description: 相手の防御を刺激せずに疑惑を逸らす
+  - label: 不信感の植え付け
+    trigger_event: 特定プレイヤーに信頼が集まる
+    preconditions:
+    - そのプレイヤーが無防備な発言をする
+    body:
+    - type: basic_action
+      description: そのプレイヤーの矛盾を指摘し、不安を煽る
+  - label: リスクの取り方を調整
+    trigger_event: ゲーム終盤
+    preconditions:
+    - リンが説得を試みる時間が限られている
+    body:
+    - type: basic_action
+      description: 大胆に他のプレイヤーを疑う
+    - type: subgoal
+      description: 他メンバーの投票を操作する
+  notes: ゲームプランはリンの強い探求心と独立性を考慮し、社会的承認を維持しつつゲーム展開を楽しむコンセプトに基づく
+meta:
+  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T06:57:46Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/リン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/リン/macro_desire.yml

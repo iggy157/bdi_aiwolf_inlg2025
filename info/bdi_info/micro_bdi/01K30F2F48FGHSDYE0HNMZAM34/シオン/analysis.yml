@@ -1,0 +1,57 @@
+1:
+  content: '[PENDING] Analyzing: まだ情報が少ないので、みんなの意見を聞いていきたいと思います。...'
+  type: pending_analysis
+  from: ダイスケ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: そうだね、みんなの様子を見ながら意見を言っていくね！...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: まだ情報は限られていますが、まずは皆さんの意見をよく聞いて一緒に考えましょう。...'
+  type: pending_analysis
+  from: タクミ
+  to: all
+  credibility: 0.0
+4:
+  content: まだ情報が少ないので、みんなの意見を聞いていきたいと思います。
+  type: 'null'
+  from: ダイスケ
+  to: all
+  credibility: 0.338
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: ダイスケ
+5:
+  content: そうだね、みんなの様子を見ながら意見を言っていくね！
+  type: 'null'
+  from: サクラ
+  to: 'null'
+  credibility: 0.354
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.633
+    liking: 0.633
+    creditability: 0.633
+    from: サクラ
+6:
+  content: まだ情報は限られていますが、まずは皆さんの意見をよく聞いて一緒に考えましょう。
+  type: 'null'
+  from: タクミ
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: タクミ

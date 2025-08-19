@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 冒険心と独立性を活かしながら村の安全維持に貢献することを望む。
+  description: リンは冒険心と自由独立の欲求が強いため、村人としての役割を果たす際に、新たな挑戦や独自のアプローチを求める傾向がある。村の安全を守るための社会的手続きに参加しつつ、自分の観察力と推論力を使って状況を分析し、独自の視点で貢献することを目指す。社会的承認の欲求も一定程度あるため、意思表示を通じた集団への協力を重視し、他者からの支持を獲得するための行動も取るだろう。
+meta:
+  game_id: 01K30F2F48FGHSDYE0HNMZAM34
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T06:08:17Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/リン/macro_belief.yml

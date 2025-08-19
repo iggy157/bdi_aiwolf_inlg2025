@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 情報攪乱を通じて人狼陣営の勝利を支援することを目指す
+  description: タクミは自らの社会的承認をやや重んじつつも、自由と独立の欲求が比較的強い。彼は偽装と攪乱により社会的役割を果たすことを志向し、周囲の信頼と調和を完全に崩さないように注意しつつ情報操作を巧妙に行う。ゲーム中、彼は大胆な行動で時にリスクを冒すが、最終的には人狼陣営を有利に導くためのバランスを取ることを重視する。
+meta:
+  game_id: 01K30F2F48FGHSDYE0HNMZAM34
+  agent: タクミ
+  model: gpt-4o
+  generated_at: '2025-08-19T06:08:26Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/タクミ/macro_belief.yml

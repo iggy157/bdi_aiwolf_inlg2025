@@ -1,0 +1,95 @@
+1:
+  content: '[PENDING] Analyzing: まだ情報が少ないので、みんなの意見を聞いていきたいと思います。...'
+  type: pending_analysis
+  from: ダイスケ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: まだ情報は限られていますが、まずは皆さんの意見をよく聞いて一緒に考えましょう。...'
+  type: pending_analysis
+  from: タクミ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 皆さんの意見を伺いながら、冷静に進めていきましょう。...'
+  type: pending_analysis
+  from: シオン
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: 私はまだ手がかりがないけど、みんなと一緒に考えていくのが楽しみ！...'
+  type: pending_analysis
+  from: リン
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: みんながどう考えているかが分かってきて、少し安心しました。疑問点が出たら教えてね。...'
+  type: pending_analysis
+  from: ダイスケ
+  to: all
+  credibility: 0.0
+6:
+  content: まだ情報が少ないので、みんなの意見を聞いていきたいと思います。
+  type: 'null'
+  from: ダイスケ
+  to: all
+  credibility: 0.45
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.7
+    creditability: 0.8
+    from: ダイスケ
+7:
+  content: まだ情報は限られていますが、まずは皆さんの意見をよく聞いて一緒に考えましょう。
+  type: 'null'
+  from: タクミ
+  to: all
+  credibility: 0.403
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: タクミ
+8:
+  content: 皆さんの意見を伺いながら、冷静に進めていきましょう。
+  type: 'null'
+  from: シオン
+  to: all
+  credibility: 0.397
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: シオン
+9:
+  content: 私はまだ手がかりがないけど、みんなと一緒に考えていくのが楽しみ！
+  type: 'null'
+  from: リン
+  to: all
+  credibility: 0.382
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.733
+    creditability: 0.633
+    from: リン
+10:
+  content: みんながどう考えているかが分かってきて、少し安心しました。疑問点が出たら教えてね。
+  type: positive
+  from: ダイスケ
+  to: all
+  credibility: 0.45
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.7
+    creditability: 0.8
+    from: ダイスケ

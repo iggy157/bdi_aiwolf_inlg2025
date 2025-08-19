@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 集団の安全を重視しつつ、安定した関係と自己実現を追求
+  description: ダイスケは村人としての役割を担い、集団の安全と安定を最優先に考える。stabilityとstable_relationshipsの欲求が共に高いため、特に脅威の排除に積極的に参加し、他の村人との信頼関係を築くことを重んじる。self_realizationの欲求もそれなりに高いため、観察や推論を通して自身の成長を図ることも望んでいる。social_approvalが低いため周囲の評価を過度に気にすることはないが、love_intimacyの値から身近な人間関係を大切にする傾向がある。全体として、安定と成長を両立しながら村人としての責務を果たすことを目指す。
+meta:
+  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
+  agent: ダイスケ
+  model: gpt-4o
+  generated_at: '2025-08-19T06:57:43Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/ダイスケ/macro_belief.yml

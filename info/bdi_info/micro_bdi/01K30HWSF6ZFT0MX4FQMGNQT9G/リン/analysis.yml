@@ -1,0 +1,57 @@
+1:
+  content: '[PENDING] Analyzing: こんにちは、みんなの意見を聞きたいな！何か気になることある？Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: 特にまだ気になることはないけど、みんなの話を聞いてから考えたいな。Over...'
+  type: pending_analysis
+  from: ダイスケ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 特に今は気になることはないけれど、みんなの意見を聞いて考えたいです。Over...'
+  type: pending_analysis
+  from: ジョナサン
+  to: all
+  credibility: 0.0
+4:
+  content: こんにちは、みんなの意見を聞きたいな！何か気になることある？Over
+  type: question
+  from: サクラ
+  to: all
+  credibility: 0.407
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.733
+    creditability: 0.6
+    from: サクラ
+5:
+  content: 特にまだ気になることはないけど、みんなの話を聞いてから考えたいな。Over
+  type: 'null'
+  from: ダイスケ
+  to: all
+  credibility: 0.377
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: ダイスケ
+6:
+  content: 特に今は気になることはないけれど、みんなの意見を聞いて考えたいです。Over
+  type: 'null'
+  from: ジョナサン
+  to: all
+  credibility: 0.37
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: ジョナサン

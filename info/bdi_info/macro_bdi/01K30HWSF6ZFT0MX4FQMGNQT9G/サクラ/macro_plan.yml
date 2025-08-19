@@ -1,0 +1,43 @@
+macro_plan:
+  plans:
+  - label: 自由と冒険の探索
+    trigger_event: ゲーム開始時
+    preconditions:
+    - 自身が村人としての役割を持っている
+    body:
+    - type: basic_action
+      description: 自由な議論を提案し、他プレイヤーとのコミュニケーションを開始する
+    - type: subgoal
+      description: 村人としての役割を全うしつつ、新しい情報を集める
+    - type: basic_action
+      description: 興味深いプレイヤーや行動を探し出し、積極的に関与する
+  - label: 集団安全の革新的アプローチ
+    trigger_event: 疑わしい人物が判明した時
+    preconditions:
+    - 他のプレイヤーからの信頼が一定以上ある
+    body:
+    - type: basic_action
+      description: 他プレイヤーからの情報収集をリードし、協力的な姿勢を見せる
+    - type: subgoal
+      description: 新たな推理方法を提案し、グループ全体での認識を深める
+    - type: basic_action
+      description: 柔軟に意見を調整し、新しい戦略を採用する
+  - label: 個人の刺激と責任のバランス
+    trigger_event: 自分が指名された会議中
+    preconditions:
+    - プレイヤー間の状況が変化しつつある
+    body:
+    - type: basic_action
+      description: 自分の意見を強く表明し、議論の方向性を変更する
+    - type: basic_action
+      description: 他のプレイヤーの意見を柔軟に受け入れ、自分の立場を見直す
+    - type: subgoal
+      description: ゲームの進行に合わせた新しい戦術を模索する
+  notes: 各プランはサクラの性格や行動傾向に基づき、ゲーム内での自由な探索とグループの安全への貢献を両立させるよう設計されています。
+meta:
+  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
+  agent: サクラ
+  model: gpt-4o
+  generated_at: '2025-08-19T06:57:47Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/サクラ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/サクラ/macro_desire.yml
