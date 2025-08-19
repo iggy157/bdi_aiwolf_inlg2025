@@ -1,3 +1,4 @@
+# agent.py
 """Module that defines the base class for agents.
 
 エージェントの基底クラスを定義するモジュール.
@@ -7,6 +8,8 @@ from __future__ import annotations
 
 import os
 import random
+import re
+import yaml
 from pathlib import Path
 from time import sleep
 from typing import TYPE_CHECKING, Any, ParamSpec, TypeVar
@@ -697,7 +700,111 @@ class Agent:
         Returns:
             str: Talk message / 発言メッセージ
         """
-        response = self._send_message_to_llm(self.request)
+        # ==== micro_intention-aware talk ====
+        def _load_yaml_safe_local(p: Path) -> dict[str, Any]:
+            try:
+                if p.exists():
+                    with p.open("r", encoding="utf-8") as f:
+                        return yaml.safe_load(f) or {}
+            except Exception:
+                self.agent_logger.logger.exception(f"YAML load failed: {p}")
+            return {}
+
+        def _get_latest_micro_intention_entry(game_id_: str, agent_id_: str) -> dict[str, Any] | None:
+            base_micro = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            mi_path = base_micro / game_id_ / agent_id_ / "micro_intention.yml"
+            data = _load_yaml_safe_local(mi_path)
+            # 新形式（append-only）
+            if isinstance(data.get("micro_intentions"), list) and data["micro_intentions"]:
+                entry = data["micro_intentions"][-1]
+                if isinstance(entry, dict) and "content" in entry:
+                    return {"consist": str(entry.get("consist", "")).strip(),
+                            "content": str(entry.get("content", "")).strip()}
+            # 旧形式（単体オブジェクト）に緩く対応
+            if isinstance(data.get("micro_intention"), dict):
+                mi = data["micro_intention"]
+                if "content" in mi and "consist" in mi:
+                    return {"consist": str(mi.get("consist", "")).strip(),
+                            "content": str(mi.get("content", "")).strip()}
+            return None
+
+        def _get_behavior_tendency_map(game_id_: str, agent_id_: str) -> dict[str, Any]:
+            base_macro = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi")
+            mb_path = base_macro / game_id_ / agent_id_ / "macro_belief.yml"
+            mb = _load_yaml_safe_local(mb_path)
+            beh = {}
+            try:
+                if "macro_belief" in mb:
+                    beh = mb["macro_belief"].get("behavior_tendency", {}) or {}
+                    if isinstance(beh, dict) and "behavior_tendencies" in beh:
+                        beh = beh["behavior_tendencies"]
+            except Exception:
+                pass
+            return beh or {}
+
+        def _sanitize_and_enforce(
+            text: str,
+            mention_limit: int = 125,
+            base_limit: int = 125,
+            enforce_length: bool = True
+        ) -> str:
+            # 基本サニタイズ
+            text = (text or "").strip()
+            text = text.replace("\n", " ")
+            # 禁止記号の除去
+            text = text.replace(">", " ")
+            text = text.replace("`", "")
+            text = text.replace(",", " ")  # 半角カンマ排除
+            # 先頭の箇条書き/引用風を除去
+            text = re.sub(r"^\s*[-*•>]+\s*", "", text)
+            # 装飾絵文字等を広めに除去（BMPと拡張面の絵文字レンジ）
+            text = re.sub(r"[\u2600-\u27BF\uE000-\uF8FF\U0001F300-\U0001FAFF]", "", text)
+            text = " ".join(text.split())  # 余分な空白整理
+            # 長さ規定
+            if enforce_length and text.startswith("@"):
+                # メンション区切り：最初の「:」または空白
+                idxs = [i for i in (text.find(":"), text.find(" ")) if i > 0]
+                cut = min(idxs) if idxs else len(text)
+                mention = text[:cut].strip()[:mention_limit]
+                base = text[cut + 1:].strip() if cut < len(text) else ""
+                base = base[:base_limit] if base else ""
+                text = (mention + (" " + base if base else "")).strip()
+                # 合計最終ガード（250相当）
+                if len(text) > (mention_limit + base_limit):
+                    text = text[: mention_limit + base_limit]
+            elif enforce_length:
+                text = text[:base_limit]
+            return text
+
+        # micro_intention / behavior_tendency の収集
+        game_id = self.info.game_id if self.info else ""
+        agent_id = self.info.agent if (self.info and hasattr(self.info, "agent")) else self.agent_name
+        mi_entry = _get_latest_micro_intention_entry(game_id, agent_id)
+        beh_map = _get_behavior_tendency_map(game_id, agent_id)
+
+        if mi_entry:
+            # micro_intention あり: 新テンプレートで生成
+            response_raw = self.send_message_to_llm(
+                "talk",
+                extra_vars={
+                    "micro_intention_entry": mi_entry,
+                    "behavior_tendency": beh_map,
+                    "char_limits": {"mention_length": 125, "base_length": 125},
+                },
+                log_tag="talk",
+                use_shared_history=True,
+            )
+            response = _sanitize_and_enforce(response_raw or "", 125, 125, enforce_length=True)
+        else:
+            # micro_intention なし: 旧テンプレートで生成
+            response_raw = self.send_message_to_llm(
+                "talk_fallback",
+                log_tag="talk_fallback",
+                use_shared_history=True,
+            )
+            # 禁止記号のみ除去（長さは従来の per_talk に委ねる）
+            response = _sanitize_and_enforce(response_raw or "", 10**9, 10**9, enforce_length=False)
+
         self.sent_talk_count = len(self.talk_history)
         
         # AnalysisTrackerでトーク履歴を分析（talkリクエスト毎に実行）

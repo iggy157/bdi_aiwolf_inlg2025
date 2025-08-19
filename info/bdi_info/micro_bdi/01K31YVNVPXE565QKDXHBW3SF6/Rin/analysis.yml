@@ -1,0 +1,650 @@
+1:
+  content: '[PENDING] Analyzing: Let''s consider focusing on Asuka; I feel there mig...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: Midori let''s continue to support each other and
+    ma...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: I believe a careful reveal of info can shift thing...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing:  @Rin  I think we''ve been overlooking Takumi; has
+    ...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: @Rin and  @Sakura  I am dedicated to our group''s
+    s...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+6:
+  content: '[PENDING] Analyzing: Midori your insights are valuable but can anyone
+    e...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+7:
+  content: '[PENDING] Analyzing: @Asuka let''s consider investigating Kenji next to
+    ...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing:  @Rin  I think we should watch each other''s backs
+    ...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+9:
+  content: '[PENDING] Analyzing: @Rin and  @Sakura  let''s align our efforts to supp...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+10:
+  content: '[PENDING] Analyzing: Let''s focus on identifying the threats; any though...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+11:
+  content: '[PENDING] Analyzing: Hello everyone. Does anyone have updates on yester...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+12:
+  content: '[PENDING] Analyzing: Let''s come together and discuss carefully to keep
+    ...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+13:
+  content: '[PENDING] Analyzing: I found Haruto''s statement yesterday suspicious;
+    w...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+14:
+  content: '[PENDING] Analyzing: I believe timely sharing of my insights will aid
+    o...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+15:
+  content: '[PENDING] Analyzing:  @Rin  Do you think there''s a reason to trust Yuki...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+16:
+  content: '[PENDING] Analyzing: @everyone to build our trust and work well togethe...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+17:
+  content: Let's consider focusing on Asuka; I feel there might be something worth
+    examining more closely.
+  type: 'null'
+  from: Takumi
+  to: 'null'
+  credibility: 0.455
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+18:
+  content: ' @Sakura  I value your opinion and trust that your insights can guide
+    us well.'
+  type: positive
+  from: Midori
+  to: Sakura
+  credibility: 0.509
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+19:
+  content: ' @Rin  Let''s work closely to keep our alliances strong and ensure we''re
+    not misled by others.'
+  type: positive
+  from: Daisuke
+  to: Rin
+  credibility: 0.453
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+20:
+  content: I feel collaborating with Midori is key but shouldn't we examine why things
+    seem off this round?
+  type: question
+  from: Takumi
+  to: Midori
+  credibility: 0.448
+  credibility_raw: 0.69
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+21:
+  content: I have positive results on  @Rin ; let's strategize together to outsmart
+    the werewolves.
+  type: positive
+  from: Sakura
+  to: Rin
+  credibility: 0.469
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+22:
+  content: ' @Rin  considering the last vote patterns could be helpful for our next
+    decision what do you think?'
+  type: question
+  from: Midori
+  to: Rin
+  credibility: 0.47
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+23:
+  content: '@Rin  @Midori  Any thoughts on today''s accusations? Let''s piece this
+    puzzle together carefully.'
+  type: question
+  from: Daisuke
+  to: Midori,Rin
+  credibility: 0.313
+  credibility_raw: 0.47
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+24:
+  content: I think we should be cautious and consider if Daisuke might have some hidden
+    motives.
+  type: negative
+  from: Takumi
+  to: Daisuke
+  credibility: 0.397
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+25:
+  content: '[PENDING] Analyzing:  @Rin  was confirmed safe by my insights; let''s
+    us...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+26:
+  content: '[PENDING] Analyzing: I have verified that  @Rin  is trustworthy so let''...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+27:
+  content: '[PENDING] Analyzing:  @Sakura  I value your opinion and trust that your...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+28:
+  content: '[PENDING] Analyzing:  @Rin  Let''s work closely to keep our alliances
+    st...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+29:
+  content: '[PENDING] Analyzing: I feel collaborating with Midori is key but should...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+30:
+  content: '[PENDING] Analyzing: I have positive results on  @Rin ; let''s strategiz...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+31:
+  content: '[PENDING] Analyzing:  @Rin  considering the last vote patterns could be...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+32:
+  content: '[PENDING] Analyzing: @Rin  @Midori  Any thoughts on today''s accusations...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+33:
+  content: '[PENDING] Analyzing: I think we should be cautious and consider if Dais...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+34:
+  content: '[PENDING] Analyzing: Let''s focus on identifying who we can trust within...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+35:
+  content: '[PENDING] Analyzing:  @Rin  What do you think about the latest developm...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+36:
+  content: '[PENDING] Analyzing: Could Daisuke clarify why his behavior seems diffe...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+37:
+  content: '[PENDING] Analyzing:  @Rin  I''ve got a read on you; let''s work together...'
+  type: pending_analysis
+  from: Sakura
+  to: all
+  credibility: 0.0
+38:
+  content: '[PENDING] Analyzing: I support the group''s direction and back @Rin and
+    ...'
+  type: pending_analysis
+  from: Midori
+  to: all
+  credibility: 0.0
+39:
+  content: '[PENDING] Analyzing:  @Rin  It''s crucial we continue to build trust to
+    ...'
+  type: pending_analysis
+  from: Daisuke
+  to: all
+  credibility: 0.0
+40:
+  content: '[PENDING] Analyzing: Midori let''s also consider Daisuke''s recent action...'
+  type: pending_analysis
+  from: Takumi
+  to: all
+  credibility: 0.0
+41:
+  content: Let's focus on identifying the threats; any thoughts on the latest events
+    everyone?
+  type: question
+  from: Sakura
+  to: all
+  credibility: 0.403
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+42:
+  content: Hello everyone. Does anyone have updates on yesterday's events?
+  type: question
+  from: Daisuke
+  to: all
+  credibility: 0.313
+  credibility_raw: 0.47
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+43:
+  content: Let's come together and discuss carefully to keep our group steady and
+    safe.
+  type: positive
+  from: Midori
+  to: all
+  credibility: 0.509
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+44:
+  content: I found Haruto's statement yesterday suspicious; we should scrutinize their
+    actions more closely.
+  type: negative
+  from: Takumi
+  to: 'null'
+  credibility: 0.423
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+45:
+  content: I believe timely sharing of my insights will aid our strategy; I'll reveal
+    findings soon.
+  type: 'null'
+  from: Sakura
+  to: all
+  credibility: 0.513
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+46:
+  content: ' @Rin  Do you think there''s a reason to trust Yuki more than the others
+    right now?'
+  type: question
+  from: Daisuke
+  to: Rin
+  credibility: 0.38
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+47:
+  content: '@everyone to build our trust and work well together does anyone have new
+    insights or theories to share?'
+  type: question
+  from: Midori
+  to: all
+  credibility: 0.431
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+48:
+  content: Midori let's continue to support each other and maybe consider Hiro's recent
+    actions more closely.
+  type: positive
+  from: Takumi
+  to: Midori
+  credibility: 0.455
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+49:
+  content: I believe a careful reveal of info can shift things in our favor let's
+    proceed thoughtfully.
+  type: 'null'
+  from: Sakura
+  to: all
+  credibility: 0.484
+  credibility_raw: 0.66
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+50:
+  content: ' @Rin  I think we''ve been overlooking Takumi; has anyone noticed anything
+    unusual about his behavior?'
+  type: question
+  from: Daisuke
+  to: Takumi
+  credibility: 0.453
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+51:
+  content: '@Rin and  @Sakura  I am dedicated to our group''s safety so let''s stay
+    united and vigilant against any threats.'
+  type: positive
+  from: Midori
+  to: Rin,Sakura
+  credibility: 0.517
+  credibility_raw: 0.66
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+52:
+  content: Midori your insights are valuable but can anyone explain why Shinji changed
+    his vote last minute?
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.461
+  credibility_raw: 0.71
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+53:
+  content: '@Asuka let''s consider investigating Kenji next to clarify his role.'
+  type: negative
+  from: Sakura
+  to: 'null'
+  credibility: 0.557
+  credibility_raw: 0.76
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+54:
+  content: ' @Rin  I think we should watch each other''s backs to navigate this game
+    safely.'
+  type: positive
+  from: Daisuke
+  to: Rin
+  credibility: 0.52
+  credibility_raw: 0.78
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+55:
+  content: '@Rin and  @Sakura  let''s align our efforts to support the group''s decisions
+    and maintain stability together.'
+  type: positive
+  from: Midori
+  to: Rin,Sakura
+  credibility: 0.485
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+56:
+  content: ' @Rin  was confirmed safe by my insights; let''s use her trustworthiness
+    to guide our next move.'
+  type: positive
+  from: Sakura
+  to: Rin
+  credibility: 0.447
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+57:
+  content: 'Let''s focus on identifying who we can trust within our group to make
+    stronger decisions especially involving @Rin and  @Sakura '
+  type: negative
+  from: Midori
+  to: Rin,Sakura
+  credibility: 0.493
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+58:
+  content: ' @Rin  What do you think about the latest development? We need to be cautious
+    about jumping to conclusions.'
+  type: question
+  from: Daisuke
+  to: Rin
+  credibility: 0.427
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+59:
+  content: Could Daisuke clarify why his behavior seems different today? Let's ensure
+    we're all on the same page.
+  type: question
+  from: Takumi
+  to: Daisuke
+  credibility: 0.442
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+60:
+  content: ' @Rin  I''ve got a read on you; let''s work together to corner the werewolves.'
+  type: positive
+  from: Sakura
+  to: Rin
+  credibility: 0.403
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura
+61:
+  content: I support the group's direction and back @Rin and  @Sakura 's ideas for
+    our next move.
+  type: positive
+  from: Midori
+  to: Rin,Sakura
+  credibility: 0.485
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Midori
+62:
+  content: ' @Rin  It''s crucial we continue to build trust to navigate this situation
+    effectively.'
+  type: positive
+  from: Daisuke
+  to: Rin
+  credibility: 0.473
+  credibility_raw: 0.71
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.65
+    creditability: 0.683
+    from: Daisuke
+63:
+  content: Midori let's also consider Daisuke's recent actions to clarify his standing
+    among us.
+  type: negative
+  from: Takumi
+  to: Midori
+  credibility: 0.41
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+64:
+  content: I have verified that  @Rin  is trustworthy so let's coordinate our efforts
+    strategically.
+  type: positive
+  from: Sakura
+  to: all
+  credibility: 0.499
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.667
+    creditability: 0.8
+    from: Sakura

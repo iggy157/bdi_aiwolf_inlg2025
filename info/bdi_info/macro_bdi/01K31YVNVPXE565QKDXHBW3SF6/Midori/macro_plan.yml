@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 積極的に意見を出しながら他者の信頼を築き、安定した環境を目指す
+  mid_game: グループの意見を尊重しつつ、共感を持って慎重に投票行動を行う
+  late_game: 信頼関係に基づいて協力し、決定的な一手を打つことで勝利に導く
+  format: simplified_3line
+meta:
+  game_id: 01K31YVNVPXE565QKDXHBW3SF6
+  agent: Midori
+  model: gpt-4o
+  generated_at: '2025-08-19T20:03:39Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Midori/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Midori/macro_desire.yml

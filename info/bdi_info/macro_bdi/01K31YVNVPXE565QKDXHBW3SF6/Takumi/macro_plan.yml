@@ -1,0 +1,12 @@
+macro_plan:
+  early_game: 序盤では他の村人と協力しながら情報を少しずつ混乱させ、疑惑を人狼以外のメンバーに向ける。
+  mid_game: 中盤では独自の推理を展開しつつ、信頼を築くことで狂人としての役割を自然に隠す。
+  late_game: 終盤では積極的に疑いをかけられないようにし、人狼に有利な状況を戦略的に作り出す。
+  format: simplified_3line
+meta:
+  game_id: 01K31YVNVPXE565QKDXHBW3SF6
+  agent: Takumi
+  model: gpt-4o
+  generated_at: '2025-08-19T20:03:37Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Takumi/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Takumi/macro_desire.yml

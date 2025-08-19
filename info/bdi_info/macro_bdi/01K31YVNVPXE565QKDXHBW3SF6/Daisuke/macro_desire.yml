@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Balance stability and deception while maintaining strong alliances.
+  description: Daisuke prioritizes establishing and maintaining stable relationships
+    to enhance his role as 人狼, leveraging his high tendency for stability (0.784)
+    and stable relationships (0.784). While his desire for self-realization (0.544)
+    and love_intimacy (0.625) supports a nuanced approach to coordinating with allies,
+    he must conceal these intentions to avoid drawing suspicion. Despite a lower tendency
+    for freedom_independence (0.278), Daisuke should remain adaptable, balancing social
+    approval (0.350) with the need for secrecy inherent to his role. Ultimately, success
+    hinges on his ability to navigate social dynamics with subtlety and strategic
+    engagement in deception, all while nurturing essential alliances.
+meta:
+  game_id: 01K31YVNVPXE565QKDXHBW3SF6
+  agent: Daisuke
+  model: gpt-4o
+  generated_at: '2025-08-19T20:03:30Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Daisuke/macro_belief.yml

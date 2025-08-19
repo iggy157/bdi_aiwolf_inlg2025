@@ -1,0 +1,16 @@
+macro_desire:
+  summary: Strategically reveal identities to influence the game while seeking adventure
+    and independence.
+  description: Sakura wishes to navigate her role as 占い師 by balancing her desire for
+    freedom and independence with her responsibility to uncover and share identity
+    information. While she feels a sense of duty to assist the group by disclosing
+    identity insights, she prioritizes her personal goals of seeking new experiences
+    and maintaining autonomy. Sakura's tendency towards adventure and stimulation
+    drives her to selectively reveal information at opportune moments, using her insights
+    to guide the game's progression in a dynamic and self-directed manner.
+meta:
+  game_id: 01K31YVNVPXE565QKDXHBW3SF6
+  agent: Sakura
+  model: gpt-4o
+  generated_at: '2025-08-19T20:03:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K31YVNVPXE565QKDXHBW3SF6/Sakura/macro_belief.yml
