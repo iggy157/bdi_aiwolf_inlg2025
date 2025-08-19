@@ -1,0 +1,10 @@
+macro_desire:
+  summary: Failed to parse LLM response
+  description: "Original response: yaml\nmacro_desire:\n  summary: \"安定を求めつつ、巧妙に正体を隠してゲームを攻略する\"\
+    \n  description: \"シュンイチは安定性(stability)と安定した人間関係(stable_relationships)を最も重視しているため、ゲーム内では仲間との信頼関係を築きつつ、確実に進行を図るアプローチを取る。self_realizationとsocial_ap..."
+meta:
+  game_id: 01K30621XTQQBAF5EW87MCPRGR
+  agent: シュンイチ
+  model: gpt-4o
+  generated_at: '2025-08-19T03:30:53Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/シュンイチ/macro_belief.yml

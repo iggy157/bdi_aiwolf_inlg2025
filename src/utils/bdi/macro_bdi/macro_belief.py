@@ -26,7 +26,8 @@ def generate_macro_belief(
     game_id: str,
     out_root: str | Path = "info/bdi_info/macro_bdi",
     role_en: str | None = None,
-    agent_logger=None
+    agent_logger=None,
+    agent_obj=None
 ) -> Path:
     """Generate consolidated macro belief YAML file.
     
@@ -42,7 +43,7 @@ def generate_macro_belief(
         Path to generated macro_belief.yml file
     """
     # Step 1: Infer MBTI parameters
-    mbti_data = infer_mbti(config, profile, agent_name, agent_logger)
+    mbti_data = infer_mbti(config, profile, agent_name, agent_logger, agent_obj)
     
     # Step 2: Calculate Enneagram parameters
     enneagram_data = infer_enneagram(mbti_data)

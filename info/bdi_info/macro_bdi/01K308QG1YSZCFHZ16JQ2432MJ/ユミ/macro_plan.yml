@@ -1,0 +1,48 @@
+macro_plan:
+  plans:
+  - label: 初日の情報提供プラン
+    trigger_event: ゲーム開始後、議論が始まった時
+    preconditions:
+    - ユミが占い師であること
+    body:
+    - type: basic_action
+      description: 初日は村人に有益な情報を提供するため、占い結果を共有
+    - type: subgoal
+      description: その後の議論で積極的に意見を述べ、他者の信頼を得る
+  - label: 情報開示遅延プラン
+    trigger_event: 議論が煮詰まり、協調が必要な状況
+    preconditions:
+    - ユミが圧力を感じていないこと
+    - 他の重要な情報が不足していること
+    body:
+    - type: basic_action
+      description: 意図的に占い結果の開示を遅らせ、議論を引き伸ばす
+    - type: subgoal
+      description: 議論の流れを観察し、最も効果的なタイミングで情報を開示する
+  - label: 攻撃的情報操作プラン
+    trigger_event: ユミが他のプレイヤーからの疑いを受けた時
+    preconditions:
+    - 他プレイヤーからの攻撃が激しいこと
+    - ユミが情報を操作できる余地があること
+    body:
+    - type: basic_action
+      description: 他のプレイヤーを惑わすために情報を少し改変して提供
+    - type: subgoal
+      description: その情報をもとに、不安を煽り、他プレイヤーの団結を崩す
+  - label: 共感的アプローチプラン
+    trigger_event: プレイヤー間の信頼が希薄な状況
+    preconditions:
+    - ユミが他のプレイヤーから孤立していないこと
+    body:
+    - type: basic_action
+      description: 他のプレイヤーの意見に共感し、信頼関係を構築
+    - type: subgoal
+      description: 共感的な姿勢を見せつつ、有益な情報を適度に開示
+  notes: ユミのプランは、占い師としての役割を果たしつつ、創造的な方法で情報を管理することを目的としています。
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-19T04:17:42Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ユミ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ユミ/macro_desire.yml

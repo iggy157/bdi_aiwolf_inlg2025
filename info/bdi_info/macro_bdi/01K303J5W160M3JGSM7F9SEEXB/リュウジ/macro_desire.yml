@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 安定性と自己実現を求める占い師として、集団の利益を重視
+  description: リュウジは占い師として、安定性を重視しながら自己実現を追求する。彼は情報の信憑性を慎重に管理し、集団の利益に適したタイミングで情報を開示することを望む。社会的承認も考慮しつつ、安定した関係を築くことで、より良い判断を下す。彼のアプローチは堅実で、情報の価値を最大化すると同時に、個人としても自己成長を目指すものである。
+meta:
+  game_id: 01K303J5W160M3JGSM7F9SEEXB
+  agent: リュウジ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:47:10Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/リュウジ/macro_belief.yml

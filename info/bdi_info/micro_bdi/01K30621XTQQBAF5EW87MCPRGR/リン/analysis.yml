@@ -1,0 +1,120 @@
+1:
+  content: '[PENDING] Analyzing: 今日はどんな推理が出るか楽しみですね、皆さんの意見を聞かせてください！...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: そうですね、皆さんの意見を聞いてから冷静に分析したいと思います。...'
+  type: pending_analysis
+  from: ヴィクトリア
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: そうですね、一緒に悩みながら進めていきましょう！皆の意見を聞くのが楽しみです！...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: サクラさんとリンさんは信じられそうですが、全員の意見をもう少し聞いてみましょう。...'
+  type: pending_analysis
+  from: ヴィクトリア
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: それならば、少しずつ情報を共有して何か手がかりを見つけ出しましょう。...'
+  type: pending_analysis
+  from: シュンイチ
+  to: all
+  credibility: 0.0
+6:
+  content: '[PENDING] Analyzing: なるほど、情報を集めながら冷静に判断していきましょう！何か気付いたことある？...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+7:
+  content: '[PENDING] Analyzing: ならば、まずは自己紹介から始めてお互いの考えを共有しましょう。...'
+  type: pending_analysis
+  from: シュンイチ
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing: サクラです！探偵ごっこみたいでワクワクしますね、みんなで頑張りましょう！...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+9:
+  content: '[PENDING] Analyzing: ユミです！明るく元気な16歳です、みんなと仲良く頑張りたいと思います！...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+10:
+  content: '[PENDING] Analyzing: ヴィクトリアです、37歳の冷静な観察者として皆さんと共に頑張ります。...'
+  type: pending_analysis
+  from: ヴィクトリア
+  to: all
+  credibility: 0.0
+11:
+  content: '[PENDING] Analyzing: みんなの気合を感じますね、今日はどんな推理が飛び出すか楽しみです。Over。...'
+  type: pending_analysis
+  from: シュンイチ
+  to: all
+  credibility: 0.0
+12:
+  content: '[PENDING] Analyzing: 暖かい雰囲気ですね、誰を信じるか悩みますが一緒に考えていきましょう！...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+13:
+  content: 今日はどんな推理が出るか楽しみですね、皆さんの意見を聞かせてください！
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.61
+14:
+  content: そうですね、皆さんの意見を聞いてから冷静に分析したいと思います。
+  type: 'null'
+  from: ヴィクトリア
+  to: all
+  credibility: 0.63
+15:
+  content: ならば、まずは自己紹介から始めてお互いの考えを共有しましょう。
+  type: 'null'
+  from: シュンイチ
+  to: all
+  credibility: 0.64
+16:
+  content: サクラです！探偵ごっこみたいでワクワクしますね、みんなで頑張りましょう！
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.6
+17:
+  content: ユミです！明るく元気な16歳です、みんなと仲良く頑張りたいと思います！
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.52
+18:
+  content: ヴィクトリアです、37歳の冷静な観察者として皆さんと共に頑張ります。
+  type: co
+  from: ヴィクトリア
+  to: all
+  credibility: 0.65
+19:
+  content: みんなの気合を感じますね、今日はどんな推理が飛び出すか楽しみです。Over。
+  type: 'null'
+  from: シュンイチ
+  to: all
+  credibility: 0.58
+20:
+  content: 暖かい雰囲気ですね、誰を信じるか悩みますが一緒に考えていきましょう！
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.56

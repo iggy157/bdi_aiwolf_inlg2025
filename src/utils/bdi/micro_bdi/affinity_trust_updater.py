@@ -353,7 +353,8 @@ def update_affinity_trust_for_agent(
     game_id: str,
     agent: str,
     agent_logger: Optional[Any] = None,
-    talk_dir_name: str = "talk_history"
+    talk_dir_name: str = "talk_history",
+    agent_obj: Optional[Any] = None
 ) -> None:
     """Update affinity and trust scores for all talk history files of an agent."""
     
@@ -377,11 +378,13 @@ def update_affinity_trust_for_agent(
     
     logger.info(f"Loaded weights - liking: {liking_keys}, trust: {trust_keys}")
     
-    # Initialize LLM
+    # Initialize LLM for fallback (even if agent_obj is available)
+    llm_model = None
     try:
         llm_model = initialize_llm(config)
+        logger.info("LLM initialized for fallback")
     except Exception as e:
-        logger.error(f"Failed to initialize LLM: {e}")
+        logger.warning(f"Failed to initialize fallback LLM: {e}")
         llm_model = None
     
     # Process each talk history file
@@ -403,16 +406,104 @@ def update_affinity_trust_for_agent(
             # Prepare talks for LLM
             talks = [item['content'] for item in items]
             
-            # Evaluate with LLM
-            if llm_model and talks:
+            # Initialize scores variables
+            liking_scores = {}
+            trust_scores = {}
+            
+            # Evaluate with LLM - try agent_obj first, then fallback to direct LLM
+            if agent_obj is not None and talks:
+                # Use Agent's centralized LLM calling method
+                extra_vars = {
+                    "from_agent": from_agent,
+                    "talks": talks,
+                    "liking_keys": liking_keys,
+                    "trust_keys": trust_keys
+                }
+                logger.info(f"Trying agent_obj.send_message_to_llm for {from_agent} with {len(talks)} talks")
+                
+                try:
+                    response = agent_obj.send_message_to_llm(
+                        "affinity_trust_eval",
+                        extra_vars=extra_vars,
+                        log_tag="affinity_trust_eval"
+                    )
+                    
+                    parsed = extract_json_from_response(response) if response else None
+                    if parsed and isinstance(parsed.get('liking'), dict) and isinstance(parsed.get('trust'), dict):
+                        logger.info(f"Successfully evaluated via agent_obj for {from_agent}")
+                        
+                        # Extract liking scores
+                        for k in liking_keys:
+                            val = parsed['liking'].get(k, 0.5)
+                            try:
+                                liking_scores[k] = max(0.0, min(1.0, float(val)))
+                            except (TypeError, ValueError):
+                                liking_scores[k] = 0.5
+                        
+                        # Extract trust scores
+                        for k in trust_keys:
+                            val = parsed['trust'].get(k, 0.5)
+                            try:
+                                trust_scores[k] = max(0.0, min(1.0, float(val)))
+                            except (TypeError, ValueError):
+                                trust_scores[k] = 0.5
+                    else:
+                        logger.warning(f"affinity_trust_eval via agent_obj failed; falling back to direct LLM for {from_agent}")
+                        if llm_model is None:
+                            try:
+                                llm_model = initialize_llm(config)
+                            except Exception as e:
+                                logger.error(f"Failed to init llm_model: {e}")
+                        
+                        if llm_model:
+                            liking_scores, trust_scores = evaluate_with_llm(
+                                llm_model, config, from_agent, agent,
+                                talks, liking_keys, trust_keys, agent_logger
+                            )
+                            logger.info(f"evaluated via direct LLM for {from_agent}")
+                        else:
+                            logger.error(f"No LLM available; falling back to 0.5 for {from_agent}")
+                            liking_scores = {k: 0.5 for k in liking_keys}
+                            trust_scores = {k: 0.5 for k in trust_keys}
+                except Exception as e:
+                    logger.warning(f"agent_obj.send_message_to_llm failed for {from_agent}: {e}; falling back to direct LLM")
+                    if llm_model is None:
+                        try:
+                            llm_model = initialize_llm(config)
+                        except Exception as init_e:
+                            logger.error(f"Failed to init llm_model: {init_e}")
+                    
+                    if llm_model:
+                        liking_scores, trust_scores = evaluate_with_llm(
+                            llm_model, config, from_agent, agent,
+                            talks, liking_keys, trust_keys, agent_logger
+                        )
+                        logger.info(f"evaluated via direct LLM for {from_agent}")
+                    else:
+                        logger.error(f"No LLM available; falling back to 0.5 for {from_agent}")
+                        liking_scores = {k: 0.5 for k in liking_keys}
+                        trust_scores = {k: 0.5 for k in trust_keys}
+            
+            elif llm_model and talks:
+                # Direct LLM call when no agent_obj
+                logger.info(f"Using direct LLM evaluation for {from_agent}")
                 liking_scores, trust_scores = evaluate_with_llm(
                     llm_model, config, from_agent, agent,
                     talks, liking_keys, trust_keys, agent_logger
                 )
             else:
-                # Fallback to defaults
+                # Fallback to defaults when no LLM available
+                logger.warning(f"No LLM available; falling back to 0.5 for {from_agent}")
                 liking_scores = {k: 0.5 for k in liking_keys}
                 trust_scores = {k: 0.5 for k in trust_keys}
+            
+            # Fill missing keys with 0.5
+            for k in liking_keys:
+                if k not in liking_scores:
+                    liking_scores[k] = 0.5
+            for k in trust_keys:
+                if k not in trust_scores:
+                    trust_scores[k] = 0.5
             
             # Calculate weighted averages
             liking_score = calculate_weighted_average(liking_scores, liking_weights)

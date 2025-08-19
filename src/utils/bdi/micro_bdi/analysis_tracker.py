@@ -96,6 +96,7 @@ class AnalysisTracker:
         agent_name: str,
         game_id: str,
         agent_logger=None,
+        agent_obj=None,
     ) -> None:
         """初期化."""
         self.config = config
@@ -103,6 +104,7 @@ class AnalysisTracker:
         self.game_id = game_id
         self.packet_idx = 0
         self.agent_logger = agent_logger
+        self.agent_obj = agent_obj
         
         # 分析履歴を保存する辞書
         # {packet_idx: [{"content": ..., "type": ..., "from": ..., "to": ..., "credibility": ...}, ...]}
@@ -114,9 +116,10 @@ class AnalysisTracker:
         # 互換のため残すが、重複判定は seen_talk_keys を主とする
         self.last_analyzed_talk_count = 0
         
-        # LLMクライアントの初期化
+        # LLMクライアントの初期化（agent_objがない場合のみ）
         self.llm_model = None
-        self._initialize_llm()
+        if self.agent_obj is None:
+            self._initialize_llm()
         
         # 出力ディレクトリの設定
         self._setup_output_directory()
@@ -150,7 +153,7 @@ class AnalysisTracker:
                     self.llm_model = ChatGoogleGenerativeAI(
                         model=str(self.config.get("google", {}).get("model", "gemini-2.0-flash-lite")),
                         temperature=float(self.config.get("google", {}).get("temperature", 0.7)),
-                        api_key=SecretStr(api_key),
+                        google_api_key=SecretStr(api_key),
                     )
                 case "ollama":
                     self.llm_model = ChatOllama(
@@ -411,38 +414,54 @@ class AnalysisTracker:
         info: Info,
     ) -> str:
         """発話のタイプを分析."""
-        # LLMを使って発話タイプを分析
-        if not self.llm_model:
-            if self.agent_logger:
-                self.agent_logger.llm_error("message_type_analysis", "LLM model not available")
-            return "null"
         
         try:
-            from jinja2 import Template
-            from langchain_core.messages import HumanMessage
-            from langchain_core.output_parsers import StrOutputParser
-            
-            # プロンプトテンプレートの作成（config → デフォルト）
-            prompt_template = self.config.get("prompt", {}).get("analyze_message_type", "") if self.config else ""
-            if not prompt_template:
-                prompt_template = DEFAULT_PROMPTS.analyze_message_type
+            # Use agent_obj centralized LLM if available
+            if self.agent_obj is not None:
+                extra_vars = {
+                    "content": content,
+                    "agent_names": list(info.status_map.keys())
+                }
+                response = self.agent_obj.send_message_to_llm(
+                    "analyze_message_type",
+                    extra_vars=extra_vars,
+                    log_tag="message_type_analysis"
+                )
+                if not response:
+                    if self.agent_logger:
+                        self.agent_logger.llm_error("message_type_analysis", "Agent LLM call returned None")
+                    return "null"
+            elif self.llm_model:
+                # Fallback to direct LLM call
+                from jinja2 import Template
+                from langchain_core.messages import HumanMessage
+                from langchain_core.output_parsers import StrOutputParser
+                
+                # プロンプトテンプレートの作成（config → デフォルト）
+                prompt_template = self.config.get("prompt", {}).get("analyze_message_type", "") if self.config else ""
+                if not prompt_template:
+                    prompt_template = DEFAULT_PROMPTS.analyze_message_type
+                    if self.agent_logger:
+                        self.agent_logger.logger.info("Using default prompt for analyze_message_type")
+                
+                template = Template(prompt_template)
+                prompt = template.render(
+                    content=content,
+                    agent_names=list(info.status_map.keys()),
+                )
+                
+                # LLMに問い合わせ
+                messages = [HumanMessage(content=prompt)]
+                response = (self.llm_model | StrOutputParser()).invoke(messages)
+                
+                # LLMやり取りをログ出力
                 if self.agent_logger:
-                    self.agent_logger.logger.info("Using default prompt for analyze_message_type")
-            
-            template = Template(prompt_template)
-            prompt = template.render(
-                content=content,
-                agent_names=list(info.status_map.keys()),
-            )
-            
-            # LLMに問い合わせ
-            messages = [HumanMessage(content=prompt)]
-            response = (self.llm_model | StrOutputParser()).invoke(messages)
-            
-            # LLMやり取りをログ出力
-            if self.agent_logger:
-                model_info = f"{type(self.llm_model).__name__}"
-                self.agent_logger.llm_interaction("message_type_analysis", prompt, response, model_info)
+                    model_info = f"{type(self.llm_model).__name__}"
+                    self.agent_logger.llm_interaction("message_type_analysis", prompt, response, model_info)
+            else:
+                if self.agent_logger:
+                    self.agent_logger.llm_error("message_type_analysis", "No LLM available")
+                return "null"
             
             # 応答からタイプを抽出
             response = response.strip().lower()
@@ -475,38 +494,54 @@ class AnalysisTracker:
         info: Info,
     ) -> str:
         """発話の対象エージェントを分析."""
-        # LLMを使って発話対象を分析
-        if not self.llm_model:
-            if self.agent_logger:
-                self.agent_logger.llm_error("target_agents_analysis", "LLM model not available")
-            return "null"
         
         try:
-            from jinja2 import Template
-            from langchain_core.messages import HumanMessage
-            from langchain_core.output_parsers import StrOutputParser
-            
-            # プロンプトテンプレートの作成（config → デフォルト）
-            prompt_template = self.config.get("prompt", {}).get("analyze_target_agents", "") if self.config else ""
-            if not prompt_template:
-                prompt_template = DEFAULT_PROMPTS.analyze_target_agents
+            # Use agent_obj centralized LLM if available
+            if self.agent_obj is not None:
+                extra_vars = {
+                    "content": content,
+                    "agent_names": list(info.status_map.keys())
+                }
+                response = self.agent_obj.send_message_to_llm(
+                    "analyze_target_agents",
+                    extra_vars=extra_vars,
+                    log_tag="target_agents_analysis"
+                )
+                if not response:
+                    if self.agent_logger:
+                        self.agent_logger.llm_error("target_agents_analysis", "Agent LLM call returned None")
+                    return "null"
+            elif self.llm_model:
+                # Fallback to direct LLM call
+                from jinja2 import Template
+                from langchain_core.messages import HumanMessage
+                from langchain_core.output_parsers import StrOutputParser
+                
+                # プロンプトテンプレートの作成（config → デフォルト）
+                prompt_template = self.config.get("prompt", {}).get("analyze_target_agents", "") if self.config else ""
+                if not prompt_template:
+                    prompt_template = DEFAULT_PROMPTS.analyze_target_agents
+                    if self.agent_logger:
+                        self.agent_logger.logger.info("Using default prompt for analyze_target_agents")
+                
+                template = Template(prompt_template)
+                prompt = template.render(
+                    content=content,
+                    agent_names=list(info.status_map.keys()),
+                )
+                
+                # LLMに問い合わせ
+                messages = [HumanMessage(content=prompt)]
+                response = (self.llm_model | StrOutputParser()).invoke(messages)
+                
+                # LLMやり取りをログ出力
                 if self.agent_logger:
-                    self.agent_logger.logger.info("Using default prompt for analyze_target_agents")
-            
-            template = Template(prompt_template)
-            prompt = template.render(
-                content=content,
-                agent_names=list(info.status_map.keys()),
-            )
-            
-            # LLMに問い合わせ
-            messages = [HumanMessage(content=prompt)]
-            response = (self.llm_model | StrOutputParser()).invoke(messages)
-            
-            # LLMやり取りをログ出力
-            if self.agent_logger:
-                model_info = f"{type(self.llm_model).__name__}"
-                self.agent_logger.llm_interaction("target_agents_analysis", prompt, response, model_info)
+                    model_info = f"{type(self.llm_model).__name__}"
+                    self.agent_logger.llm_interaction("target_agents_analysis", prompt, response, model_info)
+            else:
+                if self.agent_logger:
+                    self.agent_logger.llm_error("target_agents_analysis", "No LLM available")
+                return "null"
             
             # 応答から対象エージェントを抽出
             response = response.strip()
@@ -572,37 +607,54 @@ class AnalysisTracker:
         info: Info,
     ) -> dict[str, float]:
         """LLMを使って信憑性の4つのスコアを取得."""
-        if not self.llm_model:
-            if self.agent_logger:
-                self.agent_logger.llm_error("credibility_analysis", "LLM model not available")
-            return {}
         
         try:
-            from jinja2 import Template
-            from langchain_core.messages import HumanMessage
-            from langchain_core.output_parsers import StrOutputParser
-            
-            # プロンプトテンプレートの作成（config → デフォルト）
-            prompt_template = self.config.get("prompt", {}).get("analyze_credibility", "") if self.config else ""
-            if not prompt_template:
-                prompt_template = DEFAULT_PROMPTS.analyze_credibility
+            # Use agent_obj centralized LLM if available
+            if self.agent_obj is not None:
+                extra_vars = {
+                    "content": content,
+                    "agent_names": list(info.status_map.keys())
+                }
+                response = self.agent_obj.send_message_to_llm(
+                    "analyze_credibility",
+                    extra_vars=extra_vars,
+                    log_tag="credibility_analysis"
+                )
+                if not response:
+                    if self.agent_logger:
+                        self.agent_logger.llm_error("credibility_analysis", "Agent LLM call returned None")
+                    return {}
+            elif self.llm_model:
+                # Fallback to direct LLM call
+                from jinja2 import Template
+                from langchain_core.messages import HumanMessage
+                from langchain_core.output_parsers import StrOutputParser
+                
+                # プロンプトテンプレートの作成（config → デフォルト）
+                prompt_template = self.config.get("prompt", {}).get("analyze_credibility", "") if self.config else ""
+                if not prompt_template:
+                    prompt_template = DEFAULT_PROMPTS.analyze_credibility
+                    if self.agent_logger:
+                        self.agent_logger.logger.info("Using default prompt for analyze_credibility")
+                
+                template = Template(prompt_template)
+                prompt = template.render(
+                    content=content,
+                    agent_names=list(info.status_map.keys()),
+                )
+                
+                # LLMに問い合わせ
+                messages = [HumanMessage(content=prompt)]
+                response = (self.llm_model | StrOutputParser()).invoke(messages)
+                
+                # LLMやり取りをログ出力
                 if self.agent_logger:
-                    self.agent_logger.logger.info("Using default prompt for analyze_credibility")
-            
-            template = Template(prompt_template)
-            prompt = template.render(
-                content=content,
-                agent_names=list(info.status_map.keys()),
-            )
-            
-            # LLMに問い合わせ
-            messages = [HumanMessage(content=prompt)]
-            response = (self.llm_model | StrOutputParser()).invoke(messages)
-            
-            # LLMやり取りをログ出力
-            if self.agent_logger:
-                model_info = f"{type(self.llm_model).__name__}"
-                self.agent_logger.llm_interaction("credibility_analysis", prompt, response, model_info)
+                    model_info = f"{type(self.llm_model).__name__}"
+                    self.agent_logger.llm_interaction("credibility_analysis", prompt, response, model_info)
+            else:
+                if self.agent_logger:
+                    self.agent_logger.llm_error("credibility_analysis", "No LLM available")
+                return {}
             
             # 応答からスコアを抽出
             scores = {}

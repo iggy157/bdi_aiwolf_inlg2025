@@ -1,0 +1,10 @@
+macro_desire:
+  summary: Failed to parse LLM response
+  description: "Original response: yaml\nmacro_desire:\n  summary: \"自由な情報活用を求めつつ、信頼を維持したい\"\
+    \n  description: \"ユミは占い師として、集団に有益な情報を提供しつつ、自分の自由を重視したい。ただし、強い自由志向と冒険心も持ち合わせているため、必ずしも常に情報開示を最優先とはしない。このため、情報のタイミングと信憑性を管理しつつ、必要に応じて創造的な手法で情報を活用することを..."
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-19T04:17:29Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ユミ/macro_belief.yml

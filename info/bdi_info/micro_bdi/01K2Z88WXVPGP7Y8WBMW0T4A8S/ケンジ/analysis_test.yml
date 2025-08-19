@@ -1,0 +1,152 @@
+1:
+  content: '[PENDING] Analyzing: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。...'
+  type: pending_analysis
+  from: ミドリ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: 占い師は潜伏していることを考慮しています。...'
+  type: pending_analysis
+  from: シオン
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 村人の視点から見て疑わしいエージェントを教えてください。...'
+  type: pending_analysis
+  from: セルヴァス
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: 現時点での状況分析をお願いします。...'
+  type: pending_analysis
+  from: ミサキ
+  to: all
+  credibility: 0.0
+5:
+  content: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  type: question
+  from: ミドリ
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミドリ
+6:
+  content: '[PENDING] Analyzing: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。...'
+  type: pending_analysis
+  from: ミサキ
+  to: all
+  credibility: 0.0
+7:
+  content: '[PENDING] Analyzing: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。...'
+  type: pending_analysis
+  from: ミドリ
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing: 占い師は潜伏していることを考慮しています。...'
+  type: pending_analysis
+  from: セルヴァス
+  to: all
+  credibility: 0.0
+9:
+  content: '[PENDING] Analyzing: 現時点での状況分析をお願いします。...'
+  type: pending_analysis
+  from: シオン
+  to: all
+  credibility: 0.0
+10:
+  content: 占い師は潜伏していることを考慮しています。
+  type: 'null'
+  from: シオン
+  to: 'null'
+  credibility: 0.14
+  credibility_raw: 0.28
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: シオン
+11:
+  content: 村人の視点から見て疑わしいエージェントを教えてください。
+  type: question
+  from: セルヴァス
+  to: 'null'
+  credibility: 0.265
+  credibility_raw: 0.53
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: セルヴァス
+12:
+  content: 現時点での状況分析をお願いします。
+  type: question
+  from: ミサキ
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミサキ
+13:
+  content: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  type: question
+  from: ミサキ
+  to: all
+  credibility: 0.315
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミサキ
+14:
+  content: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  type: question
+  from: ミドリ
+  to: 'null'
+  credibility: 0.245
+  credibility_raw: 0.49
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミドリ
+15:
+  content: 占い師は潜伏していることを考慮しています。
+  type: 'null'
+  from: セルヴァス
+  to: 'null'
+  credibility: 0.275
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: セルヴァス
+16:
+  content: 現時点での状況分析をお願いします。
+  type: question
+  from: シオン
+  to: 'null'
+  credibility: 0.33
+  credibility_raw: 0.66
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: シオン

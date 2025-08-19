@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 特定陣営の支援を隠しつつ、自身の承認を求める狡猾な策略
+  description: ミヅキは社会的承認を強く求めており、これを達成するために自身の狂人役としての立場を慎重に操作しようとするだろう。欲求が示すように、ミヅキは自由と社会的承認のバランスをとりつつ、巧妙に情報を操作することで他のプレイヤーに信頼されながら、裏で特定の陣営を有利にする計画を練る。直接的なコミュニケーションがない中でも、存在感をアピールしつつ、安定感と刺激を少しずつ追求しつつ、ゲームにおける勝利条件を達成し続けることを望む。
+meta:
+  game_id: 01K303J5W160M3JGSM7F9SEEXB
+  agent: ミヅキ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:47:11Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/ミヅキ/macro_belief.yml

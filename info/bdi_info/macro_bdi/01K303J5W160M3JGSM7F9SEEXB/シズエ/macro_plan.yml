@@ -1,0 +1,45 @@
+macro_plan:
+  plans:
+  - label: オープニングディスカッション
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - 議論の時間である
+    body:
+    - type: basic_action
+      description: 自己紹介をし、積極的に議論に参加する
+  - label: 村の安全確保
+    trigger_event: 夜が終わった後
+    preconditions:
+    - 朝になる
+    body:
+    - type: subgoal
+      description: 昨晩の動きを観察し、他者の意見を収集して状況を把握する
+  - label: 潜在的な脅威の排除
+    trigger_event: 日中議論中
+    preconditions:
+    - 怪しい行動や発言があった個人がいる
+    body:
+    - type: basic_action
+      description: その人物に対して質問し、議論をリードすることで集団のコンセンサスを得る
+  - label: 柔軟な戦略調整
+    trigger_event: 日中の投票直前
+    preconditions:
+    - 集団の意見が固まっていない
+    body:
+    - type: subgoal
+      description: 他者の意見を取り入れつつ、新たな角度から意見を提供する
+  - label: 自由な意思表示
+    trigger_event: 意見が対立している時
+    preconditions:
+    - 議論が停滞している
+    body:
+    - type: basic_action
+      description: 自らの意見を率直に述べ、議論の活性化を図る
+  notes: シズエは積極的な関与を通して集団に影響を与えつつ、自由と柔軟性を維持する。議論の中で自分のスタンスを明確にする一方で、他者とのコミュニケーションを大切にする。
+meta:
+  game_id: 01K303J5W160M3JGSM7F9SEEXB
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:47:21Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/シズエ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/シズエ/macro_desire.yml

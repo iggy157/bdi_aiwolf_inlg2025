@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 集団の安全を最優先にし、調和を維持したい
+  description: ミドリは、村人としての社会的責務を重視し、安全で安定した集団生活を維持することを望んでいます。欲求傾向から、集団の中での安定や愛情、親密さを求める一方で、多少の自由や冒険を欲する傾向もあります。しかし、集団の安全を脅かす存在に対しては慎重な観察と推論を通じて、社会的決定手段による排除に協力する意志があります。自分が安定した人間関係を築きながら、村全体の調和を保つことを目的としています。
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: ミドリ
+  model: gpt-4o
+  generated_at: '2025-08-19T04:17:30Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ミドリ/macro_belief.yml

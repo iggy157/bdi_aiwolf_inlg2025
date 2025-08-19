@@ -1,0 +1,47 @@
+macro_plan:
+  plans:
+  - label: 信頼の確保
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - 全員が発言または行動する準備が整っている
+    body:
+    - type: basic_action
+      description: 初期の挨拶を行い、集団内での存在感を示す
+    - type: subgoal
+      description: 信頼を得るための有効な情報提供
+  - label: 仲間との協力
+    trigger_event: ゲームの中盤
+    preconditions:
+    - 他の構成員が疑われ始めている
+    - 自身の疑惑が低い
+    body:
+    - type: subgoal
+      description: 仲間との非言語的合図での連携
+    - type: basic_action
+      description: 暗黙の了解でターゲットを選定
+  - label: 役割の隠蔽
+    trigger_event: 疑惑が高まった時
+    preconditions:
+    - 他の構成員からの不信感が感じられる
+    body:
+    - type: basic_action
+      description: 積極的な提案を行い、仲間からのサポートを得る
+    - type: subgoal
+      description: 議論への積極的な参加で信頼を回復
+  - label: 排除の計画
+    trigger_event: 夜のターン
+    preconditions:
+    - ターゲットが孤立している
+    body:
+    - type: basic_action
+      description: ターゲットを排除するための行動を選択
+    - type: subgoal
+      description: 排除後の策略を立て直し、次の日に備える
+  notes: 行動は慎重かつ自律性を持って行動し、集団内での浮き上がりを防ぐ。
+meta:
+  game_id: 01K303S0Q4R1VX3VF4Q65BG1FX
+  agent: ミヅキ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:51:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303S0Q4R1VX3VF4Q65BG1FX/ミヅキ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303S0Q4R1VX3VF4Q65BG1FX/ミヅキ/macro_desire.yml

@@ -17,12 +17,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import requests
-from dotenv import load_dotenv
 from jinja2 import Template
 
-# Load environment variables
-load_dotenv(Path(__file__).parent.parent.parent.parent.parent / "config" / ".env")
+# NOTE: .env loading is handled by agent.py only
 
 # Default fallback prompt template (used when config.yml is not available)
 FALLBACK_PROMPT_TEMPLATE = """あなたは社会的役割と欲求傾向にもとづき、エージェントの上位欲求（macro_desire）をYAMLで設計する専門家です。  
@@ -180,137 +177,13 @@ def extract_numeric_value(value_str: str) -> float:
         return 0.5  # Default
 
 
-def call_openai_api(prompt: str, model: str, max_retries: int = 3) -> str:
-    """Call OpenAI API with exponential backoff retry.
-    
-    Args:
-        prompt: Input prompt
-        model: Model name (e.g., gpt-4o)
-        max_retries: Maximum number of retries
-        
-    Returns:
-        API response text
-        
-    Raises:
-        Exception: If all retries fail
-    """
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
-        raise ValueError("OPENAI_API_KEY not found in environment variables")
-    
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
-    
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "user", "content": prompt}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 2000
-    }
-    
-    for attempt in range(max_retries):
-        try:
-            response = requests.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers=headers,
-                json=payload,
-                timeout=60
-            )
-            response.raise_for_status()
-            
-            data = response.json()
-            return data["choices"][0]["message"]["content"]
-            
-        except Exception as e:
-            if attempt == max_retries - 1:
-                raise e
-            
-            wait_time = 2 ** attempt  # Exponential backoff
-            print(f"API call failed (attempt {attempt + 1}/{max_retries}): {e}")
-            print(f"Retrying in {wait_time} seconds...")
-            time.sleep(wait_time)
+# Direct API calls removed - use agent.send_message_to_llm instead
 
 
-def call_anthropic_api(prompt: str, model: str, max_retries: int = 3) -> str:
-    """Call Anthropic API with exponential backoff retry.
-    
-    Args:
-        prompt: Input prompt
-        model: Model name (e.g., claude-3-5-sonnet)
-        max_retries: Maximum number of retries
-        
-    Returns:
-        API response text
-        
-    Raises:
-        Exception: If all retries fail
-    """
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise ValueError("ANTHROPIC_API_KEY not found in environment variables")
-    
-    headers = {
-        "x-api-key": api_key,
-        "Content-Type": "application/json",
-        "anthropic-version": "2023-06-01"
-    }
-    
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "user", "content": prompt}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 2000
-    }
-    
-    for attempt in range(max_retries):
-        try:
-            response = requests.post(
-                "https://api.anthropic.com/v1/messages",
-                headers=headers,
-                json=payload,
-                timeout=60
-            )
-            response.raise_for_status()
-            
-            data = response.json()
-            return data["content"][0]["text"]
-            
-        except Exception as e:
-            if attempt == max_retries - 1:
-                raise e
-            
-            wait_time = 2 ** attempt  # Exponential backoff
-            print(f"API call failed (attempt {attempt + 1}/{max_retries}): {e}")
-            print(f"Retrying in {wait_time} seconds...")
-            time.sleep(wait_time)
+# Direct API calls removed - use agent.send_message_to_llm instead
 
 
-def call_llm_api(prompt: str, model: str) -> str:
-    """Call appropriate LLM API based on model name.
-    
-    Args:
-        prompt: Input prompt
-        model: Model name
-        
-    Returns:
-        API response text
-    """
-    model_lower = model.lower()
-    
-    if any(provider in model_lower for provider in ["gpt", "openai"]):
-        return call_openai_api(prompt, model)
-    elif any(provider in model_lower for provider in ["claude", "anthropic"]):
-        return call_anthropic_api(prompt, model)
-    else:
-        # Default to OpenAI if unclear
-        print(f"Unknown model provider for '{model}', defaulting to OpenAI API")
-        return call_openai_api(prompt, model)
+# Direct API calls removed - use agent.send_message_to_llm instead
 
 
 def extract_yaml_from_response(response: str) -> Dict[str, Any]:
@@ -395,7 +268,7 @@ def normalize_macro_desire(data: Dict[str, Any]) -> Dict[str, Any]:
 def generate_macro_desire(
     game_id: str,
     agent: str,
-    model: str,
+    agent_obj,
     dry_run: bool = False,
     overwrite: bool = False
 ) -> Dict[str, Any]:
@@ -411,6 +284,8 @@ def generate_macro_desire(
     Returns:
         Generated macro desire data
     """
+    import logging
+    
     # Define paths
     base_path = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
     macro_belief_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_belief.yml"
@@ -421,110 +296,154 @@ def generate_macro_desire(
     if output_path.exists() and not overwrite and not dry_run:
         raise FileExistsError(f"Output file already exists: {output_path}. Use --overwrite to overwrite.")
     
-    # Load input files
-    print(f"Loading macro_belief from: {macro_belief_path}")
-    macro_belief_data = load_yaml_file(macro_belief_path)
-    
-    print(f"Loading config from: {config_path}")
     try:
-        config_data = load_yaml_file(config_path)
-    except FileNotFoundError:
-        print("Config file not found, using fallback prompt")
-        config_data = {}
-    
-    # Extract required data
-    role_data = macro_belief_data["macro_belief"]["role_social_duties"]
-    role = role_data["role"]
-    role_definition = role_data["duties"]["定義"]
-    desire_tendencies = macro_belief_data["macro_belief"]["desire_tendency"]["desire_tendencies"]
-    
-    # Get prompt template from config
-    prompt_template = config_data.get("prompt", {}).get("macro_desire", FALLBACK_PROMPT_TEMPLATE)
-    if not prompt_template:
-        prompt_template = FALLBACK_PROMPT_TEMPLATE
-        print("Warning: Using fallback prompt template")
-    
-    # Build prompt
-    prompt = build_prompt(prompt_template, game_id, agent, role, role_definition, desire_tendencies)
-    
-    if dry_run:
-        print("\n" + "="*50)
-        print("DRY RUN - GENERATED PROMPT:")
-        print("="*50)
-        print(prompt)
-        print("\n" + "="*50)
-    
-    # Call LLM
-    print(f"Calling {model} API...")
-    response = call_llm_api(prompt, model)
-    
-    if dry_run:
-        print("RAW LLM RESPONSE:")
-        print("="*50)
-        print(response)
-        print("\n" + "="*50)
-    
-    # Parse response
-    parsed_data = extract_yaml_from_response(response)
-    normalized_data = normalize_macro_desire(parsed_data)
-    
-    # Add metadata
-    final_data = {
-        **normalized_data,
-        "meta": {
+        # Load input files
+        try:
+            macro_belief_data = load_yaml_file(macro_belief_path)
+        except FileNotFoundError:
+            print(f"Warning: macro_belief file not found: {macro_belief_path}")
+            macro_belief_data = {"macro_belief": {}}
+        except Exception as e:
+            print(f"Warning: Failed to load macro_belief: {e}")
+            macro_belief_data = {"macro_belief": {}}
+        
+        # Load config
+        try:
+            config_data = load_yaml_file(config_path)
+        except FileNotFoundError:
+            print("Config file not found, using fallback prompt")
+            config_data = {}
+        
+        # Extract required data with safe fallbacks
+        m = macro_belief_data.get("macro_belief", {})
+        role_data = m.get("role_social_duties", {}) or {}
+        role = role_data.get("role") or m.get("role") or "不明"
+        duties = role_data.get("duties", {}) if isinstance(role_data.get("duties", {}), dict) else {}
+        role_definition = duties.get("定義") or duties.get("definition") or m.get("role_definition") or ""
+        dt = m.get("desire_tendency", {}) or {}
+        desire_tendencies = dt.get("desire_tendencies") or dt  # どちらでも受ける
+        if not isinstance(desire_tendencies, dict):
+            desire_tendencies = {}
+        
+        # Debug: extracted data loaded
+        
+        # Get prompt template from config
+        prompt_template = config_data.get("prompt", {}).get("macro_desire", FALLBACK_PROMPT_TEMPLATE)
+        if not prompt_template:
+            prompt_template = FALLBACK_PROMPT_TEMPLATE
+            print("Warning: Using fallback prompt template")
+        
+        # Build prompt
+        prompt = build_prompt(prompt_template, game_id, agent, role, role_definition, desire_tendencies)
+        
+        if dry_run:
+            print("\n" + "="*50)
+            print("DRY RUN - GENERATED PROMPT:")
+            print("="*50)
+            print(prompt)
+            print("\n" + "="*50)
+        
+        # Call LLM via agent only
+        if agent_obj is None:
+            raise ValueError("agent_obj is required. Direct API calls are not allowed.")
+        
+        extra_vars = {
             "game_id": game_id,
             "agent": agent,
-            "model": model,
-            "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-            "source_macro_belief": str(macro_belief_path)
+            "role": role,
+            "role_definition": role_definition,
+            "desire_tendencies": desire_tendencies
         }
-    }
-    
-    if dry_run:
-        print("PARSED AND NORMALIZED RESULT:")
-        print("="*50)
-        print(yaml.dump(final_data, allow_unicode=True, sort_keys=False))
+        response = agent_obj.send_message_to_llm(
+            "macro_desire",
+            extra_vars=extra_vars,
+            log_tag="MACRO_DESIRE_GENERATION",
+            use_shared_history=False
+        )
+        if response is None:
+            raise ValueError("Agent LLM call returned None")
+        
+        if dry_run:
+            print("RAW LLM RESPONSE:")
+            print("="*50)
+            print(response)
+            print("\n" + "="*50)
+        
+        # Parse response
+        parsed_data = extract_yaml_from_response(response)
+        normalized_data = normalize_macro_desire(parsed_data)
+        
+        # Add metadata
+        final_data = {
+            **normalized_data,
+            "meta": {
+                "game_id": game_id,
+                "agent": agent,
+                "model": (agent_obj.config.get("openai", {}).get("model")
+                          or agent_obj.config.get("google", {}).get("model")
+                          or agent_obj.config.get("ollama", {}).get("model")),
+                "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+                "source_macro_belief": str(macro_belief_path)
+            }
+        }
+        
+        if dry_run:
+            print("PARSED AND NORMALIZED RESULT:")
+            print("="*50)
+            print(yaml.dump(final_data, allow_unicode=True, sort_keys=False))
+            return final_data
+        
+        # Save result atomically
+        _atomic_write_yaml(final_data, output_path)
+        print(f"Saved macro_desire: {output_path}")
+        
         return final_data
-    
-    # Save result atomically
-    _atomic_write_yaml(final_data, output_path)
-    print(f"Saved macro_desire: {output_path}")
-    
-    return final_data
+        
+    except Exception as e:
+        error_msg = str(e)
+        print(f"Error generating macro_desire: {error_msg}")
+        
+        if not dry_run:
+            # Write fallback minimal YAML structure
+            try:
+                output_path.parent.mkdir(parents=True, exist_ok=True)
+                
+                fallback_data = {
+                    "macro_desire": {
+                        "summary": "Auto-generated (fallback)",
+                        "description": f"Fallback due to error: {error_msg[:100]}"
+                    },
+                    "meta": {
+                        "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+                        "source": "macro_desire.py fallback", 
+                        "game_id": game_id,
+                        "agent": agent,
+                        "model": (agent_obj.config.get("openai", {}).get("model")
+                                  or agent_obj.config.get("google", {}).get("model")
+                                  or agent_obj.config.get("ollama", {}).get("model"))
+                                 if agent_obj else "unknown",
+                        "fallback": True,
+                        "error": error_msg[:200]
+                    }
+                }
+                
+                _atomic_write_yaml(fallback_data, output_path)
+                print(f"Created fallback macro_desire: {output_path}")
+                return fallback_data
+                
+            except Exception as fallback_error:
+                print(f"Failed to write fallback macro_desire: {fallback_error}")
+                raise e  # Re-raise original error
+        else:
+            raise e
 
 
 def main():
-    """Main CLI function."""
-    parser = argparse.ArgumentParser(
-        description="Generate macro_desire from role_social_duties and desire_tendency"
-    )
-    parser.add_argument("--game_id", required=True, help="Game ID")
-    parser.add_argument("--agent", required=True, help="Agent name")
-    parser.add_argument("--model", required=True, help="LLM model name (e.g., gpt-4o, claude-3-5-sonnet)")
-    parser.add_argument("--dry-run", action="store_true", help="Show prompt and response only, don't save")
-    parser.add_argument("--overwrite", action="store_true", help="Overwrite existing files")
-    
-    args = parser.parse_args()
-    
-    try:
-        result = generate_macro_desire(
-            game_id=args.game_id,
-            agent=args.agent,
-            model=args.model,
-            dry_run=args.dry_run,
-            overwrite=args.overwrite
-        )
-        
-        if args.dry_run:
-            print("\n✅ Dry run completed successfully!")
-        else:
-            print("✅ Macro desire generation completed successfully!")
-            
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return 1
-    
-    return 0
+    """Deprecated CLI function."""
+    print("❌ This CLI no longer calls LLM directly.")
+    print("💡 Run from Agent runtime context instead.")
+    print("   Example: agent.generate_macro_desire(game_id, agent_name, agent_obj=agent)")
+    return 1
 
 
 if __name__ == "__main__":

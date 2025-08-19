@@ -1,0 +1,48 @@
+macro_plan:
+  plans:
+  - label: 信頼構築と情報収集
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - 初期の信頼関係を築く必要がある
+    body:
+    - type: basic_action
+      description: 挨拶して自己紹介を行い、他のプレイヤーの警戒を解く
+    - type: basic_action
+      description: 他のプレイヤーの発言を注意深く聴き、情報を収集
+    - type: subgoal
+      description: 重要な対話を記録しておく
+  - label: 安全な話題での交流
+    trigger_event: 信頼を深める必要があると判断した時
+    preconditions:
+    - 直接的な疑いが向けられていない
+    body:
+    - type: basic_action
+      description: ゲームに直接関与しない無難な話題を提供し会話をリード
+    - type: basic_action
+      description: 他のプレイヤーの発言に共感を示し、信頼を得る
+  - label: 秘密の操作
+    trigger_event: 疑われるリスクが低いと判断した時
+    preconditions:
+    - 他プレイヤーの注目が自身から逸れている
+    body:
+    - type: basic_action
+      description: 他の人狼プレイヤーと非公開の合図で連携
+    - type: subgoal
+      description: 次の夜の行動を計画する
+  - label: 緊急時の自己防衛
+    trigger_event: 自分への疑いが非常に高まった時
+    preconditions:
+    - 他者から明確に疑われている
+    body:
+    - type: basic_action
+      description: 笑顔を維持し、冷静に弁明を試みる
+    - type: subgoal
+      description: 疑いを他のプレイヤーに転嫁するための証拠を探す
+  notes: ダイスケの計画は長期的な信頼と安定を築くことを意図しているが、状況に応じた柔軟な対応が求められる。そのため、冷静かつ現実的な行動が重要。
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: ダイスケ
+  model: gpt-4o
+  generated_at: '2025-08-19T04:17:39Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ダイスケ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ダイスケ/macro_desire.yml

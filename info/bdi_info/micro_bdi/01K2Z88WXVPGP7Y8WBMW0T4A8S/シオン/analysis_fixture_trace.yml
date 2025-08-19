@@ -1,0 +1,106 @@
+0:0:18a63f55:
+  from_agent: ミドリ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T03:50:39.777481'
+0:1:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T03:50:41.929013'
+0:3:18a63f55:
+  from_agent: セルヴァス
+  original: Over
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T03:51:03.127526'
+0:4:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 現時点での状況分析をお願いします。
+  timestamp: '2025-08-19T03:51:05.480609'
+1:0:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T03:51:37.629937'
+1:1:18a63f55:
+  from_agent: ミドリ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T03:51:39.682084'
+1:2:18a63f55:
+  from_agent: セルヴァス
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T03:51:41.726623'
+1:3:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T03:51:44.291547'
+meta:heartbeat:empty_candidates:1755543070:2865:
+  from_agent: null
+  original: ''
+  reason: empty_candidates
+  replaced: ''
+  timestamp: '2025-08-19T03:51:10.501271'
+meta:heartbeat:empty_candidates:1755543105:4538:
+  from_agent: null
+  original: ''
+  reason: empty_candidates
+  replaced: ''
+  timestamp: '2025-08-19T03:51:45.003049'
+meta:heartbeat:stub_saved_fixture:1755543037:6648:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:50:37.432540'
+meta:heartbeat:stub_saved_fixture:1755543039:8784:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:50:39.793332'
+meta:heartbeat:stub_saved_fixture:1755543060:2324:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:00.740831'
+meta:heartbeat:stub_saved_fixture:1755543063:7152:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:03.160383'
+meta:heartbeat:stub_saved_fixture:1755543095:7618:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:35.698631'
+meta:heartbeat:stub_saved_fixture:1755543097:9452:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:37.674758'
+meta:heartbeat:stub_saved_fixture:1755543099:6687:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:39.727514'
+meta:heartbeat:stub_saved_fixture:1755543101:2848:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:41.762314'
+meta:tracker_init:1755543016:5204:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-19T03:50:16.349522'

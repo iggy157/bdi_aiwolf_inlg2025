@@ -1,0 +1,95 @@
+1:
+  content: '[PENDING] Analyzing: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: 私はまだ情報が少ないので、まずはみんなの意見を聞いて推理を始めたいです。...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。...'
+  type: pending_analysis
+  from: ミヅキ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+5:
+  content: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.27
+  credibility_raw: 0.54
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+6:
+  content: '[PENDING] Analyzing: 昨日ケンジさんを占ったら人間でした。みなさん、ほかに気になるところはありますか？...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+7:
+  content: 私はまだ情報が少ないので、まずはみんなの意見を聞いて推理を始めたいです。
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.29
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ユミ
+8:
+  content: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。
+  type: 'null'
+  from: ミヅキ
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミヅキ
+9:
+  content: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over
+  type: question
+  from: サクラ
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+10:
+  content: 昨日ケンジさんを占ったら人間でした。みなさん、ほかに気になるところはありますか？
+  type: co
+  from: ユミ
+  to: all
+  credibility: 0.205
+  credibility_raw: 0.41
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ユミ

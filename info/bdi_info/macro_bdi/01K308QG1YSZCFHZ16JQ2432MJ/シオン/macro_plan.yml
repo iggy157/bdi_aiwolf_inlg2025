@@ -1,0 +1,55 @@
+macro_plan:
+  plans:
+  - label: 情報の収集と観察
+    trigger_event: ゲーム開始後の最初の議論フェーズ
+    preconditions:
+    - 初日の議論が始まる
+    body:
+    - type: basic_action
+      description: 他のプレイヤーの発言を観察し、特に疑われているプレイヤーに注意を払う
+    - type: basic_action
+      description: 自分に関する情報を過度に開示せず、状況を見守る
+  - label: 信頼の構築
+    trigger_event: 第1夜以降、同調者を探す
+    preconditions:
+    - ある程度の情報が収集された
+    body:
+    - type: subgoal
+      description: 他のプレイヤーからの信頼を得る
+    - type: basic_action
+      description: 自分が市民側であるという疑いを持たれないように、他のプレイヤーと協調する発言をする
+  - label: 情報攪乱の開始
+    trigger_event: 信頼がある程度得られ、自身が疑われていないと感じた時
+    preconditions:
+    - 他のプレイヤーからの信頼感が強まった
+    body:
+    - type: subgoal
+      description: 他のプレイヤーに対する疑念を巧妙に拡散する
+    - type: basic_action
+      description: 自分の発言を通して、無実のプレイヤーに対する疑念を助長する情報をさりげなく提供する
+  - label: 陣営のサポート
+    trigger_event: 他の狂人や人狼が窮地に立ったとき
+    preconditions:
+    - 仲間の人狼や狂人が疑われ始めた
+    body:
+    - type: subgoal
+      description: 仲間を支えるための策を練る
+    - type: basic_action
+      description: 議論を他の無実のプレイヤーに向けることで、仲間への疑いを逸らす
+  - label: 最終局面の戦略
+    trigger_event: ゲームが終盤に差し掛かり、自陣営の勝利が近づいたとき
+    preconditions:
+    - 残りのプレイヤーが少なくなり、勝利が視野に入る
+    body:
+    - type: subgoal
+      description: 最終的な勝利を確実にするためのプランを実行
+    - type: basic_action
+      description: 他のプレイヤーと連携して最後の疑念を操作し、敵対陣営を混乱させる
+  notes: 慎重かつ着実な行動を心掛け、リスクを最小限に抑えつつ効果的な攪乱を行うことが重要
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: シオン
+  model: gpt-4o
+  generated_at: '2025-08-19T04:18:03Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/シオン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/シオン/macro_desire.yml

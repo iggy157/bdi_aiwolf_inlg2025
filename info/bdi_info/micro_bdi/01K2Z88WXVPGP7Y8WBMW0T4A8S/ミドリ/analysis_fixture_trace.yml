@@ -1,0 +1,95 @@
+0:1:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T03:51:03.201538'
+0:2:18a63f55:
+  from_agent: シオン
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T03:51:06.296883'
+0:3:18a63f55:
+  from_agent: セルヴァス
+  original: Over
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T03:51:08.807046'
+0:4:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 現時点での状況分析をお願いします。
+  timestamp: '2025-08-19T03:51:13.121891'
+1:0:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T03:51:21.451942'
+1:2:18a63f55:
+  from_agent: セルヴァス
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T03:51:47.531530'
+1:3:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T03:51:49.528683'
+meta:heartbeat:empty_candidates:1755543077:5239:
+  from_agent: null
+  original: ''
+  reason: empty_candidates
+  replaced: ''
+  timestamp: '2025-08-19T03:51:17.660400'
+meta:heartbeat:stub_saved_fixture:1755543060:6319:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:00.752728'
+meta:heartbeat:stub_saved_fixture:1755543063:5021:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:03.216988'
+meta:heartbeat:stub_saved_fixture:1755543066:9418:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:06.314037'
+meta:heartbeat:stub_saved_fixture:1755543068:3176:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:08.825053'
+meta:heartbeat:stub_saved_fixture:1755543078:7910:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:18.922983'
+meta:heartbeat:stub_saved_fixture:1755543105:4653:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:45.422681'
+meta:heartbeat:stub_saved_fixture:1755543107:1315:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:47.554909'
+meta:heartbeat:stub_saved_fixture:1755543109:1457:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:49.553099'
+meta:tracker_init:1755543016:1800:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-19T03:50:16.467643'

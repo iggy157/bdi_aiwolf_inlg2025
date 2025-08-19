@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 安定した信頼関係を保ちながら秘密を守ることを重視
+  description: ダイスケは安定と信頼関係を重視するため、他の構成員とのつながりを維持しつつ、正体を隠すことを優先する。人狼としての役割を果たしつつも、安定した関係を築くことで自身の立場を守り、計画的に他の構成員を排除する。秘密裏の計画を遂行しながらも、状況に応じて適応し、必要な場面で真意を隠す努力を怠らない。
+meta:
+  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
+  agent: ダイスケ
+  model: gpt-4o
+  generated_at: '2025-08-19T04:17:27Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ダイスケ/macro_belief.yml

@@ -1,0 +1,100 @@
+0:0:18a63f55:
+  from_agent: ミドリ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T03:50:44.899397'
+0:1:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T03:50:46.744071'
+0:2:18a63f55:
+  from_agent: シオン
+  original: Over
+  replaced: 占い師は潜伏していることを考慮しています。
+  timestamp: '2025-08-19T03:50:49.236333'
+0:4:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 現時点での状況分析をお願いします。
+  timestamp: '2025-08-19T03:51:03.674083'
+1:0:18a63f55:
+  from_agent: ミサキ
+  original: Over
+  replaced: 占いCOの有無を確認したいです。仮投票先と理由を一言でお願いします。
+  timestamp: '2025-08-19T03:51:24.524295'
+1:1:18a63f55:
+  from_agent: ミドリ
+  original: Over
+  replaced: 便乗と早い同調を重く見ます。初期の白黒各1名と根拠を提示ください。
+  timestamp: '2025-08-19T03:51:26.953018'
+1:3:18a63f55:
+  from_agent: ケンジ
+  original: Over
+  replaced: 村人の視点から見て疑わしいエージェントを教えてください。
+  timestamp: '2025-08-19T03:51:47.125422'
+meta:heartbeat:empty_candidates:1755543070:5393:
+  from_agent: null
+  original: ''
+  reason: empty_candidates
+  replaced: ''
+  timestamp: '2025-08-19T03:51:10.981106'
+meta:heartbeat:stub_saved_fixture:1755543042:4332:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:50:42.698449'
+meta:heartbeat:stub_saved_fixture:1755543044:3848:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:50:44.928494'
+meta:heartbeat:stub_saved_fixture:1755543046:2891:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:50:46.786816'
+meta:heartbeat:stub_saved_fixture:1755543060:8623:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:00.765135'
+meta:heartbeat:stub_saved_fixture:1755543082:9021:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:22.289207'
+meta:heartbeat:stub_saved_fixture:1755543084:2274:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:24.546249'
+meta:heartbeat:stub_saved_fixture:1755543105:5951:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:45.140519'
+meta:heartbeat:stub_saved_fixture:1755543107:9650:
+  from_agent: null
+  original: ''
+  reason: stub_saved_fixture
+  replaced: ''
+  timestamp: '2025-08-19T03:51:47.163980'
+meta:tracker_init:1755543017:7271:
+  from_agent: null
+  original: ''
+  reason: tracker_init
+  replaced: ''
+  timestamp: '2025-08-19T03:50:17.507028'
+1:4:18a63f55:
+  from_agent: シオン
+  original: Over
+  replaced: 現時点での状況分析をお願いします。
+  timestamp: '2025-08-19T03:51:49.296330'

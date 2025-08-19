@@ -1,0 +1,76 @@
+1:
+  content: '[PENDING] Analyzing: 何か気になる点があれば教えてください、皆さんの意見を聞きたいです。...'
+  type: pending_analysis
+  from: ベンジャミン
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: まだ特に気になる点はないですが、様子を見ながら考えます。...'
+  type: pending_analysis
+  from: ダイスケ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 占い師として今日はまだ情報収集中ですが、何かあれば随時報告しますね。...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: まだ情報が少ないですが、ダイスケさんの意見に同意で、様子を見ながら進めます。...'
+  type: pending_analysis
+  from: シオン
+  to: all
+  credibility: 0.0
+5:
+  content: 何か気になる点があれば教えてください、皆さんの意見を聞きたいです。
+  type: question
+  from: ベンジャミン
+  to: all
+  credibility: 0.43
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: ベンジャミン
+6:
+  content: まだ特に気になる点はないですが、様子を見ながら考えます。
+  type: 'null'
+  from: ダイスケ
+  to: 'null'
+  credibility: 0.338
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: ダイスケ
+7:
+  content: 占い師として今日はまだ情報収集中ですが、何かあれば随時報告しますね。
+  type: co
+  from: ユミ
+  to: 'null'
+  credibility: 0.392
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: ユミ
+8:
+  content: まだ情報が少ないですが、ダイスケさんの意見に同意で、様子を見ながら進めます。
+  type: positive
+  from: シオン
+  to: ダイスケ
+  credibility: 0.363
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.567
+    liking: 0.533
+    creditability: 0.6
+    from: シオン

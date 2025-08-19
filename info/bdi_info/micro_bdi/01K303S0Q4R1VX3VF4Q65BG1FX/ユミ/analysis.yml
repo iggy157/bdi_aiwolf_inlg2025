@@ -1,0 +1,66 @@
+1:
+  content: '[PENDING] Analyzing: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: ぼくは特に変わったことはないけれど、みんなの意見を聞いて推理を始めたいね。...'
+  type: pending_analysis
+  from: ケンジ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。...'
+  type: pending_analysis
+  from: ミヅキ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+5:
+  content: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over
+  type: question
+  from: サクラ
+  to: all
+  credibility: 0.54
+6:
+  content: ぼくは特に変わったことはないけれど、みんなの意見を聞いて推理を始めたいね。
+  type: 'null'
+  from: ケンジ
+  to: all
+  credibility: 0.61
+7:
+  content: '[PENDING] Analyzing: ユミさん、占いの結果ありがとう！他のみんなの意見も聞きたいね。...'
+  type: pending_analysis
+  from: ケンジ
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing: ユミさんの占い結果は有益ですね、他の意見も聞きたいです。...'
+  type: pending_analysis
+  from: リュウジ
+  to: all
+  credibility: 0.0
+9:
+  content: '[PENDING] Analyzing: ユミさんの結果は参考になりますね。他の人も意見や情報があれば教えてください！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+10:
+  content: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。
+  type: 'null'
+  from: ミヅキ
+  to: all
+  credibility: 0.61
+11:
+  content: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.61

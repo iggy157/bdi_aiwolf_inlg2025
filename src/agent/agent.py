@@ -30,7 +30,7 @@ from utils.agent_logger import AgentLogger
 from utils.stoppable_thread import StoppableThread
 from utils.bdi.micro_bdi.extract_pairs import extract_pairs_for_agent
 from utils.bdi.micro_bdi.affinity_trust_updater import update_affinity_trust_for_agent
-from utils.bdi.micro_bdi.talk_history_init import init_talk_history_for_agent
+from utils.bdi.micro_bdi.talk_history_init import init_talk_history_for_agent, determine_talk_dir
 from utils.bdi.micro_bdi.credibility_adjuster import apply_affinity_to_analysis
 from utils.bdi.micro_bdi.select_sentence import update_select_sentence_for_agent
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
@@ -221,6 +221,82 @@ class Agent:
         else:
             return response
 
+    def send_message_to_llm(
+        self,
+        prompt_key: str,
+        extra_vars: dict[str, Any] | None = None,
+        *,
+        log_tag: str | None = None,
+        use_shared_history: bool = False,
+    ) -> str | None:
+        """Send message to LLM using config-based prompt and return response.
+        
+        config['prompt'][prompt_key]をJinja2でレンダリングし、LLMを実行して文字列レスポンスを返す.
+        - プロンプトはconfig/config.ymlからのみ取得
+        - APIキーはconfig/.envに依存（agent初期化の既存load_dotenvを利用）
+        - 既定ではチャット履歴を共有しない（aux系生成物は会話履歴に汚染を与えない）
+
+        Args:
+            prompt_key: config['prompt']にあるキー（例: 'macro_desire', 'macro_plan'など）
+            extra_vars: テンプレートに渡す追加コンテキスト
+            log_tag: LLMログ出力用タグ（省略時はprompt_key）
+            use_shared_history: Trueの場合に限りself.llm_message_historyを共有・更新する
+
+        Returns:
+            str | None: LLMからの生テキスト
+        """
+        if self.llm_model is None:
+            self.agent_logger.logger.error("LLM is not initialized")
+            return None
+
+        if "prompt" not in self.config or prompt_key not in self.config["prompt"]:
+            self.agent_logger.logger.error(f"Prompt key not found: {prompt_key}")
+            return None
+
+        prompt_tmpl = Template(self.config["prompt"][prompt_key])
+        base = {
+            "info": self.info,
+            "setting": self.setting,
+            "talk_history": self.talk_history,
+            "whisper_history": self.whisper_history,
+            "role": self.role,
+            "sent_talk_count": self.sent_talk_count,
+            "sent_whisper_count": self.sent_whisper_count,
+            "agent_name": getattr(self, "agent_name", None),
+            "game_id": getattr(self.info, "game_id", None) if self.info else None,
+        }
+        if extra_vars:
+            base.update(extra_vars)
+
+        prompt = prompt_tmpl.render(**base).strip()
+
+        # Apply sleep time if configured
+        if float(self.config.get("llm", {}).get("sleep_time", 0)) > 0:
+            sleep(float(self.config["llm"]["sleep_time"]))
+
+        try:
+            from langchain_core.messages import HumanMessage, AIMessage
+            from langchain_core.output_parsers import StrOutputParser
+
+            msg = HumanMessage(content=prompt)
+            if use_shared_history:
+                history = self.llm_message_history + [msg]
+                response = (self.llm_model | StrOutputParser()).invoke(history)
+                # 共有する場合のみ履歴を汚染
+                self.llm_message_history.append(msg)
+                self.llm_message_history.append(AIMessage(content=response))
+            else:
+                # 単発呼び出し
+                response = (self.llm_model | StrOutputParser()).invoke([msg])
+
+            model_info = f"{type(self.llm_model).__name__}"
+            self.agent_logger.llm_interaction(log_tag or prompt_key, prompt, response, model_info)
+            return response
+        except Exception as e:
+            self.agent_logger.llm_error(log_tag or prompt_key, str(e), prompt)
+            self.agent_logger.logger.exception("send_message_to_llm failed")
+            return None
+
     @timeout
     def name(self) -> str:
         """Return response to name request.
@@ -252,7 +328,7 @@ class Agent:
                 self.llm_model = ChatGoogleGenerativeAI(
                     model=str(self.config["google"]["model"]),
                     temperature=float(self.config["google"]["temperature"]),
-                    api_key=SecretStr(os.environ["GOOGLE_API_KEY"]),
+                    google_api_key=SecretStr(os.environ["GOOGLE_API_KEY"]),
                 )
             case "ollama":
                 self.llm_model = ChatOllama(
@@ -265,53 +341,11 @@ class Agent:
         self.llm_model = self.llm_model
         self._send_message_to_llm(self.request)
         
-        if self.info and self.info.profile:
+        if self.info:
             try:
-                # Get role from info.role_map or use self.role as fallback
-                role_en = None
-                if hasattr(self.info, 'role_map') and self.info.agent in self.info.role_map:
-                    role_obj = self.info.role_map[self.info.agent]
-                    role_en = role_obj.name if hasattr(role_obj, 'name') else str(role_obj)
-                elif self.role:
-                    role_en = self.role.name if hasattr(self.role, 'name') else str(self.role)
-                
-                macro_belief_path = generate_macro_belief(
-                    config=self.config,
-                    profile=self.info.profile,
-                    agent_name=self.info.agent,
-                    game_id=self.info.game_id,
-                    role_en=role_en,
-                    agent_logger=self.agent_logger
-                )
-                self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
-                
-                # Generate macro desire based on macro belief
-                try:
-                    macro_desire_data = generate_macro_desire(
-                        game_id=self.info.game_id,
-                        agent=self.info.agent,
-                        model=self.config.get("openai", {}).get("model", "gpt-4o"),
-                        dry_run=False,
-                        overwrite=True  # Allow overwrite during initialization
-                    )
-                    self.agent_logger.logger.info(f"Generated macro desire for agent: {self.info.agent}")
-                except Exception as e:
-                    self.agent_logger.logger.error(f"Failed to generate macro desire: {e}")
-                
-                # Generate macro plan based on behavior tendencies
-                try:
-                    macro_plan_data = generate_macro_plan(
-                        game_id=self.info.game_id,
-                        agent=self.info.agent,
-                        model=self.config.get("openai", {}).get("model", "gpt-4o"),
-                        dry_run=False,
-                        overwrite=True  # Allow overwrite during initialization
-                    )
-                    self.agent_logger.logger.info(f"Generated macro plan for agent: {self.info.agent}")
-                except Exception as e:
-                    self.agent_logger.logger.error(f"Failed to generate macro plan: {e}")
-            except Exception as e:
-                self.agent_logger.logger.error(f"Failed to generate macro belief: {e}")
+                self._ensure_macro_assets()
+            except Exception:
+                self.agent_logger.logger.exception("Failed to ensure macro assets")
         
         # AnalysisTrackerの初期化
         try:
@@ -321,7 +355,8 @@ class Agent:
                 config=self.config,
                 agent_name=analysis_agent_name,
                 game_id=self.info.game_id if self.info else "",
-                agent_logger=self.agent_logger
+                agent_logger=self.agent_logger,
+                agent_obj=self
             )
             self.agent_logger.logger.info(f"AnalysisTracker initialized successfully with agent_name: {analysis_agent_name}")
         except Exception as e:
@@ -353,6 +388,13 @@ class Agent:
         昼開始リクエストに対する処理を行う.
         """
         self._send_message_to_llm(self.request)
+        
+        # Ensure macro_plan.yml exists (deferred from initialize to avoid timeout)
+        if self.info:
+            try:
+                self._ensure_deferred_macro_plan()
+            except Exception:
+                self.agent_logger.logger.exception("Failed to ensure deferred macro plan")
         
         # AnalysisTrackerでトーク履歴を分析
         if self.analysis_tracker and self.info:
@@ -397,11 +439,16 @@ class Agent:
             return
         try:
             base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            agent_id = self.info.agent if hasattr(self.info, "agent") else self.agent_name
+            agent_dir = base_dir / self.info.game_id / agent_id
+            talk_dir = determine_talk_dir(agent_dir)
+            self.agent_logger.logger.info(f"Using talk directory: {talk_dir.name}")
+            
             extract_pairs_for_agent(
                 base_dir=base_dir,
                 game_id=self.info.game_id,
-                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
-                out_subdir="トーク履歴",
+                agent=agent_id,
+                out_subdir=talk_dir.name,
                 skip_pending=False,   # pending も含める（必要なら True に）
                 flat_output=True,     # トーク履歴ディレクトリ直下に出力
                 exclude_self=True,    # 自分の from は除外
@@ -415,12 +462,18 @@ class Agent:
         if not self.info:
             return
         try:
+            base_dir = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi")
+            agent_id = self.info.agent if hasattr(self.info, "agent") else self.agent_name
+            agent_dir = base_dir / self.info.game_id / agent_id
+            talk_dir = determine_talk_dir(agent_dir)
+            
             update_affinity_trust_for_agent(
                 config=self.config,
                 game_id=self.info.game_id,
-                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                agent=agent_id,
                 agent_logger=self.agent_logger,
-                talk_dir_name="トーク履歴"
+                talk_dir_name=talk_dir.name,
+                agent_obj=self
             )
         except Exception:
             self.agent_logger.logger.exception("Failed to update affinity/trust headers in talk history")
@@ -457,6 +510,165 @@ class Agent:
             )
         except Exception:
             self.agent_logger.logger.exception("Failed to update select_sentence.yml")
+    
+    def _ensure_macro_assets(self) -> None:
+        """Ensure macro_belief, macro_desire, and macro_plan files exist, generating them if necessary."""
+        if not self.info:
+            return
+        
+        base = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
+        macro_dir = base / "info/bdi_info/macro_bdi" / self.info.game_id / self.info.agent
+        
+        mb_path = macro_dir / "macro_belief.yml"
+        md_path = macro_dir / "macro_desire.yml" 
+        mp_path = macro_dir / "macro_plan.yml"
+        
+        # Get role information
+        role_en = None
+        if hasattr(self.info, 'role_map') and self.info.agent in self.info.role_map:
+            role_obj = self.info.role_map[self.info.agent]
+            role_en = role_obj.name if hasattr(role_obj, 'name') else str(role_obj)
+        elif self.role:
+            role_en = self.role.name if hasattr(self.role, 'name') else str(self.role)
+        
+        # Determine model for LLM calls
+        model = ((self.config.get("openai", {}) or {}).get("model") or 
+                (self.config.get("google", {}) or {}).get("model") or 
+                "gpt-4o")
+        
+        # 1. Ensure macro_belief.yml exists
+        if not mb_path.exists():
+            try:
+                self.agent_logger.logger.info("Generating macro_belief.yml")
+                macro_belief_path = generate_macro_belief(
+                    config=self.config,
+                    profile=(self.info.profile or ""),
+                    agent_name=self.info.agent,
+                    game_id=self.info.game_id,
+                    role_en=role_en,
+                    agent_logger=self.agent_logger,
+                    agent_obj=self
+                )
+                self.agent_logger.logger.info(f"Generated macro belief: {macro_belief_path}")
+            except Exception:
+                self.agent_logger.logger.exception("macro_belief generation failed")
+                # Continue to next step even if this fails
+        
+        # 2. Ensure macro_desire.yml exists
+        if not md_path.exists():
+            try:
+                self.agent_logger.logger.info("Generating macro_desire.yml")
+                macro_desire_data = generate_macro_desire(
+                    game_id=self.info.game_id,
+                    agent=self.info.agent,
+                    agent_obj=self,
+                    dry_run=False,
+                    overwrite=False
+                )
+                self.agent_logger.logger.info(f"Generated macro desire for agent: {self.info.agent}")
+            except Exception as e:
+                self.agent_logger.logger.exception("macro_desire generation failed")
+                # Write fallback minimal YAML
+                try:
+                    self._write_fallback_macro_desire(md_path, str(e))
+                except Exception:
+                    self.agent_logger.logger.exception("Failed to write fallback macro_desire")
+        
+        # 3. macro_plan generation deferred to daily_initialize to avoid timeout
+    
+    def _ensure_deferred_macro_plan(self) -> None:
+        """Ensure macro_plan.yml exists - called from daily_initialize to avoid init timeout."""
+        if not self.info:
+            return
+        
+        base = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
+        macro_dir = base / "info/bdi_info/macro_bdi" / self.info.game_id / self.info.agent
+        mp_path = macro_dir / "macro_plan.yml"
+        
+        if not mp_path.exists():
+            try:
+                self.agent_logger.logger.info("Generating deferred macro_plan.yml")
+                macro_plan_data = generate_macro_plan(
+                    game_id=self.info.game_id,
+                    agent=self.info.agent,
+                    agent_obj=self,
+                    dry_run=False,
+                    overwrite=False
+                )
+                self.agent_logger.logger.info(f"Generated deferred macro plan for agent: {self.info.agent}")
+            except Exception as e:
+                self.agent_logger.logger.exception("Deferred macro_plan generation failed")
+                # Write fallback minimal YAML
+                try:
+                    self._write_fallback_macro_plan(mp_path, str(e))
+                except Exception:
+                    self.agent_logger.logger.exception("Failed to write fallback macro_plan")
+    
+    def _write_fallback_macro_desire(self, file_path: Path, error_reason: str) -> None:
+        """Write minimal fallback macro_desire.yml structure."""
+        from datetime import datetime
+        import yaml
+        
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        fallback_data = {
+            "macro_desire": {
+                "summary": "Auto-generated (fallback)",
+                "description": f"Fallback due to error: {error_reason[:100]}"
+            },
+            "meta": {
+                "generated_at": datetime.now().isoformat(),
+                "source": "agent.py fallback",
+                "agent": self.info.agent if self.info else self.agent_name,
+                "game_id": self.info.game_id if self.info else "",
+                "fallback": True,
+                "error": error_reason[:200]
+            }
+        }
+        
+        with file_path.open("w", encoding="utf-8") as f:
+            yaml.safe_dump(fallback_data, f, allow_unicode=True, sort_keys=False)
+        
+        self.agent_logger.logger.info(f"Created fallback macro_desire: {file_path}")
+    
+    def _write_fallback_macro_plan(self, file_path: Path, error_reason: str) -> None:
+        """Write minimal fallback macro_plan.yml structure."""
+        from datetime import datetime
+        import yaml
+        
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        fallback_data = {
+            "macro_plan": {
+                "plans": [
+                    {
+                        "label": "fallback_plan",
+                        "trigger_event": "startup",
+                        "preconditions": [],
+                        "body": [
+                            {
+                                "type": "basic_action",
+                                "description": "Fallback due to error"
+                            }
+                        ]
+                    }
+                ],
+                "notes": "auto-generated fallback"
+            },
+            "meta": {
+                "generated_at": datetime.now().isoformat(),
+                "source": "agent.py fallback",
+                "agent": self.info.agent if self.info else self.agent_name,
+                "game_id": self.info.game_id if self.info else "",
+                "fallback": True,
+                "error": error_reason[:200]
+            }
+        }
+        
+        with file_path.open("w", encoding="utf-8") as f:
+            yaml.safe_dump(fallback_data, f, allow_unicode=True, sort_keys=False)
+        
+        self.agent_logger.logger.info(f"Created fallback macro_plan: {file_path}")
 
     def talk(self) -> str:
         """Return response to talk request.

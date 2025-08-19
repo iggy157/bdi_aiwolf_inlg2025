@@ -1,0 +1,55 @@
+macro_plan:
+  plans:
+  - label: 疑わしき者の監視
+    trigger_event: 初日の会話が始まる
+    preconditions:
+    - 全員と対話可能
+    body:
+    - type: subgoal
+      description: 全員の発言パターンを観察する
+    - type: basic_action
+      description: 発言を記録し、疑わしい点をメモする
+  - label: 信頼関係の構築
+    trigger_event: 初日の会話中
+    preconditions:
+    - 他者からの信頼を得たい
+    body:
+    - type: basic_action
+      description: 共感を示すために慎重な質問を投げかける
+    - type: basic_action
+      description: 自分の意見を明確にし、透明性を保つ
+  - label: 協力者の特定と共闘
+    trigger_event: 二日目以降の会話中
+    preconditions:
+    - 継続的なパターンが見え始める
+    body:
+    - type: subgoal
+      description: 信頼できる者を見極める
+    - type: basic_action
+      description: 信頼者と情報を共有し協力を呼びかける
+  - label: 疑惑の解明
+    trigger_event: 3日目の議論中
+    preconditions:
+    - 特定の人物への疑念が高まっている
+    body:
+    - type: subgoal
+      description: 過去の行動を振り返り真実を探る
+    - type: basic_action
+      description: 論理的に質問し、議論を導く
+  - label: 最終推論と投票
+    trigger_event: 投票フェーズ
+    preconditions:
+    - 推理の確信が高まる
+    body:
+    - type: subgoal
+      description: 最も疑わしい者への投票先を決定
+    - type: basic_action
+      description: 最善と思われる選択に基づき投票を行う
+  notes: ヴィクトリアが村の安全をあくまで重視し、疑念を慎重に考慮しながらも効率的にかつ安定的に行動します。
+meta:
+  game_id: 01K30621XTQQBAF5EW87MCPRGR
+  agent: ヴィクトリア
+  model: gpt-4o
+  generated_at: '2025-08-19T03:30:59Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ヴィクトリア/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ヴィクトリア/macro_desire.yml

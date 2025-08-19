@@ -1,0 +1,152 @@
+1:
+  content: '[PENDING] Analyzing: そうですね、皆さんの意見を聞いてから冷静に分析したいと思います。...'
+  type: pending_analysis
+  from: ヴィクトリア
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: ならば、まずは自己紹介から始めてお互いの考えを共有しましょう。...'
+  type: pending_analysis
+  from: シュンイチ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: サクラです！探偵ごっこみたいでワクワクしますね、みんなで頑張りましょう！...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: リンです！皆さんと一緒に人狼を見つけるために頑張ります、よろしくお願いします！...'
+  type: pending_analysis
+  from: リン
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: ヴィクトリアです、37歳の冷静な観察者として皆さんと共に頑張ります。...'
+  type: pending_analysis
+  from: ヴィクトリア
+  to: all
+  credibility: 0.0
+6:
+  content: '[PENDING] Analyzing: みんなの気合を感じますね、今日はどんな推理が飛び出すか楽しみです。Over。...'
+  type: pending_analysis
+  from: シュンイチ
+  to: all
+  credibility: 0.0
+7:
+  content: '[PENDING] Analyzing: 暖かい雰囲気ですね、誰を信じるか悩みますが一緒に考えていきましょう！...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing: みんなで力を合わせて、一緒に楽しく推理していきましょう！誰も信じてね！...'
+  type: pending_analysis
+  from: リン
+  to: all
+  credibility: 0.0
+9:
+  content: そうですね、皆さんの意見を聞いてから冷静に分析したいと思います。
+  type: 'null'
+  from: ヴィクトリア
+  to: all
+  credibility: 0.295
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ヴィクトリア
+10:
+  content: ならば、まずは自己紹介から始めてお互いの考えを共有しましょう。
+  type: 'null'
+  from: シュンイチ
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.65
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: シュンイチ
+11:
+  content: サクラです！探偵ごっこみたいでワクワクしますね、みんなで頑張りましょう！
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.295
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+12:
+  content: リンです！皆さんと一緒に人狼を見つけるために頑張ります、よろしくお願いします！
+  type: 'null'
+  from: リン
+  to: all
+  credibility: 0.3
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: リン
+13:
+  content: ヴィクトリアです、37歳の冷静な観察者として皆さんと共に頑張ります。
+  type: co
+  from: ヴィクトリア
+  to: ヴィクトリア
+  credibility: 0.345
+  credibility_raw: 0.69
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ヴィクトリア
+14:
+  content: みんなの気合を感じますね、今日はどんな推理が飛び出すか楽しみです。Over。
+  type: 'null'
+  from: シュンイチ
+  to: all
+  credibility: 0.285
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: シュンイチ
+15:
+  content: 暖かい雰囲気ですね、誰を信じるか悩みますが一緒に考えていきましょう！
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.295
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+16:
+  content: みんなで力を合わせて、一緒に楽しく推理していきましょう！誰も信じてね！
+  type: 'null'
+  from: リン
+  to: all
+  credibility: 0.235
+  credibility_raw: 0.47
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: リン

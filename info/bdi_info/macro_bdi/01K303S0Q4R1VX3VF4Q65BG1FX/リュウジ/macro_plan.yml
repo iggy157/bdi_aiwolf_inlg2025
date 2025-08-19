@@ -1,0 +1,40 @@
+macro_plan:
+  plans:
+  - label: 持続的な情報撹乱
+    trigger_event: ゲームの初期段階
+    preconditions:
+    - プレイヤー数が減る前
+    - 他のプレイヤーの信頼を獲得する必要がある
+    body:
+    - type: subgoal
+      description: 疑惑を分散する為の情報を流布する
+    - type: subgoal
+      description: 他のプレイヤーの動向を観察し情報を収集する
+  - label: ためらい無く行動する時を察知する
+    trigger_event: ゲーム中盤
+    preconditions:
+    - ゲームの流れが停滞している
+    - リーダーシップを発揮する必要が出てきた
+    body:
+    - type: subgoal
+      description: 潜在的に信頼される他プレイヤーを味方に引き込む
+    - type: basic_action
+      description: 仮のリーダーシップを取って、選択を促す
+  - label: 終盤における自己表現
+    trigger_event: ゲーム終盤
+    preconditions:
+    - 少人数の状況になった時
+    - 状況が複雑化している
+    body:
+    - type: subgoal
+      description: 自己防衛のための強い立場を取る
+    - type: basic_action
+      description: 大胆に行動し、必要ならば他のプレイヤーを犠牲にする
+  notes: リュウジの行動は外向性が低く内向的であるため、主に情報を操作しつつ自分が目立たないようにすることを意識したプラン。
+meta:
+  game_id: 01K303S0Q4R1VX3VF4Q65BG1FX
+  agent: リュウジ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:51:09Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303S0Q4R1VX3VF4Q65BG1FX/リュウジ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303S0Q4R1VX3VF4Q65BG1FX/リュウジ/macro_desire.yml

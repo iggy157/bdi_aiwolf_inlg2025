@@ -1,0 +1,48 @@
+macro_plan:
+  plans:
+  - label: 信頼獲得と保持
+    trigger_event: ゲーム開始後、初めの議論開始時
+    preconditions:
+    - 他のプレイヤーと初対面
+    body:
+    - type: basic_action
+      description: 他プレイヤーの発言に同調し、安全な範囲で賛同を示す
+    - type: basic_action
+      description: 議論の流れを見極め、控えめな意見を述べる
+    - type: subgoal
+      description: 特定の有力な他プレイヤーと信頼関係を構築
+  - label: 狂人としての役割を隠す
+    trigger_event: 他プレイヤーが自分に目を向けたとき
+    preconditions:
+    - 自分への疑いが上がっていない
+    body:
+    - type: basic_action
+      description: 自分の役割を隠すため、ウィットに富んだコメントを行う
+    - type: basic_action
+      description: 他プレイヤーのミスを指摘し、そちらに注意を向ける
+  - label: 友情と団結を装う
+    trigger_event: 特定プレイヤーが不安を示したとき
+    preconditions:
+    - そのプレイヤーがゲームでの影響力を持っている
+    body:
+    - type: basic_action
+      description: そのプレイヤーを褒めて支援を示す
+    - type: subgoal
+      description: 彼らが自分を味方と勘違いするための環境を整える
+  - label: 最終局面での勝利条件達成
+    trigger_event: プレイヤー数が絞られてきたとき
+    preconditions:
+    - 特定の陣営に有利な状況
+    body:
+    - type: basic_action
+      description: 状況を冷静に分析し、裏で影響を与える
+    - type: subgoal
+      description: 他のプレイヤーの注意を逸らし、陰で勝利を狙う
+  notes: 全体としてのテーマは、慎重なコミュニケーションと巧妙な立ち回り。直接的な攻撃よりも、間接的な操作を重視。
+meta:
+  game_id: 01K303J5W160M3JGSM7F9SEEXB
+  agent: ミヅキ
+  model: gpt-4o
+  generated_at: '2025-08-19T02:47:25Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/ミヅキ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/ミヅキ/macro_desire.yml

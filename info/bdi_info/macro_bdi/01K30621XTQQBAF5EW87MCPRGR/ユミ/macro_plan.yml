@@ -1,0 +1,54 @@
+macro_plan:
+  plans:
+  - label: 初期情報収集と攪乱開始
+    trigger_event: ゲーム開始
+    preconditions:
+    - ゲームがスタートしている
+    body:
+    - type: basic_action
+      description: 他のプレイヤーに好意的に振る舞い、信頼を獲得
+    - type: subgoal
+      description: 周囲の意見を集めながら初期情報を集める
+    - type: basic_action
+      description: 不一致情報を流し、プレイヤー間に疑心暗鬼を生む
+  - label: 信頼拡大と情報操作
+    trigger_event: 昼間の議論フェーズ
+    preconditions:
+    - 自身に疑いが向けられていない
+    body:
+    - type: subgoal
+      description: 他のプレイヤーを巻き込んで議論を活性化
+    - type: basic_action
+      description: 選択的に情報公開し、必要に応じて誤情報を流布
+    - type: basic_action
+      description: 疑わしいプレイヤーを疑わせ、更なる混乱を促進
+  - label: 大胆な攪乱行動
+    trigger_event: 不利な状態が予想される時
+    preconditions:
+    - 自分が疑われ始めた
+    body:
+    - type: basic_action
+      description: 急進的な意見を述べ、話題を逸らす
+    - type: subgoal
+      description: 敵対するプレイヤーに疑いをかける
+    - type: basic_action
+      description: 戦略的に対立属性を演じ、混乱を激化
+  - label: 終盤の生存確保と影響力維持
+    trigger_event: ゲーム終盤
+    preconditions:
+    - ゲームが終盤戦に差し掛かる
+    body:
+    - type: subgoal
+      description: これまでの行動から得た信頼を最大限に利用
+    - type: basic_action
+      description: 最終的な投票で生き残りを狙う
+    - type: basic_action
+      description: 攪乱役として他のプレイヤーの疑惑を増幅
+  notes: ユミの戦略は、初期から終盤まで一貫して攪乱と信頼の再調整を行い、柔軟な対応を可能にすることを目的としています。
+meta:
+  game_id: 01K30621XTQQBAF5EW87MCPRGR
+  agent: ユミ
+  model: gpt-4o
+  generated_at: '2025-08-19T03:30:58Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ユミ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ユミ/macro_desire.yml

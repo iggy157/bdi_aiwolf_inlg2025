@@ -1,0 +1,46 @@
+macro_plan:
+  plans:
+  - label: 自由な情報探索
+    trigger_event: ゲーム開始時
+    preconditions:
+    - ゲームが開始された
+    body:
+    - type: basic_action
+      description: 他プレイヤーとの情報交換を積極的に行う
+    - type: subgoal
+      description: 占い結果から信頼できる情報元を見極める
+  - label: 斬新な情報開示
+    trigger_event: 有用な情報を得た時
+    preconditions:
+    - 占い結果が他プレイヤーに影響を与える可能性が高い
+    body:
+    - type: basic_action
+      description: 少数の信頼できるプレイヤーと情報を共有
+    - type: subgoal
+      description: 効果的なタイミングで情報を公に開示
+  - label: 独自の判断をサポート
+    trigger_event: 他のプレイヤーが内紛を起こした時
+    preconditions:
+    - グループ内で意見の衝突が発生した
+    body:
+    - type: subgoal
+      description: 客観的な観点から状況を分析
+    - type: basic_action
+      description: 個人としての見解を自由に表明
+  - label: 冒険的なアプローチ
+    trigger_event: ゲームが停滞した時
+    preconditions:
+    - ゲームが予測可能な展開を見せている
+    body:
+    - type: subgoal
+      description: 新たな占いの方法を試みる
+    - type: basic_action
+      description: 自分の意図を明確にしない範囲で行動する
+  notes: このプランはリンの自由と冒険心を満たしながら、占い師としての役割を果たすためのものです。
+meta:
+  game_id: 01K30621XTQQBAF5EW87MCPRGR
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T03:31:00Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/リン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/リン/macro_desire.yml

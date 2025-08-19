@@ -1,0 +1,133 @@
+1:
+  content: '[PENDING] Analyzing: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+2:
+  content: '[PENDING] Analyzing: ぼくは特に変わったことはないけれど、みんなの意見を聞いて推理を始めたいね。...'
+  type: pending_analysis
+  from: ケンジ
+  to: all
+  credibility: 0.0
+3:
+  content: '[PENDING] Analyzing: 私はまだ情報が少ないので、まずはみんなの意見を聞いて推理を始めたいです。...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+4:
+  content: '[PENDING] Analyzing: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。...'
+  type: pending_analysis
+  from: ミヅキ
+  to: all
+  credibility: 0.0
+5:
+  content: '[PENDING] Analyzing: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over...'
+  type: pending_analysis
+  from: サクラ
+  to: all
+  credibility: 0.0
+6:
+  content: 今日は特に不思議なことは起きなかったですね、みんなの意見をもっと聞きたいです！Over
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.265
+  credibility_raw: 0.53
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+7:
+  content: '[PENDING] Analyzing: 昨日ケンジさんを占ったら人間でした。みなさん、ほかに気になるところはありますか？...'
+  type: pending_analysis
+  from: ユミ
+  to: all
+  credibility: 0.0
+8:
+  content: '[PENDING] Analyzing: ユミさん、占いの結果ありがとう！他のみんなの意見も聞きたいね。...'
+  type: pending_analysis
+  from: ケンジ
+  to: all
+  credibility: 0.0
+9:
+  content: ぼくは特に変わったことはないけれど、みんなの意見を聞いて推理を始めたいね。
+  type: 'null'
+  from: ケンジ
+  to: all
+  credibility: 0.315
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ケンジ
+10:
+  content: 私はまだ情報が少ないので、まずはみんなの意見を聞いて推理を始めたいです。
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.285
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ユミ
+11:
+  content: 今日はまだ始まったばかりなので、情報を集めたいですね。みんなで協力していきましょう。
+  type: 'null'
+  from: ミヅキ
+  to: all
+  credibility: 0.305
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ミヅキ
+12:
+  content: 何か気になることがあったら教えてくださいね、みんなで考えましょう！Over
+  type: 'null'
+  from: サクラ
+  to: all
+  credibility: 0.28
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: サクラ
+13:
+  content: 昨日ケンジさんを占ったら人間でした。みなさん、ほかに気になるところはありますか？
+  type: co
+  from: ユミ
+  to: all
+  credibility: 0.24
+  credibility_raw: 0.48
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ユミ
+14:
+  content: ユミさん、占いの結果ありがとう！他のみんなの意見も聞きたいね。
+  type: positive
+  from: ケンジ
+  to: ユミ
+  credibility: 0.275
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ケンジ
