@@ -1,0 +1,54 @@
+macro_plan:
+  plans:
+  - label: 社会的繋がりを強化
+    trigger_event: ゲーム開始
+    preconditions:
+    - ゲームが村人として始まる
+    body:
+    - type: basic_action
+      description: 初日の昼に積極的に自己紹介と挨拶を行う
+    - type: subgoal
+      description: 他プレイヤーとの信頼関係を構築
+    - type: basic_action
+      description: 他のプレイヤーの発言を積極的に支持または軽い質問を行い、会話を増やす
+  - label: 柔軟な戦略の実行
+    trigger_event: 誰かが行動を疑われたとき
+    preconditions:
+    - 疑われた人物に対する証拠が不明確
+    body:
+    - type: basic_action
+      description: 即座に自己の意見を述べて状況を整理
+    - type: subgoal
+      description: 公正で客観的な情報収集
+    - type: basic_action
+      description: 全体の意見を聞いた上で自分の洞察を共有
+  - label: 独自の分析を活用
+    trigger_event: 投票前の議論
+    preconditions:
+    - 複数の候補が存在する状況
+    body:
+    - type: subgoal
+      description: 村全体の安全を考慮に入れた分析を行う
+    - type: basic_action
+      description: 自由で刺激的な視点から候補者の考察を行い提案
+    - type: subgoal
+      description: 村人の協力を得るための説得技術を使用
+  - label: 議論の活性化
+    trigger_event: 会話が停滞したとき
+    preconditions:
+    - 議論の時間が余っている
+    body:
+    - type: basic_action
+      description: 新しい視点や話題を提示して議論を促進
+    - type: subgoal
+      description: 参加者全員の考えを引き出す
+    - type: basic_action
+      description: アクティブリスニングを通じて他者を理解する
+  notes: このプランはシズエの自由で冒険的な精神を尊重しつつ、村全体の利益を考えることを目的としている。
+meta:
+  game_id: 01K30KJFFYQ3J1TMK8BABYWFDB
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-19T07:27:10Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/シズエ/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/シズエ/macro_desire.yml

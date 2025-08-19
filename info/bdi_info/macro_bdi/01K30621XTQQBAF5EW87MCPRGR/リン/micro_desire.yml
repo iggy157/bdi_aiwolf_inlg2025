@@ -1,0 +1,25 @@
+# test micro_desire for リン
+micro_desire:
+  summary: テスト用の願望
+  intent:
+    label: advance_plan
+    priority: 0.7
+    targets: []
+  next_utterance:
+    objective: テスト発話の目標
+    key_points:
+      - テストポイント1
+      - テストポイント2
+    ask_if_not_addressed:
+      - テスト質問
+  consistency:
+    align_macro_desire: true
+    align_desire_tendency: true
+    align_macro_plan: true
+  rationale: テスト用の理由
+meta:
+  generated_at: '2025-08-19T16:00:00.000000'
+  trigger: test
+  model: test
+  game_id: 01K30621XTQQBAF5EW87MCPRGR
+  agent: リン

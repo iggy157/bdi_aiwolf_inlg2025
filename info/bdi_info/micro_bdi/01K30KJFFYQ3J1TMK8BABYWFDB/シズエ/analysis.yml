@@ -1,0 +1,19 @@
+1:
+  content: '[PENDING] Analyzing: 誰が何を考えているのか、まずは会話を通じて少しずつ情報を整理しましょう。...'
+  type: pending_analysis
+  from: ミナコ
+  to: all
+  credibility: 0.0
+2:
+  content: 誰が何を考えているのか、まずは会話を通じて少しずつ情報を整理しましょう。
+  type: 'null'
+  from: ミナコ
+  to: all
+  credibility: 0.38
+  credibility_raw: 0.69
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.55
+    liking: 0.567
+    creditability: 0.533
+    from: ミナコ

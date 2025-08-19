@@ -1,0 +1,43 @@
+macro_plan:
+  plans:
+  - label: 初期の信頼獲得
+    trigger_event: ゲーム開始直後
+    preconditions:
+    - まだ誰の信頼も得ていない
+    body:
+    - type: basic_action
+      description: 明るく挨拶し、他のプレイヤーに交友的に振る舞う
+    - type: basic_action
+      description: 他のプレイヤーの発言を積極的に傾聴し、共感を示す
+    - type: subgoal
+      description: 初期の信頼を得たプレイヤーをリストアップ
+  - label: 攪乱の開始
+    trigger_event: 初期の信頼を得た後
+    preconditions:
+    - 対象プレイヤーからの信頼を一時的に確保している
+    body:
+    - type: basic_action
+      description: 初期に信頼を得たプレイヤーに小さな疑いをかける
+    - type: basic_action
+      description: 別の信頼したプレイヤーを支援するような発言をする
+    - type: subgoal
+      description: プレイヤー間の疑惑形成を追求
+  - label: 予期せぬ転換
+    trigger_event: 他プレイヤー間の対立が形成されたとき
+    preconditions:
+    - 対立が激しく、自分への疑惑が薄い
+    body:
+    - type: basic_action
+      description: 急に方針を変えて他のプレイヤーを強く支持する
+    - type: basic_action
+      description: 非合理的に見える行動で自己の意図を隠す
+    - type: subgoal
+      description: 情勢の不安定化を維持し、自身の立ち位置を不明瞭に保つ
+  notes: リンの行動は予測不可能性を武器にしており、恐れを持たずに大胆な作戦を展開することを目的とします。
+meta:
+  game_id: 01K30KJFFYQ3J1TMK8BABYWFDB
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T07:27:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/リン/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/リン/macro_desire.yml

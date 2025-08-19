@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由と冒険心を活かした攪乱
+  description: リンは自由と冒険心を強く志向しており、これらの欲求を満たすために積極的に攪乱を試みる。役割上の義務として狂人の立場を活かし、自らの動きを柔軟に変えつつ情勢を掻き乱すことを望んでいる。社会的承認や愛情親密さへの欲求もあるため、他者からの信頼を一時的に得ることでより効果的に攪乱を行い、自身の行動に正当性を持たせる。しかし、安定性や安定した関係にはあまり価値を置かず、自らの自由度を最優先する。このため、攪乱行為をリスクを恐れない、ダイナミックかつ予測不可能な方法で展開することを追求する。
+meta:
+  game_id: 01K30KJFFYQ3J1TMK8BABYWFDB
+  agent: リン
+  model: gpt-4o
+  generated_at: '2025-08-19T07:27:01Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/リン/macro_belief.yml

@@ -1,0 +1,9 @@
+macro_desire:
+  summary: 自由で冒険的な手段を重視しながら、社会的決定のプロセスに参加して村の安全を守ることを望む
+  description: シズエは自由と独立を大切にし、冒険心を持っているため、固定観念にとらわれない柔軟なアプローチで村の安全を確保したいと考えている。社会的承認と愛情にも一定の価値を見出しているので、村人としての責務を果たす過程で他者の意見を尊重し、協力関係を築きながら社会的決定に貢献することを目指す。特に、自由で刺激的な活動を通じて得た洞察を、多数決の場での意思決定に役立てることが彼女の望みである。
+meta:
+  game_id: 01K30KJFFYQ3J1TMK8BABYWFDB
+  agent: シズエ
+  model: gpt-4o
+  generated_at: '2025-08-19T07:26:58Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30KJFFYQ3J1TMK8BABYWFDB/シズエ/macro_belief.yml
