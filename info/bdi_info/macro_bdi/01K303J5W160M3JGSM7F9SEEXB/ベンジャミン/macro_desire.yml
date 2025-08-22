@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定性と社会的承認を求めつつ、集団内での正体を隠す
-  description: ベンジャミンは安定性と安定した人間関係に強い欲求を持ち、社会的承認も重視しているため、これらを優先しながら人狼の使命を達成しようとする。彼は集団内で自分の正体を隠すことに細心の注意を払い、言動を慎重に管理する。秘匿性を保ちつつも、仲間との協力関係を強化し、慎重な計画を立てることでメンバーを排除することを目指す。彼の行動は穏やかかつ計画的であり、疑念を避けながらミッションを遂行する。
-meta:
-  game_id: 01K303J5W160M3JGSM7F9SEEXB
-  agent: ベンジャミン
-  model: gpt-4o
-  generated_at: '2025-08-19T02:47:12Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/ベンジャミン/macro_belief.yml

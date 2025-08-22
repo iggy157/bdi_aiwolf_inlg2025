@@ -1,0 +1,20 @@
+macro_plan:
+  early_game: Introduce self with a calm demeanor to build trust while remaining non-committal
+    about role claims, suggesting a flexible voting stance.
+  mid_game: Subtly mislead with controlled misreads on low-credibility targets, supporting
+    the werewolves indirectly by nudging discussions away from them.
+  late_game: Guide the group towards a decision that aligns with the werewolf victory
+    path, framing the narrative to maintain a misleading perspective.
+meta:
+  game_id: 01K39FKQD2WW0BC7FR55TKKCR7
+  agent: Mio
+  role_raw: 狂人
+  role_canon: possessed
+  role_source: macro_belief.role_social_duties.role
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T18:11:29Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FKQD2WW0BC7FR55TKKCR7/Mio/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FKQD2WW0BC7FR55TKKCR7/Mio/macro_desire.yml
+  format: one_line_per_phase

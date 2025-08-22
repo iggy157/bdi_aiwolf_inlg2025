@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Introduce myself as a villager focused on balancing personal independence
+    with the safety of the group, while clearly stating my non-claim policy and provisional
+    voting intent.
+  mid_game: Synthesize public information to identify and assertively push against
+    a suspicious player using reasoning based on talk-history and claim consistency,
+    while coordinating checks and votes for maximum information gain.
+  late_game: Summarize the strongest cases and resolved contradictions to fix the
+    elimination target, ensuring alignment with the village victory condition and
+    preventing last-minute chaos by securing consensus.
+meta:
+  game_id: 01K39FNTSPVCBBW7MH33VZKCWX
+  agent: Rin
+  role_raw: 村人
+  role_canon: villager
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T18:13:23Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Rin/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Rin/macro_desire.yml
+  format: one_line_per_phase

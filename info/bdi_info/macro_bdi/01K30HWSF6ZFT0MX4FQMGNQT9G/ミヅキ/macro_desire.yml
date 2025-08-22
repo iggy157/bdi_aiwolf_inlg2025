@@ -1,9 +1,0 @@
-macro_desire:
-  summary: バランスの取れた情報共有と自己表現
-  description: ミヅキは占い師としての役割を全うするために、情報の正確性と適切な開示タイミングを重視します。social_approvalが高いため、集団からの信頼を得るために情報を共有しますが、freedom_independenceも重要視するため、タイミングや方法において自主性を保ちます。self_realizationとadventure_stimulationの影響で、新しい戦略を試しつつ個人の成長を図り、時にはリスクを取ることも躊躇しません。しかし、信頼を損なわない範囲で行動することを心掛けます。
-meta:
-  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
-  agent: ミヅキ
-  model: gpt-4o
-  generated_at: '2025-08-19T06:57:38Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/ミヅキ/macro_belief.yml

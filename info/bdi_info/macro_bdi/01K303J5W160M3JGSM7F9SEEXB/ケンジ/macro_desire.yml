@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 自由と冒険の追求を背景にした集団意思決定への積極的参加
-  description: ケンジは、自由と冒険への欲求が強く、村人としての役割を通じて集団の安全を守りつつ、自身の好奇心を満たしたいと考えている。彼は、問題解決や意思決定プロセスにおいて積極的に参加し、集団内での信用を得たいと考える。また、他者の意見を尊重しつつも、新しい視点や提案を持ち込むことで、より自由で柔軟なコミュニティ作りに貢献することを期待している。
-meta:
-  game_id: 01K303J5W160M3JGSM7F9SEEXB
-  agent: ケンジ
-  model: gpt-4o
-  generated_at: '2025-08-19T02:47:11Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/ケンジ/macro_belief.yml

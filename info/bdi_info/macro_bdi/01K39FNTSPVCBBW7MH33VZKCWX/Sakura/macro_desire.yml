@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Balance freedom with social duties as a Seer.
+  description: Sakura prioritizes freedom and independence, seeking to maintain autonomy
+    while fulfilling her role as a Seer. Her tendency towards adventure and stimulation
+    drives her to explore innovative ways to manage her social duties, such as revealing
+    identities strategically to enhance group dynamics. She aims to balance her moderate
+    need for social approval with her duties, carefully deciding when to disclose
+    information to maintain credibility. Despite her lower emphasis on stability and
+    stable relationships, she understands the importance of her role in the group's
+    success and strives to leverage her insights effectively while preserving her
+    personal freedom and independence.
+meta:
+  game_id: 01K39FNTSPVCBBW7MH33VZKCWX
+  agent: Sakura
+  model: gpt-4o
+  generated_at: '2025-08-22T18:12:07Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Sakura/macro_belief.yml

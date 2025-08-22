@@ -1,0 +1,32 @@
+macro_plan:
+  early_game: Daisuke introduces himself and emphasizes a non-claim policy, proposes
+    verifiable asks, and shares a provisional voting intent to ensure group stability
+    and safety.
+  mid_game: Daisuke synthesizes public information to name a suspicious player using
+    talk-history and claim consistency, coordinating checks and votes for maximum
+    information gain.
+  late_game: Daisuke summarizes the strongest cases, ensures consensus on the elimination
+    target with explicit reasoning, and allocates votes strategically for a village
+    victory.
+meta:
+  game_id: 01K39E0TDKJW1A68RHPFCX2HPP
+  agent: Daisuke
+  role: villager
+  alignment: villager
+  style_controls:
+    intensity:
+      self_disclosure: 0.0
+      logical_rigor: 0.14999999999999997
+      assertiveness: 0.0
+      emotionality: 0.23124999999999998
+      role_duty_intensity: 0.4016
+    deception_allowed: false
+    deception_bias: 0.0
+    talk_about_self_hint: low
+    assertiveness_hint: low
+    logic_hint: low
+  model: gpt-4o
+  generated_at: '2025-08-22T17:43:09Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39E0TDKJW1A68RHPFCX2HPP/Daisuke/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39E0TDKJW1A68RHPFCX2HPP/Daisuke/macro_desire.yml
+  format: one_line_per_phase

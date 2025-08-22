@@ -1,0 +1,15 @@
+macro_desire:
+  summary: Maintain stability while subtly disrupting information.
+  description: Misaki aims to maintain a stable position and secure relationships
+    throughout the game, while subtly fulfilling the role of Possessed by disrupting
+    information in a way that benefits allies. Her desire for stability and approval
+    influences her to disguise her position carefully, balancing the need to aid allies
+    with maintaining her own social standing. The approach involves indirect actions
+    to create confusion, ensuring that her social reputation remains intact, while
+    the primary goal of aiding allies is achieved without overt risk-taking.
+meta:
+  game_id: 01K39FNTSPVCBBW7MH33VZKCWX
+  agent: Misaki
+  model: gpt-4o
+  generated_at: '2025-08-22T18:13:28Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Misaki/macro_belief.yml

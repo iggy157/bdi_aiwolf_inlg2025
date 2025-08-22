@@ -1,0 +1,15 @@
+macro_desire:
+  summary: Balance group safety with social integration.
+  description: Mizuki aims to maintain group safety and remove threats, leaning on
+    social decision-making skills. With a strong tendency towards social approval,
+    Mizuki will prioritize group harmony and acceptance. Their approach involves observing
+    and reasoning to make informed decisions, while maintaining stable relationships
+    and a moderate level of independence. Mizuki's actions are guided by a desire
+    for social integration and a stable environment, ensuring contributions are valued
+    and stability is preserved within the group context.
+meta:
+  game_id: 01K39FKQD2WW0BC7FR55TKKCR7
+  agent: Mizuki
+  model: gpt-4o
+  generated_at: '2025-08-22T18:10:54Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FKQD2WW0BC7FR55TKKCR7/Mizuki/macro_belief.yml

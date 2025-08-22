@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定を保ちながら、攪乱を巧妙に実行する
-  description: ジョナサンは安定と信頼性を重視し、特に安定した人間関係を築くことを好む。しかし、狂人としての役割を果たすためには、状況を見極めながら慎重に情報を攪乱しなければならない。彼の愛と親密な関係を求める傾向を考慮すると、急激な行動を避け、和やかなふるまいを活かして状況を見守りつつ、時には意外性を利用して情報を操作することを望む。社会的承認への欲求は比較的低いため、大胆な噓や矛盾した発言をすることに対してはあまり抵抗がないが、最終的な目的は人狼陣営を有利にすることである。自身を安定した一貫性のあるキャラクターと見せつつ、巧妙に役割を達成することが目標である。
-meta:
-  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
-  agent: ジョナサン
-  model: gpt-4o
-  generated_at: '2025-08-19T06:57:38Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/ジョナサン/macro_belief.yml

@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 集団の安全を求めつつ自由と刺激を追求する
-  description: セルヴァスは村人として集団の安全を維持することを大切にしながら、個人の自由と刺激を求めた行動を取る。彼は観察と推論で情報を収集し、社会的決定を下す際には自らの自由や冒険心を考慮に入れつつ、社会的義務を果たそうとする姿勢を示す。ただし、安定性と安定した人間関係に対する欲求は低いため、長期的な協力関係よりも、独自のアプローチを選ぶ傾向がある。
-meta:
-  game_id: 01K2Z88WXVPGP7Y8WBMW0T4A8S
-  agent: セルヴァス
-  model: gpt-4o
-  generated_at: '2025-08-18T18:50:17Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2Z88WXVPGP7Y8WBMW0T4A8S/セルヴァス/macro_belief.yml

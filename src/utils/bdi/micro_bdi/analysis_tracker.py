@@ -107,7 +107,7 @@ class AnalysisTracker:
         self.agent_obj = agent_obj
         
         # 分析履歴を保存する辞書
-        # {packet_idx: [{"content": ..., "type": ..., "from": ..., "to": ..., "credibility": ...}, ...]}
+        # {packet_idx(int): [{"content": ..., "type": ..., "from": ..., "to": ..., "credibility": ...}, ...]}
         self.analysis_history: dict[int, list[dict[str, Any]]] = {}
         
         # 既に解析済みのトークを一意キーで保持（重複解析を防ぐ）
@@ -249,8 +249,13 @@ class AnalysisTracker:
         if cfg["enable"]:
             print(f"[AnalysisTracker] Fixture mode ENABLED: output={cfg['output_file']}, max={cfg['max_per_call']}, apply_to={cfg['apply_to_agents']}")
         
+        # 新しいパケット（この呼び出し単位）
         self.packet_idx += 1
-        analysis_entries: list[dict[str, Any]] = []
+        # パケット領域を用意（整数キーで統一）
+        if self.packet_idx not in self.analysis_history:
+            self.analysis_history[self.packet_idx] = []
+        
+        added_entries = 0
         
         # 全履歴から候補を抽出（seen登録は遅延）
         candidates: list[tuple[str, str, Any, Any]] = []  # (key, kind, talk/proxy, origin_or_None)
@@ -266,7 +271,6 @@ class AnalysisTracker:
             is_target_text = txt in set(cfg["rewrite_targets"])
             is_flagged = bool(getattr(t, "skip", False) or getattr(t, "over", False))
             
-            # 解析可能かどうかを判定
             analyzable = False
             
             if cfg["enable"] and apply_ok and (is_target_text or is_flagged):
@@ -285,7 +289,6 @@ class AnalysisTracker:
                     print(f"[AnalysisTracker] Fixture replacement: '{txt}' -> '{repl}' for {getattr(t, 'agent', 'unknown')}")
                     analyzable = True
             elif self._is_meaningful_other_utterance(t):
-                # 通常の解析対象
                 candidates.append((k, "real", t, None))
                 analyzable = True
             
@@ -295,13 +298,10 @@ class AnalysisTracker:
         
         if not candidates:
             print(f"[AnalysisTracker] No analyzable talks in this call")
-            # 互換のため更新
             self.last_analyzed_talk_count = len(talk_history)
-            
             # ハートビート: 空候補でもトレースファイルが空にならないよう保証
             if cfg["enable"] and cfg.get("trace_file"):
                 self._record_heartbeat_trace(cfg, "empty_candidates")
-            
             return 0
         
         # max_per_call制限を適用
@@ -315,23 +315,41 @@ class AnalysisTracker:
             text = getattr(talk, "text", "")
             print(f"[AnalysisTracker] Analyzing ({kind}) talk {i+1}/{process_count}: {agent_name} - {text}")
             
-            # スタブ先行保存: LLM分析前にpending状態で保存
-            self._save_stub_entry_before_llm(talk, kind)
+            # ---- 変更点①：スタブはメモリにのみ挿入し、同じ場所を後で上書き ----
+            pkt, pos = self._insert_stub_entry_before_llm(talk, kind)
             
             # 発話内容の分析
             analysis_entry = self._analyze_talk_entry(talk, info)
-            if analysis_entry:
-                analysis_entries.append(analysis_entry)
-                print(f"[AnalysisTracker] Analysis entry created ({kind}): {analysis_entry['type']} from {analysis_entry['from']}")
-                
-                # Fixtureモードの場合、トレースを記録
-                if kind == "fixture" and cfg.get("trace_file"):
-                    self._record_fixture_trace(origin, talk, cfg)
+            if not analysis_entry:
+                # フォールバックで null エントリ
+                analysis_entry = self._fallback_entry_for(talk)
+                print(f"[AnalysisTracker] No analysis entry created; wrote fallback for talk: {text}")
             else:
-                print(f"[AnalysisTracker] No analysis entry created for talk: {text}")
+                print(f"[AnalysisTracker] Analysis entry created ({kind}): {analysis_entry['type']} from {analysis_entry['from']}")
             
-            # 処理済みキーをリストに追加
+            # Fixtureトレース
+            if kind == "fixture" and cfg.get("trace_file") and origin is not None:
+                self._record_fixture_trace(origin, talk, cfg)
+            
+            # ---- 変更点②：同じ配列位置を上書きして、pending を残さない ----
+            try:
+                self._replace_stub_with_result(pkt, pos, analysis_entry)
+            except Exception as e:
+                print(f"[AnalysisTracker] Failed to replace stub at pkt={pkt}, pos={pos}: {e}")
+                # 念のため末尾に追加（二重化は save 時の番号振り直しで吸収）
+                self.analysis_history[pkt].append(analysis_entry)
+            
+            # ---- 変更点③：トークごとに小まめに保存（下流処理はまだ実行しない）----
+            try:
+                self.save_analysis(run_downstream=False)  # pending を出力しない設計なので安全
+            except Exception as e:
+                print(f"[AnalysisTracker] Per-talk save failed: {e}")
+                if self.agent_logger:
+                    self.agent_logger.logger.exception(f"Per-talk save failed: {e}")
+            
+            # 処理済みキー
             processed_keys.append(key)
+            added_entries += 1
         
         # 処理した分だけseen登録（残りは次回に繰り越し）
         for key in processed_keys:
@@ -340,30 +358,32 @@ class AnalysisTracker:
         if len(candidates) > process_count:
             print(f"[AnalysisTracker] {len(candidates) - process_count} candidates deferred to next call")
         
-        # 分析結果を履歴に保存
-        if analysis_entries:
-            self.analysis_history[self.packet_idx] = analysis_entries
-            print(f"[AnalysisTracker] Saved {len(analysis_entries)} analysis entries for packet_idx {self.packet_idx}")
-        else:
-            print(f"[AnalysisTracker] No analysis entries to save")
-        
-        # 追跡値を更新
         self.last_analyzed_talk_count = len(talk_history)
-        print(f"[AnalysisTracker] newly added entries in this call: {len(analysis_entries)}")
+        print(f"[AnalysisTracker] newly added entries in this call: {added_entries}")
         
-        # --- タイムアウト対策: 分析直後に即座保存 ---
+        # --- 呼び出しの最後に一度だけ下流処理を実行する保存 ---
         try:
-            print(f"[AnalysisTracker] === save_analysis 開始 (immediate) ===")
-            self.save_analysis()
+            print(f"[AnalysisTracker] === save_analysis 開始 (final) ===")
+            self.save_analysis(run_downstream=True)
             if cfg["enable"] and cfg.get("trace_file"):
                 self.save_fixture_trace()
-            print(f"[AnalysisTracker] === save_analysis 終了 (immediate) ===")
+            print(f"[AnalysisTracker] === save_analysis 終了 (final) ===")
         except Exception as e:
-            print(f"[AnalysisTracker] Immediate save failed: {e}")
+            print(f"[AnalysisTracker] Final save failed: {e}")
             if self.agent_logger:
-                self.agent_logger.logger.exception(f"Immediate save failed: {e}")
+                self.agent_logger.logger.exception(f"Final save failed: {e}")
         
-        return len(analysis_entries)
+        return added_entries
+    
+    def _fallback_entry_for(self, talk: Any) -> dict[str, Any]:
+        """LLM失敗時などのフォールバックエントリ."""
+        return {
+            "content": getattr(talk, "text", ""),
+            "type": "null",
+            "from": getattr(talk, "agent", "unknown"),
+            "to": "null",
+            "credibility": 0.0,
+        }
     
     def _analyze_talk_entry(
         self,
@@ -414,7 +434,6 @@ class AnalysisTracker:
         info: Info,
     ) -> str:
         """発話のタイプを分析."""
-        
         try:
             # Use agent_obj centralized LLM if available
             if self.agent_obj is not None:
@@ -485,7 +504,7 @@ class AnalysisTracker:
                 
         except Exception as e:
             if self.agent_logger:
-                self.agent_logger.llm_error("message_type_analysis", str(e), prompt if 'prompt' in locals() else None)
+                self.agent_logger.llm_error("message_type_analysis", str(e), locals().get('prompt'))
             return "null"
     
     def _analyze_target_agents(
@@ -494,7 +513,6 @@ class AnalysisTracker:
         info: Info,
     ) -> str:
         """発話の対象エージェントを分析."""
-        
         try:
             # Use agent_obj centralized LLM if available
             if self.agent_obj is not None:
@@ -566,7 +584,7 @@ class AnalysisTracker:
                 
         except Exception as e:
             if self.agent_logger:
-                self.agent_logger.llm_error("target_agents_analysis", str(e), prompt if 'prompt' in locals() else None)
+                self.agent_logger.llm_error("target_agents_analysis", str(e), locals().get('prompt'))
             return "null"
     
     def _analyze_credibility(
@@ -585,7 +603,7 @@ class AnalysisTracker:
         weights = self._get_statement_bias_weights(from_agent)
         if not weights:
             # 重みが取得できない場合は単純平均
-            return sum(raw_scores.values()) / len(raw_scores)
+            return round(sum(raw_scores.values()) / len(raw_scores), 2)
         
         # 加重平均を計算
         weighted_sum = 0.0
@@ -607,7 +625,6 @@ class AnalysisTracker:
         info: Info,
     ) -> dict[str, float]:
         """LLMを使って信憑性の4つのスコアを取得."""
-        
         try:
             # Use agent_obj centralized LLM if available
             if self.agent_obj is not None:
@@ -686,7 +703,7 @@ class AnalysisTracker:
                 
         except Exception as e:
             if self.agent_logger:
-                self.agent_logger.llm_error("credibility_analysis", str(e), prompt if 'prompt' in locals() else None)
+                self.agent_logger.llm_error("credibility_analysis", str(e), locals().get('prompt'))
             return {}
     
     def _get_statement_bias_weights(self, agent_name: str) -> dict[str, float]:
@@ -717,8 +734,11 @@ class AnalysisTracker:
         except Exception:
             return {}
     
-    def save_analysis(self) -> None:
-        """analysis.ymlファイルに保存."""
+    def save_analysis(self, run_downstream: bool = True) -> None:
+        """analysis.ymlファイルに保存.
+        
+        run_downstream=False のときは select_sentence / intention の更新をスキップする。
+        """
         # Fixture設定を取得
         cfg = self._get_fixture_config()
         
@@ -735,14 +755,18 @@ class AnalysisTracker:
         
         # 連番マップ化（1始まり）
         all_entries = []
-        # キーを文字列に変換して安全にソート
-        sorted_keys = sorted(self.analysis_history.keys(), key=lambda x: str(x))
+        # キーを文字列化せず、整数キーで安定ソート
+        sorted_keys = sorted(self.analysis_history.keys())
         for packet_idx in sorted_keys:
             entries = self.analysis_history[packet_idx] or []
             print(f"[AnalysisTracker]   packet_idx {packet_idx}: {len(entries)} entries")
             all_entries.extend(entries)
         
-        print(f"[AnalysisTracker] 合計エントリ数: {len(all_entries)}")
+        print(f"[AnalysisTracker] 合計エントリ数(含pending): {len(all_entries)}")
+        
+        # ---- 変更点④：ファイル出力時に pending_analysis を除外 ----
+        all_entries = [e for e in all_entries if e.get("type") != "pending_analysis"]
+        print(f"[AnalysisTracker] 合計エントリ数(出力対象): {len(all_entries)}")
         
         if all_entries:
             # 1始まりの連番キーでデータを構築
@@ -805,24 +829,29 @@ class AnalysisTracker:
                 blob = rf.read()
             print(f"[AnalysisTracker] readback right after save: {len(blob)} bytes, head={blob[:120]!r}")
             
-            # YAML構造検証
+            # YAML構造検証（出力対象の件数で検証）
             self._verify_saved_file(target_path, len(data) if 'data' in locals() else 0)
             
         except Exception as e:
             print(f"[AnalysisTracker] readback failed: {e}")
         
-        # 下流処理の実行フラグを取得
+        # 下流処理の実行フラグを取得（環境変数ベース）
         ds_flags = self._get_downstream_flags()
         
         # Fixture有効時は既定で下流処理をSKIP（環境変数で上書き可能）
         if cfg["enable"]:
-            # Fixture有効時のデフォルトはFalse、環境変数があればそれを優先
             if "ANALYSIS_UPDATE_SELECT_SENTENCE" not in os.environ:
                 ds_flags["update_select_sentence"] = False
             if "ANALYSIS_UPDATE_INTENTION" not in os.environ:
                 ds_flags["update_intention"] = False
         
         before = target_path.stat().st_size
+        
+        # ---- 変更点⑤：run_downstream=False の場合はここで打ち切り ----
+        if not run_downstream:
+            print(f"[AnalysisTracker] Downstream updates are skipped (run_downstream=False)")
+            print(f"[AnalysisTracker] === save_analysis 終了 ===")
+            return
         
         # select_sentence更新
         if ds_flags.get("update_select_sentence", True):
@@ -935,8 +964,8 @@ class AnalysisTracker:
         print(f"  - LLM model available: {self.llm_model is not None}")
         print(f"  - analysis_history keys: {list(self.analysis_history.keys())}")
         
-        # 通常の保存処理を実行
-        self.save_analysis()
+        # 通常の保存処理を実行（下流処理も実行）
+        self.save_analysis(run_downstream=True)
     
     def _update_select_sentence(self) -> None:
         """select_sentence.ymlを更新."""
@@ -1247,23 +1276,16 @@ class AnalysisTracker:
             except Exception:
                 pass
     
-    def _save_stub_entry_before_llm(self, talk: Talk, kind: str) -> None:
-        """LLM分析前にスタブエントリを保存してタイムアウト対策."""
-        # Fixture設定を取得
+    # ---- 変更点：スタブ挿入はメモリのみ・同じ配列位置に確保 ----
+    def _insert_stub_entry_before_llm(self, talk: Talk, kind: str) -> tuple[int, int]:
+        """LLM分析前にスタブエントリをメモリに挿入し、位置を返す."""
         cfg = self._get_fixture_config()
         
-        # スタブエントリを作成
         agent_name = getattr(talk, "agent", "unknown")
         text = getattr(talk, "text", "")
         
-        # packet_idxを生成
-        day = getattr(talk, "day", -1)
-        idx = getattr(talk, "idx", None)
-        turn = getattr(talk, "turn", -1)
-        if idx is not None:
-            packet_idx = f"{day}_{idx}"
-        else:
-            packet_idx = f"{day}_{turn}_{hashlib.sha1(text.encode('utf-8', 'ignore')).hexdigest()[:8]}"
+        pkt = self.packet_idx  # 整数キー
+        lst = self.analysis_history.setdefault(pkt, [])
         
         stub_entry = {
             "content": f"[PENDING] Analyzing: {text[:50]}...",
@@ -1276,21 +1298,24 @@ class AnalysisTracker:
             "original_text": text,
             "analysis_kind": kind
         }
+        lst.append(stub_entry)
+        pos = len(lst) - 1
         
-        # 一時的にanalysis_historyに保存
-        if packet_idx not in self.analysis_history:
-            self.analysis_history[packet_idx] = []
-        self.analysis_history[packet_idx].append(stub_entry)
+        # pending はファイルへ書かない方針だが、進捗の痕跡は trace へ
+        if cfg["enable"] and cfg.get("trace_file"):
+            self._record_heartbeat_trace(cfg, f"stub_inserted_{kind}")
         
-        # 即座にファイル保存（タイムアウト対策）
-        try:
-            self.save_analysis()
-            if cfg["enable"] and cfg.get("trace_file"):
-                # スタブでもトレースに記録
-                self._record_heartbeat_trace(cfg, f"stub_saved_{kind}")
-            print(f"[AnalysisTracker] Saved stub entry for {agent_name}: {text[:30]}...")
-        except Exception as e:
-            print(f"[AnalysisTracker] Failed to save stub entry: {e}")
+        print(f"[AnalysisTracker] Inserted in-memory stub at pkt={pkt}, pos={pos}")
+        return pkt, pos
+    
+    def _replace_stub_with_result(self, pkt: int, pos: int, result: dict[str, Any]) -> None:
+        """スタブを解析結果で置換."""
+        if pkt not in self.analysis_history:
+            raise KeyError(f"packet {pkt} not found")
+        if pos < 0 or pos >= len(self.analysis_history[pkt]):
+            raise IndexError(f"position {pos} out of range for packet {pkt}")
+        self.analysis_history[pkt][pos] = result
+        print(f"[AnalysisTracker] Replaced stub at pkt={pkt}, pos={pos}")
     
     def _verify_saved_file(self, file_path, expected_entry_count: int) -> None:
         """保存されたファイルの構造検証."""
@@ -1364,13 +1389,12 @@ class AnalysisTracker:
         # 現在のanalysis_historyとファイル内容を同期
         sync_needed = False
         
-        # analysis_historyに存在してファイルに存在しない項目を検出
+        # analysis_historyに存在してファイルに存在しない項目を検出（pending は除外）
         all_current_entries = []
-        # キーを文字列に変換して安全にソート
-        sorted_keys = sorted(self.analysis_history.keys(), key=lambda x: str(x))
+        sorted_keys = sorted(self.analysis_history.keys())
         for packet_idx in sorted_keys:
             entries = self.analysis_history[packet_idx] or []
-            all_current_entries.extend(entries)
+            all_current_entries.extend([e for e in entries if e.get("type") != "pending_analysis"])
         
         current_count = len(all_current_entries)
         file_count = len(existing_analysis)
@@ -1388,7 +1412,7 @@ class AnalysisTracker:
         if sync_needed:
             print(f"[AnalysisTracker] Executing file sync...")
             try:
-                self.save_analysis()
+                self.save_analysis(run_downstream=False)
                 self.save_fixture_trace()
                 print(f"[AnalysisTracker] File sync completed")
             except Exception as e:

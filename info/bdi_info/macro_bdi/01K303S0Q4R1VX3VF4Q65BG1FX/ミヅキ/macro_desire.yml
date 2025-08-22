@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 社会的承認を重視しつつ、自由と独立性を確保するバランスの取れた役割遂行
-  description: ミヅキは、社会的承認を高く重視しているため、集団内での信頼を維持しつつ、人狼としての役割を隠し通すことを目指します。自由と独立性の欲求も強いため、自らの判断で行動できる範囲を確保しつつ、仲間と協力して他の構成員を排除する計画を立てます。安定性や刺激を求める欲求も考慮し、慎重かつ機敏な言動を心掛け、集団内で浮かび上がらないような行動パターンを維持します。
-meta:
-  game_id: 01K303S0Q4R1VX3VF4Q65BG1FX
-  agent: ミヅキ
-  model: gpt-4o
-  generated_at: '2025-08-19T02:50:55Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303S0Q4R1VX3VF4Q65BG1FX/ミヅキ/macro_belief.yml

@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 自由を重視しつつ、村の安全を守る
-  description: シズエは自由と自発的な意思表示を大切にしながら、村人の社会的役割に従って行動します。自らの判断に基づいて、脅威を観察し排除するための討論に参加します。彼女は社会的承認をやや重視し、他者との円滑なコミュニケーションを意識しつつ、自らの刺激探求の欲求を満たしながら、村の安全維持に貢献します。集団決定に影響を与える準備を整えつつ、柔軟で自由なスタンスを維持します。
-meta:
-  game_id: 01K303J5W160M3JGSM7F9SEEXB
-  agent: シズエ
-  model: gpt-4o
-  generated_at: '2025-08-19T02:47:11Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K303J5W160M3JGSM7F9SEEXB/シズエ/macro_belief.yml

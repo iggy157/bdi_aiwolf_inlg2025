@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 安定性を確保しつつ、役割を果たす
-  description: ダイスケは安定性と安定した人間関係への強い欲求を持つため、人狼としての使命を果たす際には慎重に行動し、集団内での疑念を最小限に抑えつつ、信頼できる少数の味方と協力して他の構成員を徐々に排除することを望む。また、社会的に承認されたいという欲求もあるため、他のメンバーとの関係を継続的に築きながら行動を管理し、最終的に自らの安定した地位を確保しつつ役割を全うすることを目指す。
-meta:
-  game_id: 01K30F2F48FGHSDYE0HNMZAM34
-  agent: ダイスケ
-  model: gpt-4o
-  generated_at: '2025-08-19T06:08:19Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30F2F48FGHSDYE0HNMZAM34/ダイスケ/macro_belief.yml

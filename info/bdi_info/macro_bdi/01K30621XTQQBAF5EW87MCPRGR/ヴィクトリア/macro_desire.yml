@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 村の安全を安定的に守ることを重視
-  description: ヴィクトリアは村人として、集団の安全と安定を最優先に考え、観察や推論を通じて社会的意思決定に積極的に参加します。安定性と信頼性の高い関係を築く志向が強く、他者の信頼を得て、村を脅威から守る役割を全うします。特に安定した環境で村の安全を確保することが最大の目的です。
-meta:
-  game_id: 01K30621XTQQBAF5EW87MCPRGR
-  agent: ヴィクトリア
-  model: gpt-4o
-  generated_at: '2025-08-19T03:30:47Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ヴィクトリア/macro_belief.yml

@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 村人としての安全維持と集団内での安定した人間関係の構築を目指す
-  description: ベンジャミンは村人として集団の安全を重視する役割を持ち、安定とコミュニティ内の調和を志向する。0.620という安定性の高い欲求に基づき、集団の安全を維持しつつ、協力的な環境を作り出すことを目指す。自身の存在意義を模索し、集団内での承認を得ることも重視しながら、村人としての役割を果たす。観察及び推論を駆使し、コミュニケーションを通じて集団に貢献し、安定した関係の構築を重視するアプローチをとる。
-meta:
-  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
-  agent: ベンジャミン
-  model: gpt-4o
-  generated_at: '2025-08-19T04:17:28Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/ベンジャミン/macro_belief.yml

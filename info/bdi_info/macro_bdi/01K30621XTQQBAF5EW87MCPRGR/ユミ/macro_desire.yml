@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 攪乱者としての役割を活かしつつ、自由と冒険を追求する
-  description: ユミは自由と冒険を志向しており、この傾向を活かして、狂人としての役割を果たしつつゲームをダイナミックに展開したいと考えています。直接的に仲間とは意思疎通をしませんが、攪乱のために大胆かつ独立した行動を取り、状況に応じて柔軟に情報を操ることに集中します。社会的承認も求める傾向があるため、周囲の信頼を獲得しつつ、混乱を引き起こすことを目指します。
-meta:
-  game_id: 01K30621XTQQBAF5EW87MCPRGR
-  agent: ユミ
-  model: gpt-4o
-  generated_at: '2025-08-19T03:30:47Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30621XTQQBAF5EW87MCPRGR/ユミ/macro_belief.yml

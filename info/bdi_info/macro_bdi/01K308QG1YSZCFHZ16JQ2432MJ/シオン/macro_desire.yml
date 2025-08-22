@@ -1,9 +1,0 @@
-macro_desire:
-  summary: シオンは安定を図りつつ、自己実現を重視して情報攪乱を行うことを望む。
-  description: シオンは、安定(stability)と安定した人間関係(stable_relationships)を強く重視する傾向にあるため、慎重さを保ちながら狂人としての役割を果たす。しかし、自己実現(self_realization)の欲求が比較的高いため、ただ仲間をサポートするのではなく、自らの戦略的判断によってゲームを動かすことに喜びを見出す。また、比較的高い社会的承認(social_approval)のため、他のプレイヤーから信頼を得つつ、巧妙に情報を操作することに留意する。結果として、リスクを避けつつ陣営の勝利を支えるため、控えめだが効果的な攪乱作戦を展開する。
-meta:
-  game_id: 01K308QG1YSZCFHZ16JQ2432MJ
-  agent: シオン
-  model: gpt-4o
-  generated_at: '2025-08-19T04:17:49Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K308QG1YSZCFHZ16JQ2432MJ/シオン/macro_belief.yml

@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 攪乱戦略と安定性の両立
-  description: シオンは、狂人としての役割を果たすために、状況を注意深く観察し、攪乱する情報を戦略的に提供します。自己実現欲求と安定性への志向が強いため、長期的に人狼陣営を有利にするための情報操作を行いながら、自らの立場が疑われないように注意深く行動します。社会的承認の欲求もある程度あり、村人たちから信頼を得つつ行動することを望みますが、自身の安全第一を念頭に置きます。したがって、直接的なアクションよりも、噂や間接的な手段を使って攪乱を行うことが多く、ゲームの勝利に貢献することを目標とします。
-meta:
-  game_id: 01K2Z88WXVPGP7Y8WBMW0T4A8S
-  agent: シオン
-  model: gpt-4o
-  generated_at: '2025-08-18T18:50:16Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K2Z88WXVPGP7Y8WBMW0T4A8S/シオン/macro_belief.yml

@@ -1,0 +1,16 @@
+macro_desire:
+  summary: Balance concealment with adventurous independence.
+  description: Servas seeks to effectively conceal their identity as a werewolf, coordinating
+    with allies to eliminate others while prioritizing freedom and adventure. They
+    will use their tendency towards adventure and independence to navigate the challenges
+    of the game, employing creative and bold strategies to maintain their cover. While
+    social approval and stable relationships are less of a priority, they will carefully
+    manage interactions to avoid suspicion, leveraging their moderate social skills
+    to blend in and fulfill their role without compromising their desire for independence
+    and stimulation.
+meta:
+  game_id: 01K39FNTSPVCBBW7MH33VZKCWX
+  agent: Servas
+  model: gpt-4o
+  generated_at: '2025-08-22T18:12:06Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Servas/macro_belief.yml

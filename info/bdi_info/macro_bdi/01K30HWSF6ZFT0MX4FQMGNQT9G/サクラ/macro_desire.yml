@@ -1,9 +1,0 @@
-macro_desire:
-  summary: 自由で刺激的な環境の中で集団安全を確保したい
-  description: サクラは冒険と刺激を求める傾向が強く、次いで自由を重視している。そのため、村人としての社会的役割においても、この欲求が反映される。役割を果たす際には、個人の自由と冒険を探求しながら行動するのが特徴である。集団の安全に対する責任は果たすが、革新的で自由なアプローチを取ることを好む。社会的承認や安定は低く、役割の義務は最低限に抑えながら、自身の興味を満たす方法で意思決定に参加する。結果として、集団の安全を維持しつつ、新しい経験を追求することを目指す。
-meta:
-  game_id: 01K30HWSF6ZFT0MX4FQMGNQT9G
-  agent: サクラ
-  model: gpt-4o
-  generated_at: '2025-08-19T06:57:39Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K30HWSF6ZFT0MX4FQMGNQT9G/サクラ/macro_belief.yml

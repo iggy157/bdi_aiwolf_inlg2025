@@ -1,0 +1,19 @@
+macro_plan:
+  early_game: Introduce yourself briefly, express a clear intention to.
+  mid_game: True-claim when you have a seer result, reveal the latest target and judgement
+    promptly, and coordinate with allies to push suspicion with logical evidence.
+  late_game: Summarize confirmed information and align votes decisively to ensure
+    the village's victory, driving consensus with clear rationale.
+meta:
+  game_id: 01K39FNTSPVCBBW7MH33VZKCWX
+  agent: Sakura
+  role_raw: 占い師
+  role_canon: seer
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T18:12:16Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Sakura/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39FNTSPVCBBW7MH33VZKCWX/Sakura/macro_desire.yml
+  format: one_line_per_phase

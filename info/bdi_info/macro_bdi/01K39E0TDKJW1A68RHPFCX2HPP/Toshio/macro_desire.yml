@@ -1,0 +1,17 @@
+macro_desire:
+  summary: Maintain alliances and create confusion while ensuring personal stability.
+  description: Toshio aims to subtly disrupt information flow to support allies, balancing
+    this with a strong need for stability and stable relationships. While Toshio is
+    inclined to fulfill the role of 'Possessed' by misleading others, this is done
+    with a calculated approach to maintain personal safety and stable connections.
+    The desire for self-realization is moderate, allowing Toshio to adapt his strategies
+    creatively while keeping a low profile to avoid detection. Social approval is
+    less prioritized, allowing Toshio to focus more on strategic alliances rather
+    than seeking widespread acceptance. Overall, Toshio prioritizes stability and
+    secure alliances while executing his role duties.
+meta:
+  game_id: 01K39E0TDKJW1A68RHPFCX2HPP
+  agent: Toshio
+  model: gpt-4o
+  generated_at: '2025-08-22T17:43:09Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39E0TDKJW1A68RHPFCX2HPP/Toshio/macro_belief.yml
