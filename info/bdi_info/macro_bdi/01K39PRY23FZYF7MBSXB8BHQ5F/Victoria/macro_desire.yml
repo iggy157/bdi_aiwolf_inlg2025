@@ -1,0 +1,10 @@
+macro_desire:
+  description: Victoria aims to ensure group safety and stability by using her reasoning
+    and observation skills to identify and mitigate threats, while also seeking self-realization
+    and maintaining stable relationships within the community.
+meta:
+  game_id: 01K39PRY23FZYF7MBSXB8BHQ5F
+  agent: Victoria
+  model: gpt-4o
+  generated_at: '2025-08-22T20:16:02Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Victoria/macro_belief.yml

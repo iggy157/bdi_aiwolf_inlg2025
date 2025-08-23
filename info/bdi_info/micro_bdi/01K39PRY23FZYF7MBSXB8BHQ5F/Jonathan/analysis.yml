@@ -1,0 +1,445 @@
+1:
+  content: Good morning everyone let's start by sharing our thoughts on strategies
+    and focus on gathering useful insights today.
+  type: 'null'
+  from: Shunichi
+  to: all
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+2:
+  content: Hello everyone I'm Victoria. Let's observe interactions to keep our group
+    stable and identify any threats.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+3:
+  content: Hello everyone let's share our thoughts and work together to keep our village
+    safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.445
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+4:
+  content: Hello everyone I'm Mizuki. I think it's worth discussing Shizue's actions
+    today.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+5:
+  content: Hello all I'm Shunichi and I suggest we focus on broad strategies to start
+    with and see where the discussion takes us.
+  type: question
+  from: Shunichi
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+6:
+  content: Hello I'm Victoria. Let's focus on sharing strategies and gathering insights
+    for our group today.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.378
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+7:
+  content: Good morning everyone let's stay vigilant and share any observations we
+    have to keep our village safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.406
+  credibility_raw: 0.53
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+8:
+  content: Hello I'm Mizuki. Let's focus on observing Jonathan's actions today.
+  type: 'null'
+  from: Mizuki
+  to: Jonathan
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+9:
+  content: Jonathan's idea of provisional voting sounds good let's observe how everyone
+    interacts for a stable start.
+  type: question
+  from: Shunichi
+  to: Jonathan
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+10:
+  content: Hi I'm Victoria. I'll be observing interactions today without role claims
+    aiming for group stability through provisional voti
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+11:
+  content: Mizuki I appreciate your interest; let's keep the conversation open and
+    share our thoughts for the good of the village.
+  type: 'null'
+  from: Shizue
+  to: Mizuki
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+12:
+  content: Hello I'm Mizuki. Let's focus on observing interactions to make informed
+    decisions.
+  type: 'null'
+  from: Mizuki
+  to: Mizuki
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+13:
+  content: I agree with Mizuki on keeping an eye on Jonathan it's a good starting
+    point for today.
+  type: positive
+  from: Shunichi
+  to: Jonathan
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+14:
+  content: I notice Mizuki focusing on Jonathan; I'll continue observing without claims
+    aiming to gather info for group stability.
+  type: 'null'
+  from: Victoria
+  to: Jonathan,Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+15:
+  content: ' @Jonathan  Mizuki Shunichi Victoria thank you for your intros; let''s
+    focus on open dialogue and build trust today.'
+  type: 'null'
+  from: Shizue
+  to: Jonathan,Mizuki,Shunichi,Victoria
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+16:
+  content: ' @Shizue  could you explain your recent actions? We should discuss this
+    for clarity.'
+  type: question
+  from: Mizuki
+  to: Shizue
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+17:
+  content: ' @Mizuki  I appreciate your focus on Jonathan let''s keep our dialogue
+    open to build trust within the group.'
+  type: positive
+  from: Shunichi
+  to: Mizuki,Jonathan
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+18:
+  content: Let's focus on Shizue's interactions today and discuss any suspicious behavior
+    we notice.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+19:
+  content: Let's discuss our observations to identify threats focusing on consistent
+    actions; I'll keep observing without special claims
+  type: 'null'
+  from: Victoria
+  to: 'null'
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+20:
+  content: As the Seer I can confirm that Mizuki is HUMAN based on my result.
+  type: question
+  from: Shizue
+  to: Mizuki
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+21:
+  content: ' @Jonathan  let''s keep our dialogue open and observe Shizue''s actions
+    to build group trust without role reveals.'
+  type: 'null'
+  from: Shunichi
+  to: Jonathan,Shizue
+  credibility: 0.374
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+22:
+  content: I agree with Jonathan; let's observe interactions today to maintain stability.
+  type: positive
+  from: Mizuki
+  to: Jonathan
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+23:
+  content: ' @Mizuki  let''s observe Shizue''s interactions today while keeping our
+    dialogue open for group stability; I have no special results.'
+  type: 'null'
+  from: Victoria
+  to: Mizuki,Shizue
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+24:
+  content: ' @Mizuki  my Seer result confirms you are HUMAN which I share to strengthen
+    our group''s trust and focus.'
+  type: positive
+  from: Shizue
+  to: Mizuki
+  credibility: 0.475
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+25:
+  content: ' @Mizuki  focusing on Shizue''s interactions seems wise let''s track any
+    suspicious behavior together.'
+  type: 'null'
+  from: Shunichi
+  to: Mizuki,Shizue
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+26:
+  content: I'm interested in Shizue's actions today; let's gather insights from our
+    interactions.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+27:
+  content: I'll align with Jonathan and Mizuki by observing Shizue's interactions
+    today; no special results to disclose focusing on stab
+  type: 'null'
+  from: Victoria
+  to: Jonathan,Mizuki,Shizue
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+28:
+  content: As the Seer I reveal that Mizuki is HUMAN; let's keep our dialogue open
+    to build trust among us.
+  type: positive
+  from: Shizue
+  to: Mizuki
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue
+29:
+  content: Observing Shizue today seems like a solid plan for maintaining stability
+    I'll keep an eye on interactions.
+  type: 'null'
+  from: Shunichi
+  to: Shizue
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Shunichi
+30:
+  content: Acknowledging Shizue's Seer claim I'll keep observing interactions to maintain
+    group stability.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.209
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.417
+    liking: 0.367
+    creditability: 0.467
+    from: Mizuki
+31:
+  content: Let's focus on Shizue's actions today to gather insights and maintain stability;
+    I have no special results to disclose.
+  type: 'null'
+  from: Victoria
+  to: Shizue
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Victoria
+32:
+  content: I am the Seer and I found that Mizuki is HUMAN; let's address questions
+    and keep our dialogue open.
+  type: co
+  from: Shizue
+  to: Mizuki
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.733
+    creditability: 0.8
+    from: Shizue

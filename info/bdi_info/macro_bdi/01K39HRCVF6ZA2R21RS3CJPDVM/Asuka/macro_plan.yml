@@ -1,0 +1,21 @@
+macro_plan:
+  early_game: Introduce yourself calmly to earn trust, avoid true claims, and consider
+    a situational fake claim to create division while keeping voting options open.
+  mid_game: Subtly mislead by suggesting a suspect with low credibility using soft
+    logic, and steer the discussion flow to benefit your allies without revealing
+    their identities.
+  late_game: Recap in a way that maintains the misleading narrative, and drive the
+    group towards eliminating a target that aligns with the werewolf victory path.
+meta:
+  game_id: 01K39HRCVF6ZA2R21RS3CJPDVM
+  agent: Asuka
+  role_raw: 狂人
+  role_canon: possessed
+  role_source: macro_belief.role_social_duties.role
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T18:48:25Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39HRCVF6ZA2R21RS3CJPDVM/Asuka/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39HRCVF6ZA2R21RS3CJPDVM/Asuka/macro_desire.yml
+  format: one_line_per_phase

@@ -1,0 +1,10 @@
+macro_desire:
+  description: Yumi seeks to leverage her high desire for adventure and independence
+    to effectively disrupt information and support allies discreetly, while balancing
+    her moderate need for self-realization and social approval.
+meta:
+  game_id: 01K39ME706MYHM6NQVWCPH5Q1V
+  agent: Yumi
+  model: gpt-4o
+  generated_at: '2025-08-22T19:35:13Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Yumi/macro_belief.yml

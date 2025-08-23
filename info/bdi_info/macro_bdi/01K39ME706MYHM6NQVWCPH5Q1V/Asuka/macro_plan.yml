@@ -1,0 +1,20 @@
+macro_plan:
+  early_game: Introduce yourself with a focus on stability, state that you won't claim
+    your role yet, and establish a voting intent for village alignment.
+  mid_game: Reveal your latest Seer result with clarity and logic, pushing for a suspect
+    based on this evidence while coordinating with allies for strategic voting.
+  late_game: Summarize the confirmed information and lead the group to a clear consensus
+    on the elimination target to achieve a village victory.
+meta:
+  game_id: 01K39ME706MYHM6NQVWCPH5Q1V
+  agent: Asuka
+  role_raw: 占い師
+  role_canon: seer
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T19:35:17Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Asuka/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Asuka/macro_desire.yml
+  format: one_line_per_phase

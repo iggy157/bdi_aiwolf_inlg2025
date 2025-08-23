@@ -1,0 +1,16 @@
+macro_desire:
+  summary: Maintain group safety through observation and reasoning while valuing stability
+    and self-realization.
+  description: Shunichi aims to fulfill the role of a Villager by actively participating
+    in group safety and decision-making. Prioritizing stability and self-realization,
+    Shunichi will employ observation and reasoning to identify threats and contribute
+    to group discussions. Although social approval is also important, achieving stability
+    and maintaining stable relationships are primary goals. Shunichi will balance
+    personal desires for self-realization with the social duties of ensuring group
+    safety, striving for a harmonious integration of personal and group objectives.
+meta:
+  game_id: 01K39G24NM6Y8Z0JTW55CNHEWN
+  agent: Shunichi
+  model: gpt-4o
+  generated_at: '2025-08-22T18:18:57Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39G24NM6Y8Z0JTW55CNHEWN/Shunichi/macro_belief.yml

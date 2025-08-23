@@ -1,0 +1,11 @@
+macro_desire:
+  description: Jonathan aims to maintain group safety by using his strong sense of
+    stability to guide social decision-making and foster stable relationships among
+    villagers. He seeks to balance his personal growth with his responsibility to
+    the community.
+meta:
+  game_id: 01K39ME706MYHM6NQVWCPH5Q1V
+  agent: Jonathan
+  model: gpt-4o
+  generated_at: '2025-08-22T19:35:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Jonathan/macro_belief.yml

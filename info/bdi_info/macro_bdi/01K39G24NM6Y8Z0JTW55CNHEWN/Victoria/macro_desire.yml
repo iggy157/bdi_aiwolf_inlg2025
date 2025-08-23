@@ -1,0 +1,15 @@
+macro_desire:
+  summary: Balance concealment with stability and self-realization.
+  description: Victoria aims to effectively conceal her identity as a werewolf while
+    managing her desire for stability and self-realization. Her approach involves
+    cautiously coordinating with allies to eliminate others without drawing suspicion.
+    Her strong inclination towards stability and self-realization will guide her to
+    maintain a composed demeanor and carefully manage interactions to prevent revealing
+    her true intent. While she values social approval and stable relationships, these
+    are secondary to maintaining her cover and achieving her goals as a werewolf.
+meta:
+  game_id: 01K39G24NM6Y8Z0JTW55CNHEWN
+  agent: Victoria
+  model: gpt-4o
+  generated_at: '2025-08-22T18:20:01Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39G24NM6Y8Z0JTW55CNHEWN/Victoria/macro_belief.yml

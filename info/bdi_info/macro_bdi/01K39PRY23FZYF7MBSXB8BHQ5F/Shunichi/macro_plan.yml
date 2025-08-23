@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Introduce yourself lightly and suggest strategies that subtly deflect
+    attention away from werewolf allies, while asserting a voting intent that appears
+    proactive and stable.
+  mid_game: Feign plausible results if necessary, redirect suspicion toward an alternative
+    target using soft logic, and coordinate with allies to shape the narrative and
+    protect them.
+  late_game: Recap the game in a way that supports a misread path and engineer the
+    elimination target to maximize werewolf odds, driving the consensus towards a
+    favorable outcome for the werewolves.
+meta:
+  game_id: 01K39PRY23FZYF7MBSXB8BHQ5F
+  agent: Shunichi
+  role_raw: 人狼
+  role_canon: werewolf
+  role_source: macro_belief.role_social_duties.role
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T20:16:06Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Shunichi/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Shunichi/macro_desire.yml
+  format: one_line_per_phase

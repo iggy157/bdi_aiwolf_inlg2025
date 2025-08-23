@@ -1,0 +1,15 @@
+macro_desire:
+  summary: Balance independence with the seer's role.
+  description: Sakura aims to maintain personal freedom and independence while fulfilling
+    her role as the Seer. She values adventure and stimulation, which will guide her
+    to reveal information strategically, balancing between personal desires and social
+    duties. While she seeks social approval, her approach will prioritize leveraging
+    her role to both satisfy her own tendencies and contribute meaningfully to the
+    group's success. Stability and stable relationships are less prioritized, allowing
+    for a dynamic and flexible engagement with her responsibilities.
+meta:
+  game_id: 01K39G24NM6Y8Z0JTW55CNHEWN
+  agent: Sakura
+  model: gpt-4o
+  generated_at: '2025-08-22T18:18:44Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39G24NM6Y8Z0JTW55CNHEWN/Sakura/macro_belief.yml

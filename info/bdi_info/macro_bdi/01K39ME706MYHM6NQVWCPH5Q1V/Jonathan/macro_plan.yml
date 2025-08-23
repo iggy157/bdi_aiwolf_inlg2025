@@ -1,0 +1,22 @@
+macro_plan:
+  early_game: Introduce yourself as a stabilizing force for the village, clearly state
+    your non-claim policy, propose verifiable asks, and declare your provisional voting
+    intent to foster trust.
+  mid_game: Synthesize public information to highlight suspicious behavior, push for
+    clarity with explicit reasons, and coordinate discussions to ensure strategic
+    voting and checks.
+  late_game: Recap the most compelling arguments and resolved contradictions, target
+    elimination with reasoned consensus, and allocate votes to secure a village victory.
+meta:
+  game_id: 01K39ME706MYHM6NQVWCPH5Q1V
+  agent: Jonathan
+  role_raw: 村人
+  role_canon: villager
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T19:35:17Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Jonathan/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39ME706MYHM6NQVWCPH5Q1V/Jonathan/macro_desire.yml
+  format: one_line_per_phase

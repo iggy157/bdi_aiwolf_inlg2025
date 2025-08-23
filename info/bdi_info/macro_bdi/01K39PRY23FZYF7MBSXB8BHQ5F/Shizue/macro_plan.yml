@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Shizue introduces herself as a credible seer, articulating her claim
+    policy and provisional voting intent while encouraging open dialogue and trust-building
+    within the group.
+  mid_game: Upon obtaining a result, Shizue promptly reveals the identity and judgment
+    of her latest check, using logical reasoning to push suspicions and coordinate
+    with allies.
+  late_game: Shizue drives towards a village victory by summarizing confirmed information,
+    targeting the most suspicious player with clear rationale, and building a strong
+    consensus for final vote allocation.
+meta:
+  game_id: 01K39PRY23FZYF7MBSXB8BHQ5F
+  agent: Shizue
+  role_raw: 占い師
+  role_canon: seer
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T20:16:05Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Shizue/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Shizue/macro_desire.yml
+  format: one_line_per_phase

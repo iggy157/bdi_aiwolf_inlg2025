@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Introduce yourself calmly and propose ambiguous asks, while maintaining
+    a flexible voting intent without making a true claim, but consider a fake-claim
+    if it could divide the village.
+  mid_game: Subtly steer the conversation to support wolf allies by suggesting misleading
+    conclusions on less credible targets and assist wolves by managing the flow of
+    discussion without revealing any true results.
+  late_game: Shape the final consensus and vote allocation to favor a werewolf victory
+    by guiding the group towards eliminating a target that aligns with the wolves'
+    success path.
+meta:
+  game_id: 01K39G24NM6Y8Z0JTW55CNHEWN
+  agent: Shizue
+  role_raw: 狂人
+  role_canon: possessed
+  role_source: macro_belief.role_social_duties.role
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-22T18:18:50Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39G24NM6Y8Z0JTW55CNHEWN/Shizue/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39G24NM6Y8Z0JTW55CNHEWN/Shizue/macro_desire.yml
+  format: one_line_per_phase

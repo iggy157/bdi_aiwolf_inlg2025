@@ -1,0 +1,10 @@
+macro_desire:
+  description: As a Seer, Shion aims to utilize their insights to foster group stability
+    while balancing self-realization and managing credibility. Their desire to maintain
+    stable relationships will guide the timing and manner of information disclosure.
+meta:
+  game_id: 01K39HRCVF6ZA2R21RS3CJPDVM
+  agent: Shion
+  model: gpt-4o
+  generated_at: '2025-08-22T18:48:21Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39HRCVF6ZA2R21RS3CJPDVM/Shion/macro_belief.yml

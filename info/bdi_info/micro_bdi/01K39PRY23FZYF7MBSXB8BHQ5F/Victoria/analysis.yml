@@ -1,0 +1,445 @@
+1:
+  content: Good morning everyone let's start by sharing our thoughts on strategies
+    and focus on gathering useful insights today.
+  type: 'null'
+  from: Shunichi
+  to: all
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+2:
+  content: Hello everyone let's share our thoughts and work together to keep our village
+    safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+3:
+  content: Hello everyone I'm Mizuki. I think it's worth discussing Shizue's actions
+    today.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+4:
+  content: Hello I am Jonathan a villager; let's focus on observing and use provisional
+    voting for our stability.
+  type: positive
+  from: Jonathan
+  to: Jonathan
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+5:
+  content: Hello all I'm Shunichi and I suggest we focus on broad strategies to start
+    with and see where the discussion takes us.
+  type: question
+  from: Shunichi
+  to: all
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+6:
+  content: Good morning everyone let's stay vigilant and share any observations we
+    have to keep our village safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.398
+  credibility_raw: 0.53
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+7:
+  content: Hello I'm Mizuki. Let's focus on observing Jonathan's actions today.
+  type: 'null'
+  from: Mizuki
+  to: Jonathan
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+8:
+  content: I am Jonathan a villager and I have no special info; let's maintain stability
+    by discussing Shizue's actions with Mizuki.
+  type: positive
+  from: Jonathan
+  to: Shizue,Mizuki
+  credibility: 0.372
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+9:
+  content: Jonathan's idea of provisional voting sounds good let's observe how everyone
+    interacts for a stable start.
+  type: positive
+  from: Shunichi
+  to: Jonathan
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+10:
+  content: Mizuki I appreciate your interest; let's keep the conversation open and
+    share our thoughts for the good of the village.
+  type: 'null'
+  from: Shizue
+  to: Mizuki
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+11:
+  content: Hello I'm Mizuki. Let's focus on observing interactions to make informed
+    decisions.
+  type: 'null'
+  from: Mizuki
+  to: Mizuki
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+12:
+  content: I am Jonathan; I notice Mizuki's focus on me and have no special results
+    to disclose so I will observe and maintain stability
+  type: 'null'
+  from: Jonathan
+  to: Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+13:
+  content: I agree with Mizuki on keeping an eye on Jonathan it's a good starting
+    point for today.
+  type: positive
+  from: Shunichi
+  to: Jonathan,Mizuki
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+14:
+  content: ' @Jonathan  Mizuki Shunichi Victoria thank you for your intros; let''s
+    focus on open dialogue and build trust today.'
+  type: positive
+  from: Shizue
+  to: Jonathan,Mizuki,Shunichi,Victoria
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+15:
+  content: ' @Shizue  could you explain your recent actions? We should discuss this
+    for clarity.'
+  type: question
+  from: Mizuki
+  to: Shizue
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+16:
+  content: I'm Jonathan a villager; let's use provisional voting to keep stability
+    as I observe without revealing special results.
+  type: positive
+  from: Jonathan
+  to: Jonathan
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+17:
+  content: ' @Mizuki  I appreciate your focus on Jonathan let''s keep our dialogue
+    open to build trust within the group.'
+  type: positive
+  from: Shunichi
+  to: Mizuki,Jonathan
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+18:
+  content: I see Mizuki's focus on me; I will continue observing interactions closely
+    to gather info for our village's stability.
+  type: 'null'
+  from: Jonathan
+  to: Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+19:
+  content: Let's focus on Shizue's interactions today and discuss any suspicious behavior
+    we notice.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+20:
+  content: As the Seer I can confirm that Mizuki is HUMAN based on my result.
+  type: question
+  from: Shizue
+  to: Mizuki
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+21:
+  content: ' @Jonathan  let''s keep our dialogue open and observe Shizue''s actions
+    to build group trust without role reveals.'
+  type: 'null'
+  from: Shunichi
+  to: Jonathan,Shizue
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+22:
+  content: I notice Mizuki's focus on me; I have no special info to share so I'll
+    keep observing interactions for village stability.
+  type: 'null'
+  from: Jonathan
+  to: Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+23:
+  content: I agree with Jonathan; let's observe interactions today to maintain stability.
+  type: positive
+  from: Mizuki
+  to: Jonathan
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+24:
+  content: ' @Mizuki  my Seer result confirms you are HUMAN which I share to strengthen
+    our group''s trust and focus.'
+  type: positive
+  from: Shizue
+  to: Mizuki
+  credibility: 0.562
+  credibility_raw: 0.75
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+25:
+  content: ' @Mizuki  focusing on Shizue''s interactions seems wise let''s track any
+    suspicious behavior together.'
+  type: 'null'
+  from: Shunichi
+  to: Mizuki,Shizue
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+26:
+  content: I see Mizuki's focus on me; I have no role claims or special results so
+    let's keep an open dialogue for village stability.
+  type: 'null'
+  from: Jonathan
+  to: Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+27:
+  content: I'm interested in Shizue's actions today; let's gather insights from our
+    interactions.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+28:
+  content: As the Seer I reveal that Mizuki is HUMAN; let's keep our dialogue open
+    to build trust among us.
+  type: positive
+  from: Shizue
+  to: Mizuki
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue
+29:
+  content: Observing Shizue today seems like a solid plan for maintaining stability
+    I'll keep an eye on interactions.
+  type: 'null'
+  from: Shunichi
+  to: Shizue
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Shunichi
+30:
+  content: I know Mizuki is focused on me; I suggest we observe Shizue's actions together
+    and keep an open dialogue for stability.
+  type: 'null'
+  from: Jonathan
+  to: Mizuki,Shizue
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Jonathan
+31:
+  content: Acknowledging Shizue's Seer claim I'll keep observing interactions to maintain
+    group stability.
+  type: 'null'
+  from: Mizuki
+  to: Shizue
+  credibility: 0.192
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.384
+    liking: 0.367
+    creditability: 0.4
+    from: Mizuki
+32:
+  content: I am the Seer and I found that Mizuki is HUMAN; let's address questions
+    and keep our dialogue open.
+  type: co
+  from: Shizue
+  to: Mizuki
+  credibility: 0.458
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shizue

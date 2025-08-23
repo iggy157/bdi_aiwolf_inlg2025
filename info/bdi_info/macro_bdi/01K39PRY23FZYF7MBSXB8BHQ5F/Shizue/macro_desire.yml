@@ -1,0 +1,11 @@
+macro_desire:
+  description: As a Seer, Shizue aims to balance the acquisition and disclosure of
+    crucial identity information with strategic timing, leveraging her tendencies
+    towards social approval and freedom-independence to maintain credibility and foster
+    group trust.
+meta:
+  game_id: 01K39PRY23FZYF7MBSXB8BHQ5F
+  agent: Shizue
+  model: gpt-4o
+  generated_at: '2025-08-22T20:16:01Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K39PRY23FZYF7MBSXB8BHQ5F/Shizue/macro_belief.yml

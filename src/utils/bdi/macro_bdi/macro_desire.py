@@ -1,147 +1,89 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Macro desire generation from role_social_duties and desire_tendency.
-
-役職責任と欲求傾向からマクロ欲求を生成するスクリプト。
-- プロンプト: フェンス禁止 / 先頭を `macro_desire:` に固定
-- 抽出: サニタイズ → フェンス解除 → そのまま読み → キー以降切り出し → ぶっこ抜き救済
-- 正規化: 欠損を必ず埋める
-- 決定論フォールバック: 役職・傾向から要約/説明を機械生成
-- 役職定義の穴埋め: config.yml の role_social_duties から補完
+"""Macro desire generation (description only, ≤2 sentences).
+- macro_belief.yml / role_social_duties を参照
+- 出力は macro_desire.description のみ（summary は生成しない）
+- description は最大 2 文に制限
+- プロンプトは config.yml の prompt.macro_desire を使用（コード内に埋め込まない）
 """
 
 from __future__ import annotations
 
-import argparse
-import json
 import os
 import re
-import time
 import yaml
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple
-
+from typing import Any, Dict, Tuple
 from jinja2 import Template
 
-# NOTE: .env loading is handled by agent.py only
+# ====== パス ======
+BASE = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
+CFG_PATH = BASE / "config" / "config.yml"
 
-# ====== Fallback prompt (フェンス禁止・先頭固定版) ======
-FALLBACK_PROMPT_TEMPLATE = """あなたは社会的役割と欲求傾向にもとづき、エージェントの上位欲求（macro_desire）を設計する専門家です。
-以下の入力を読み、**YAMLのみ**で出力してください。**Markdownのコードフェンスや余計な文字は出力しない**でください。
-**最初の行は必ず `macro_desire:` から開始**し、その下に `summary` と `description` の2項目を記述してください。
-
-[context]
-- game_id: {{ game_id }}
-- agent: {{ agent }}
-
-[role_social_duties]
-- role: {{ role }}
-- definition: {{ role_definition }}
-
-[desire_tendency]
-以下は {{ agent }} の欲求傾向（0–1）です。値が高いほど志向が強い想定です。
-{% for key, value in desire_tendencies.items() -%}
-  - {{ key }}: {{ "%.3f"|format(value) }}
-{% endfor %}
-
-[要件]
-- 出力は **YAMLのみ**。フェンスや解説文を含めないこと。
-- **最初の行は `macro_desire:`**。
-- role_social_duties の達成と desire_tendencies の強弱を踏まえ、ゲーム全体での欲求を記述。
-- role_social_duties をどれだけ重視するかは desire_tendencies に依存してよい。
-
-[出力スキーマ]
-macro_desire:
-  summary: "<短い要約>"
-  description: "<詳細な説明>"
-"""
-
-
-# ========= IO helpers =========
+# ====== IO ======
 def load_yaml_file(file_path: Path) -> Dict[str, Any]:
     if not file_path.exists():
         raise FileNotFoundError(f"File not found: {file_path}")
     with file_path.open("r", encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
 
-
 def _safe_mkdir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
 
-
 def _atomic_write_text(text: str, dst: Path) -> None:
     _safe_mkdir(dst.parent)
-    tmp = dst.with_suffix(dst.suffix + f".tmp-{os.getpid()}-{int(time.time()*1000)}")
+    tmp = dst.with_suffix(dst.suffix + ".tmp")
     with tmp.open("w", encoding="utf-8") as f:
         f.write(text)
         f.flush()
-        os.fsync(f.fileno())
     os.replace(tmp, dst)
-
 
 def _atomic_write_yaml(obj: Dict[str, Any], dst: Path) -> None:
     text = yaml.safe_dump(obj, allow_unicode=True, sort_keys=False, default_flow_style=False)
     _atomic_write_text(text, dst)
 
-
-# ========= Role canonicalization / config補完 =========
-ROLE_ALIASES = {
-    "werewolf": ("werewolf", "狼", "人狼"),
-    "villager": ("villager", "村", "村人"),
-    "possessed": ("possessed", "madman", "狂人"),
-    "seer": ("seer", "占い師", "占師", "占い"),
-    "knight": ("knight", "guard", "bodyguard", "騎士", "狩人", "守護"),
-    "medium": ("medium", "霊媒師", "霊能"),
+# ====== 役職正規化（この6パターンのみ対応） ======
+# 入力に対して返す表示名（英語タイトルケース）
+ROLE_NORMALIZE_TABLE = {
+    "villager":  "Villager",  "Villager": "Villager",  "村人":   "Villager",
+    "seer":      "Seer",      "Seer":     "Seer",      "占い師": "Seer",
+    "werewolf":  "Werewolf",  "Werewolf": "Werewolf",  "人狼":   "Werewolf",
+    "possessed": "Possessed", "Possessed":"Possessed", "狂人":   "Possessed",
+    "bodyguard": "Bodyguard", "Bodyguard":"Bodyguard", "騎士":   "Bodyguard",
+    "medium":    "Medium",    "Medium":   "Medium",    "霊媒師": "Medium",
+}
+# config.role_social_duties でのキー対応（Bodyguard は Knight 配下に定義がある想定）
+CONFIG_ROLE_KEY = {
+    "Villager":  "Villager",
+    "Seer":      "Seer",
+    "Werewolf":  "Werewolf",
+    "Possessed": "Possessed",
+    "Bodyguard": "Knight",
+    "Medium":    "Medium",
 }
 
-def _canonical_role_key(s: str) -> str:
-    t = (s or "").strip().lower()
-    for k, aliases in ROLE_ALIASES.items():
-        if t == k or any(a in t for a in aliases):
-            return k
-    # heuristics
-    if "占" in t or "seer" in t: return "seer"
-    if "霊" in t or "medium" in t: return "medium"
-    if "騎" in t or "狩" in t or "guard" in t: return "knight"
-    if "狼" in t or "werewolf" in t: return "werewolf"
-    if "狂" in t or "mad" in t: return "possessed"
-    if "村" in t or "vill" in t: return "villager"
-    return "villager"
+def _normalize_role_name(s: str | None) -> str:
+    if not s:
+        return "Villager"
+    key = s.strip()
+    return ROLE_NORMALIZE_TABLE.get(key, "Villager")
 
+def _supplement_role_definition(display_role: str, role_definition: str,
+                                config_data: Dict[str, Any]) -> Tuple[str, str]:
+    """display_role を前提に、config.yml から役職定義を補完して返す。"""
+    if role_definition:
+        return display_role, role_definition
+    rsd = (config_data.get("role_social_duties") or {}) if isinstance(config_data, dict) else {}
+    cfg_key = CONFIG_ROLE_KEY.get(display_role, display_role)
+    if cfg_key in rsd:
+        role_definition = rsd[cfg_key].get("definition") or rsd[cfg_key].get("定義") or role_definition
+    return display_role, (role_definition or "")
 
-def _supplement_role_definition(role: str, role_definition: str, config_data: Dict[str, Any]) -> Tuple[str, str]:
-    """config.yml の role_social_duties から定義を補完し、role 名も英字に正規化した表示名を返す。"""
-    if role_definition and role and role != "不明":
-        return role, role_definition
-
-    canonical = _canonical_role_key(role or "")
-    rsd = config_data.get("role_social_duties", {}) if isinstance(config_data, dict) else {}
-    # role_social_duties は英字キー想定
-    # キー存在時のみ採用
-    for key in rsd.keys():
-        if _canonical_role_key(key) == canonical:
-            role_definition = role_definition or rsd[key].get("definition", "") or rsd[key].get("定義", "")
-            break
-
-    # 表示用のロール名（英字タイトルケース）
-    display = {
-        "werewolf": "Werewolf",
-        "villager": "Villager",
-        "possessed": "Possessed",
-        "seer": "Seer",
-        "knight": "Knight",
-        "medium": "Medium",
-    }.get(canonical, "Villager")
-
-    return display, role_definition
-
-
-# ========= Prompt builder =========
+# ====== プロンプト構築（config.yml 管理） ======
 def build_prompt(template: str, game_id: str, agent: str, role: str,
                  role_definition: str, desire_tendencies: Dict[str, float]) -> str:
-    jinja_template = Template(template)
-    return jinja_template.render(
+    return Template(template).render(
         game_id=game_id,
         agent=agent,
         role=role,
@@ -149,113 +91,84 @@ def build_prompt(template: str, game_id: str, agent: str, role: str,
         desire_tendencies=desire_tendencies or {},
     ).strip()
 
-
-# ========= Robust extraction =========
+# ====== 抽出ロバスト化 ======
 def _sanitize_text(s: str) -> str:
-    s = (s or "")
-    s = s.lstrip("\ufeff").strip()  # BOM + outer spaces
+    s = (s or "").lstrip("\ufeff").strip()
     s = s.replace("“", '"').replace("”", '"').replace("’", "'").replace("…", "...")
-    # 裸の 'yaml' / 'yml' 行が先頭に来る事故を除去
     s = re.sub(r"^(yaml|yml)\s*\r?\n", "", s, flags=re.IGNORECASE)
     return s
 
-
-def _unfence(s: str) -> Optional[str]:
-    # ```yaml ... ``` / ```yml ... ``` / ``` ... ```
+def _unfence(s: str) -> str | None:
     m = re.search(r"```(?:yaml|yml)?\s*\r?\n([\s\S]*?)\r?\n```", s, re.IGNORECASE)
-    if m:
-        return m.group(1).strip()
-    return None
+    return m.group(1).strip() if m else None
 
-
-def _slice_from_key(s: str, key: str = "macro_desire:") -> Optional[str]:
+def _slice_from_key(s: str, key: str = "macro_desire:") -> str | None:
     i = s.lower().find(key)
     return s[i:].strip() if i != -1 else None
 
-
 def extract_yaml_from_response(response: str) -> Dict[str, Any]:
-    """LLM応答から YAML を頑健に抽出。失敗時は salvage して最低限の形に復元する。"""
+    """LLM応答から YAML を頑健に抽出（失敗時は description を救済）。"""
     s = _sanitize_text(response)
-
-    # 1) フェンス優先
     body = _unfence(s)
     if body:
         try:
             return yaml.safe_load(body) or {}
         except yaml.YAMLError:
             pass
-
-    # 2) 全体をそのまま
     try:
         return yaml.safe_load(s) or {}
     except yaml.YAMLError:
         pass
-
-    # 3) 'macro_desire:' 以降を切り出し
     tail = _slice_from_key(s)
     if tail:
         try:
             return yaml.safe_load(tail) or {}
         except yaml.YAMLError:
             pass
+    # 最後の手段：description 行だけ抽出
+    m = re.search(r"description\s*:\s*(.+)", s, re.IGNORECASE)
+    desc = (m.group(1).strip()) if m else "Auto-generated description."
+    return {"macro_desire": {"description": desc}}
 
-    # 4) ブルータル救済: summary/description 行を掘り出して補完
-    sum_m = re.search(r"summary\s*:\s*(.+)", s, re.IGNORECASE)
-    desc_m = re.search(r"description\s*:\s*(.+)", s, re.IGNORECASE)
-    summary = (sum_m.group(1).strip(' "\'')) if sum_m else "Auto-generated summary"
-    description = (desc_m.group(1).strip()) if desc_m else "Auto-generated description."
-    return {"macro_desire": {"summary": summary, "description": description}}
+# ====== 文数制御（最大2文） ======
+def _limit_sentences(text: str, max_sents: int = 2) -> str:
+    t = (text or "").strip()
+    if not t:
+        return t
+    # 日英っぽい句点で区切って2文まで
+    parts = re.split(r"(?<=[。．\.!?！？」])\s+", t)
+    parts = [p.strip() for p in parts if p.strip()]
+    trimmed = " ".join(parts[:max_sents]).strip()
+    return trimmed if re.search(r"[。．\.!?！？」]$", trimmed) else (trimmed + "." if trimmed else "")
 
-
-# ========= Normalizer =========
+# ====== 正規化（description のみ） ======
 def normalize_macro_desire(data: Dict[str, Any]) -> Dict[str, Any]:
-    """macro_desire の2フィールドを必ず埋め、余計なフェンス/接頭語を掃除。"""
+    """macro_desire.description を必須にし、最大2文に制限。"""
     if "macro_desire" not in data or not isinstance(data["macro_desire"], dict):
         data = {"macro_desire": (data if isinstance(data, dict) else {})}
-
     md = data["macro_desire"]
-    md["summary"] = str(md.get("summary") or "Auto-generated summary")
-    md["description"] = str(md.get("description") or "No detailed description provided")
+    desc = str(md.get("description") or "")
+    desc = desc.replace("```", "").strip()
+    desc = re.sub(r"^yaml\s*", "", desc, flags=re.IGNORECASE)
+    desc = _limit_sentences(desc, 2)
+    return {"macro_desire": {"description": desc}}
 
-    for k in ("summary", "description"):
-        v = md.get(k, "")
-        v = v.replace("```", "").strip()
-        v = re.sub(r"^yaml\s*", "", v, flags=re.IGNORECASE)
-        md[k] = v
-
-    return {"macro_desire": md}
-
-
-# ========= Deterministic fallback =========
+# ====== 決定論フォールバック（description のみ・最大2文） ======
 def build_deterministic_macro_desire(agent: str, role: str,
                                      role_definition: str,
                                      desire_tendencies: Dict[str, float]) -> Dict[str, Any]:
-    tops = sorted((desire_tendencies or {}).items(), key=lambda kv: kv[1], reverse=True)[:3]
-    drivers = ", ".join(f"{k}={v:.2f}" for k, v in tops) if tops else "n/a"
-    focus = tops[0][0] if tops else "stability"
-    focus_disp = focus.replace("_", " ")
-
-    summary = f"Balance {focus_disp} with {role} duties."
-    description = (
-        f"{agent} aims to fulfill the {role} role while prioritizing {focus_disp}. "
-        f"Role duties: {role_definition or 'n/a'}. "
-        f"Key drivers: {drivers}. "
-        f"The agent will adjust commitment to role expectations proportionally to these tendencies."
-    )
-    return {"macro_desire": {"summary": summary, "description": description}}
-
+    # 上位2傾向を文に織り込む（軽量）
+    tops = sorted((desire_tendencies or {}).items(), key=lambda kv: kv[1], reverse=True)[:2]
+    drivers = ", ".join(k.replace("_"," ") for k,_ in tops) if tops else "stability"
+    s1 = f"{agent} aims to fulfill the {role} role while prioritizing {drivers}."
+    s2 = f"Role duties: {role_definition or 'n/a'}."
+    return {"macro_desire": {"description": _limit_sentences(f'{s1} {s2}', 2)}}
 
 def _is_unusable(md_obj: Dict[str, Any]) -> bool:
-    s = (md_obj or {}).get("summary", "")
     d = (md_obj or {}).get("description", "")
-    if "Failed to parse LLM response" in s:
-        return True
-    if s.startswith("Auto-generated") and len(d) < 10:
-        return True
-    return False
+    return len((d or "").strip()) < 10
 
-
-# ========= Main generator =========
+# ====== メイン ======
 def generate_macro_desire(
     game_id: str,
     agent: str,
@@ -263,167 +176,93 @@ def generate_macro_desire(
     dry_run: bool = False,
     overwrite: bool = False
 ) -> Dict[str, Any]:
-    """Generate macro desire from macro_belief data."""
-    base_path = Path("/home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025")
-    macro_belief_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_belief.yml"
-    config_path = base_path / "config" / "config.yml"
-    output_path = base_path / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_desire.yml"
+    """Generate macro_desire (description only, ≤2 sentences) from macro_belief data."""
+    mb_path = BASE / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_belief.yml"
+    cfg_path = CFG_PATH
+    out_path = BASE / "info" / "bdi_info" / "macro_bdi" / game_id / agent / "macro_desire.yml"
 
-    if output_path.exists() and not overwrite and not dry_run:
-        raise FileExistsError(f"Output file already exists: {output_path}. Use --overwrite to overwrite.")
+    if out_path.exists() and not overwrite and not dry_run:
+        raise FileExistsError(f"Output file already exists: {out_path}. Use --overwrite to overwrite.")
 
     try:
-        # Load inputs
-        try:
-            macro_belief_data = load_yaml_file(macro_belief_path)
-        except Exception:
-            macro_belief_data = {"macro_belief": {}}
+        macro_belief_data = load_yaml_file(mb_path)
+        config_data = load_yaml_file(cfg_path)
+    except Exception:
+        macro_belief_data, config_data = {"macro_belief": {}}, {}
 
-        try:
-            config_data = load_yaml_file(config_path)
-        except Exception:
-            config_data = {}
+    # macro_belief から役職/定義/傾向
+    m = macro_belief_data.get("macro_belief", {}) or {}
+    role_data = m.get("role_social_duties", {}) or {}
+    role_raw = role_data.get("role") or m.get("role") or "Villager"
+    role_display = _normalize_role_name(role_raw)
+    duties = role_data.get("duties", {}) if isinstance(role_data.get("duties", {}), dict) else {}
+    role_def = duties.get("definition") or duties.get("定義") or m.get("role_definition") or ""
+    role_display, role_def = _supplement_role_definition(role_display, role_def, config_data)
 
-        # Extract from macro_belief (robust)
-        m = macro_belief_data.get("macro_belief", {}) or {}
-        # role
-        role_data = m.get("role_social_duties", {}) or {}
-        role = role_data.get("role") or m.get("role") or "不明"
-        # definition
-        duties = role_data.get("duties", {})
-        duties = duties if isinstance(duties, dict) else {}
-        role_definition = duties.get("definition") or duties.get("定義") or m.get("role_definition") or ""
+    dt = m.get("desire_tendency", {}) or {}
+    desire_tendencies = dt.get("desire_tendencies") or dt
+    if not isinstance(desire_tendencies, dict):
+        desire_tendencies = {}
 
-        # supplement from config if missing
-        role, role_definition = _supplement_role_definition(role, role_definition, config_data)
+    # プロンプト（config.yml 必須）
+    prompt_template = (config_data.get("prompt", {}) or {}).get("macro_desire", "")
+    if not prompt_template:
+        raise RuntimeError("prompt.macro_desire is missing in config.yml")
 
-        # desire tendencies
-        dt = m.get("desire_tendency", {}) or {}
-        desire_tendencies = dt.get("desire_tendencies") or dt
-        if not isinstance(desire_tendencies, dict):
-            desire_tendencies = {}
+    prompt = build_prompt(prompt_template, game_id, agent, role_display, role_def, desire_tendencies)
+    if dry_run:
+        print("---- PROMPT ----")
+        print(prompt)
 
-        # Template
-        prompt_template = (config_data.get("prompt", {}) or {}).get("macro_desire", FALLBACK_PROMPT_TEMPLATE) or FALLBACK_PROMPT_TEMPLATE
+    # LLM 呼び出し
+    if agent_obj is None:
+        raise ValueError("agent_obj is required. Direct API calls are not allowed.")
+    extra_vars = {
+        "game_id": game_id,
+        "agent": agent,
+        "role": role_display,
+        "role_definition": role_def,
+        "desire_tendencies": desire_tendencies
+    }
+    response = agent_obj.send_message_to_llm(
+        "macro_desire",
+        extra_vars=extra_vars,
+        log_tag="MACRO_DESIRE_GENERATION_LITE",
+        use_shared_history=False
+    )
+    if response is None:
+        raise ValueError("Agent LLM call returned None")
 
-        # Build prompt
-        prompt = build_prompt(prompt_template, game_id, agent, role, role_definition, desire_tendencies)
+    # パース & 正規化（description のみ、最大2文）
+    parsed = extract_yaml_from_response(response)
+    normalized = normalize_macro_desire(parsed)
 
-        if dry_run:
-            print("\n" + "="*50)
-            print("DRY RUN - GENERATED PROMPT:")
-            print("="*50)
-            print(prompt)
-            print("\n" + "="*50)
+    # フォールバック
+    if _is_unusable(normalized.get("macro_desire", {})):
+        normalized = build_deterministic_macro_desire(agent, role_display, role_def, desire_tendencies)
 
-        # LLM call via agent
-        if agent_obj is None:
-            raise ValueError("agent_obj is required. Direct API calls are not allowed.")
-
-        extra_vars = {
+    # メタ付与
+    final_data = {
+        **normalized,
+        "meta": {
             "game_id": game_id,
             "agent": agent,
-            "role": role,
-            "role_definition": role_definition,
-            "desire_tendencies": desire_tendencies
+            "model": (agent_obj.config.get("openai", {}).get("model")
+                      or agent_obj.config.get("google", {}).get("model")
+                      or agent_obj.config.get("ollama", {}).get("model")),
+            "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+            "source_macro_belief": str(mb_path)
         }
-        response = agent_obj.send_message_to_llm(
-            "macro_desire",
-            extra_vars=extra_vars,
-            log_tag="MACRO_DESIRE_GENERATION",
-            use_shared_history=False
-            # 温度を下げたい場合は、agent側でこのタグを見て下げる実装にする
-        )
-        if response is None:
-            raise ValueError("Agent LLM call returned None")
+    }
 
-        if dry_run:
-            print("RAW LLM RESPONSE:")
-            print("="*50)
-            print(response)
-            print("\n" + "="*50)
-
-        # Parse
-        parsed_data = extract_yaml_from_response(response)
-        normalized_data = normalize_macro_desire(parsed_data)
-
-        # Deterministic fallback if unusable
-        if _is_unusable(normalized_data.get("macro_desire", {})):
-            normalized_data = build_deterministic_macro_desire(agent, role, role_definition, desire_tendencies)
-
-        # Meta
-        final_data = {
-            **normalized_data,
-            "meta": {
-                "game_id": game_id,
-                "agent": agent,
-                "model": (agent_obj.config.get("openai", {}).get("model")
-                          or agent_obj.config.get("google", {}).get("model")
-                          or agent_obj.config.get("ollama", {}).get("model")),
-                "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-                "source_macro_belief": str(macro_belief_path)
-            }
-        }
-
-        if dry_run:
-            print("PARSED AND NORMALIZED RESULT:")
-            print("="*50)
-            print(yaml.safe_dump(final_data, allow_unicode=True, sort_keys=False))
-            return final_data
-
-        _atomic_write_yaml(final_data, output_path)
-        print(f"Saved macro_desire: {output_path}")
+    if dry_run:
+        print("---- RESULT ----")
+        print(yaml.safe_dump(final_data, allow_unicode=True, sort_keys=False))
         return final_data
 
-    except Exception as e:
-        error_msg = str(e)
-        print(f"Error generating macro_desire: {error_msg}")
-
-        if not dry_run:
-            # Best-effort deterministic fallback on hard error
-            try:
-                # try to re-read what we can to build a reasonable fallback
-                role_fb, role_def_fb = "Villager", ""
-                try:
-                    config_data = load_yaml_file(config_path)
-                except Exception:
-                    config_data = {}
-                role_fb, role_def_fb = _supplement_role_definition(role_fb, role_def_fb, config_data)
-
-                macro_belief_data = macro_belief_data if "macro_belief_data" in locals() else {"macro_belief": {}}
-                m = macro_belief_data.get("macro_belief", {}) or {}
-                dt = m.get("desire_tendency", {}) or {}
-                desire_tendencies = dt.get("desire_tendencies") or dt
-                if not isinstance(desire_tendencies, dict):
-                    desire_tendencies = {}
-
-                fb_md = build_deterministic_macro_desire(agent, role_fb, role_def_fb, desire_tendencies)
-
-                fallback_data = {
-                    **fb_md,
-                    "meta": {
-                        "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-                        "source": "macro_desire.py fallback",
-                        "game_id": game_id,
-                        "agent": agent,
-                        "model": (agent_obj.config.get("openai", {}).get("model")
-                                  or agent_obj.config.get("google", {}).get("model")
-                                  or agent_obj.config.get("ollama", {}).get("model"))
-                                 if agent_obj else "unknown",
-                        "fallback": True,
-                        "error": error_msg[:200]
-                    }
-                }
-                _atomic_write_yaml(fallback_data, output_path)
-                print(f"Created fallback macro_desire: {output_path}")
-                return fallback_data
-
-            except Exception as fallback_error:
-                print(f"Failed to write fallback macro_desire: {fallback_error}")
-                raise e  # Re-raise original error
-        else:
-            raise e
-
+    _atomic_write_yaml(final_data, out_path)
+    print(f"Saved macro_desire: {out_path}")
+    return final_data
 
 def main():
     """Deprecated CLI function."""
@@ -431,7 +270,6 @@ def main():
     print("💡 Run from Agent runtime context instead.")
     print("   Example: agent.generate_macro_desire(game_id, agent_name, agent_obj=agent)")
     return 1
-
 
 if __name__ == "__main__":
     exit(main())
