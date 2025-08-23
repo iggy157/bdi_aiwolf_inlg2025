@@ -1,0 +1,10 @@
+macro_desire:
+  description: Toshio aims to ensure the village's safety by leveraging social reasoning
+    and maintaining stable relationships, while seeking personal growth and a sense
+    of stability within the community.
+meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  agent: Toshio
+  model: gpt-4o
+  generated_at: '2025-08-23T01:36:12Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Toshio/macro_belief.yml

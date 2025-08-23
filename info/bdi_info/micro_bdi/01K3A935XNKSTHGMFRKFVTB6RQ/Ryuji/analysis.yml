@@ -1,0 +1,290 @@
+1:
+  content: Hello everyone I'm May. Today I'll be observing and gathering information
+    to strategically share insights later.
+  type: 'null'
+  from: May
+  to: May
+  credibility: 0.233
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.467
+    liking: 0.533
+    creditability: 0.4
+    from: May
+2:
+  content: I'm Toshio I have no special role info will focus on verifiable asks for
+    village safety and plan to vote cautiously today.
+  type: negative
+  from: Toshio
+  to: Toshio
+  credibility: 0.315
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+3:
+  content: Hello everyone let's start by getting to know each other a bit.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: Victoria
+4:
+  content: Hello everyone I am Minako a villager and I suggest we focus on building
+    a consensus today without revealing specific roles.
+  type: positive
+  from: Minako
+  to: Minako
+  credibility: 0.452
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako
+5:
+  content: Hey everyone I'm May. I'll be focusing on observing and gathering information
+    today without making any role claims yet.
+  type: 'null'
+  from: May
+  to: May
+  credibility: 0.289
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.467
+    liking: 0.533
+    creditability: 0.4
+    from: May
+6:
+  content: I'm Toshio I have no special results to share so I'll focus on proposing
+    verifiable asks to help us today.
+  type: 'null'
+  from: Toshio
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+7:
+  content: Hi everyone it's nice to be here. May I'd love to hear your thoughts.
+  type: question
+  from: Victoria
+  to: May
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: Victoria
+8:
+  content: Thank you Toshio; I will not claim Seer or Medium this turn and I have
+    no special role information to share now.
+  type: 'null'
+  from: Minako
+  to: Toshio
+  credibility: 0.452
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako
+9:
+  content: I hear your plan Toshio. I'll keep observing without any special results
+    to share yet and work with the village for our safet
+  type: 'null'
+  from: May
+  to: Toshio
+  credibility: 0.233
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.467
+    liking: 0.533
+    creditability: 0.4
+    from: May
+10:
+  content: I'll follow May's plan and focus on observing interactions as I have no
+    special role results to share today.
+  type: 'null'
+  from: Toshio
+  to: May
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+11:
+  content: I'm Victoria observing today and eager to align with the group.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: Victoria
+12:
+  content: May I appreciate your focus on observation; could you share any insights
+    to help us build consensus?
+  type: question
+  from: Minako
+  to: May
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako
+13:
+  content: Hi everyone I'm May. I have no special info to share right now but let's
+    work together and keep things open.
+  type: 'null'
+  from: May
+  to: all
+  credibility: 0.261
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.467
+    liking: 0.533
+    creditability: 0.4
+    from: May
+14:
+  content: I'm Toshio I have no special role results to share so I'll focus on observing
+    interactions to keep the village safe.
+  type: 'null'
+  from: Toshio
+  to: Toshio
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+15:
+  content: I'm Victoria and I'll be observing today while keeping my role to myself.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.367
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: Victoria
+16:
+  content: I have no special role info today and will focus on observing and supporting
+    May's plan to help us reach consensus.
+  type: positive
+  from: Minako
+  to: May
+  credibility: 0.545
+  credibility_raw: 0.76
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako
+17:
+  content: ' @May  I have no special results today so I''ll focus on observing interactions
+    to help us reach a group consensus.'
+  type: 'null'
+  from: Minako
+  to: May
+  credibility: 0.452
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako
+18:
+  content: Hello everyone I'm revealing as the Seer and can confirm that Ryuji is
+    HUMAN based on my observation.
+  type: question
+  from: May
+  to: Ryuji
+  credibility: 0.233
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.467
+    liking: 0.533
+    creditability: 0.4
+    from: May
+19:
+  content: Aligning with the plan today I have no special results and will observe
+    to keep us safe.
+  type: 'null'
+  from: Victoria
+  to: 'null'
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.633
+    creditability: 0.533
+    from: Victoria
+20:
+  content: I acknowledge Ryuji's focus on noting inconsistencies; I have no special
+    results today so I'll propose verifiable asks for vi
+  type: 'null'
+  from: Toshio
+  to: Ryuji
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+21:
+  content: I am Minako a villager and I appreciate Ryuji sharing; let's collaborate
+    on observations to ensure village safety.
+  type: positive
+  from: Minako
+  to: Minako,Ryuji
+  credibility: 0.452
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minako

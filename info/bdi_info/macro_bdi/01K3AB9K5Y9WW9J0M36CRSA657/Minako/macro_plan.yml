@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Minako introduces herself, emphasizes her non-claim policy, and commits
+    to observing social dynamics to make a provisional voting decision that aligns
+    with group stability.
+  mid_game: She synthesizes public information to name a suspicious player, utilizing
+    talk-history and claim consistency as evidence while coordinating checks to maximize
+    information gain.
+  late_game: Minako summarizes the strongest cases and resolves contradictions to
+    fix the elimination target, ensuring consensus to achieve the village's victory
+    condition.
+meta:
+  game_id: 01K3AB9K5Y9WW9J0M36CRSA657
+  agent: Minako
+  role_raw: 村人
+  role_canon: villager
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-23T02:14:42Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3AB9K5Y9WW9J0M36CRSA657/Minako/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3AB9K5Y9WW9J0M36CRSA657/Minako/macro_desire.yml
+  format: one_line_per_phase

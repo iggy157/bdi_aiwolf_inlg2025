@@ -1,0 +1,22 @@
+macro_plan:
+  early_game: Introduce myself briefly, clarify my stance against making claims, propose
+    verifiable asks, and declare a provisional voting intent.
+  mid_game: Synthesize public information to highlight inconsistencies, name and push
+    against a suspicious player using talk-history and claim consistency as evidence,
+    and coordinate checks and votes for information gain.
+  late_game: Summarize the strongest cases and eliminate contradictions, fix the elimination
+    target with explicit reasoning, ensure consensus to prevent chaos, and allocate
+    votes to secure the village's victory.
+meta:
+  game_id: 01K3A6042E7XF3DEGT92Y1HBHZ
+  agent: Mio
+  role_raw: 村人
+  role_canon: villager
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-23T00:42:09Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A6042E7XF3DEGT92Y1HBHZ/Mio/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A6042E7XF3DEGT92Y1HBHZ/Mio/macro_desire.yml
+  format: one_line_per_phase

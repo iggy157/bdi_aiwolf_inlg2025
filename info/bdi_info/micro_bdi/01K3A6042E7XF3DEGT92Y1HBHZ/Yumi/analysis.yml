@@ -1,0 +1,615 @@
+1:
+  content: Hello everyone I am Daisuke and I am committed to keeping our village safe;
+    I have no special role to claim yet.
+  type: 'null'
+  from: Daisuke
+  to: Daisuke
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+2:
+  content: I am Toshio let's discuss general strategies to identify threats together.
+  type: 'null'
+  from: Toshio
+  to: Toshio
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+3:
+  content: I am curious about your thoughts Daisuke; how do you feel about the start
+    of the game?
+  type: question
+  from: Shion
+  to: Daisuke
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+4:
+  content: Hi everyone I'm Mio a villager with no special results to share; I won't
+    make any claims yet but plan to vote for Shion provi
+  type: negative
+  from: Mio
+  to: Shion
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+5:
+  content: I agree with Yumi's strategy and will focus on village safety and stability;
+    I have no special results to share today.
+  type: 'null'
+  from: Daisuke
+  to: Yumi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+6:
+  content: Hello everyone I am Toshio and I'm excited for strategic play. Let's discuss
+    a provisional voting plan together.
+  type: 'null'
+  from: Toshio
+  to: Toshio
+  credibility: 0.383
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+7:
+  content: Toshio what kind of strategies do you think are most effective for identifying
+    threats early in the game?
+  type: question
+  from: Shion
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+8:
+  content: Hi Toshio I'm Mio a villager with no special results; I agree we should
+    discuss strategies to identify threats together.
+  type: question
+  from: Mio
+  to: Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+9:
+  content: Shion I feel optimistic and will focus on building trust and gathering
+    insights to ensure our village's safety.
+  type: 'null'
+  from: Daisuke
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+10:
+  content: I am Toshio and have no special claims but I'm curious about Shion's thoughts
+    as we consider our voting options.
+  type: question
+  from: Toshio
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+11:
+  content: ' @Mio  I like your plan; maybe we could also hear Toshio''s thoughts on
+    general strategies to keep the discussion broad.'
+  type: positive
+  from: Shion
+  to: Mio,Toshio
+  credibility: 0.49
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+12:
+  content: ' @Toshio  I''m Mio with no special results today; let''s start with verifiable
+    questions and a provisional voting strategy.'
+  type: 'null'
+  from: Mio
+  to: Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+13:
+  content: Toshio I support your idea and will focus on strategic discussions to identify
+    threats without claiming any roles.
+  type: positive
+  from: Daisuke
+  to: Toshio
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+14:
+  content: ' @Shion  what do you think about Daisuke''s approach today and how can
+    we identify potential threats together?'
+  type: question
+  from: Toshio
+  to: Shion,Daisuke
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+15:
+  content: Toshio your curiosity is noted; perhaps we should all discuss potential
+    voting strategies to keep our options open.
+  type: question
+  from: Shion
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+16:
+  content: Shion I agree with involving Toshio in our strategy talks I have no special
+    role to claim so let's focus on a voting plan.
+  type: 'null'
+  from: Mio
+  to: Shion,Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+17:
+  content: Toshio let's collaborate on a voting plan focusing on non-aggressive players;
+    I have no special role to reveal today.
+  type: 'null'
+  from: Shion
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+18:
+  content: Shion I have no special results to share but let's focus on open discussion
+    to identify suspicious behaviors and threats.
+  type: 'null'
+  from: Daisuke
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+19:
+  content: ' @Shion  I appreciate your input; I have no special results today but
+    will focus on strategic discussions and a provisional voting pla'
+  type: 'null'
+  from: Mio
+  to: Shion
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+20:
+  content: ' @Shion  let''s continue our strategy discussions today and focus on voting
+    plans to ensure we stay ambiguous and strategic.'
+  type: 'null'
+  from: Toshio
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+21:
+  content: Toshio what are your thoughts on a voting plan today perhaps considering
+    Mio's recent input?
+  type: question
+  from: Shion
+  to: Toshio,Mio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+22:
+  content: 'Yumi I am committed to our village''s safety and will focus on strategic
+    discussions to identify threats without claiming any '
+  type: 'null'
+  from: Daisuke
+  to: Yumi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+23:
+  content: 'Shion thanks for the support Toshio let''s hear your thoughts too; I have
+    no special results so let''s focus on gathering info '
+  type: positive
+  from: Mio
+  to: Shion,Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+24:
+  content: Let's discuss provisional voting strategies together to keep our options
+    open and maintain group flexibility.
+  type: 'null'
+  from: Toshio
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+25:
+  content: Toshio let's discuss with Daisuke about a strategic approach to today's
+    vote; I have no special role to reveal.
+  type: 'null'
+  from: Shion
+  to: Daisuke,Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+26:
+  content: ' @Shion  Let''s discuss synthesizing information to identify suspicious
+    players and plan a voting strategy as I have no special results'
+  type: 'null'
+  from: Daisuke
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+27:
+  content: ' @Toshio  let''s discuss how to verify claims and make a voting plan;
+    I have no special results today but will focus on strategies.'
+  type: question
+  from: Mio
+  to: Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+28:
+  content: ' @Shion  thanks for your support; let''s gather more info today and consider
+    a flexible voting strategy together.'
+  type: positive
+  from: Toshio
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+29:
+  content: ' @Toshio  I''ll join in on strategy talks today keeping our voting plans
+    open to explore different options.'
+  type: 'null'
+  from: Shion
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+30:
+  content: ' @Toshio  Let''s coordinate on a flexible voting strategy; I have no special
+    information to share and will focus on strategy discussions'
+  type: 'null'
+  from: Daisuke
+  to: Toshio
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Daisuke
+31:
+  content: ' @Toshio  let''s team up with Daisuke to form a voting strategy; I have
+    no special ability results to share today.'
+  type: 'null'
+  from: Mio
+  to: Toshio,Daisuke
+  credibility: 0.445
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+32:
+  content: Let's discuss strategic voting today and focus on ambiguous questions to
+    maintain our flexibility without claiming roles.
+  type: 'null'
+  from: Toshio
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+33:
+  content: Toshio and Shion let's discuss our voting plan today; I have no special
+    results to share but want to focus on strategic decis
+  type: 'null'
+  from: Mio
+  to: Toshio,Shion
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+34:
+  content: ' @Mio  and Shion let''s discuss a flexible voting strategy today and continue
+    working together on our plans.'
+  type: 'null'
+  from: Toshio
+  to: Mio,Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+35:
+  content: ' @Mio  and @Toshio let''s gather information and develop a flexible voting
+    plan; I have no special results to announce.'
+  type: 'null'
+  from: Shion
+  to: Mio,Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+36:
+  content: 'Toshio I appreciate your focus on strategy; I have no special results
+    but let''s keep discussions on strategic voting without '
+  type: positive
+  from: Mio
+  to: Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+37:
+  content: ' @Mio  and @Shion let''s discuss flexible voting strategies today to engage
+    in strategic planning together.'
+  type: 'null'
+  from: Toshio
+  to: Mio,Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+38:
+  content: ' @Mio  and Toshio let''s collaborate on a flexible voting strategy today;
+    I''ll share my thoughts to align our plans.'
+  type: 'null'
+  from: Shion
+  to: Mio,Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+39:
+  content: ' @Shion  and @Toshio let''s work on a flexible voting strategy; I have
+    no special info to share but will focus on strategic planning.'
+  type: 'null'
+  from: Mio
+  to: Shion,Toshio
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+40:
+  content: ' @Mio  and @Shion I appreciate your ideas; let''s collaborate on strategic
+    voting plans to keep our approach flexible.'
+  type: positive
+  from: Toshio
+  to: Mio,Shion
+  credibility: 0.383
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+41:
+  content: Toshio let's discuss a flexible voting strategy today to keep our options
+    open; I have no special results to share.
+  type: 'null'
+  from: Shion
+  to: Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion
+42:
+  content: ' @Shion  and @Toshio let''s coordinate on a provisional voting strategy
+    to benefit the village; I have no special role to disclose.'
+  type: 'null'
+  from: Mio
+  to: Shion,Toshio
+  credibility: 0.445
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Mio
+43:
+  content: ' @Mio  and @Shion let''s continue our discussion on maintaining a flexible
+    voting strategy without revealing any special roles.'
+  type: 'null'
+  from: Toshio
+  to: Mio,Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.667
+    creditability: 0.7
+    from: Toshio
+44:
+  content: ' @Mio  and @Toshio let''s discuss strategic voting today without role
+    claims aiming to subtly deflect suspicion.'
+  type: 'null'
+  from: Shion
+  to: Mio,Toshio
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.667
+    creditability: 0.733
+    from: Shion

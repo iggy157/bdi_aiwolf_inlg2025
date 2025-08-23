@@ -1,0 +1,10 @@
+macro_desire:
+  description: As a Villager, Mizuki aims to prioritize group safety through careful
+    observation and reasoning, while seeking social approval and maintaining stable
+    relationships in decision-making.
+meta:
+  game_id: 01K3AB9K5Y9WW9J0M36CRSA657
+  agent: Mizuki
+  model: gpt-4o
+  generated_at: '2025-08-23T02:14:38Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3AB9K5Y9WW9J0M36CRSA657/Mizuki/macro_belief.yml

@@ -3,15 +3,25 @@
 """
 macro_plan 生成器（プロンプトは config.yml 管理／コード内に埋め込まない版）
 
-機能概要:
-- macro_belief.yml / macro_desire.yml を読み込んで、early/mid/late を各1文で生成
+変更点:
+- 出力フェーズを early/mid/late から以下の5区分に変更
+  * self_introduction: Self-introduction (including role claims)
+  * information_sharing: Information sharing and role-related updates (special ability results, etc.)
+  * reasoning_analysis: Reasoning and analysis
+  * discussion_persuasion: Discussion and persuasion
+  * voting_decision: Voting decision
+- 互換性維持のため、上記5区分から early_game/mid_game/late_game を合成して
+  レガシー別名(legacy bridge)としても出力
+
+生成方針:
+- macro_belief.yml / macro_desire.yml を参照して5区分を各1文で生成
 - 役職は macro_belief.role_social_duties.role（日本語）を最優先で英語に正規化
 - LLM 出力の形式ズレ（辞書返却など）は一文に合成して救済
-- Seer/Medium: early 結果禁止、mid 結果開示（検証で強制）
-- late: 陣営勝利条件を強制補完
-- 村/狩: 真CO抑止、狼/狂: 真CO禁止・偽COは条件付き
-
-プロンプトは config.yml の prompt.macro_plan を使用（未定義なら RuntimeError）。
+- Seer/Medium:
+    * self_introduction では結果語（白/黒/人間/人狼/result/flip 等）を含めない
+    * information_sharing では「結果があるときは最新の対象+判定を開示」を強制補完
+- voting_decision: 陣営勝利条件への言及を強制補完
+- 村/狩: 真CO抑止、狼/狂: 真CO禁止（偽COは条件付き）
 """
 
 from __future__ import annotations
@@ -66,127 +76,49 @@ ROLE_POLICY = {
     "possessed":  dict(should_true_co=False, allow_fake_co=True ),
 }
 
-# ==== ヒント用のベース骨子（LLMへの補助 & フォールバック合成に使用） ====
-BASE_ITEMS: Dict[str, Dict[str, Dict[str, str]]] = {
+# ==== 新5区分の骨子（ヒント & フォールバック合成に使用） ====
+BASE5: Dict[str, Dict[str, str]] = {
     "seer": {
-        "early_game": {
-            "self_intro": "Brief self-intro; clarify stable/analytic stance.",
-            "claim_policy": "Remain non-claiming and state claim policy.",
-            "asks": "Set testable asks that create safe pressure.",
-            "voting_intent": "Declare a clear provisional voting intent.",
-        },
-        "mid_game": {
-            "report_results": "When a seer result exists, true-claim and reveal the latest result with target and judgement.",
-            "suspect_push": "Name a suspicious player and push with explicit logical reasons.",
-            "evidence_style": "Reference result-based evidence and talk-history inconsistencies.",
-            "coordination": "Coordinate with confirmed allies to align checks and votes.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Summarize confirmed information and remaining worlds.",
-            "final_targeting": "Identify the elimination target with crisp rationale.",
-            "consensus_strategy": "Drive decisive consensus for endgame clarity.",
-            "vote_allocation": "Allocate votes toward the village victory condition.",
-        },
+        "self_introduction":     "Brief self-intro; clarify analytical stance; state non-claim policy for now.",
+        "information_sharing":   "When a seer result exists, true-claim and reveal the latest check with target and judgement promptly.",
+        "reasoning_analysis":    "Name a suspicious player with explicit logic referencing result consistency and talk-history.",
+        "discussion_persuasion": "Coordinate with likely allies to align checks, counter-claims, and consolidate narratives.",
+        "voting_decision":       "Fix the elimination target based on confirmed info and push consensus toward the village victory condition.",
     },
     "medium": {
-        "early_game": {
-            "self_intro": "Brief self-intro; clarify careful/verification stance.",
-            "claim_policy": "Remain non-claiming and state claim policy.",
-            "asks": "Propose a safe verification plan tied to executions.",
-            "voting_intent": "Declare a clear provisional voting intent.",
-        },
-        "mid_game": {
-            "report_results": "When a flip result exists, true-claim and reveal it promptly with concrete wording.",
-            "suspect_push": "Advance a suspect based on flip-consistent logic.",
-            "evidence_style": "Cite flip-based confirmations and contradictions.",
-            "coordination": "Coordinate to resolve claim conflicts efficiently.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Recap flips and consistency across claims.",
-            "final_targeting": "Nominate the elimination target based on confirmed info.",
-            "consensus_strategy": "Consolidate votes using verified narratives.",
-            "vote_allocation": "Align votes toward the village victory condition.",
-        },
+        "self_introduction":     "Brief self-intro; clarify careful verification stance; keep claim policy stated without outing.",
+        "information_sharing":   "When a flip result exists, true-claim and reveal it promptly with the concrete wording of target and judgement.",
+        "reasoning_analysis":    "Advance a suspect using flip-consistent logic and contradiction spotting.",
+        "discussion_persuasion": "Resolve claim conflicts efficiently and coordinate confirmations.",
+        "voting_decision":       "Select the elimination target based on confirmed flips and secure votes toward the village victory condition.",
     },
     "bodyguard": {
-        "early_game": {
-            "self_intro": "Brief self-intro emphasizing cautious protection stance.",
-            "claim_policy": "State non-claim policy and keep protection ambiguous.",
-            "asks": "Request concrete verification that avoids exposing power roles.",
-            "voting_intent": "Declare a provisional vote that minimizes PR risk.",
-        },
-        "mid_game": {
-            "report_results": "No special results; keep protection patterns opaque.",
-            "suspect_push": "Redirect pressure away from likely power roles while naming a suspect.",
-            "evidence_style": "Use logical scrutiny and risk assessment language.",
-            "coordination": "Quietly coordinate around likely PRs to reduce exposure.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Recap protection reasoning and safe assumptions.",
-            "final_targeting": "Select target consistent with PR survival.",
-            "consensus_strategy": "Assist consensus without outing protection details.",
-            "vote_allocation": "Align votes toward the village victory condition.",
-        },
+        "self_introduction":     "Brief self-intro emphasizing cautious protection; explicitly prefer non-claim policy.",
+        "information_sharing":   "Do not reveal protection details; keep patterns opaque while sharing safe inferences.",
+        "reasoning_analysis":    "Name a suspect while prioritizing power-role safety and risk assessment.",
+        "discussion_persuasion": "Quietly steer discussion to reduce PR exposure and support stable verification.",
+        "voting_decision":       "Allocate votes that maximize PR survival and progress toward the village victory condition.",
     },
     "villager": {
-        "early_game": {
-            "self_intro": "Brief self-intro to clarify approach.",
-            "claim_policy": "State non-claim policy clearly.",
-            "asks": "Propose concrete asks that can be verified.",
-            "voting_intent": "Declare a clear provisional voting intent.",
-        },
-        "mid_game": {
-            "report_results": "No special results; synthesize public info.",
-            "suspect_push": "Name a suspicious player and push with explicit reasons.",
-            "evidence_style": "Use talk-history and claim consistency as evidence.",
-            "coordination": "Coordinate checks and votes to maximize information gain.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Summarize strongest cases and resolved contradictions.",
-            "final_targeting": "Fix the elimination target with explicit reasoning.",
-            "consensus_strategy": "Lock in consensus and prevent last-minute chaos.",
-            "vote_allocation": "Allocate votes toward the village victory condition.",
-        },
+        "self_introduction":     "Brief self-intro clarifying approach; prefer non-claim policy.",
+        "information_sharing":   "Synthesize public information rather than special results; share testable observations.",
+        "reasoning_analysis":    "Present a concrete suspect with explicit reasons grounded in claims and consistency.",
+        "discussion_persuasion": "Drive consensus by comparing alternatives and addressing counter-arguments.",
+        "voting_decision":       "Lock in the elimination target with crisp rationale toward the village victory condition.",
     },
     "werewolf": {
-        "early_game": {
-            "self_intro": "Light self-intro to build cover without overcommitting.",
-            "claim_policy": "Do not true-claim; consider conditional fake-CO only if beneficial.",
-            "asks": "Propose plausible asks that steer away from wolves.",
-            "voting_intent": "Declare voting intent assertively to appear proactive.",
-        },
-        "mid_game": {
-            "report_results": "No true results; if feigning, keep it plausible and reactive.",
-            "suspect_push": "Redirect suspicion by presenting a plausible alternative target.",
-            "evidence_style": "Cite behavioral tells and soft logic that do not bind wolves.",
-            "coordination": "Shield allies by shaping narratives and tempo.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Frame a recap that supports the misread path.",
-            "final_targeting": "Engineer the elimination target that maximizes wolf odds.",
-            "consensus_strategy": "Manufacture or exploit consensus where favorable.",
-            "vote_allocation": "Allocate votes toward the werewolf victory condition.",
-        },
+        "self_introduction":     "Light self-intro to build cover; do not true-claim; consider conditional fake-CO only if beneficial.",
+        "information_sharing":   "No true results; if feigning, keep it plausible and reactive to public info.",
+        "reasoning_analysis":    "Redirect suspicion plausibly by presenting an alternative narrative.",
+        "discussion_persuasion": "Shape the talk flow to shield allies and create favorable momentum.",
+        "voting_decision":       "Engineer votes to maximize wolf odds and secure the werewolf victory condition.",
     },
     "possessed": {
-        "early_game": {
-            "self_intro": "Calm self-intro to earn trust with low heat.",
-            "claim_policy": "Do not true-claim; consider situational fake-CO to split village.",
-            "asks": "Propose asks that create ambiguous pressure patterns.",
-            "voting_intent": "State a tentative vote that keeps options open.",
-        },
-        "mid_game": {
-            "report_results": "No true results; seed controlled misreads if safe.",
-            "suspect_push": "Insert a misread on a low-credibility target with some rationale.",
-            "evidence_style": "Prefer soft logic that avoids exposing wolves.",
-            "coordination": "Assist wolves indirectly by steering talk flow.",
-        },
-        "late_game": {
-            "final_results_or_recap": "Recap in a way that sustains the misleading frame.",
-            "final_targeting": "Steer toward an elimination consistent with wolf win path.",
-            "consensus_strategy": "Shape consensus to enable wolf victory.",
-            "vote_allocation": "Allocate votes toward the werewolf victory condition.",
-        },
+        "self_introduction":     "Calm self-intro to earn trust with low heat; do not true-claim; consider situational fake-CO.",
+        "information_sharing":   "No true results; seed controlled misreads only when safe.",
+        "reasoning_analysis":    "Insert a misread on a low-credibility target with some rationale.",
+        "discussion_persuasion": "Assist wolves indirectly by steering frames and tempo.",
+        "voting_decision":       "Steer votes to sustain misreads and enable the werewolf victory condition.",
     },
 }
 
@@ -238,25 +170,39 @@ def _extract_yaml(resp: str) -> Dict[str, Any]:
             pass
     return {}
 
-def _normalize_to_three_lines(data: Dict[str, Any], role: str) -> Dict[str, str]:
-    """LLM応答を early/mid/late の各一文に正規化（辞書返却時は合成）。"""
+NEW_KEYS = [
+    "self_introduction",
+    "information_sharing",
+    "reasoning_analysis",
+    "discussion_persuasion",
+    "voting_decision",
+]
+
+def _normalize_to_five_lines(data: Dict[str, Any], role: str) -> Dict[str, str]:
+    """LLM応答を5区分・各1文に正規化（辞書返却時は合成）。"""
     mp = data.get("macro_plan", {})
-    out = {"early_game":"", "mid_game":"", "late_game":""}
-    for phase in out.keys():
-        v = mp.get(phase, "")
+    out = {k: "" for k in NEW_KEYS}
+    for k in NEW_KEYS:
+        v = mp.get(k, "")
         if isinstance(v, str):
-            out[phase] = _dedupe_tokens(v.strip())
+            out[k] = _dedupe_tokens(v.strip())
         elif isinstance(v, dict):
             parts = [str(x).strip().rstrip(".") for x in v.values() if str(x).strip()]
-            out[phase] = _dedupe_tokens(("; ".join(parts) + ".") if parts else "")
+            out[k] = _dedupe_tokens(("; ".join(parts) + ".") if parts else "")
         else:
-            out[phase] = ""
-        if not out[phase]:
-            # ベース骨子から一文を合成（保険）
-            base = BASE_ITEMS.get(role, BASE_ITEMS["villager"]).get(phase, {})
-            parts = [s.strip().rstrip(".") for s in base.values() if s.strip()]
-            out[phase] = _dedupe_tokens(("; ".join(parts) + ".") if parts else "")
+            out[k] = ""
+        if not out[k]:
+            base = BASE5.get(role, BASE5["villager"]).get(k, "")
+            out[k] = _dedupe_tokens(base)
     return out
+
+def _has_any(s: str, terms: tuple[str, ...]) -> bool:
+    low = (s or "").lower()
+    return any(t in low for t in terms)
+
+RESULT_TERMS = (
+    "reveal","result","flip","divine","seer","medium","判定","結果","白","黒","人狼","人間"
+)
 
 def _enforce_alignment(line: str, alignment: str) -> str:
     s = (line or "").lower()
@@ -268,38 +214,61 @@ def _enforce_alignment(line: str, alignment: str) -> str:
             return (line.rstrip(".") + " toward the werewolf victory condition.")
     return line
 
-def _has_any(s: str, terms: tuple[str, ...]) -> bool:
-    low = (s or "").lower()
-    return any(t in low for t in terms)
+def _validate_and_fix5(plan5: Dict[str,str], role: str, alignment: str) -> Dict[str,str]:
+    si = plan5["self_introduction"]
+    is_ = plan5["information_sharing"]
+    ra = plan5["reasoning_analysis"]
+    dp = plan5["discussion_persuasion"]
+    vd = plan5["voting_decision"]
 
-def _validate_and_fix(plan: Dict[str,str], role: str, alignment: str) -> Dict[str,str]:
-    eg, mg, lg = plan["early_game"], plan["mid_game"], plan["late_game"]
-
-    # Seer/Medium: early で結果語禁止、mid で結果語を推奨
+    # Seer/Medium: self_introduction で結果語を消し、information_sharing に結果開示を保証
     if role in ("seer","medium"):
-        if _has_any(eg, ("reveal","result","flip","divine","medium")):
-            eg = re.sub(r"\b(reveal|result|flip|divine|medium)\b.*?(?:\.|;|$)", "", eg, flags=re.IGNORECASE).strip()
-            eg = re.sub(r"\s{2,}", " ", eg).rstrip(";").strip()
-            if eg and not eg.endswith("."):
-                eg += "."
-        if not _has_any(mg, ("reveal","result","flip","divine","medium")):
-            mg = (mg.rstrip(".") + "; when a result exists, reveal the latest result (target and judgement) promptly.").strip()
+        if _has_any(si, RESULT_TERMS):
+            si = re.sub(r"(?i)\b(reveal|result|flip|divine|seer|medium)\b.*?(?:\.|;|$)", "", si).strip()
+            si = re.sub(r"\s{2,}", " ", si).rstrip(";").strip()
+            if si and not si.endswith("."):
+                si += "."
+        if not _has_any(is_, ("reveal","result","flip","divine","判定","結果","白","黒","人狼","人間")):
+            is_ = (is_.rstrip(".") + "; when a result exists, reveal the latest result (target and judgement) promptly.").strip()
 
     # 村/狩：不用意な真COを抑止
-    if role in ("villager","bodyguard") and _has_any(eg, ("true-claim","trueclaim"," claim")):
-        eg = re.sub(r"(?i)\btrue-?claim\b|\bclaim\b", "state non-claim policy", eg)
+    if role in ("villager","bodyguard") and _has_any(si, ("true-claim","trueclaim"," claim")):
+        si = re.sub(r"(?i)\btrue-?claim\b|\bclaim\b", "state non-claim policy", si)
 
     # 狼/狂：真CO禁止（偽COは条件付き）
-    if role in ("werewolf","possessed") and _has_any(eg, ("true-claim","trueclaim")):
-        eg = re.sub(r"(?i)\btrue-?claim\b", "do not true-claim", eg)
+    if role in ("werewolf","possessed") and _has_any(si, ("true-claim","trueclaim")):
+        si = re.sub(r"(?i)\btrue-?claim\b", "do not true-claim", si)
 
-    # late：陣営勝利条件の明示を保証
-    lg = _enforce_alignment(lg, alignment)
+    # voting_decision：陣営勝利条件の明示を保証
+    vd = _enforce_alignment(vd, alignment)
 
     return {
-        "early_game": _dedupe_tokens(eg),
-        "mid_game":   _dedupe_tokens(mg),
-        "late_game":  _dedupe_tokens(lg),
+        "self_introduction":     _dedupe_tokens(si),
+        "information_sharing":   _dedupe_tokens(is_),
+        "reasoning_analysis":    _dedupe_tokens(ra),
+        "discussion_persuasion": _dedupe_tokens(dp),
+        "voting_decision":       _dedupe_tokens(vd),
+    }
+
+def _compose_legacy_bridge(plan5: Dict[str,str], alignment: str) -> Dict[str,str]:
+    """新5区分から early/mid/late を一文合成（互換レイヤ）。"""
+    early = plan5["self_introduction"]
+    mid   = "; ".join(
+        [x.rstrip(".") for x in (plan5["information_sharing"], plan5["reasoning_analysis"]) if x.strip()]
+    ).strip()
+    if mid and not mid.endswith("."):
+        mid += "."
+    late  = "; ".join(
+        [x.rstrip(".") for x in (plan5["discussion_persuasion"], plan5["voting_decision"]) if x.strip()]
+    ).strip()
+    if late and not late.endswith("."):
+        late += "."
+    late = _enforce_alignment(late, alignment)
+
+    return {
+        "early_game": _dedupe_tokens(early),
+        "mid_game":   _dedupe_tokens(mid),
+        "late_game":  _dedupe_tokens(late),
     }
 
 # ==== メイン ====
@@ -310,7 +279,7 @@ def generate_macro_plan(
     dry_run: bool=False,
     overwrite: bool=False
 ) -> Dict[str, Any]:
-    """macro_belief.yml / macro_desire.yml を参照して macro_plan（一段落一文×3）を生成。"""
+    """macro_belief.yml / macro_desire.yml を参照して macro_plan（5区分・各1文）を生成。"""
     out_path = BASE / "info/bdi_info/macro_bdi" / game_id / agent / "macro_plan.yml"
     if out_path.exists() and not overwrite and not dry_run:
         raise FileExistsError(f"Output exists: {out_path}. Use overwrite=True.")
@@ -348,8 +317,8 @@ def generate_macro_plan(
     if not prompt_tmpl:
         raise RuntimeError("prompt.macro_plan is missing in config.yml. Please add it to config.")
 
-    # ベース骨子（ヒントとして渡す）
-    base_items = BASE_ITEMS.get(role_canon, BASE_ITEMS["villager"])
+    # 5区分骨子（ヒントとして渡す）
+    section_hints = BASE5.get(role_canon, BASE5["villager"])
 
     # 変数束
     prompt_vars = {
@@ -362,13 +331,8 @@ def generate_macro_plan(
         "behavior_tendencies": behavior or {},
         "desire_tendencies": desire_tendencies or {},
         "role_policy": ROLE_POLICY.get(role_canon, ROLE_POLICY["villager"]),
-        # ヒント
-        "item_hints": {
-            "early_game": ("self_intro", "claim_policy", "asks", "voting_intent"),
-            "mid_game":   ("report_results", "suspect_push", "evidence_style", "coordination"),
-            "late_game":  ("final_results_or_recap", "final_targeting", "consensus_strategy", "vote_allocation"),
-        },
-        "base_items": base_items,
+        # ヒント（LLMに渡すが、そのまま出力させない）
+        "section_hints": section_hints,
     }
     prompt = _render(prompt_tmpl, prompt_vars)
     if dry_run:
@@ -382,17 +346,24 @@ def generate_macro_plan(
     resp = agent_obj.send_message_to_llm(
         "macro_plan",
         extra_vars=prompt_vars,
-        log_tag="MACRO_PLAN_ONE_LINE",
+        log_tag="MACRO_PLAN_FIVE_SECTIONS",
         use_shared_history=False
     )
 
-    # パース＆正規化（各段階一文へ）
+    # パース＆正規化（5区分へ）
     parsed = _extract_yaml(resp or "")
-    plan = _normalize_to_three_lines(parsed, role_canon)
-    fixed = _validate_and_fix(plan, role_canon, alignment)
+    plan5 = _normalize_to_five_lines(parsed, role_canon)
+    fixed5 = _validate_and_fix5(plan5, role_canon, alignment)
+
+    # 互換レイヤ（legacy bridge）
+    legacy3 = _compose_legacy_bridge(fixed5, alignment)
 
     final = {
-        "macro_plan": fixed,
+        "macro_plan": {
+            **fixed5,
+            # 互換キー（既存モジュール用）
+            **legacy3,
+        },
         "meta": {
             "game_id": game_id,
             "agent": agent,
@@ -407,7 +378,7 @@ def generate_macro_plan(
             "generated_at": datetime.utcnow().replace(microsecond=0).isoformat()+"Z",
             "source_macro_belief": str(mb_path),
             "source_macro_desire": str(md_path),
-            "format": "one_line_per_phase",
+            "format": "five_sections + legacy_bridge",
         }
     }
 

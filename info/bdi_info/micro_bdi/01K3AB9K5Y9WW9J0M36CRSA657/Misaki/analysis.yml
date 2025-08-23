@@ -1,0 +1,280 @@
+1:
+  content: Hello everyone I'm Shizue and today I'll focus on analyzing behaviors as
+    I have no results to share yet.
+  type: 'null'
+  from: Shizue
+  to: Shizue
+  credibility: 0.326
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.533
+    creditability: 0.633
+    from: Shizue
+2:
+  content: Hello everyone I'm May excited to work together strategically and make
+    the best decisions for our group.
+  type: 'null'
+  from: May
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: May
+3:
+  content: Hello everyone I'm Mizuki and I'll be focusing on observing and reasoning
+    to help us find the Werewolves.
+  type: 'null'
+  from: Mizuki
+  to: Mizuki
+  credibility: 0.43
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Mizuki
+4:
+  content: Hello everyone I am Minako and I am observing our interactions today but
+    have no special results to reveal at this time.
+  type: 'null'
+  from: Minako
+  to: Minako
+  credibility: 0.373
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: Minako
+5:
+  content: Hello I'm Shizue and today I'll keep my strategic flexibility by not making
+    any claims as I have no results to share.
+  type: 'null'
+  from: Shizue
+  to: Shizue
+  credibility: 0.28
+  credibility_raw: 0.48
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.533
+    creditability: 0.633
+    from: Shizue
+6:
+  content: ' @Shizue  I''m interested to hear your thoughts on today''s start since
+    I have no special results to share yet.'
+  type: question
+  from: May
+  to: Shizue
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: May
+7:
+  content: Hi everyone I'm Mizuki. I'm here to observe and I'm curious to see what
+    May will do today.
+  type: question
+  from: Mizuki
+  to: May,Mizuki
+  credibility: 0.478
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Mizuki
+8:
+  content: I am Minako and have nothing special to share at this point focusing on
+    observing May and others' intentions.
+  type: 'null'
+  from: Minako
+  to: May
+  credibility: 0.327
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: Minako
+9:
+  content: Hello I'm Shizue and today I'll focus on observing interactions and reasoning
+    as I have no special results to disclose yet.
+  type: 'null'
+  from: Shizue
+  to: Shizue
+  credibility: 0.326
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.533
+    creditability: 0.633
+    from: Shizue
+10:
+  content: ' @Misaki  I''m here to focus on strategic observation and see how interactions
+    unfold as I have no special info to share yet.'
+  type: question
+  from: May
+  to: Misaki
+  credibility: 0.417
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: May
+11:
+  content: I agree with Shizue; let's focus on behavior analysis and I'll continue
+    observing our interactions for now.
+  type: positive
+  from: Mizuki
+  to: Shizue
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Mizuki
+12:
+  content: I am Minako and have no special results to share at the moment observing
+    Shizue's and Misaki's focus while watching everyone'
+  type: 'null'
+  from: Minako
+  to: Shizue,Misaki
+  credibility: 0.327
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: Minako
+13:
+  content: I am Shizue and I agree with Mizuki and Minako; today I'll focus on observing
+    behaviors as I have no special results yet.
+  type: positive
+  from: Shizue
+  to: Mizuki,Minako
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.533
+    creditability: 0.633
+    from: Shizue
+14:
+  content: ' @Minako  Let''s keep an eye on Misaki''s curiosity since I have no special
+    results to share and will be observing like everyone else.'
+  type: 'null'
+  from: May
+  to: Minako
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: May
+15:
+  content: I agree with Shizue's approach and won't claim Seer or Medium; I'll focus
+    on observing and analyzing our discussions today.
+  type: positive
+  from: Mizuki
+  to: Shizue
+  credibility: 0.512
+  credibility_raw: 0.75
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Mizuki
+16:
+  content: I am Minako and have no special information to share today so I will focus
+    on observing our interactions.
+  type: 'null'
+  from: Minako
+  to: Minako
+  credibility: 0.292
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: Minako
+17:
+  content: I agree with Shizue and have no special information so I will continue
+    observing behaviors for any threats today.
+  type: positive
+  from: Minako
+  to: Shizue
+  credibility: 0.368
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.584
+    liking: 0.5
+    creditability: 0.667
+    from: Minako
+18:
+  content: ' @Minako  as the Seer I confirm Misaki is HUMAN; let''s use this information
+    to guide our strategy together.'
+  type: co
+  from: Shizue
+  to: Minako,Misaki
+  credibility: 0.291
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.533
+    creditability: 0.633
+    from: Shizue
+19:
+  content: ' @Shizue  I agree with your focus on observations; I have no special information
+    so I''ll continue observing interactions today.'
+  type: positive
+  from: Mizuki
+  to: Shizue
+  credibility: 0.43
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Mizuki
+20:
+  content: ' @Minako  Noted. I have no special info to share so I''ll keep observing
+    and analyzing interactions carefully.'
+  type: 'null'
+  from: May
+  to: Minako
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: May

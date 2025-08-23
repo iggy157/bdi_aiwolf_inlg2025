@@ -1,0 +1,143 @@
+1:
+  content: Hello everyone I'm May. Today I'll be observing and gathering information
+    to strategically share insights later.
+  type: 'null'
+  from: May
+  to: May
+  credibility: 0.5
+2:
+  content: Hello everyone let's start by getting to know each other a bit.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.5
+3:
+  content: Hello everyone I am Minako a villager and I suggest we focus on building
+    a consensus today without revealing specific roles.
+  type: positive
+  from: Minako
+  to: Minako
+  credibility: 0.5
+4:
+  content: I'm Ryuji; I have no special results to reveal today so I'll observe quietly
+    and I encourage everyone to be cautious.
+  type: 'null'
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.5
+5:
+  content: Hey everyone I'm May. I'll be focusing on observing and gathering information
+    today without making any role claims yet.
+  type: 'null'
+  from: May
+  to: May
+  credibility: 0.5
+6:
+  content: Hi everyone it's nice to be here. May I'd love to hear your thoughts.
+  type: question
+  from: Victoria
+  to: May
+  credibility: 0.5
+7:
+  content: Thank you Toshio; I will not claim Seer or Medium this turn and I have
+    no special role information to share now.
+  type: 'null'
+  from: Minako
+  to: Toshio
+  credibility: 0.82
+8:
+  content: ' @May  Let''s work together; I have no role information to share today
+    but I''ll keep my role ambiguous and won''t claim Seer or Medium'
+  type: 'null'
+  from: Ryuji
+  to: May
+  credibility: 0.5
+9:
+  content: I hear your plan Toshio. I'll keep observing without any special results
+    to share yet and work with the village for our safet
+  type: 'null'
+  from: May
+  to: Toshio
+  credibility: 0.5
+10:
+  content: I'm Victoria observing today and eager to align with the group.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.5
+11:
+  content: May I appreciate your focus on observation; could you share any insights
+    to help us build consensus?
+  type: question
+  from: Minako
+  to: May
+  credibility: 0.5
+12:
+  content: I'm Ryuji; I have no special results to disclose today so I'll focus on
+    observing and noting any inconsistencies.
+  type: 'null'
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.57
+13:
+  content: Hi everyone I'm May. I have no special info to share right now but let's
+    work together and keep things open.
+  type: 'null'
+  from: May
+  to: all
+  credibility: 0.56
+14:
+  content: I'm Victoria and I'll be observing today while keeping my role to myself.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.77
+15:
+  content: I have no special role info today and will focus on observing and supporting
+    May's plan to help us reach consensus.
+  type: 'null'
+  from: Minako
+  to: May
+  credibility: 0.76
+16:
+  content: I'm Ryuji; I have no special role results to share today so I'll focus
+    on observing interactions and withholding role claims.
+  type: 'null'
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.76
+17:
+  content: ' @May  I have no special results today so I''ll focus on observing interactions
+    to help us reach a group consensus.'
+  type: 'null'
+  from: Minako
+  to: May
+  credibility: 0.5
+18:
+  content: ' @May  I appreciate your observation strategy; let''s remain cautious
+    today as I have no special information to share focusing on gui'
+  type: positive
+  from: Ryuji
+  to: May
+  credibility: 0.5
+19:
+  content: Hello everyone I'm revealing as the Seer and can confirm that Ryuji is
+    HUMAN based on my observation.
+  type: question
+  from: May
+  to: Ryuji
+  credibility: 0.5
+20:
+  content: Aligning with the plan today I have no special results and will observe
+    to keep us safe.
+  type: 'null'
+  from: Victoria
+  to: 'null'
+  credibility: 0.5
+21:
+  content: I am Minako a villager and I appreciate Ryuji sharing; let's collaborate
+    on observations to ensure village safety.
+  type: positive
+  from: Minako
+  to: Minako,Ryuji
+  credibility: 0.63

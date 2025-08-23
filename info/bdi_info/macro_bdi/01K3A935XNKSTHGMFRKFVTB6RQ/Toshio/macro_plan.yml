@@ -1,0 +1,22 @@
+macro_plan:
+  early_game: Introduce myself briefly, clarify that I will not make any claims, propose
+    verifiable asks, and declare a provisional voting intent to maintain village safety.
+  mid_game: Combine public information to identify and push a suspicious player with
+    clear reasoning, using talk-history and claim consistency as evidence, while coordinating
+    checks and votes to maximize information gain.
+  late_game: Summarize the strongest cases and resolved contradictions, fix the elimination
+    target with explicit reasoning, lock in consensus to avoid last-minute chaos,
+    and allocate votes to ensure the village's victory.
+meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  agent: Toshio
+  role_raw: 村人
+  role_canon: villager
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-23T01:36:16Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Toshio/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Toshio/macro_desire.yml
+  format: one_line_per_phase

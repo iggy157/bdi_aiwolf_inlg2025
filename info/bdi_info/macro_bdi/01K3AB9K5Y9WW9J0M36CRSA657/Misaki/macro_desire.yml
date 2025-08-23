@@ -1,0 +1,11 @@
+macro_desire:
+  description: Misaki aims to subtly disrupt information flow to obscure her true
+    role while maintaining stable relationships with allies. She prioritizes stability
+    and self-realization, balancing her actions to benefit her side without direct
+    communication.
+meta:
+  game_id: 01K3AB9K5Y9WW9J0M36CRSA657
+  agent: Misaki
+  model: gpt-4o
+  generated_at: '2025-08-23T02:14:39Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3AB9K5Y9WW9J0M36CRSA657/Misaki/macro_belief.yml

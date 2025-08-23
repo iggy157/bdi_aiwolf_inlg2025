@@ -1,0 +1,10 @@
+macro_desire:
+  description: May seeks to leverage her freedom and adventurous spirit to reveal
+    critical identity insights, carefully balancing timing and credibility in her
+    role as Seer.
+meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  agent: May
+  model: gpt-4o
+  generated_at: '2025-08-23T01:36:12Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/May/macro_belief.yml

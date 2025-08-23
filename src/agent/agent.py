@@ -41,6 +41,7 @@ from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 from utils.bdi.macro_bdi.macro_plan import generate_macro_plan
 from utils.bdi.micro_bdi.analysis_tracker import AnalysisTracker
+from utils.bdi.micro_bdi.micro_belief import write_micro_belief  # ← 追加
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -418,6 +419,7 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
+                    self._update_micro_belief()  # ← 追加: micro_belief.yml 生成/更新
                     self._generate_micro_desire(trigger="daily_initialize")  # micro_desire生成
                     self._generate_micro_intention(trigger="daily_initialize")  # micro_intention生成
                     self.agent_logger.logger.info(f"Analysis saved for day {request_count} (added={added})")
@@ -498,6 +500,18 @@ class Agent:
         except Exception:
             self.agent_logger.logger.exception("Failed to apply affinity to analysis")
     
+    def _update_micro_belief(self) -> None:
+        """analysis.yml と talk_history をもとに micro_belief.yml を生成/更新する"""
+        if not self.info:
+            return
+        try:
+            path = write_micro_belief(
+                game_id=self.info.game_id,
+                owner=self.info.agent if hasattr(self.info, "agent") else self.agent_name
+            )
+            self.agent_logger.logger.info(f"micro_belief saved: {path}")
+        except Exception:
+            self.agent_logger.logger.exception("Failed to generate micro_belief")
     
     def _generate_micro_desire(self, *, trigger: str) -> None:
         """Generate micro_desire based on current situation."""
@@ -825,6 +839,7 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
+                    self._update_micro_belief()  # ← 追加: micro_belief.yml 生成/更新
                     self._generate_micro_desire(trigger="talk")  # micro_desire生成
                     self._generate_micro_intention(trigger="talk")  # micro_intention生成
                     self.agent_logger.logger.info(f"Talk analysis saved (added={added})")
@@ -866,6 +881,7 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
+                    self._update_micro_belief()  # ← 追加: micro_belief.yml 生成/更新
                     self._generate_micro_desire(trigger="daily_finish")  # micro_desire生成
                     self._generate_micro_intention(trigger="daily_finish")  # micro_intention生成
                     self.agent_logger.logger.info(f"Final analysis saved for day {request_count} (added={added})")
@@ -944,6 +960,7 @@ class Agent:
                     self._update_talk_logs()  # トーク履歴の更新
                     self._update_affinity_trust()  # liking/creditabilityスコアの更新
                     self._apply_affinity_to_analysis()  # 信頼度調整の適用
+                    self._update_micro_belief()  # ← 追加: micro_belief.yml 生成/更新
                     self._generate_micro_desire(trigger="finish")  # micro_desire生成
                     self._generate_micro_intention(trigger="finish")  # micro_intention生成
                     self.agent_logger.logger.info(f"Game finish analysis saved (added={added})")

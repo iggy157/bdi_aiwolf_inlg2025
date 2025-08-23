@@ -1,0 +1,57 @@
+May:
+  creditability: 0.4
+  liking: 0.533
+  self_co: null
+  seer_co: null
+  negative_to_Minako: null
+  positive_to_Minako: null
+  negative_to_Ryuji: null
+  positive_to_Ryuji: null
+  negative_to_Toshio: null
+  positive_to_Toshio: null
+  negative_to_Victoria: null
+  positive_to_Victoria: null
+Minako:
+  creditability: 0.767
+  liking: 0.667
+  self_co: null
+  seer_co: null
+  negative_to_May: null
+  positive_to_May: May
+  negative_to_Ryuji: null
+  positive_to_Ryuji: Ryuji
+  negative_to_Toshio: null
+  positive_to_Toshio: null
+  negative_to_Victoria: null
+  positive_to_Victoria: null
+Toshio:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+  negative_to_May: null
+  positive_to_May: null
+  negative_to_Minako: null
+  positive_to_Minako: null
+  negative_to_Ryuji: null
+  positive_to_Ryuji: null
+  negative_to_Victoria: null
+  positive_to_Victoria: null
+Victoria:
+  creditability: 0.533
+  liking: 0.633
+  self_co: null
+  seer_co: null
+  negative_to_May: null
+  positive_to_May: null
+  negative_to_Minako: null
+  positive_to_Minako: null
+  negative_to_Ryuji: null
+  positive_to_Ryuji: null
+  negative_to_Toshio: null
+  positive_to_Toshio: null
+_meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  owner: Ryuji
+  generated_at: '2025-08-23T01:43:59Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Ryuji/analysis.yml

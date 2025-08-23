@@ -1,0 +1,23 @@
+macro_plan:
+  early_game: Victoria introduces herself lightly to establish her cover and declares
+    her voting intent assertively, while subtly steering discussions away from her
+    werewolf allies.
+  mid_game: Victoria redirects suspicion by presenting a plausible alternative target,
+    citing soft logic and behavioral tells that do not implicate her allies, while
+    shaping the narrative to protect them.
+  late_game: Victoria frames the recap to support a misinterpretation that favors
+    werewolves and engineers the elimination target to maximize their odds, ensuring
+    the votes align with a werewolf victory.
+meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  agent: Victoria
+  role_raw: 人狼
+  role_canon: werewolf
+  role_source: macro_belief.role_social_duties.role
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-23T01:36:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Victoria/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/Victoria/macro_desire.yml
+  format: one_line_per_phase

@@ -1,4 +1,4 @@
-"""analysis.ymlを生成するためのモジュール（type分類ロジック強化版）."""
+"""analysis.ymlを生成するためのモジュール（LLM主体+役職語フィルタ版）."""
 
 from __future__ import annotations
 
@@ -35,23 +35,25 @@ DEFAULT_FIXTURE_UTTERANCES = [
     "What is your current analysis of the situation?",
 ]
 
-# 役職ラベル（英/日）
+# 役職ラベル（英/日）。co判定はLLMに任せるが、役職語が本文に存在しない場合はcoを不許可にするフィルタを行う
 ROLE_WORDS_EN = ["villager", "seer", "werewolf", "possessed", "bodyguard", "medium"]
 ROLE_WORDS_JA = ["村人", "占い師", "人狼", "狂人", "騎士", "霊媒師"]
 ROLE_WORDS_ALL = ROLE_WORDS_EN + ROLE_WORDS_JA
 
-# 白黒判定（英/日）
-JUDGE_WORDS_EN = ["human", "villager", "werewolf", "wolf"]
-JUDGE_WORDS_JA = ["人間", "村人", "人狼", "白", "黒"]
-JUDGE_WORDS_ALL = JUDGE_WORDS_EN + JUDGE_WORDS_JA
+# 役職語フィルタ用の正規表現（英は単語境界、日本語はそのまま）
+_RE_ROLE_WORD = re.compile(
+    r"\b(?:villager|seer|werewolf|possessed|bodyguard|medium)\b|(?:村人|占い師|人狼|狂人|騎士|霊媒師)",
+    re.IGNORECASE,
+)
 
 # 疑い/投票（negative）や擁護/好意（positive）に出やすい語（ヒューリスティック補助）
 NEGATIVE_HINTS = [
     "suspicious", "suspect", "vote", "lynch", "eliminate", "execute",
     "怪しい", "疑う", "黒", "人狼", "吊りたい", "投票", "入れる", "処刑"
 ]
+# ※ CO近傍語の誤爆を避けるため、役職語は含めない
 POSITIVE_HINTS = [
-    "trust", "agree", "town", "villager", "clear", "innocent", "support", "defend",
+    "trust", "agree", "clear", "innocent", "support", "defend",
     "信用", "賛成", "白", "人間", "好感", "心強い", "擁護", "かばう"
 ]
 
@@ -218,46 +220,11 @@ def _contains_question(text: str) -> bool:
                 re.search(r"(ですか|ますか|でしょうか|誰|なぜ|どこ|いつ|どうして)", s))
 
 
-# ====== CO検出（厳密） ======
-# 自己CO（英）
-_RE_CO_SELF_EN = re.compile(
-    rf"\b(i\s*(?:am|'m)\s*(?:the|a)?\s*(?:{'|'.join(map(re.escape, ROLE_WORDS_EN))}))\b|"
-    rf"\b(claim(?:ing)?|coming\s*out(?:\s+as)?)\s*(?:{'|'.join(map(re.escape, ROLE_WORDS_EN))})\b|"
-    rf"\bco\s*(?:{'|'.join(map(re.escape, ROLE_WORDS_EN))})\b",
-    re.IGNORECASE
-)
-# 自己CO（日）
-_RE_CO_SELF_JA = re.compile(
-    rf"(?:私は|俺は|僕は|自分は)?\s*(?:{'|'.join(map(re.escape, ROLE_WORDS_JA))})\s*(?:です|だ)\b|"
-    rf"(?:{'|'.join(map(re.escape, ROLE_WORDS_JA))})\s*(?:CO|ＣＯ)\b|"
-    rf"\bCO\s*(?:{'|'.join(map(re.escape, ROLE_WORDS_JA))})\b"
-)
-
-# 能力結果報告（英/日）
-_RE_CO_RESULT_EN = re.compile(
-    rf"\b(seer|medium)\b.*\b(result|report|checked|check|scan|investigat(?:e|ed)|divin(?:e|ed))\b.*?"
-    rf"@?([A-Z][a-zA-Z]+)\b.*\b(is|was)\b.*\b({'|'.join(map(re.escape, JUDGE_WORDS_EN))})\b",
-    re.IGNORECASE
-)
-_RE_CO_RESULT_JA = re.compile(
-    rf"(占い|霊媒|霊能).{{0,12}}(結果|判定|:|：)?\s*@?([一-龥ぁ-んァ-ンA-Za-z0-9_]+)\s*(は|が)\s*({'|'.join(map(re.escape, JUDGE_WORDS_JA))})",
-)
-
-
-def _detect_co(text: str) -> bool:
-    """CO文（自己CO or 能力結果報告）なら True。"""
+def _has_role_word(text: str) -> bool:
+    """本文に役職語（英/日）が出現しているか。"""
     if not text:
         return False
-    s = text.strip()
-    if _RE_CO_SELF_EN.search(s):
-        return True
-    if _RE_CO_SELF_JA.search(s):
-        return True
-    if _RE_CO_RESULT_EN.search(s):
-        return True
-    if _RE_CO_RESULT_JA.search(s):
-        return True
-    return False
+    return _RE_ROLE_WORD.search(text) is not None
 
 
 class AnalysisTracker:
@@ -380,7 +347,7 @@ class AnalysisTracker:
 
     # ====== LLM ラッパ ======
     def _agent_llm_call(self, prompt_key: str, extra_vars: dict, log_tag: str) -> str | None:
-        """agent_obj.center の LLM 呼び出し（失敗時 None）。"""
+        """agent_obj.center の LLM 呼び出し（失敗時 None）."""
         if self.agent_obj is None:
             return None
         try:
@@ -392,7 +359,7 @@ class AnalysisTracker:
             return None
 
     def _local_llm_call(self, prompt_key: str, extra_vars: dict, log_tag: str) -> str | None:
-        """フォールバック LLM 呼び出し（config にプロンプトが無ければ実行しない）。"""
+        """フォールバック LLM 呼び出し（config にプロンプトが無ければ実行しない）."""
         # config に該当プロンプトがない場合は使わない（コードにプロンプトを持たない方針）
         if not (self.config.get("prompt", {}) or {}).get(prompt_key):
             return None
@@ -587,9 +554,11 @@ class AnalysisTracker:
             mt_resp = self._local_llm_call("analyze_message_type", extra, "message_type_analysis")
         initial_type = self._parse_type_token(mt_resp)
 
-        ta_resp = self._agent_llm_call("analyze_target_agents", extra, "target_agents_analysis")
+        # target_agents には msg_type/speaker ヒントも渡す（プロンプト側で利用）
+        extra_to = {"content": content, "agent_names": names, "msg_type": initial_type, "speaker": from_agent}
+        ta_resp = self._agent_llm_call("analyze_target_agents", extra_to, "target_agents_analysis")
         if not ta_resp:
-            ta_resp = self._local_llm_call("analyze_target_agents", extra, "target_agents_analysis")
+            ta_resp = self._local_llm_call("analyze_target_agents", extra_to, "target_agents_analysis")
         initial_to = _parse_target_agents_response(ta_resp or "", names)
         if initial_to == "null":
             # LLMが取れない時の補完
@@ -597,8 +566,8 @@ class AnalysisTracker:
             if guessed:
                 initial_to = ",".join(guessed)
 
-        # 2) ルール後処理（厳密仕様の適用）
-        final_type, final_to = self._postprocess_type(content, initial_type, initial_to, names)
+        # 2) ルール後処理（役職語フィルタ + 厳密仕様の適用）
+        final_type, final_to = self._postprocess_type(content, initial_type, initial_to, names, from_agent)
 
         # 3) 信憑性
         credibility = self._analyze_credibility(content, info, from_agent)
@@ -634,28 +603,35 @@ class AnalysisTracker:
                 return t
         return "null"
 
-    def _postprocess_type(self, content: str, mtype: str, to_agents: str, allowed_names: list[str]) -> tuple[str, str]:
+    def _postprocess_type(
+        self,
+        content: str,
+        mtype: str,
+        to_agents: str,
+        allowed_names: list[str],
+        speaker: str,
+    ) -> tuple[str, str]:
         """
-        ユーザ仕様に基づく厳密後処理:
-          - CO: 自己CO or 能力結果報告のみをCO許可（パターン不一致ならCO取消）
-          - negative/positive: 必ず特定エージェント宛（to!=all/null）。満たせないと null に降格
-          - question: to が null の場合、本文から対象抽出 / 無ければ to=all
+        後処理仕様:
+          - co は LLM 一次判定を尊重する。ただし「本文に役職語が1つも無い場合」は co 不許可（降格）。
+            * 役職語ありで co の場合、to が空/全体なら最小限の補完（本文の名前→なければ speaker）。
+          - negative/positive: 必ず特定宛先（to!=all/null）。満たせないと null。
+          - question: to が空なら本文から対象抽出 / 無ければ to=all。
         """
         s = content or ""
+        role_present = _has_role_word(s)
 
-        # ① CO厳密判定
-        co_detected = _detect_co(s)
-        if co_detected:
-            # COは常にCO
-            if to_agents in (None, "", "null"):
-                guessed = _extract_targets_by_names(s, allowed_names)
-                to_agents = ",".join(guessed) if guessed else "all"
-            return "co", to_agents
-        else:
-            # LLMがcoと言っても、パターンに合致しない限りCOは付けない
-            if mtype == "co":
-                # CO取消 → 以降は他カテゴリを検討（簡易ヒューリスティック）
+        # ① co の扱い（役職語フィルタ）
+        if mtype == "co":
+            if not role_present:
+                # 役職語がないcoは不許可 → 簡易再分類
                 mtype = self._fallback_non_co_type_guess(s, allowed_names)
+            else:
+                # LLMのco判定を採用。toが明示されていない場合のみ最小限で補完。
+                if to_agents in (None, "", "null", "all"):
+                    guessed = _extract_targets_by_names(s, allowed_names)
+                    to_agents = ",".join(guessed) if guessed else speaker
+                return "co", to_agents
 
         # ② positive / negative は必ず特定宛先
         if mtype in ("positive", "negative"):
@@ -664,7 +640,6 @@ class AnalysisTracker:
                 if guessed:
                     to_agents = ",".join(guessed)
                 else:
-                    # 宛先取れない場合は要件を満たさないため null に降格
                     return "null", "null"
             return mtype, to_agents
 
@@ -679,9 +654,8 @@ class AnalysisTracker:
         return "null", (to_agents if to_agents not in (None, "") else "null")
 
     def _fallback_non_co_type_guess(self, text: str, allowed_names: list[str]) -> str:
-        """CO取消後の簡易再分類（疑問符/否定/擁護語から推定）。"""
+        """co降格後の簡易再分類（疑問符/否定/擁護語から推定）。"""
         s = text or ""
-        # positive/negativeの語があり、対象名がいると判定しやすい
         has_neg = any(h in s for h in NEGATIVE_HINTS)
         has_pos = any(h in s for h in POSITIVE_HINTS)
         has_q = _contains_question(s)
@@ -847,11 +821,10 @@ class AnalysisTracker:
 
         ds_flags = self._get_downstream_flags()
 
-        if cfg["enable"]:
-            if "ANALYSIS_UPDATE_SELECT_SENTENCE" not in os.environ:
-                ds_flags["update_select_sentence"] = False
-            if "ANALYSIS_UPDATE_INTENTION" not in os.environ:
-                ds_flags["update_intention"] = False
+        if cfg["enable"] and "ANALYSIS_UPDATE_SELECT_SENTENCE" not in os.environ:
+            ds_flags["update_select_sentence"] = False
+        if cfg["enable"] and "ANALYSIS_UPDATE_INTENTION" not in os.environ:
+            ds_flags["update_intention"] = False
 
         before = target_path.stat().st_size
 
@@ -893,7 +866,7 @@ class AnalysisTracker:
         print("[AnalysisTracker] === save_analysis 終了 ===")
 
     def save_fixture_trace(self) -> None:
-        """Fixtureトレースファイル保存（冪等性保証）。"""
+        """Fixtureトレースファイル保存（冪等性保証）."""
         cfg = self._get_fixture_config()
         if not cfg["enable"] or not cfg.get("trace_file"):
             return

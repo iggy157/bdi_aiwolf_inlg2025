@@ -1,0 +1,20 @@
+macro_plan:
+  early_game: May introduces herself confidently, outlining her intent to maintain
+    transparency while hinting at her strategic, non-claiming stance.
+  mid_game: May assertsively reveals her seer results at the earliest opportunity,
+    logically targeting and pressing suspicious players with evidence from her observations.
+  late_game: May decisively pushes for consensus on a clear elimination target, ensuring
+    the village aligns on a strategy to secure victory.
+meta:
+  game_id: 01K3A935XNKSTHGMFRKFVTB6RQ
+  agent: May
+  role_raw: 占い師
+  role_canon: seer
+  role_source: macro_belief.role_social_duties.role
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-23T01:36:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/May/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A935XNKSTHGMFRKFVTB6RQ/May/macro_desire.yml
+  format: one_line_per_phase
