@@ -1,0 +1,29 @@
+Benjamin:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Shion:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Shunichi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+  negative_to_Benjamin: 1
+  negative_to_Shion: 1
+  negative_to_Toshio: 1
+  negative_to_Victoria: 1
+Toshio:
+  creditability: 0.733
+  liking: 0.633
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3EBZ50QG1ET5KMC0RTPXPZV
+  owner: Victoria
+  generated_at: '2025-08-24T15:46:47Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Victoria/analysis.yml

@@ -1,0 +1,27 @@
+Benjamin:
+  creditability: 0.5
+  liking: 0.5
+  self_co: villager
+  seer_co: null
+  positive_to_Yumi: 1
+Daisuke:
+  creditability: 0.667
+  liking: 0.7
+  self_co: null
+  seer_co: null
+Minato:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Mizuki:
+  creditability: 0.8
+  liking: 0.85
+  self_co: null
+  seer_co: null
+  positive_to_Minato: 1
+_meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  owner: Yumi
+  generated_at: '2025-08-24T11:23:16Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Yumi/analysis.yml

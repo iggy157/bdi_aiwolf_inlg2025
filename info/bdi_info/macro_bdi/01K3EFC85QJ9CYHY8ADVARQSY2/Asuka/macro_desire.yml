@@ -1,0 +1,42 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Asukaは敵対者を特定し、村人側の勝利を確実にするために情報を収集したいと考えている。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Asukaは正確な情報を提供し、信頼を得ることでチームを勝利に導くことを願望している。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Asukaは、村人たちに自分が本物のSEERであると信じてもらい、ゲームの勝利に貢献したいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Asukaは今夜、最も疑わしいプレイヤーを占うことを望んでいる。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Asuka likely desires to be protected so she can continue using her abilities
+      to benefit her team.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Asukaは、自分の「黒」の結果が正しいと証明し、村の勝利に寄与することを願望している。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Asukaは、信頼性の高い情報を提供し、村の協力を得て人狼を見つけることを望んでいる。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Asukaは自分の判断が正しいことを証明し、他のプレイヤーからの信頼を得たいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: AsukaはSEERとして、仲間のプレイヤーに有益な情報を提供してゲームを有利に進めることを望んでいる。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Asukaは他のSEERと協力しつつ、自身の信頼性を確立したいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EFC85QJ9CYHY8ADVARQSY2/Asuka/macro_belief.yml

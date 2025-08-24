@@ -1,0 +1,37 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Shunichiは他のプレイヤーに自身が村人であると信じ込ませ、最終的に混乱を引き起こすことを望んでいる。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Shunichi's primary desire is to effectively manipulate the game to ensure
+      his team's victory.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Shunichiは村人を混乱させ、狼陣営に有利な状況を作り出すことを望んでいる。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: ShunichiはSeerとMediumの矛盾を利用して村人を混乱させたいと考えている。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Shunichiは、自身が疑われずに狼側をサポートし、村人を混乱させることを願っている。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Shunichiは防衛グループ内の信頼を崩し、混乱を引き起こしたいと願望している。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Shunichiは、村人を混乱させて狼側の勝利を導くことを願っている。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Shunichiは、人狼側の勝利に有利になるように投票を操作し、村人を混乱させることを強く願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Shunichi/macro_belief.yml

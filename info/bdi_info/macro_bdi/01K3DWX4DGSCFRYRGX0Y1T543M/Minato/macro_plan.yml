@@ -1,0 +1,36 @@
+macro_plan:
+  strategy_summary: Minato, as a Seer aligned with the villagers, should strategically
+    reveal identity information to build trust and influence, leveraging his moderate
+    adaptability and assertiveness. He should balance his desire for freedom with
+    his role responsibilities, focusing on maximizing credibility through truthful
+    actions.
+  policies:
+    co_policy: Minato should opt for true_co when significant suspicion arises or
+      when it can strategically benefit the village. This should occur after initial
+      observations but before mid-game to maximize impact while maintaining credibility.
+    results_policy: Minato should publish his results at the start of each day after
+      an investigation, targeting highly suspicious players or those with potential
+      influence, to aid in steering the village's decision-making process effectively.
+    analysis_policy: Minato should analyze others by observing voting patterns, alliances,
+      and behavioral changes, considering emotional cues due to his empathy tendency,
+      to identify possible threats and allies.
+    persuasion_policy: Minato should use logical arguments and evidence-backed insights
+      to persuade the group, ensuring his approach is consistent with his moderate
+      assertiveness and adaptability to different social dynamics.
+    vote_policy: Minato should prioritize voting for players with strong evidence
+      against them, using his investigative results as a guiding factor, while being
+      open to adapting his decision if new credible information arises from discussions
+      Aim toward the village victory condition.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Minato
+  role_raw: 占い師
+  role_canon: seer
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:15Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Minato/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Minato/macro_desire.yml
+  format: summary_and_policies_only
+  forbidden_keys_removed: true

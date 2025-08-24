@@ -1,0 +1,36 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Daisukeは村に溶け込みつつも、最終的に狼側の勝利をサポートする願望を抱いている。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Daisukeの願望は、偽の占い師として村人を混乱させ、自分の正体がバレないようにすることである。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Daisukeは他のプレイヤーを混乱させ、村人チームの意思決定を誤らせることを望んでいる。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: DaisukeはSeerとMediumの矛盾を利用して村人たちを混乱させ、自身の正体を隠し続けることを願っている。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Daisukeは、疑惑を最小限に抑えながら狼陣営をサポートすることを願望している。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Daisuke は他のプレイヤーと協力するふりをしつつ、最終的には彼らを裏切ることを望むだろう。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Daisukeは他のプレイヤーを混乱させ、自身の正体を隠しつつ信頼を得ることを望んでいる。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Daisukeは、他のプレイヤーを混乱させ、自分の正体を隠しつつゲームを有利に進めることを願望している。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E75K282ZE7KAV3XFQ868CN/Daisuke/macro_belief.yml

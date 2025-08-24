@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Shionの願望は、村人として敵を見つけ出し、安全を確保することです。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Shionは村人として他のプレイヤーと協力し、人狼を特定して村を守りたいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Shionは村の勝利に貢献するために情報を集め、真の預言者を見極めようとする願望を抱く。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Shionは村人陣営の勝利のために、占い師の情報を活用して敵対勢力を特定しようとする願望を抱くだろう。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Shionは偽の預言者を見破り、本物の預言者を特定したいと願望している。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: Shionは真のミディアムを見極め、村人としての勝利を確保したいと願望している。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Shionは、正確にKnight/Guardの真贋を見極めて村を守ることを望んでいる。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Shionは自分への疑いを晴らし、村人としての信頼を回復することを望んでいる。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Shionは村全体の安全と繁栄を実現するため、仲間との連携と協力を深めたいと望んでいる。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Shionは他のプレイヤーからの信頼を得るために、誤解を解き明らかにすることを望んでいる。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Shionは他のプレイヤーとの協調を通じて集団の意見を尊重しつつ、自身の生存を確保することを望む。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Shionは他のプレイヤーと協力しながら慎重に情報を集め、適切な投票先を決定することを望む。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Shionは村の安全を確保するために、分析によって提案された処刑が適切かどうかを判断し、それに従うことを願っている。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Shionは、村を守るためにGray-lynch proposalに賛成する願望を抱く可能性が高い。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Shionは、他のプレイヤーからの信頼を得るために、より積極的に発言し存在感を示すことを望んでいる。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Shionは、他者とのコミュニケーションで誤解を避け、信頼を築くことを望んでいる。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Shionの願望は、自分が追放されるのを避けることによってゲームでの生存を確保することである。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Shionは真のSeerを見極めることを強く望んでいる。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Shionは、村人として協力できる相手を見つけて連携を図りたいと願望している。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Shionは自身の生存を確保しつつ村人チームの勝利を目指す願望を抱いている。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Shionは狼を見つけ出すために情報を集め続けることを望む。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Shionは霊媒結果を基に人狼を特定し、村を勝利に導くことを望んでいる。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Shionは他のプレイヤーの情報を集めて狼を見つけ出すことを望んでいる。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Shionは影響力の高いプレイヤーと協力し、村の勝利を目指したいと願望している。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Shionの願望は、村人としての信頼を得て、村の勝利に貢献することである。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Shionは他のプレイヤーに自分が信頼できる村人であることを示すことで、安全を確保したいと願望している。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Shion/macro_belief.yml

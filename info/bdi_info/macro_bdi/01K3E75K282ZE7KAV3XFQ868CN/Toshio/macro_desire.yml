@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Toshioは他のプレイヤーから情報を集めて、人狼を特定する手がかりを得たいと願望している。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Toshioは、他の村人からの信頼を得て協力することで、ゲームを有利に進めたいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Toshioは占い師の真偽を見極め、村人チームの勝利に貢献したいと願望している。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Toshioは占い結果を活用して村を守りたいと願っている。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Toshioは、真の占い師を見極めて村人チームの勝利に貢献したいと願望している。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: ToshioはMediumのCOが真かどうかを確認し、その情報を基に村の勝利を目指す行動をとることを望む。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Toshioは、騎士やガード役の主張の真偽を見極め、村人陣営の勝利に貢献することを望む。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Toshioは自らの潔白を証明し、他のプレイヤーの信頼を得ることを望んでいる。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Toshioは村全体の協力と団結を深め、平和を維持したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Toshioは他のプレイヤーの信頼を得るために積極的に情報を共有し、チームに貢献したいと願望している。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Toshioの願望は村全体の安全と調和を維持することです。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Toshioは他の村人と協力して人狼を見つけ出し、最も怪しいと感じる人物に投票したいと願っている。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Toshioは村の安全を確保するために人狼を見つけ出そうとしている。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Toshioは確実な情報に基づいて行動し、無実の村人を誤って処刑しないよう慎重に判断したいと考えている。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Toshioは、村人としての情報共有と存在感の向上を願望として抱いている。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Toshioは、村人として信頼を得るために、効果的かつ慎重なコミュニケーションを願望している。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Toshioの願望は、自己の生存を確保し、村人陣営に貢献することである。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: トシオは村人チームの勝利を目指し、偽占い師を見破るために正確な情報を共有したいと願っている。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Toshioは村の安全を確保するために、情報を集めて人狼を見つけることを望む。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Toshioは村人陣営の勝利のために敵対者を特定し排除することを願っている。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Toshioは村人として、村の勝利を目指して他の村人と協力し、状況を有利に進めることを望んでいる。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: ToshioはMediumの結果を活用して狼を見つけ出し、村人陣営の勝利に貢献したいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Toshioは村の勝利を確実にするため、狼を見つけ出すことを願望として抱くだろう。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Toshioは影響力のあるスピーカーと協力して村の勝利を目指すことを願っている。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Toshioは村を守り、他のプレイヤーと協力して安全を確保したいと望んでいる。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Toshioは村人として信頼を獲得し、村全体の安全を確保することを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E75K282ZE7KAV3XFQ868CN/Toshio/macro_belief.yml

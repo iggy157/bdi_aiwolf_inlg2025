@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Shizueは自分が人狼であることを隠し、村人を混乱させることを最も望んでいる。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Shizueは「No-kill night」を利用し、村人の間に疑心暗鬼を生じさせ、他のプレイヤーに疑いを向けさせたいと願望する。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Shizueは村人を混乱させ、自身の正体を隠すことで生き残りを図りたいと考えている。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Shizueは他の狼を犠牲にしたことで自分の立場を強化し、ゲームを有利に進めることを望む。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Shizueは他のプレイヤーに疑惑を向け、自分の処刑を回避して生存を図りたいと考えている。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Shizueは他のプレイヤーを説得して自身への疑いを逸らし、生き延びることを願望している。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Shizueは村人を混乱させ、誤った決断を誘導することを望む。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Shizueは自らの正体を隠しつつ、村人を混乱させるために情報を操作したいと願望している。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Shizueは他のプレイヤーに疑いを向けて、自分たちが有利になるように状況を操作したいと考えている。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Shizueは自分が疑われずに票を操作し、相手陣営を混乱させることを望む。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Shizue/macro_belief.yml

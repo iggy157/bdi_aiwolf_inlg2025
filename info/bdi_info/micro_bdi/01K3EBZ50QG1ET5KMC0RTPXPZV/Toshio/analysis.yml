@@ -1,0 +1,112 @@
+1:
+  content: Hello everyone I'm Shunichi and I'm here to observe and collaborate with
+    you all.
+  type: 'null'
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Shunichi
+2:
+  content: Hello everyone I'm Victoria. I'm attentive and ready to contribute to our
+    discussions.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.416
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Victoria
+3:
+  content: I'll be focusing on analyzing the behaviors of Benjamin Shion and Toshio
+    for now.
+  type: 'null'
+  from: Shunichi
+  to: Benjamin,Toshio,Shion
+  credibility: 0.255
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Shunichi
+4:
+  content: Shunichi could you share your initial thoughts? Let's start building our
+    understanding together.
+  type: question
+  from: Victoria
+  to: Shunichi
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Victoria
+5:
+  content: I'm observing Benjamin and Shion closely due to low trust; let's collaborate
+    Victoria and Toshio.
+  type: negative
+  from: Shunichi
+  to: Benjamin,Shion,Victoria,Toshio
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Shunichi
+6:
+  content: Let's all share our initial thoughts to get the discussion started and
+    see where it leads us.
+  type: question
+  from: Victoria
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Victoria
+7:
+  content: ' @Victoria  @Toshio let''s assess Benjamin and Shion''s trust levels together;
+    I have no special insights yet.'
+  type: 'null'
+  from: Shunichi
+  to: Toshio,Victoria
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Shunichi
+8:
+  content: Shunichi I see your focus on Benjamin and Shion; let's all share our insights
+    to build trust together.
+  type: positive
+  from: Victoria
+  to: Shunichi
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Victoria

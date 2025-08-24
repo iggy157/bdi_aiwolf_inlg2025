@@ -1,0 +1,26 @@
+Daisuke:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Minako:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Misaki:
+  creditability: 0.667
+  liking: 0.633
+  self_co: null
+  seer_co: null
+Shizue:
+  creditability: 0.7
+  liking: 0.733
+  self_co: null
+  seer_co: null
+  positive_to_Takumi: 1
+_meta:
+  game_id: 01K3E62EJYJ4R8V6J7VEYZB3NS
+  owner: Takumi
+  generated_at: '2025-08-24T14:03:18Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Takumi/analysis.yml

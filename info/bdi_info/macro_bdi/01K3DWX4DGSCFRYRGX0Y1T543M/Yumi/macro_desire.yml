@@ -1,0 +1,10 @@
+macro_desire:
+  description: Yumi seeks to balance her love for freedom and adventure with her role
+    as a Villager, prioritizing group safety and decision-making through keen observation
+    and interaction.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Yumi
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:10Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Yumi/macro_belief.yml

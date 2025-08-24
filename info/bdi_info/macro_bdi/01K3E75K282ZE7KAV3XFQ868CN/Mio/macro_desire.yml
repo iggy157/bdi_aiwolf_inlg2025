@@ -1,0 +1,103 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Mioは村を守るために情報を収集し、他のプレイヤーと協力したいと望んでいる。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Mioの願望は村人として村を守り、人狼を見つけることです。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Mioは村のために真の占い師を見極めようとする願望を抱いている。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Mioは占い結果に基づいて狼を特定し、村の勝利に貢献することを強く望んでいる。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Mioは真の占い師を特定し、村人陣営の勝利に貢献したいと願っている。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: MioはMediumの真偽を見極めることで村の勝利に貢献したいと願望している。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Mioは村の勝利を目指して、正しい騎士やガードを見極めるための情報収集を強く望むだろう。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Mioの最終的な願望は、自身の無実を証明して村の信頼を取り戻すことである。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Mioは村人として他のプレイヤーとの信頼を築き、安全を確保したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Mioは、自身の信頼性を高めて村人としての役割を全うすることを願っている。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Mioは村全体の利益を最大化するため、集団の賛同を得て協力を促進したいと望んでいる。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Mioは、村人陣営の利益を最大化するために、最も疑わしいプレイヤーに投票したいと願望している。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Mioは、提案された処刑が村の利益に適うかどうかを慎重に評価し、人狼を排除することを願望する。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Mioは、村人としての安全を確保しつつ潜在的な脅威を排除するため、Gray-lynchの提案を支持する願望を抱く。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Mioは他のプレイヤーとのコミュニケーションを増やし、自分の存在感を示したいと願っている。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Mioは、村人として他者を説得しつつ協力を得るために、積極的な発言を通じて信頼と情報を得ることを願っている。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Mioは村の勝利に貢献するために、自分が村人であることを証明し、信頼を得たいと願望している。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Mioの願望は、信頼できる預言者を見つけ出し、村の勝利に貢献することです。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Mioは、他のプレイヤーの投票の収束に基づいて人狼を見つけ出すための手がかりを得たいと願っている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Mioは狼を見つけ出し、村を守るために積極的に行動することを望んでいる。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Mioは村の勝利に貢献するために、他のプレイヤーと協力して狼を特定することを望んでいる。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Mioは村人として勝利を目指し、Mediumの結果を利用して敵を見つけ出すことを願っている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Mioは自身の安全を確保しつつ、狼を見つけ出すことを願望としている。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Mioは影響力のあるプレイヤーに従い、村の利益を守りたいと願望している。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Mioは他のプレイヤーとの協力関係を築き、安全を確保しつつゲームを進行させることを願っている。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Mio's primary desire is to be trusted and accepted as a reliable villager
+      by the other players.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E75K282ZE7KAV3XFQ868CN/Mio/macro_belief.yml

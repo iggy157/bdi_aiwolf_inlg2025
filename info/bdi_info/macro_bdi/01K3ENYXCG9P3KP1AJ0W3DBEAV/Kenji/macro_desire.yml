@@ -1,0 +1,36 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Kenjiは自分の正体を隠しつつ村人としての信頼を得て、最終的には村人を混乱させることを望んでいる。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Kenjiは村人を混乱させるために、偽の占い師として信頼を得ようとしている。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Kenjiの願望は、偽の情報で他のプレイヤーを惑わせ、狼陣営の勝利を助けることです。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Kenjiは村人たちを混乱させ、投票を操作することを望む。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Kenjiは、白のプレイヤーをかばい、村人を混乱させることを望む。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Kenjiは他のプレイヤーを欺き、自分が信頼できる仲間であるかのように見せかけたいと願う。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Kenjiの願望は、自身の正体を隠しつつ他のプレイヤーを混乱させ、ゲーム内で生き残ることです。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Kenjiの願望は、ゲームの後半で投票を均等化し、混乱を引き起こすことです。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3ENYXCG9P3KP1AJ0W3DBEAV/Kenji/macro_belief.yml

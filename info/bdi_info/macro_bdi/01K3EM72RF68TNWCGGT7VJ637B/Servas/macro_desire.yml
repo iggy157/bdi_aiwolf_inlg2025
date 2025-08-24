@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Servasは、村の安全を確保するために信頼できる仲間を見つけ、情報収集を進めたいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Servasは占い師COの真偽を早期に判断し、村の勝利に貢献することを望む。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Servasの願望は、占い結果を活用して人狼を特定し、村を守ることです。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Servasは真のSeerを見極めて村を勝利に導くことを願望している。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Servasは村人チームの勝利を目指し、霊媒師の結果を活用して人狼を見つけ出すことを願望としている。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Servasは村を守るため、疑わしい人物に対する投票を慎重に行うことを望む。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Servasは、村の利益を最大化するために処刑案の正当性を慎重に検討し、最良の決断を下したいと考えている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Servasは自身の潔白を証明し、村人としての信用を回復したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: プレイヤーは自分の信頼性を高め、村人としての役割を全うすることを望んでいる。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Servasは村人チームの勝利を目指し、他のプレイヤーの役割を推測し、村に貢献したいと願望している。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Servasは人狼を見つけ出し村を守るために他の村人と協力し情報を集めることを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Servas/macro_belief.yml

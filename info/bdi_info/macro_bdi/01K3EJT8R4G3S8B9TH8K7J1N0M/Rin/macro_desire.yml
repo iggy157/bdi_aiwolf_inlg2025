@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Rinは村人として他のプレイヤーからの情報を集め、村の勝利に貢献したいと願っている。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Rinは村の勝利のために真の情報を見極め、チームの勝利に貢献したいと願望する。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: RinはSeerの結果を基に村の勝利を目指し狼を見つけ出したいと願望している。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Rinは真の占い師を見極めることを願っている。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Rinは霊能者の結果を基に、人狼を特定して村を守りたいと願っている。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Rinは村の勝利を目指し、協調的に行動し信頼を築くことを願望として抱くだろう。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Rinは村の安全を重視し、他の村人の意見を聞きつつ慎重に行動することを望んでいる。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Rinは自分の潔白を証明し、信頼を取り戻すことを願望として抱いている。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Rinは他のプレイヤーからの信頼を得ることを願っている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Rinは村人チームの勝利に貢献するため、他のプレイヤーと協力しつつリーダーシップを発揮したいと考える。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Rinは村の安全を守るために、人狼を特定し排除することを強く望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EJT8R4G3S8B9TH8K7J1N0M/Rin/macro_belief.yml

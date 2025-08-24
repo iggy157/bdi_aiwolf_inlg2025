@@ -1,0 +1,108 @@
+1:
+  content: Hello I am Victoria. Let's work together and ensure our village thrives.
+  type: positive
+  from: Victoria
+  to: Victoria
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Victoria
+2:
+  content: Hi everyone I'm Daisuke and I'll be observing things closely today.
+  type: 'null'
+  from: Daisuke
+  to: Daisuke
+  credibility: 0.523
+  credibility_raw: 0.73
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Daisuke
+3:
+  content: Let's start sharing what we know and work together to uncover the truth.
+  type: question
+  from: Victoria
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Victoria
+4:
+  content: I don't have insights yet but let's all share our thoughts to see what
+    we can learn today.
+  type: question
+  from: Daisuke
+  to: all
+  credibility: 0.394
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Daisuke
+5:
+  content: What does everyone think about Kenji's claim of being the Seer?
+  type: question
+  from: Victoria
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Victoria
+6:
+  content: I have no results to share yet but let's discuss and consider Kenji's insights
+    carefully.
+  type: 'null'
+  from: Daisuke
+  to: Kenji
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Daisuke
+7:
+  content: Daisuke Mio Toshio could you share any observations you have? Let's discuss
+    together.
+  type: question
+  from: Victoria
+  to: Daisuke,Mio,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Victoria
+8:
+  content: Let's discuss Kenji's claim and hear everyone's thoughts to understand
+    it better.
+  type: question
+  from: Daisuke
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Daisuke

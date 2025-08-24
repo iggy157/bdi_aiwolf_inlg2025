@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Victoriaは、自分が村人であるかのように振る舞い、他のプレイヤーの信頼を得て生き延びようとする願望を抱くだろう。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Victoriaは、他のプレイヤーに疑われないように立ち回ることを望んでいる。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Victoriaは自分の正体を隠し、村人たちの注意を他のプレイヤーに向けさせることを望む。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Victoriaは、自らの推測能力を信じて他のプレイヤーの信頼を得ることで、ゲーム内での影響力を高めたいと願う。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Victoriaは、自分以外のプレイヤーに疑いを向け、吊るしを回避したいと願望する。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Victoriaは他のプレイヤーの疑いを逸らし、自分が生き残ることを望んでいる。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Victoriaは混乱を利用して村人を惑わし、自身の正体を隠し続けたいと願望するだろう。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Victoriaの願望は、自分がWEREWOLFであることを隠し通し、ゲームを有利に進めることである。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Victoriaは村人を混乱させて自らの正体を隠しつつ勝利を目指すことを願う。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Victoriaは投票を均等に保ちながら人狼チームを有利に導くことを願望している。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Victoria/macro_belief.yml

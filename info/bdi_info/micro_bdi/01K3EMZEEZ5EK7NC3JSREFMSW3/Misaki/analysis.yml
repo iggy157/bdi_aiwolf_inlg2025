@@ -1,0 +1,615 @@
+1:
+  content: Hi everyone I'm Minato. I'm ready to contribute and look forward to learning
+    about each of you as the game progresses.
+  type: 'null'
+  from: Minato
+  to: all
+  credibility: 0.397
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+2:
+  content: Hey everyone let's work together and figure things out today. I'll be observing
+    closely and sharing my thoughts.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+3:
+  content: Hello everyone I'm Shunichi. Looking forward to working together to figure
+    things out. Let's keep our eyes open and stay focu
+  type: 'null'
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+4:
+  content: I am Toshio a villager ready to work together and build trust with everyone.
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+5:
+  content: Hello everyone I'm Minato. I have no special information to share yet but
+    I'm eager to observe and learn about all of you.
+  type: 'null'
+  from: Minato
+  to: all
+  credibility: 0.364
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+6:
+  content: Let's all share what we're noticing; I'll be listening closely to see how
+    we can move forward together.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+7:
+  content: Let's start by sharing any initial thoughts or observations you have; I
+    have no special info but am ready to listen and discu
+  type: 'null'
+  from: Shunichi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+8:
+  content: I am a villager. Let's share our thoughts Minato Misaki Shunichi and Takumi
+    so we can find the werewolves together.
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+9:
+  content: 'Hi I''m Minato. Today I''m focusing on Shunichi as I''m unsure of his
+    credibility; I''ll keep observing without any role reveals '
+  type: negative
+  from: Minato
+  to: Shunichi
+  credibility: 0.403
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+10:
+  content: I don't have any special info yet but let's hear what everyone thinks so
+    we can piece things together.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+11:
+  content: I have no special info to share but I'm curious to hear what everyone else
+    thinks; any initial thoughts or observations?
+  type: question
+  from: Shunichi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+12:
+  content: '@Minato @Shunichi  @Takumi : I am a villager with no special info. Let''s
+    share our initial thoughts and observations.'
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+13:
+  content: 'I''ve noticed some inconsistencies in Shunichi''s recent statements; I''ll
+    keep observing to assess his trustworthiness without '
+  type: negative
+  from: Minato
+  to: Shunichi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+14:
+  content: '@Minato @Misaki @Shunichi  @Toshio  let''s all share our thoughts and
+    insights to keep our discussion open and productive.'
+  type: 'null'
+  from: Takumi
+  to: Minato,Misaki,Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+15:
+  content: '@Minato @Misaki  @Takumi  @Toshio I have no special info but let''s all
+    share our initial thoughts and observations to start.'
+  type: 'null'
+  from: Shunichi
+  to: Minato,Misaki,Takumi,Toshio
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+16:
+  content: I have no special info but let's all share our observations to build trust
+    and find the werewolves together.
+  type: 'null'
+  from: Toshio
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+17:
+  content: '@Minato @Misaki  @Takumi  let''s keep sharing our thoughts today; I have
+    no special info yet but ready to discuss and observe fu'
+  type: 'null'
+  from: Shunichi
+  to: Minato,Misaki,Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+18:
+  content: I am the Seer and I found out that Takumi is a WEREWOLF based on my observations
+    last night.
+  type: co
+  from: Minato
+  to: Takumi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+19:
+  content: '@Misaki @Shunichi  @Toshio  Let''s keep sharing any new thoughts or observations
+    we have to maintain an open discussion.'
+  type: 'null'
+  from: Takumi
+  to: Misaki,Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+20:
+  content: '@Minato @Shunichi  @Takumi  @Misaki: Let''s share our thoughts openly
+    today. I have no special info but value our collaboration.'
+  type: 'null'
+  from: Toshio
+  to: Minato,Shunichi,Takumi,Misaki
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+21:
+  content: Let's all share our thoughts today especially interested in hearing from
+    Minato; I have no special info but will share genera
+  type: 'null'
+  from: Shunichi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+22:
+  content: '@Misaki @Shunichi  @Takumi  @Toshio I am the Seer and discovered Takumi
+    is a WEREWOLF; let''s focus on discussing this result.'
+  type: co
+  from: Minato
+  to: Takumi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+23:
+  content: I noticed Minato's claim; let's all keep sharing insights to help us see
+    the bigger picture together.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+24:
+  content: Minato Misaki Shunichi Takumi let's all share our observations. I have
+    no special info but together we can find the werewolve
+  type: question
+  from: Toshio
+  to: Minato,Misaki,Shunichi,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+25:
+  content: Let's keep an open discussion going and hear everyone's thoughts today;
+    Minato could you clarify your Seer claim from yesterd
+  type: question
+  from: Shunichi
+  to: Minato
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+26:
+  content: As the Seer I reveal that Takumi is a WEREWOLF and I hope this helps us
+    focus our discussions and build trust today.
+  type: co
+  from: Minato
+  to: Takumi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+27:
+  content: ' @Minato  we need to verify your claim; let''s keep sharing insights to
+    make sure we''re on the right track.'
+  type: positive
+  from: Takumi
+  to: Minato
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+28:
+  content: '@Minato @Misaki @Shunichi  @Takumi  let''s discuss Minato''s claim about
+    Takumi and share thoughts to build a clearer picture.'
+  type: 'null'
+  from: Toshio
+  to: Minato,Misaki,Shunichi,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+29:
+  content: ' @Minato  can you explain your findings more clearly? Let''s all share
+    our thoughts to keep the discussion open and balanced tod'
+  type: question
+  from: Shunichi
+  to: Minato
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+30:
+  content: Takumi is a WEREWOLF; I am the Seer and revealing this to help guide our
+    discussion and strategic focus today.
+  type: co
+  from: Minato
+  to: Takumi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Minato
+31:
+  content: Minato's claim about me as a WEREWOLF is serious; let's discuss all observations
+    openly to see if it holds up.
+  type: negative
+  from: Takumi
+  to: Minato
+  credibility: 0.451
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+32:
+  content: ' @Minato  could you share more details or evidence for your Seer claim
+    about Takumi being a werewolf to help us understand?'
+  type: question
+  from: Toshio
+  to: Minato
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+33:
+  content: '@Shunichi and  @Takumi  let''s discuss Minato''s claim about Takumi being
+    a werewolf and gather insights from everyone.'
+  type: question
+  from: Toshio
+  to: Shunichi,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+34:
+  content: ' @Takumi  @Toshio let''s share more observations today; how do you feel
+    about Minato''s Seer claim after last night''s events?'
+  type: question
+  from: Shunichi
+  to: Takumi,Toshio
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+35:
+  content: Minato's claim needs more scrutiny; @Shunichi and  @Toshio  what are your
+    thoughts on this situation? Let's figure it out toget
+  type: question
+  from: Takumi
+  to: Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+36:
+  content: '@Shunichi and  @Takumi  let''s discuss Minato''s claim about Takumi to
+    verify its credibility together; I have no special results'
+  type: 'null'
+  from: Toshio
+  to: Shunichi,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+37:
+  content: Let's discuss Minato's claim further and observe Takumi's reactions closely;
+    I have no special info but am keen to hear every
+  type: 'null'
+  from: Shunichi
+  to: Minato,Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+38:
+  content: '@Shunichi  @Toshio  let''s discuss Minato''s claim about me being a werewolf;
+    we need open dialogue to assess this thoroughly.'
+  type: 'null'
+  from: Takumi
+  to: Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+39:
+  content: ' @Takumi  and everyone Shunichi asked about Minato''s claim. Please share
+    detailed observations to help us understand the situat'
+  type: 'null'
+  from: Toshio
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+40:
+  content: ' @Takumi  @Toshio let''s examine Minato''s claim about Takumi together
+    and share our observations to see if it holds up.'
+  type: 'null'
+  from: Shunichi
+  to: Takumi,Toshio
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+41:
+  content: ' @Toshio  @Shunichi let''s question Minato''s Seer claim about me and
+    discuss further to uncover more insights.'
+  type: question
+  from: Takumi
+  to: Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi
+42:
+  content: '@Shunichi and  @Takumi  let''s evaluate Minato''s Seer claim and share
+    insights to ensure we all understand and verify it properl'
+  type: 'null'
+  from: Toshio
+  to: Shunichi,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Toshio
+43:
+  content: '@Toshio let''s gather insights from everyone including  @Takumi  to evaluate
+    Minato''s claim thoroughly; I have no special info t'
+  type: 'null'
+  from: Shunichi
+  to: Toshio
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Shunichi
+44:
+  content: '@Shunichi  @Toshio  Minato''s claim lacks concrete evidence; let''s discuss
+    thoroughly to understand the situation better.'
+  type: negative
+  from: Takumi
+  to: Shunichi,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Takumi

@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Misakiは他のプレイヤーの情報を集めて村を守るための手掛かりを見つけ出したいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Misakiは真の占い師を見極め、村の勝利を目指すために行動する願望を抱く。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Misakiは、村の勝利のために予言者の情報を元に村人たちと協力して人狼を見つけ出すことを望んでいる。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Misakiは、偽の占い師を見抜き、村人陣営に有利な情報を得ることを願望している。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Misakiは、村人として他プレイヤーの役割を特定し、人狼を見つけるための情報を得ることを望んでいる。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Misakiは村を守るために最も疑わしい人に投票したいと考えるだろう。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Misakiは村の利益のために正確な処刑提案を支持し、狼を見つけ出したいと願望している。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Misakiは疑いを晴らし、村人としての信頼を取り戻すことを望んでいる。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Misakiは、村人としての信頼を得るために、誠実で透明性のある行動を取りたいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Misakiは、Seerの情報を活用しつつ、村人陣営の勝利を目指し、人狼を見つけ出すことを願望としている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Misakiは村を守るために敵を特定し排除することを望む。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Misaki/macro_belief.yml

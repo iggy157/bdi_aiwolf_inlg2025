@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Rinは、自身の正体が暴かれないように立ち回りつつ、村人を混乱させることを望む。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Rinは村人たちを混乱させ、次の夜襲に備えて自分の正体を隠し通すことを望む。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Rinは、自分や仲間の正体が暴露されるリスクを避けるため、村人たちの間に混乱を生じさせる策を講じようと願望している。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Rinは、自分の観察力を証明し、次回のゲームでリーダーシップを発揮したいと願望する可能性が高い。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Rinは自身が処刑対象とならないように、他のプレイヤーを説得し、疑惑を逸らすことを望む。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Rinは、自分以外の誰かに投票を集中させることで生き延びたいと考える。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Rinは村人たちをさらに混乱させ、疑念を増幅させることを望んでいる。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Rinは、効果的に敵プレイヤーを排除し、自分たちの勝利を確保することを望んでいる。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Rinは村人をさらに混乱させ、誤った判断をさせることを望んでいる。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Rinの願望は、村人を説得しつつ、最終的に村人を投票で排除して勝利に近づくことです。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EGW7ETMS3RTNS78ASD4H46/Rin/macro_belief.yml

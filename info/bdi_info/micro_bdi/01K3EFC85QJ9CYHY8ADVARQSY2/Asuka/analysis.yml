@@ -1,0 +1,111 @@
+1:
+  content: Hello everyone I'm Jonathan. Looking forward to a calm and engaging game
+    with all of you.
+  type: 'null'
+  from: Jonathan
+  to: Jonathan
+  credibility: 0.41
+  credibility_raw: 0.6
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+2:
+  content: I'm Ryuji. Let's work together and see how things unfold today. I have
+    nothing specific to report yet.
+  type: question
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Ryuji
+3:
+  content: Does anyone have any thoughts or roles they want to share with the group?
+  type: question
+  from: Jonathan
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+4:
+  content: I'm Ryuji. Let's focus on open communication to build trust. I have no
+    specific results to share at this time.
+  type: 'null'
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Ryuji
+5:
+  content: ' @Asuka  I appreciate your question. Let''s focus on building trust as
+    we observe the game unfold.'
+  type: positive
+  from: Jonathan
+  to: Asuka
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+6:
+  content: ' @Jonathan  I appreciate your invitation to share thoughts. Let''s all
+    discuss openly to gather insights without claiming roles'
+  type: 'null'
+  from: Ryuji
+  to: Jonathan
+  credibility: 0.41
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Ryuji
+7:
+  content: Let's focus on open communication today. I'm interested in hearing everyone's
+    thoughts on how we can establish trust.
+  type: question
+  from: Jonathan
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+8:
+  content: Let's keep an open mind on trust and focus on sharing information together.
+    I have no special results to reveal at this point
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Ryuji

@@ -1,0 +1,41 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: YumiはNight 0で最も重要なプレイヤーを占うことを願望としている。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Yumiは自身のSEERとしての能力を活かして村人側の勝利に貢献することを強く願っている。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Yumiは、自分が本物のSEERであることを証明し、村人たちの信頼を得たいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Yumiは最も疑わしいまたは重要な役割と思われるプレイヤーを占いたいと願望している。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Yumiは自分が安全に情報を集め続けるために、他のプレイヤーからの守護を強く望んでいる。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Yumiは自身の黒結果が支持され、村人側が勝利することを強く望んでいる。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Yumiは、自身の占い結果を最大限に活かし、村の勝利に貢献することを強く願っている。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Yumiは自分の占い結果を正当化し、村人としての信頼を得たいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Yumiは他のプレイヤーの正体を正確に見極めて、ゲームを有利に進めるための情報を集めたいと考えている。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Yumiは自身の占い結果の信頼性を高め、他者に自分の情報が有益であると証明したいと考えている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Yumi/macro_belief.yml

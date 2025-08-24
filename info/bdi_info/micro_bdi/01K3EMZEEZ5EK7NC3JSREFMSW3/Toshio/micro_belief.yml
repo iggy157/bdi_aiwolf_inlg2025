@@ -1,0 +1,34 @@
+Minato:
+  creditability: 0.767
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  negative_to_Shunichi: 2
+Misaki:
+  creditability: 0.767
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+  positive_to_Minato: 1
+  positive_to_Shunichi: 1
+  positive_to_Takumi: 1
+  positive_to_Toshio: 1
+Shunichi:
+  creditability: 0.667
+  liking: 0.633
+  self_co: null
+  seer_co: null
+Takumi:
+  creditability: 0.533
+  liking: 0.633
+  self_co: null
+  seer_co: werewolf
+  negative_to_Minato: 1
+  negative_to_Shunichi: 1
+  negative_to_Toshio: 1
+  positive_to_Minato: 2
+_meta:
+  game_id: 01K3EMZEEZ5EK7NC3JSREFMSW3
+  owner: Toshio
+  generated_at: '2025-08-24T18:36:29Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Toshio/analysis.yml

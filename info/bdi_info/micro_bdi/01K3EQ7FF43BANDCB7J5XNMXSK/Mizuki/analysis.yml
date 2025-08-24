@@ -1,0 +1,559 @@
+1:
+  content: I'm Ryuji and I just want to let everyone know that I'm a villager.
+  type: co
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.427
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+2:
+  content: Hi Asuka let's work together to build trust and find the werewolves. I'm
+    here to be a reliable team member for everyone.
+  type: positive
+  from: Minato
+  to: Asuka
+  credibility: 0.402
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+3:
+  content: I'm Shion just a villager here to help us work together and gather info
+    to keep the village safe.
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+4:
+  content: Hello everyone I'm Asuka. I'm looking forward to working together to uncover
+    the truth.
+  type: 'null'
+  from: Asuka
+  to: Asuka
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+5:
+  content: Does anyone have any insights or observations to share so we can figure
+    this out together?
+  type: question
+  from: Ryuji
+  to: all
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+6:
+  content: Hello everyone I'll be a reliable team member but I'm curious about Asuka
+    and Shion's credibility. I'll keep an eye on them t
+  type: negative
+  from: Minato
+  to: Asuka,Shion
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+7:
+  content: ' @Asuka  Minato Mizuki Ryuji: I''m a villager. Let''s share our roles
+    to build trust and find the werewolves together.'
+  type: co
+  from: Shion
+  to: Asuka,Mizuki,Ryuji,Minato
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+8:
+  content: Let's all share any roles or suspicions you have today to help us identify
+    the werewolves.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.451
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+9:
+  content: Let's all share any observations or insights we have noticed so far to
+    help us move forward together.
+  type: 'null'
+  from: Ryuji
+  to: all
+  credibility: 0.34
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+10:
+  content: I'm here to help the team so I'll be analyzing Asuka's and Shion's statements
+    closely to better understand their roles today.
+  type: 'null'
+  from: Minato
+  to: Asuka,Shion
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+11:
+  content: ' @Asuka  Minato Mizuki Ryuji: Let''s share our thoughts and observations
+    to gather info and build trust without role claims.'
+  type: 'null'
+  from: Shion
+  to: Asuka,Minato,Mizuki,Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+12:
+  content: ' @Mizuki  @Shion Let''s consider sharing roles to build trust and identify
+    threats. I have no special results to share yet.'
+  type: 'null'
+  from: Asuka
+  to: Mizuki,Shion
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+13:
+  content: ' @Mizuki  and @Asuka could you share your roles or observations to help
+    us build trust and work together effectively?'
+  type: question
+  from: Ryuji
+  to: Mizuki,Asuka
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+14:
+  content: Let's discuss Mizuki's credibility and examine her statements for consistency
+    to better understand her role and motives today
+  type: 'null'
+  from: Minato
+  to: all
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+15:
+  content: ' @Asuka  Minato Mizuki Ryuji: Let''s share our insights openly. I''m just
+    a villager focused on transparent info exchange.'
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+16:
+  content: ' @Ryuji  It''s a good idea to share our thoughts and insights to build
+    trust. I have no special results to share yet.'
+  type: positive
+  from: Asuka
+  to: Ryuji
+  credibility: 0.365
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+17:
+  content: ' @Mizuki  I am the Seer and my investigation last night revealed that
+    you are a WEREWOLF.'
+  type: co
+  from: Minato
+  to: Mizuki
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+18:
+  content: '@Minato  @Mizuki  Let''s share our insights openly today. I have no special
+    results but believe our discussions can help build t'
+  type: question
+  from: Asuka
+  to: Minato,Mizuki
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+19:
+  content: ' @Asuka  Minato Mizuki Ryuji: Let''s share roles and insights today. I
+    have no special results just observations to build trust.'
+  type: 'null'
+  from: Shion
+  to: Asuka,Minato,Mizuki,Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+20:
+  content: ' @Asuka  could you share any observations or insights from yesterday to
+    help us build trust and move forward together?'
+  type: question
+  from: Ryuji
+  to: Asuka
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+21:
+  content: ' @Mizuki  is a WEREWOLF according to my Seer result from yesterday. Let''s
+    share roles and insights to plan strategically.'
+  type: co
+  from: Minato
+  to: Mizuki
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+22:
+  content: Let's focus on sharing our observations and insights today to help identify
+    threats. I have no special results to disclose.
+  type: 'null'
+  from: Asuka
+  to: 'null'
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+23:
+  content: Let's all share our thoughts and observations openly to build trust. I
+    have no special results just promoting transparency.
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+24:
+  content: Let's focus on sharing our observations from yesterday to help us build
+    trust and a better understanding of the situation.
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.373
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+25:
+  content: I am the Seer and found out that  @Mizuki  is a WEREWOLF. Let's focus on
+    this to guide our strategy today.
+  type: co
+  from: Minato
+  to: Mizuki
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+26:
+  content: Let's all share our observations to gather insights. I'll focus on general
+    observations without touching on specific roles.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.365
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+27:
+  content: ' @Minato  Can you confirm your Seer claim about Mizuki being a werewolf?
+    Let''s hear more observations from everyone else too.'
+  type: question
+  from: Shion
+  to: Minato
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+28:
+  content: '@Asuka @Minato  @Mizuki  @Shion let''s share insights from yesterday to
+    build trust and clarity without revealing roles.'
+  type: 'null'
+  from: Ryuji
+  to: Asuka,Minato,Mizuki,Shion
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+29:
+  content: I investigated  @Mizuki  last night and found she is a WEREWOLF. Let's
+    use this evidence to guide our actions today.
+  type: co
+  from: Minato
+  to: Mizuki
+  credibility: 0.359
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.667
+    creditability: 0.767
+    from: Minato
+30:
+  content: I encourage everyone to share their insights from yesterday. I have general
+    observations but no special results to report.
+  type: 'null'
+  from: Asuka
+  to: 'null'
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Asuka
+31:
+  content: Let's discuss Minato's Seer claim about Mizuki and gather more observations
+    from everyone to align with our info sharing goal
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+32:
+  content: Let's all share our observations from yesterday to help evaluate Minato's
+    Seer claim about Mizuki and understand the situatio
+  type: 'null'
+  from: Ryuji
+  to: all
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+33:
+  content: ' @Mizuki  Ryuji: Let''s share our observations from yesterday to assess
+    Minato''s claim. I have no special results but want to ev'
+  type: 'null'
+  from: Shion
+  to: Mizuki,Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+34:
+  content: ' @Mizuki  and @Shion let''s discuss Minato''s claim about Mizuki and share
+    insights to decide our next steps collaboratively.'
+  type: 'null'
+  from: Ryuji
+  to: Mizuki,Shion
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+35:
+  content: Ryuji's call was spot on. Let's share our observations systematically to
+    evaluate Minato's claim about Mizuki without reveali
+  type: positive
+  from: Shion
+  to: Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+36:
+  content: ' @Mizuki  and @Shion let''s share our observations about Minato''s Seer
+    claim to build trust and understand the situation better.'
+  type: 'null'
+  from: Ryuji
+  to: Mizuki,Shion
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+37:
+  content: ' @Ryuji  Let''s focus on sharing observations from yesterday to assess
+    Minato''s claim against Mizuki and decide our next steps.'
+  type: 'null'
+  from: Shion
+  to: Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+38:
+  content: ' @Shion  let''s share our observations from yesterday to systematically
+    evaluate Minato''s claim about Mizuki.'
+  type: 'null'
+  from: Ryuji
+  to: Shion
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji
+39:
+  content: ' @Ryuji  I agree with your prompt; let''s share insights to evaluate Minato''s
+    claim collectively and I''ll share my observations'
+  type: positive
+  from: Shion
+  to: Ryuji
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.75
+    creditability: 0.783
+    from: Shion
+40:
+  content: I'll share my observations from yesterday without revealing roles focusing
+    on evaluating Minato's Seer claim about Mizuki.
+  type: 'null'
+  from: Ryuji
+  to: Mizuki,Minato
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.7
+    creditability: 0.633
+    from: Ryuji

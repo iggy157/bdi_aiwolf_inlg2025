@@ -1,0 +1,37 @@
+George:
+  creditability: 0.8
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+  negative_to_May: 1
+  negative_to_Rin: 2
+  positive_to_May: 1
+  positive_to_Rin: 1
+May:
+  creditability: 0.8
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+  positive_to_George: 2
+  positive_to_Rin: 1
+Minako:
+  creditability: 0.8
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  positive_to_George: 1
+  positive_to_Rin: 1
+  positive_to_Takumi: 2
+Rin:
+  creditability: 0.767
+  liking: 0.8
+  self_co: null
+  seer_co: null
+  positive_to_George: 4
+  positive_to_May: 1
+  positive_to_Takumi: 2
+_meta:
+  game_id: 01K3EGW7ETMS3RTNS78ASD4H46
+  owner: Takumi
+  generated_at: '2025-08-24T17:26:09Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EGW7ETMS3RTNS78ASD4H46/Takumi/analysis.yml

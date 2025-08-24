@@ -1,0 +1,31 @@
+Misaki:
+  creditability: 0.783
+  liking: 0.817
+  self_co: null
+  seer_co: null
+  positive_to_Ryuji: 1
+  positive_to_Servas: 1
+Servas:
+  creditability: 0.767
+  liking: 0.833
+  self_co: villager
+  seer_co: null
+Takumi:
+  creditability: 0.767
+  liking: 0.733
+  self_co: villager
+  seer_co: villager_side
+  positive_to_Misaki: 1
+  positive_to_Servas: 1
+  positive_to_Yumi: 1
+Yumi:
+  creditability: 0.767
+  liking: 0.633
+  self_co: null
+  seer_co: null
+  positive_to_Takumi: 1
+_meta:
+  game_id: 01K3EM72RF68TNWCGGT7VJ637B
+  owner: Ryuji
+  generated_at: '2025-08-24T18:20:07Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Ryuji/analysis.yml

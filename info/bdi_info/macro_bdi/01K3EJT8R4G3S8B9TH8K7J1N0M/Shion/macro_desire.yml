@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Shionは、村を守るために他のプレイヤーと積極的にコミュニケーションを取り、情報を集めたいと願っている。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: ShionはSeerの真偽を確かめ、村人陣営を勝利に導くことを望む。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Shionは村の安全を確保し、人狼を排除することを願望として抱いている。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Shionは本物の預言者を見つけ出し、村の勝利に貢献したいと願っている。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Shionの願望は、得られた情報を最大限に活用して村の生存と勝利に貢献することです。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Shionは村人チームを勝利に導くために、効果的に投票を宣言し、情報を共有したいと願望している。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Shionは、村を守るために狼と疑われる人物を処刑することを望む。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Shionは自身の無実を証明し、村人としての信頼を取り戻したいと願っている。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Shionは他のプレイヤーの信頼を得て、コミュニティにおいて影響力を持ちたいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Shionは、村の勝利を目指して積極的に情報を収集し、共有したいと願望する。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Shionは村を守るために、他の生存者と協力して人狼を見つけ出したいと願望を抱くだろう。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EJT8R4G3S8B9TH8K7J1N0M/Shion/macro_belief.yml

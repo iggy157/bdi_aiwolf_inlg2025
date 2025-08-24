@@ -1,0 +1,40 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Shunichiの願望は、村人たちに占い結果の信頼性を疑わせることです。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Shunichiは村人を誤導し、次の晩に成功するための新たな策略を考えたいと願望している。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Shunichiは他のプレイヤーを混乱させ、疑いを他の人物に向けることを望んでいる。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Shunichiは村人の信頼を得て、他の村人を混乱させることで最終的に人狼サイドの勝利を願っている。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Shunichiは自分が処刑されないようにすることを望んでいる。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Shunichi's primary desire is to shift the votes away from himself to survive
+      the current situation.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Shunichiは、複数のSeerのCOを利用して村人を混乱させ、自分の正体を隠し続けることを望んでいる。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Shunichiは村人を混乱させ、狼陣営の勝利を確実にするための効果的な襲撃計画を求めている。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Shunichiは村人側を混乱させ、自分の正体を隠しながら人狼チームの勝利を目指すことを望む。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Shunichiは自身への投票を避けるために他のプレイヤー間で票を分散させることを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3ENYXCG9P3KP1AJ0W3DBEAV/Shunichi/macro_belief.yml

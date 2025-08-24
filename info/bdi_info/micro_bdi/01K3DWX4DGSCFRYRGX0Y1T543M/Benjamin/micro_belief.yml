@@ -1,0 +1,26 @@
+Daisuke:
+  creditability: 0.567
+  liking: 0.7
+  self_co: null
+  seer_co: null
+Minato:
+  creditability: 0.7
+  liking: 0.667
+  self_co: null
+  seer_co: null
+Mizuki:
+  creditability: 0.7
+  liking: 0.733
+  self_co: null
+  seer_co: null
+  positive_to_Minato: 1
+Yumi:
+  creditability: 0.667
+  liking: 0.633
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  owner: Benjamin
+  generated_at: '2025-08-24T11:24:10Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Benjamin/analysis.yml

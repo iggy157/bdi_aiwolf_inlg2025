@@ -1,0 +1,616 @@
+1:
+  content: Hello everyone I am Minako a villager and I'm here to work with all of
+    you to keep our village safe.
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+2:
+  content: Hey everyone I'm Takumi. I'll be observing closely and sharing my thoughts
+    to help us figure things out together.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+3:
+  content: Hello everyone I'm Shion a villager here to work with all of you towards
+    our village's success.
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.399
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+4:
+  content: Hello everyone I'm Shunichi. Looking forward to working together and figuring
+    things out as we go.
+  type: 'null'
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.381
+  credibility_raw: 0.52
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+5:
+  content: I'm Minako a villager and I encourage everyone to share their observations
+    so we can identify any suspicious behavior togethe
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.504
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+6:
+  content: I'm Takumi examining what Kenji and Minako said and will ask Shion and
+    Shunichi for more insights. Let's solve this together.
+  type: question
+  from: Takumi
+  to: Shunichi,Minako,Kenji,Shion,Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+7:
+  content: I'm Shion just a villager here with no special info yet. Let's all share
+    our thoughts to find the best path forward for the v
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+8:
+  content: '@Kenji @Minako @Takumi  @Shion : Looking forward to hearing your thoughts
+    and observations today. Let''s work together.'
+  type: positive
+  from: Shunichi
+  to: Kenji,Minako,Takumi,Shion
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+9:
+  content: I'm Minako a villager. Kenji Shion Shunichi Takumi let's share our observations
+    to keep the village safe.
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+10:
+  content: I'm Takumi evaluating Kenji and Shunichi's introductions. Let's probe Kenji
+    more to clarify trust levels.
+  type: 'null'
+  from: Takumi
+  to: Kenji,Takumi,Shunichi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+11:
+  content: ' @Takumi  great start. I''m Shion a villager. Let''s all including @Shunichi
+    share our insights to strengthen our team''s efforts.'
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.441
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+12:
+  content: Kenji and Minako I'm interested in your thoughts today. I have no special
+    info to share just here to engage in the discussion
+  type: question
+  from: Shunichi
+  to: Kenji,Minako
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+13:
+  content: Kenji Shion let's all share our observations to foster a collaborative
+    discussion and gather insights.
+  type: 'null'
+  from: Minako
+  to: Kenji,Shion
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+14:
+  content: Hey Kenji and Shunichi let's discuss your thoughts so far. I'm gathering
+    info and not revealing any roles yet.
+  type: 'null'
+  from: Takumi
+  to: Kenji,Shunichi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+15:
+  content: ' @Shunichi  thanks for the invite. I''m Shion a villager. Let''s all share
+    our thoughts to spot any suspicious actions together.'
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+16:
+  content: Kenji Minako Shion Takumi let's share our insights today. I have no special
+    information just here to support the discussion.
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+17:
+  content: '@Kenji @Minako  @Shion  @Takumi: Let''s share our thoughts today. I have
+    no special info yet but I''m eager to hear from you all.'
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+18:
+  content: ' @Kenji  let''s all share our insights today for better analysis. Remember
+    no role claims just observations to guide us.'
+  type: 'null'
+  from: Minako
+  to: Kenji
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+19:
+  content: ' @Minako  I investigated you and found you are HUMAN. Let''s focus on
+    other players to find the werewolves.'
+  type: 'null'
+  from: Takumi
+  to: Minako
+  credibility: 0.48
+  credibility_raw: 0.64
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+20:
+  content: Let's focus on sharing insights today to better understand each other's
+    positions and identify any potential threats in our g
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+21:
+  content: '@Kenji @Minako  @Shion  @Takumi: Let''s all share our observations today.
+    I have no specific roles or results to disclose.'
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+22:
+  content: Kenji let's all share our insights today and support collective analysis
+    without revealing specific roles.
+  type: 'null'
+  from: Minako
+  to: Kenji
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+23:
+  content: ' @Minako  I checked you last night and you are HUMAN. Let''s use this
+    info to direct our focus elsewhere.'
+  type: 'null'
+  from: Takumi
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+24:
+  content: Kenji I'm ready to share my observations today and support our collective
+    analysis without claiming any roles.
+  type: 'null'
+  from: Shion
+  to: Kenji
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+25:
+  content: Kenji and Minako let's all share our observations today. I have no special
+    info or role claims just promoting open discussion
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako
+  credibility: 0.374
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+26:
+  content: Thanks Takumi for confirming I'm HUMAN. Let's all share our insights and
+    keep the discussion going to uncover more informatio
+  type: positive
+  from: Minako
+  to: Takumi
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+27:
+  content: ' @Minako  I used my seer ability and confirmed you are HUMAN. Let''s strategize
+    based on this info to find the werewolves.'
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+28:
+  content: '@Kenji @Minako  @Takumi  I''ve no special info but I''ll share my observations
+    to help our group uncover any suspicious actions.'
+  type: 'null'
+  from: Shion
+  to: Kenji,Minako,Takumi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+29:
+  content: Let's keep the discussion open by sharing observations. I have no special
+    results to share but I'm eager to hear your insight
+  type: 'null'
+  from: Shunichi
+  to: 'null'
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+30:
+  content: Thanks Takumi for confirming I'm HUMAN.  @Shunichi  and @Kenji could you
+    share your insights next to help us gather more inform
+  type: positive
+  from: Minako
+  to: Shunichi,Kenji
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.8
+    creditability: 0.8
+    from: Minako
+31:
+  content: ' @Minako  I have confirmed you are HUMAN through my Seer result. Let''s
+    use this info to focus our efforts on finding the werewo'
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+32:
+  content: ' @Shunichi  I''ll join in sharing my observations today and encourage
+    everyone to do the same for better collective understandin'
+  type: 'null'
+  from: Shion
+  to: Shunichi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+33:
+  content: ' @Shion  I confirmed you are HUMAN with my Seer result. Let''s all share
+    our insights to catch the werewolves.'
+  type: co
+  from: Takumi
+  to: Shion
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+34:
+  content: Shion and Takumi let's focus on sharing our insights today. I have no special
+    results but I'm here to support our group discu
+  type: 'null'
+  from: Shunichi
+  to: Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+35:
+  content: ' @Takumi  thanks for your insights. I''ll support your findings and encourage
+    @Shunichi and everyone to share thoughts for open '
+  type: positive
+  from: Shion
+  to: Takumi,Shunichi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+36:
+  content: ' @Shion  I used my Seer ability and confirmed you are HUMAN. Let''s have
+    Shunichi and others share their observations next.'
+  type: co
+  from: Takumi
+  to: Shion
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+37:
+  content: Takumi thanks for your input. Shion please share your insights too. I have
+    no special results but let's focus on group analys
+  type: 'null'
+  from: Shunichi
+  to: Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+38:
+  content: '@Shunichi thanks for inviting insights. I''ve no special roles but let''s
+    keep discussing openly.  @Takumi  please share your obs'
+  type: 'null'
+  from: Shion
+  to: Shunichi,Takumi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+39:
+  content: ' @Shion  I confirmed through my seer ability that you are HUMAN. Let''s
+    use this to guide our next moves and share observations.'
+  type: co
+  from: Takumi
+  to: Shion
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+40:
+  content: Thanks for the seer results Takumi. Shion let's hear more of your observations.
+    I have no special results but let's keep disc
+  type: question
+  from: Shunichi
+  to: Shion
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+41:
+  content: ' @Takumi  confirmed I''m HUMAN. Let''s hear from @Shunichi next for their
+    insights to aid our collective analysis today.'
+  type: positive
+  from: Shion
+  to: Shunichi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion
+42:
+  content: I'm the Seer and I confirmed Shion is HUMAN. Let's have Shion and Shunichi
+    share insights to improve our strategy.
+  type: co
+  from: Takumi
+  to: Shion
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+43:
+  content: Thanks for sharing your seer claim Takumi. Shion any more observations?
+    I have no special insights but encourage open discuss
+  type: question
+  from: Shunichi
+  to: Shion
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+44:
+  content: ' @Shunichi  please share more insights today. Takumi confirmed @Shion
+    as HUMAN which helps our group''s analysis and collaborati'
+  type: 'null'
+  from: Shion
+  to: Shunichi
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Shion

@@ -1,0 +1,103 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Takumiは村を守るために他のプレイヤーから情報を収集しようとしている。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Takumiの願望は、村を守り狼を見つけ出すことである。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Takumiは霊能者の主張を慎重に分析し、村の利益を守るために真の霊能者を見極めたいと願っている。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Takumiは占い結果を活用して人狼を特定し、村人陣営の勝利に貢献することを願望としている。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Takumiは本物の占い師を見極め、村を守りたいと望んでいる。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: TakumiはMediumの主張を検証し、村人としての勝利に貢献したいと願望している。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Takumiは本物のKnight/Guardを見極め、村人側の勝利に貢献したいと願っている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Takumiは他のプレイヤーからの疑いを晴らし、自らの無実を証明することを望んでいる。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Takumiは、他者の支持を受けつつ、チームの勝利に貢献したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Takumiは他のプレイヤーからの信頼を得て、ゲーム進行において貢献したいと願望している。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Takumiは集団の中で信頼され、協調的な関係を築きたいと願っている。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Takumiは狼を見つけ出し、村の勝利に貢献するために最良の投票先を宣言したいと願っている。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Takumiは、狼人間を見つけ出し処刑することで村を守りたいと願望しています。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Takumiは中立的なプレイヤーを吊るす前に確実な情報を探し出したいと願うだろう。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: タクミはゲーム内での存在感を高め、自分の役割を果たすために発言を増やしたいと願っている可能性があります。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Takumiの願望は、彼の多弁さを通じて村の安全と成功に貢献することである。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Takumiの願望は、自身の生存を確保しながら村全体の利益を守ることである。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Takumiは真のSeerを特定し、村全体を勝利に導くことを願っている。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Takumiは最も怪しい人物に投票して村を守りたいと願っている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Takumiは、村人として仲間を守りながら人狼を見つけ出すことを望んでいる。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Takumiは、この有利な状況を活かして人狼を特定し、村人側の勝利に貢献したいと願っている。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Takumiは村人チームの勝利に貢献するために、メディウムの結果を活用して狼を特定したいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Takumiは、村人側の勝利を確実にするために、白と確認されたプレイヤーと協力して狼を排除することを望む。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Takumiは影響力のあるスピーカーと協力して村の勝利を目指すことを望んでいる。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Takumiは村の安全を確保し、自身と他の村人の生存を望む。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Takumi desires to build trust with other players by clearly declaring
+      his villager status.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EFC85QJ9CYHY8ADVARQSY2/Takumi/macro_belief.yml

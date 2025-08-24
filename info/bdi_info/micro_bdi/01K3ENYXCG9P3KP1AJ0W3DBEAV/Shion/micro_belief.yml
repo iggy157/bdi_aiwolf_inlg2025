@@ -1,0 +1,30 @@
+Kenji:
+  creditability: 0.767
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+Minako:
+  creditability: 0.7
+  liking: 0.7
+  self_co: villager
+  seer_co: villager_side
+  positive_to_Takumi: 1
+Shunichi:
+  creditability: 0.767
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  positive_to_Kenji: 1
+  positive_to_Minako: 1
+  positive_to_Shion: 3
+  positive_to_Takumi: 3
+Takumi:
+  creditability: 0.767
+  liking: 0.633
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3ENYXCG9P3KP1AJ0W3DBEAV
+  owner: Shion
+  generated_at: '2025-08-24T18:53:44Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3ENYXCG9P3KP1AJ0W3DBEAV/Shion/analysis.yml

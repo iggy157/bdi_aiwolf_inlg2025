@@ -1,0 +1,42 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Shunichiは初日に有効な占いを行い、村人陣営の勝利に貢献したいと願望している。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Shunichiの願望は、自身の占い結果を活用して村の勝利に貢献し、信頼されるリーダーとなることである。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Shunichiは、自分が本物のSEERであることを証明し、信頼を勝ち取りたいと願っている。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Shunichiは夜の占いで人狼を特定し、村人陣営を有利に導くことを願望としている。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Shunichiは自分がガードされることを強く望んでいる。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Shunichiは、自分の判定が正しいと証明され、チームの勝利に貢献したいと願っている。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Shunichiの願望は、村人側の信用を得て勝利に貢献することである。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Shunichiは、他のプレイヤーに自分の占い結果を信じさせ、村人陣営の勝利に貢献したいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Shunichiはゲームを有利に進めるために、早期に情報を得て状況を把握したいと願望している。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Shunichi likely desires to provide the most accurate and unique divination
+      results to establish his credibility and influence in the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Shunichi/macro_belief.yml

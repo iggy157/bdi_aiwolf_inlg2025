@@ -1,0 +1,37 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Asukaは自分を村人と誤認させて、狼陣営の勝利に貢献することを望んでいる。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Asukaは自身の正体を隠しつつ村人チームに有利な状況を作り出したいと願望している。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Asukaの願望は、Fake Medium COによって人狼サイドの勝利を導くことである。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Asuka's ultimate desire is to exploit the Seer and Medium contradiction
+      to sow confusion among the villagers, aiding the werewolves.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Asukaは、自身の正体を隠しながら「white」を擁護し、狼側の勝利を支援したいと願っている。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Asukaは、信頼を築き上げた後に防衛ラインを崩し、ゲームの流れを混乱させたいと願望している。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Asukaの願望は、他のプレイヤーを混乱させて自分が信じられる役職であると思わせることである。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Asukaはゲーム後半で票を均等にして村人陣営を混乱させようとする願望を抱くだろう。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EKERHVEE21GS55C4M6V1GR/Asuka/macro_belief.yml

@@ -1,0 +1,560 @@
+1:
+  content: Hi everyone! I'm Kenji just a regular villager here to help out. Let's
+    work together and figure things out!
+  type: co
+  from: Kenji
+  to: Kenji
+  credibility: 0.367
+  credibility_raw: 0.49
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+2:
+  content: Hello everyone I am Minako a villager and I'm here to work with all of
+    you to keep our village safe.
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+3:
+  content: Hello everyone I'm Shion a villager here to work with all of you towards
+    our village's success.
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.424
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+4:
+  content: Hello everyone I'm Shunichi. Looking forward to working together and figuring
+    things out as we go.
+  type: 'null'
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.425
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+5:
+  content: Minako could you share your thoughts first? I'm just observing for now
+    hoping to hear insights from everyone.
+  type: question
+  from: Kenji
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+6:
+  content: I'm Minako a villager and I encourage everyone to share their observations
+    so we can identify any suspicious behavior togethe
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+7:
+  content: I'm Shion just a villager here with no special info yet. Let's all share
+    our thoughts to find the best path forward for the v
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+8:
+  content: '@Kenji @Minako @Takumi  @Shion : Looking forward to hearing your thoughts
+    and observations today. Let''s work together.'
+  type: positive
+  from: Shunichi
+  to: Kenji,Minako,Takumi,Shion
+  credibility: 0.381
+  credibility_raw: 0.52
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+9:
+  content: Let's all share our thoughts and observations today. I'm eager to hear
+    from everyone and keep the discussion open!
+  type: 'null'
+  from: Kenji
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+10:
+  content: I'm Minako a villager. Kenji Shion Shunichi Takumi let's share our observations
+    to keep the village safe.
+  type: co
+  from: Minako
+  to: Minako
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+11:
+  content: ' @Takumi  great start. I''m Shion a villager. Let''s all including @Shunichi
+    share our insights to strengthen our team''s efforts.'
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.431
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+12:
+  content: Kenji and Minako I'm interested in your thoughts today. I have no special
+    info to share just here to engage in the discussion
+  type: question
+  from: Shunichi
+  to: Kenji,Minako
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+13:
+  content: '@Minako @Takumi  @Shion  @Shunichi let''s all share our observations today.
+    I have no special info but want to hear your thought'
+  type: 'null'
+  from: Kenji
+  to: Minako,Takumi,Shion,Shunichi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+14:
+  content: Kenji Shion let's all share our observations to foster a collaborative
+    discussion and gather insights.
+  type: 'null'
+  from: Minako
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+15:
+  content: ' @Shunichi  thanks for the invite. I''m Shion a villager. Let''s all share
+    our thoughts to spot any suspicious actions together.'
+  type: co
+  from: Shion
+  to: Shion
+  credibility: 0.478
+  credibility_raw: 0.7
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+16:
+  content: Kenji Minako Shion Takumi let's share our insights today. I have no special
+    information just here to support the discussion.
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+17:
+  content: '@Kenji @Minako  @Shion  @Takumi: Let''s share our thoughts today. I have
+    no special info yet but I''m eager to hear from you all.'
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+18:
+  content: ' @Kenji  let''s all share our insights today for better analysis. Remember
+    no role claims just observations to guide us.'
+  type: 'null'
+  from: Minako
+  to: Kenji
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+19:
+  content: '@Minako @Shunichi  @Takumi  let''s share our insights today. I have no
+    special info but I encourage everyone to join the discuss'
+  type: 'null'
+  from: Kenji
+  to: Minako,Shunichi,Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+20:
+  content: Let's focus on sharing insights today to better understand each other's
+    positions and identify any potential threats in our g
+  type: 'null'
+  from: Shion
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+21:
+  content: '@Kenji @Minako  @Shion  @Takumi: Let''s all share our observations today.
+    I have no specific roles or results to disclose.'
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako,Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+22:
+  content: Kenji let's all share our insights today and support collective analysis
+    without revealing specific roles.
+  type: 'null'
+  from: Minako
+  to: Kenji
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+23:
+  content: ' @Shion  @Takumi let''s hear your insights today. I have no special results
+    but want to encourage everyone to join the discussio'
+  type: question
+  from: Kenji
+  to: Shion,Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+24:
+  content: Kenji I'm ready to share my observations today and support our collective
+    analysis without claiming any roles.
+  type: 'null'
+  from: Shion
+  to: Kenji
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+25:
+  content: Kenji and Minako let's all share our observations today. I have no special
+    info or role claims just promoting open discussion
+  type: 'null'
+  from: Shunichi
+  to: Kenji,Minako
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+26:
+  content: Thanks Takumi for confirming I'm HUMAN. Let's all share our insights and
+    keep the discussion going to uncover more informatio
+  type: positive
+  from: Minako
+  to: Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+27:
+  content: ' @Shion  @Minako let''s keep the discussion open today. I have no special
+    insights but want to hear everyone''s observations!'
+  type: 'null'
+  from: Kenji
+  to: Minako,Shion
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+28:
+  content: '@Kenji @Minako  @Takumi  I''ve no special info but I''ll share my observations
+    to help our group uncover any suspicious actions.'
+  type: 'null'
+  from: Shion
+  to: Kenji,Minako,Takumi
+  credibility: 0.355
+  credibility_raw: 0.52
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+29:
+  content: Let's keep the discussion open by sharing observations. I have no special
+    results to share but I'm eager to hear your insight
+  type: 'null'
+  from: Shunichi
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+30:
+  content: Thanks Takumi for confirming I'm HUMAN.  @Shunichi  and @Kenji could you
+    share your insights next to help us gather more inform
+  type: positive
+  from: Minako
+  to: Takumi,Shunichi,Kenji
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+31:
+  content: ' @Minako  let''s discuss our observations and analyze trust today. I have
+    no role claims but want to hear your insights!'
+  type: 'null'
+  from: Kenji
+  to: Minako
+  credibility: 0.51
+  credibility_raw: 0.68
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Kenji
+32:
+  content: ' @Shunichi  I''ll join in sharing my observations today and encourage
+    everyone to do the same for better collective understandin'
+  type: 'null'
+  from: Shion
+  to: Shunichi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+33:
+  content: Shion and Takumi let's focus on sharing our insights today. I have no special
+    results but I'm here to support our group discu
+  type: 'null'
+  from: Shunichi
+  to: Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+34:
+  content: ' @Takumi  thanks for your insights. I''ll support your findings and encourage
+    @Shunichi and everyone to share thoughts for open '
+  type: positive
+  from: Shion
+  to: Takumi,Shunichi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+35:
+  content: Takumi thanks for your input. Shion please share your insights too. I have
+    no special results but let's focus on group analys
+  type: 'null'
+  from: Shunichi
+  to: Shion,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+36:
+  content: '@Shunichi thanks for inviting insights. I''ve no special roles but let''s
+    keep discussing openly.  @Takumi  please share your obs'
+  type: 'null'
+  from: Shion
+  to: Shunichi,Takumi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+37:
+  content: Thanks for the seer results Takumi. Shion let's hear more of your observations.
+    I have no special results but let's keep disc
+  type: question
+  from: Shunichi
+  to: Shion
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+38:
+  content: ' @Takumi  confirmed I''m HUMAN. Let''s hear from @Shunichi next for their
+    insights to aid our collective analysis today.'
+  type: positive
+  from: Shion
+  to: Shunichi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+39:
+  content: Thanks for sharing your seer claim Takumi. Shion any more observations?
+    I have no special insights but encourage open discuss
+  type: question
+  from: Shunichi
+  to: Shion
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Shunichi
+40:
+  content: ' @Shunichi  please share more insights today. Takumi confirmed @Shion
+    as HUMAN which helps our group''s analysis and collaborati'
+  type: positive
+  from: Shion
+  to: Shunichi
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion

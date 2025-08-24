@@ -1,0 +1,447 @@
+1:
+  content: I'm Takumi a villager ready to help the group find the werewolves; let's
+    share what we know and keep our village safe.
+  type: co
+  from: Takumi
+  to: Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+2:
+  content: '@Servas I am a Villager and have no special abilities to share but I am
+    ready to cooperate with everyone to find the truth.'
+  type: co
+  from: Servas
+  to: Servas
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+3:
+  content: Hello everyone I'm Ryuji. Looking forward to working with Misaki Servas
+    and Takumi. Let's have a good game.
+  type: 'null'
+  from: Ryuji
+  to: all
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+4:
+  content: Hello everyone I look forward to working together and listening to all
+    of you.
+  type: 'null'
+  from: Misaki
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+5:
+  content: Let's all share what we think so far; I'm here to work with you all and
+    keep the village safe even though I have no special i
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+6:
+  content: Thank you Yumi and Takumi for sharing. I am a Villager and invite everyone
+    to share their thoughts and strategies for today.
+  type: co
+  from: Servas
+  to: Servas
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+7:
+  content: I agree with Takumi; let's discuss what we observe. I have no special abilities
+    but want to help build trust.
+  type: positive
+  from: Ryuji
+  to: Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+8:
+  content: Let's all share any thoughts we might have to get the discussion started.
+  type: 'null'
+  from: Misaki
+  to: all
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+9:
+  content: Hi everyone! Let's start by sharing what we think; I have no special abilities
+    but will help spot any suspicious actions.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+10:
+  content: Let's work together and be open with our thoughts; share any observations
+    or feelings you have about others so we can find th
+  type: question
+  from: Servas
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+11:
+  content: Let's all share our initial thoughts to get started. I have no special
+    info to offer but want to work together.
+  type: 'null'
+  from: Ryuji
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+12:
+  content: Let's focus on sharing any useful insights we have to help us find the
+    werewolves.
+  type: 'null'
+  from: Misaki
+  to: 'null'
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+13:
+  content: Let's all share our initial thoughts to help us work together; I'm keen
+    to gather insights from you all for a collaborative e
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+14:
+  content: Let's all share our observations today to promote transparency and understanding;
+    I have no special results to disclose.
+  type: 'null'
+  from: Servas
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+15:
+  content: I agree with Misaki; let's share our thoughts openly. I have no special
+    info but will support our group's transparency.
+  type: positive
+  from: Ryuji
+  to: Misaki
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+16:
+  content: I believe sharing insights is key so let's all contribute to keep our village
+    safe.
+  type: 'null'
+  from: Misaki
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+17:
+  content: Let's focus on sharing our observations for the collective benefit. I have
+    no special results but value open discussion.
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+18:
+  content: Let's continue sharing our thoughts openly as it helps us stay transparent
+    and united.
+  type: 'null'
+  from: Misaki
+  to: all
+  credibility: 0.427
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+19:
+  content: 'Misaki and Takumi please share your thoughts on our situation; I have
+    no special info but transparency will help us find the '
+  type: question
+  from: Servas
+  to: Misaki,Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+20:
+  content: Let's share our observations from yesterday to help uncover any werewolves;
+    I have no special info but working together is ke
+  type: 'null'
+  from: Takumi
+  to: 'null'
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+21:
+  content: Let's continue sharing insights as Misaki suggested. I'll contribute my
+    observations without claiming roles to keep things co
+  type: 'null'
+  from: Ryuji
+  to: Misaki
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+22:
+  content: ' @Takumi  @Yumi please share your thoughts today as transparency and collaboration
+    are vital for us.'
+  type: 'null'
+  from: Misaki
+  to: Takumi,Yumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+23:
+  content: Let's all share our observations and insights today; I have no special
+    information but collaboration is key to finding the we
+  type: 'null'
+  from: Servas
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+24:
+  content: '@Misaki  @Servas  can you share your thoughts today? I have no special
+    info but gathering everyone''s insights will help us.'
+  type: question
+  from: Takumi
+  to: Misaki,Servas
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+25:
+  content: '@Yumi and  @Servas  what are your thoughts on Yumi''s Seer claim? I''m
+    curious about your perspectives as I have no special info.'
+  type: question
+  from: Ryuji
+  to: Servas,Yumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+26:
+  content: I agree with Servas and Ryuji on the need for open discussion let's focus
+    on transparency and collaboration.
+  type: positive
+  from: Misaki
+  to: Ryuji,Servas
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+27:
+  content: Let's ensure we all share our observations openly; I have no special abilities
+    but transparency will help us identify the wer
+  type: 'null'
+  from: Servas
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+28:
+  content: ' @Yumi  confirmed I''m HUMAN as Seer; let''s hear from Misaki and Servas
+    to share their insights and increase our transparency.'
+  type: positive
+  from: Takumi
+  to: Misaki,Servas
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi
+29:
+  content: I support Yumi's transparency with her Seer claim. Let's validate insights
+    together through group discussion.
+  type: positive
+  from: Ryuji
+  to: Yumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Ryuji
+30:
+  content: ' @Servas  let''s all share our observations openly to build trust and
+    maintain transparency without revealing roles.'
+  type: 'null'
+  from: Misaki
+  to: Servas
+  credibility: 0.42
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Misaki
+31:
+  content: ' @Takumi  I agree on the need for sharing insights; I have no special
+    info but will contribute my observations to aid our effor'
+  type: positive
+  from: Servas
+  to: Takumi
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Servas
+32:
+  content: Yumi confirmed I'm HUMAN as Seer; let's all share our thoughts openly today
+    to help us find the werewolves together.
+  type: positive
+  from: Takumi
+  to: Yumi
+  credibility: 0.473
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Takumi

@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Takumiの願望は、村人を混乱させることで自分への疑いを逸らし、生き延びることである。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: タクミは村人を混乱させるために偽の情報を流し、次の夜の襲撃を成功させることを願っている。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: タクミの願望は、自分たちの正体を隠しつつ他のプレイヤーを混乱させることです。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Takumiは、村人からの信頼を得てゲームを有利に進めようと願望している。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Takumiは自身が吊られないように他のプレイヤーを説得し、疑いを逸らしたいと願望している。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Takumiは、他のプレイヤーを説得して疑いを別のターゲットに向け、投票を回避したいと願っている。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Takumiは村人を混乱させ、自分の正体を隠しつつ、ゲームを有利に進めたいと願望している。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Takumiは他のプレイヤーに疑惑を向け、自己防衛を図りたいと願望している。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Takumiは自らの正体を隠しつつ、有利な状況を利用して村人を欺き、生き残りたいと願望している。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Takumiの願望は、投票を操作して自身が疑われず、最終的に勝利することです。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Takumi/macro_belief.yml

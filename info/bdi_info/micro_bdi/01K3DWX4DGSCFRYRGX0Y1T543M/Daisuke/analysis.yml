@@ -1,0 +1,168 @@
+1:
+  content: Hi everyone I'm Yumi and I'm keen to observe and ensure our group's safety
+    today.
+  type: 'null'
+  from: Yumi
+  to: Yumi
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Yumi
+2:
+  content: Hi everyone I am Minato and I'm committed to helping our village with a
+    strategic approach.
+  type: 'null'
+  from: Minato
+  to: Minato
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato
+3:
+  content: Hello everyone I'm Mizuki. Looking forward to working together and getting
+    to know each of you.
+  type: 'null'
+  from: Mizuki
+  to: all
+  credibility: 0.519
+  credibility_raw: 0.76
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Mizuki
+4:
+  content: Hello everyone I am Benjamin a villager focused on safety and careful analysis
+    and I have no special results to share.
+  type: co
+  from: Benjamin
+  to: Benjamin
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.7
+    creditability: 0.833
+    from: Benjamin
+5:
+  content: '@Benjamin  @Daisuke  @Minato let''s share our thoughts today. I have no
+    special abilities but will focus on observing our group.'
+  type: 'null'
+  from: Yumi
+  to: Benjamin,Daisuke,Minato
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Yumi
+6:
+  content: I am Minato and today I will focus on observing Benjamin and others to
+    evaluate their credibility.
+  type: 'null'
+  from: Minato
+  to: Benjamin
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato
+7:
+  content: Minato I appreciate your strategic approach. Let's all share openly today
+    to gather valuable insights.
+  type: positive
+  from: Mizuki
+  to: Minato
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Mizuki
+8:
+  content: I acknowledge Yumi's focus on safety and encourage everyone to share insights
+    as I have no special information today.
+  type: positive
+  from: Benjamin
+  to: Yumi
+  credibility: 0.383
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.7
+    creditability: 0.833
+    from: Benjamin
+9:
+  content: '@Benjamin @Minato  @Mizuki  let''s share our insights today. I have no
+    special insights but encourage open discussion for group understand'
+  type: 'null'
+  from: Yumi
+  to: Benjamin,Minato,Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.533
+    creditability: 0.667
+    from: Yumi
+10:
+  content: I have observed interactions today and will share insights on Benjamin's
+    credibility based on group dynamics.
+  type: 'null'
+  from: Minato
+  to: Benjamin
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato
+11:
+  content: ' @Daisuke  let''s share our initial thoughts to start off and gather useful
+    insights together.'
+  type: 'null'
+  from: Mizuki
+  to: Daisuke
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Mizuki
+12:
+  content: I acknowledge Yumi's focus on observation and encourage everyone to share
+    thoughts as I have no special abilities to disclose
+  type: 'null'
+  from: Benjamin
+  to: Yumi
+  credibility: 0.437
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.766
+    liking: 0.7
+    creditability: 0.833
+    from: Benjamin

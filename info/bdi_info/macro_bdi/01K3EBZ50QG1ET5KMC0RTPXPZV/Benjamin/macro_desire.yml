@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Benjaminは、村の安全を確保し、他のプレイヤーの意図を理解することを望んでいる。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Benjaminは村人として信頼を得て、チームで協力して人狼を見つけ出すことを望んでいる。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Benjaminは村人陣営の勝利を目指し、Seerの真偽を見極めることを願望している。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Benjaminは占い師の結果を基に村を守りたいと願っている。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Benjaminは真の占い師を見極めて人狼を特定したいと考えている。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: Benjaminの願望は、真のMediumを特定し、村の安全を確保することです。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Benjaminは村の勝利を確保するために、騎士や護衛の主張の真偽を見極めたいと願っている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Benjaminは、自分への疑いを晴らし、村人としての信頼を回復したいと願望している。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Benjaminは他のプレイヤーと協力して村の安全を確保することを望んでいる。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Benjaminの願望は、村人として他のプレイヤーをサポートし、村の安全を守ることです。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: ベンジャミンは集団の意見に従い、村人としての安全と勝利を目指している。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Benjaminは、村人を守りつつ人狼を見つけるために、慎重かつ積極的に投票ターゲットを宣言することを望んでいる。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Benjaminは村を守るために、最も疑わしい人物を特定し処刑することを望んでいる。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Benjaminは村の安全を確保するためにグレーな人物を処刑することを望んでいる。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Benjaminは、村の安全を守るために積極的に会話に参加し、情報を共有したいと考えている。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: ベンジャミンは会話を通じて村人としての役割を果たし、他者と協力してゲームを進めたいと願っている。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Benjaminは、誤解を避けつつ自己防衛しながら村の利益を守りたいと考えている。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Benjaminは、ゲームの勝利のために真の占い師を見極めて村を導きたいと願っている。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Benjaminの願望は、村人チームの勝利に貢献するために正確な情報を集め、的確に投票することである。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Benjaminは狼を特定し排除することで村を守ることを望む。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Benjaminは護衛成功による村人陣営の有利を活かし、勝利を目指すことを望んでいる。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Benjaminはゲームの勝利に貢献できるような情報を得たいと願っている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Benjaminは村人陣営の勝利を確実にするため、村の仲間と協力し信頼を築きたいと願望している。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Benjaminは村の利益のために高い影響力を持つプレイヤーと協力したいと願望している。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Benjaminは村人としての信頼を得ることを願望している。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Benjaminの願望は、自身が信頼される村人であることを証明し、ゲーム内での安全性を確保することです。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Benjamin/macro_belief.yml

@@ -1,0 +1,109 @@
+1:
+  content: Hello I am Victoria. Let's work together and ensure our village thrives.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.564
+  credibility_raw: 0.77
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Victoria
+2:
+  content: Hey everyone it's Kenji here! I'm the Seer and ready to contribute actively
+    though I have no results to share yet.
+  type: co
+  from: Kenji
+  to: Kenji
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Kenji
+3:
+  content: Let's start sharing what we know and work together to uncover the truth.
+  type: question
+  from: Victoria
+  to: all
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Victoria
+4:
+  content: Hey everyone it's Kenji! Today I'll be focusing on evaluating the trust
+    levels of Daisuke Mio and Toshio.
+  type: 'null'
+  from: Kenji
+  to: Mio,Kenji,Daisuke,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Kenji
+5:
+  content: What does everyone think about Kenji's claim of being the Seer?
+  type: question
+  from: Victoria
+  to: all
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Victoria
+6:
+  content: Hi I'm Kenji! I'm ready to contribute and will focus on analyzing Daisuke
+    Mio and Toshio based on trust today.
+  type: positive
+  from: Kenji
+  to: Daisuke,Mio,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Kenji
+7:
+  content: Daisuke Mio Toshio could you share any observations you have? Let's discuss
+    together.
+  type: question
+  from: Victoria
+  to: Daisuke,Mio,Toshio
+  credibility: 0.366
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.733
+    liking: 0.733
+    creditability: 0.733
+    from: Victoria
+8:
+  content: Let's discuss Mio and Toshio today; I'll focus on analyzing their credibility
+    based on what we've observed so far.
+  type: question
+  from: Kenji
+  to: Mio,Toshio
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Kenji

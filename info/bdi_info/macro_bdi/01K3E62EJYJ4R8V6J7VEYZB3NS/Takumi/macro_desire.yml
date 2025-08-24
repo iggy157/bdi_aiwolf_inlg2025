@@ -1,0 +1,36 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Takumiは村人として振る舞いながら、自分の正体を隠したままゲームを有利に進めたいと願っている。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Takumiの願望は、他のプレイヤーを混乱させてゲームの進行を自分たちに有利にすることです。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Takumiは狼側の勝利をサポートするために、村人たちを混乱させたいと願っている。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: TakumiはSeerとMediumの矛盾を利用して村人陣営を混乱させ、人狼チームに有利な展開を作り出そうと願望している。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: このプレイヤーの願望は、狼をサポートし村人を混乱させることである。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Takumiは他のプレイヤー間の信頼関係を利用しつつ、自身の正体を隠すために策略を練ることを願う。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Takumiの実際の願望は、ゲーム内で混乱を引き起こし、自らの正体を隠しつつ他のプレイヤーを惑わせることである。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Takumiは、ゲーム終盤で自分を有利にするために票を均等化または特定のプレイヤーに集中させることを望む。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Takumi/macro_belief.yml

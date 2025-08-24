@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Mayは、初日に他のプレイヤーから情報を集めて信頼できる仲間を見つけることを願望する。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Mayは村人として、村の安全を確保し、真の預言者を見極めたいと願望している。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Mayは占い結果を活用して村をリードし、人狼を排除することを願っている。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Mayは真の占い師を見極め、村の勝利に貢献したいと願っている。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Mayは霊媒師の結果を基にして狼を見つけ出し、村人チームの勝利に貢献したいと願望している。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Mayは、村人を守るために最も疑わしいプレイヤーを見つけ出し、正確な投票を行うことを望んでいる。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Mayは処刑案が正当であるかを確認し、無実の村人を守ることを願っている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Mayは他のプレイヤーからの疑いを晴らし、信頼を回復したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Mayは、村人としての信頼を得るために、自分の立場を明確にし、他者の疑念を晴らしたいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Mayは村の勝利を目指して、人狼を見つけ出すことを最も望んでいる。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Mayは村人として仲間の安全を確保し、夜の襲撃者を特定するための情報を求めている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EKERHVEE21GS55C4M6V1GR/May/macro_belief.yml

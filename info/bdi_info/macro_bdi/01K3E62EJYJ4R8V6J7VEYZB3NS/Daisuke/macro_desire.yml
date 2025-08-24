@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Daisukeは、他のプレイヤーの情報を早期に集めて村の安全を確保したいと願望している。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Daisukeは自身の立場を明確にし、他のプレイヤーとの信頼関係を築きたいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: DaisukeはSeerのCOを信頼し、その情報を基に村の勝利に貢献したいと願う。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Daisukeの願望は占い結果を活用して村を守ることです。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: 大輔は信頼できる預言者を見つけ出し、村を勝利に導くことを願っている。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: Daisukeは真のMediumを見極め、村人陣営の勝利に貢献したいと願望している。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: Daisukeは村人として他のプレイヤーと協力し、偽の役職主張を見破りたいと願望している。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Daisukeは、他のプレイヤーからの疑いを晴らし、自身が信頼される村人であることを証明したいと願望している。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Daisukeは、他のプレイヤーとの協力とコミュニケーションを通じて、ゲームをより楽しみたいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Daisukeは村人として信頼を得たいと願望している。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Daisukeは他のプレイヤーと協力して村を守ることを望んでいる。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Daisukeは村の勝利のために、狼と思われるプレイヤーに投票したいと考えている。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Daisukeは村人陣営の勝利を願い、適切な人物の処刑を望んでいる。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Daisukeは、村の安全を確保するために慎重に判断し、危険人物を特定したいと願っている。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Daisukeは他のプレイヤーの動向を観察しつつ、適切なタイミングで村のために貢献したいと考えている。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Daisukeは村のために有益な情報を共有し、信頼関係を築くことを願望している。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Daisukeは自分の無実を証明し、ゲーム内での生存を確保することを願望している。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Daisukeは、本物の占い師を見極めて村を勝利に導くことを願っている。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Daisukeは村全体の利益を考え、正確な情報をもとに狼を見つけたいと願望している。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Daisukeは村を守るため、敵を特定し排除することを望んでいる。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Daisukeは村人陣営の勝利を目指して、次の昼の議論で狼の特定に積極的に参加したいと考える。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Daisukeは霊能者の結果を活用し、村人側が勝利するための情報戦での優位性を確立したいと願っている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Daisukeは村人陣営として他のプレイヤーと協力し、勝利に貢献したいと願っている。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Daisukeは影響力のある信頼できるプレイヤーと協力し、ゲームを有利に進めたいと願望している。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Daisukeの願望は、他のプレイヤーに信頼されながらゲームを進行させることである。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Daisukeは他のプレイヤーと協力して村の安全を確保し、信頼関係を築くことを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Daisuke/macro_belief.yml

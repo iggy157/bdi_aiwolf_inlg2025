@@ -1,0 +1,41 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: KenjiはNight 0で人狼を見つけ出し、村の勝利に貢献することを願望している。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Kenjiは自分の役割を活かして村人側を勝利に導くことを強く望んでいる。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Kenjiは自分が本物のSEERであると証明し、仲間からの信頼を確保したいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Kenjiは村人チームの勝利のために、敵対存在を見つけ出すことを強く望んでいる。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Kenjiは自分を守るためにガードの保護を求めている。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Kenjiは自身の推理が正しいことを証明し、村人陣営の勝利に貢献したいと願っている。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: KenjiはSEERとしての能力を最大限に活用し、村人陣営の勝利に貢献したいと願っている。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Kenjiは自身の情報が正しいことを証明し、他のプレイヤーの信頼を回復したいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Kenjiは、SEERとして迅速に正確な情報をチームに提供し、信頼を得てゲームを有利に進めることを願っている。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Kenjiは他のSEERと協力して、より正確な情報を提供し、村の勝利に貢献したいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E75K282ZE7KAV3XFQ868CN/Kenji/macro_belief.yml

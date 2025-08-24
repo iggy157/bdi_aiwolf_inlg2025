@@ -1,0 +1,38 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Asukaは自分の正体を隠しながら、村人として信頼を得ることを望んでいる。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Asukaは村人を混乱させ、狼陣営を有利にするために誤った情報を提供することを望んでいる。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Asukaは村人を混乱させて狼チームの勝利を支援したいと願望している。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Asukaは、占い師と霊能者の対立を利用して村人を混乱させ、自分の正体を隠すことを願望している。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Asuka desires to protect her identity while supporting her team's strategy
+      to gain an advantage.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Asukaはポジティブなサポートを受けるグループと連携しつつ、自身の正体を隠してゲームを有利に進めたいと願望している。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Asuka likely desires to create confusion and mislead other players to
+      protect the werewolves' identities.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Asukaはゲーム終盤で票を均等にするか固定することで、村人側を混乱させたいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EQ7FF43BANDCB7J5XNMXSK/Asuka/macro_belief.yml

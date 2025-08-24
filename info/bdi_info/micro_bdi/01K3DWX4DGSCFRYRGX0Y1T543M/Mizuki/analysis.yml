@@ -1,0 +1,152 @@
+1:
+  content: Hello everyone I'm Daisuke. Let's work together to figure things out.
+  type: 'null'
+  from: Daisuke
+  to: Daisuke
+  credibility: 0.413
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Daisuke
+2:
+  content: Hi everyone I'm Yumi and I'm keen to observe and ensure our group's safety
+    today.
+  type: 'null'
+  from: Yumi
+  to: all
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.633
+    creditability: 0.7
+    from: Yumi
+3:
+  content: Hi everyone I am Minato and I'm committed to helping our village with a
+    strategic approach.
+  type: 'null'
+  from: Minato
+  to: Minato
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato
+4:
+  content: Hello everyone I am Benjamin a villager focused on safety and careful analysis
+    and I have no special results to share.
+  type: co
+  from: Benjamin
+  to: Benjamin
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Benjamin
+5:
+  content: Let's all share our thoughts today; Benjamin Minato and Mizuki what do
+    you think about the current situation?
+  type: question
+  from: Daisuke
+  to: Benjamin,Mizuki
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Daisuke
+6:
+  content: '@Benjamin  @Daisuke  @Minato let''s share our thoughts today. I have no
+    special abilities but will focus on observing our group.'
+  type: 'null'
+  from: Yumi
+  to: Benjamin,Daisuke,Minato
+  credibility: 0.287
+  credibility_raw: 0.43
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.633
+    creditability: 0.7
+    from: Yumi
+7:
+  content: I am Minato and today I will focus on observing Benjamin and others to
+    evaluate their credibility.
+  type: 'null'
+  from: Minato
+  to: Benjamin
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato
+8:
+  content: I acknowledge Yumi's focus on safety and encourage everyone to share insights
+    as I have no special information today.
+  type: positive
+  from: Benjamin
+  to: Yumi
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Benjamin
+9:
+  content: What does everyone think about our current situation? Let's share our thoughts.
+  type: question
+  from: Daisuke
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Daisuke
+10:
+  content: '@Benjamin @Minato  @Mizuki  let''s share our insights today. I have no
+    special insights but encourage open discussion for group understand'
+  type: 'null'
+  from: Yumi
+  to: Benjamin,Minato,Mizuki
+  credibility: 0.333
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.666
+    liking: 0.633
+    creditability: 0.7
+    from: Yumi
+11:
+  content: I have observed interactions today and will share insights on Benjamin's
+    credibility based on group dynamics.
+  type: 'null'
+  from: Minato
+  to: Benjamin
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Minato

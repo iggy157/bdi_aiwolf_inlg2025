@@ -1,0 +1,30 @@
+Asuka:
+  creditability: 0.8
+  liking: 0.733
+  self_co: null
+  seer_co: villager
+  positive_to_Minato: 1
+  positive_to_Mizuki: 1
+  positive_to_Ryuji: 1
+Mizuki:
+  creditability: 0.5
+  liking: 0.567
+  self_co: null
+  seer_co: villager
+Ryuji:
+  creditability: 0.733
+  liking: 0.7
+  self_co: villager
+  seer_co: villager
+Shion:
+  creditability: 0.667
+  liking: 0.633
+  self_co: villager
+  seer_co: null
+  positive_to_Minato: 1
+  positive_to_Ryuji: 1
+_meta:
+  game_id: 01K3EQ7FF43BANDCB7J5XNMXSK
+  owner: Minato
+  generated_at: '2025-08-24T19:16:20Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EQ7FF43BANDCB7J5XNMXSK/Minato/analysis.yml

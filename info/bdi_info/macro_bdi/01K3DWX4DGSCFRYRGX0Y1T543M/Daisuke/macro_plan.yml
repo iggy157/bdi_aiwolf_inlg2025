@@ -1,0 +1,31 @@
+macro_plan:
+  strategy_summary: Maintain a low profile while subtly influencing the game to benefit
+    the werewolf team. Create trust among players without revealing true intentions
+    and focus on destabilizing the village's decision-making process.
+  policies:
+    co_policy: Adopt a no_co approach initially to avoid drawing attention. Consider
+      a fake_co as a villager if suspicion grows, timing it when it can create maximum
+      confusion and doubt among others.
+    results_policy: Not applicable as the possessed role has no results to share.
+    analysis_policy: Observe interactions carefully, identifying key players and potential
+      threats. Focus on those with high influence or strong reasoning skills, aiming
+      to subtly weaken their credibility.
+    persuasion_policy: Engage minimally in discussions, using high empathy to build
+      individual trust. When necessary, gently steer conversations away from allies
+      and sow seeds of doubt about others' intentions.
+    vote_policy: Vote to protect werewolf allies and target influential or suspicious
+      villagers. Prioritize strategic voting that minimizes suspicion on self while
+      supporting werewolf objectives.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Daisuke
+  role_raw: 狂人
+  role_canon: possessed
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:13Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Daisuke/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Daisuke/macro_desire.yml
+  format: summary_and_policies_only
+  forbidden_keys_removed: true

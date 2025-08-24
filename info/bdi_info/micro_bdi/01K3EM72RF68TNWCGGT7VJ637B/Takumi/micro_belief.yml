@@ -1,0 +1,34 @@
+Misaki:
+  creditability: 0.8
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  positive_to_Ryuji: 1
+  positive_to_Servas: 1
+Ryuji:
+  creditability: 0.633
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  positive_to_Misaki: 1
+  positive_to_Takumi: 1
+  positive_to_Yumi: 1
+Servas:
+  creditability: 0.733
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+  positive_to_Takumi: 1
+Yumi:
+  creditability: 0.8
+  liking: 0.633
+  self_co: null
+  seer_co: null
+  negative_to_Ryuji: 1
+  negative_to_Servas: 1
+  positive_to_Takumi: 1
+_meta:
+  game_id: 01K3EM72RF68TNWCGGT7VJ637B
+  owner: Takumi
+  generated_at: '2025-08-24T18:20:08Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Takumi/analysis.yml

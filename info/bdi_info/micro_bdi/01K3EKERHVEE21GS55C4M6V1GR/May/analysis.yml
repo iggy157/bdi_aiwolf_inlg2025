@@ -1,0 +1,448 @@
+1:
+  content: Hello everyone I am Asuka. I have no special results to share yet but look
+    forward to working together to build trust.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.348
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+2:
+  content: Hi everyone I'm Daisuke. Looking forward to a good game and hoping to get
+    to know you all better as we go along.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.584
+  credibility_raw: 0.73
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+3:
+  content: Hello everyone I'm George. Looking forward to a fair game. Let's work together
+    to keep our village safe.
+  type: 'null'
+  from: George
+  to: all
+  credibility: 0.418
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+4:
+  content: Hello everyone I'm Victoria a villager eager to work together and gather
+    information to find the werewolves among us.
+  type: co
+  from: Victoria
+  to: Victoria
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+5:
+  content: Daisuke and George what are your thoughts on our strategy today? I'm open
+    to sharing ideas to help us collaborate better.
+  type: question
+  from: Asuka
+  to: Daisuke,George
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+6:
+  content: Let's all share our thoughts and observations openly today; I have no claims
+    yet but I'm eager to hear from everyone.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.488
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+7:
+  content: Hello all I'm George. Let's build trust here. I'll closely observe Asuka
+    and Victoria for now.
+  type: 'null'
+  from: George
+  to: Asuka,Victoria,George
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+8:
+  content: I'm Victoria and I have no special roles; let's share insights and work
+    together to uncover the werewolves.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.565
+  credibility_raw: 0.77
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+9:
+  content: May Daisuke George and Victoria let's share insights to gather information
+    and understand our situation better.
+  type: 'null'
+  from: Asuka
+  to: Daisuke,George,Victoria
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+10:
+  content: Thanks Asuka. Let's all share our initial thoughts first to gather insights
+    before diving into strategy.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.584
+  credibility_raw: 0.73
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+11:
+  content: ' @Asuka  Let''s discuss our strategy and focus on trust evaluations for
+    now. I will be observing interactions especially with yo'
+  type: 'null'
+  from: George
+  to: Asuka
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+12:
+  content: ' @Asuka  @George Let''s share any insights or observations you might have
+    to help us all in identifying the werewolves.'
+  type: question
+  from: Victoria
+  to: Asuka,George
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+13:
+  content: ' @May  your suggestion is a good start. Let''s discuss initial observations.
+    I have no special roles to share yet just gathering'
+  type: 'null'
+  from: Asuka
+  to: May
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+14:
+  content: Asuka let's hear more input from everyone first; it might help us understand
+    roles better and guide our strategy.
+  type: 'null'
+  from: Daisuke
+  to: Asuka
+  credibility: 0.496
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+15:
+  content: '@Asuka  @Daisuke  I''m here to gain insights. Let''s discuss your thoughts
+    and statements to assess credibility together.'
+  type: 'null'
+  from: George
+  to: Asuka,Daisuke
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+16:
+  content: ' @May  @Asuka Let''s share our observations openly to develop our strategy;
+    I encourage everyone to contribute their insights.'
+  type: 'null'
+  from: Victoria
+  to: Asuka,May
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+17:
+  content: ' @Victoria  I am the Seer and saw that May is HUMAN. Sharing this to help
+    us focus on finding the werewolves together.'
+  type: co
+  from: George
+  to: May
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+18:
+  content: '@Asuka  @Daisuke  @George @May Let''s continue sharing our observations
+    today to build trust and work together to find the werew'
+  type: 'null'
+  from: Victoria
+  to: Asuka,Daisuke,George,May
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+19:
+  content: Asuka May let's continue to share our thoughts; I don't have special insights
+    yet but more input could help us piece things t
+  type: question
+  from: Daisuke
+  to: Asuka,May
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+20:
+  content: Let's all share our observations and insights today to help build trust
+    and analyze our situation collectively.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.389
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+21:
+  content: '@Asuka  @Victoria  Let''s share what we know; I found May is HUMAN. This
+    can guide us in forming a strategy against werewolves.'
+  type: question
+  from: George
+  to: May
+  credibility: 0.462
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+22:
+  content: I have no special info today so let's all share our thoughts and observations
+    to help us work together and find the werewolve
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+23:
+  content: I don't have any special information to share yet but let's all share our
+    observations to gain a clearer picture together.
+  type: 'null'
+  from: Daisuke
+  to: 'null'
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+24:
+  content: ' @May  I agree with sharing insights to strengthen our collaboration.
+    I have no special results but encourage open discussion t'
+  type: positive
+  from: Asuka
+  to: May
+  credibility: 0.382
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+25:
+  content: ' @Victoria  I acknowledge your request. I have found that May is HUMAN
+    and I hope this helps us refine our strategy.'
+  type: 'null'
+  from: George
+  to: May
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+26:
+  content: ' @George  Thanks for confirming May is human; let''s all share our observations
+    to strengthen our strategy and build trust.'
+  type: positive
+  from: Victoria
+  to: George
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+27:
+  content: Noted on the Seer claim; I don't have special results to share yet so I
+    encourage everyone to add their observations to the d
+  type: 'null'
+  from: Daisuke
+  to: 'null'
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+28:
+  content: May George and Victoria let's keep sharing our observations today. I have
+    no special role to reveal but want to foster trust.
+  type: positive
+  from: Asuka
+  to: George,Victoria,May
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka
+29:
+  content: ' @May  I have confirmed you are HUMAN. I urge everyone to share their
+    insights so we can strategize effectively against the wer'
+  type: positive
+  from: George
+  to: May
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: George
+30:
+  content: Let's all share insights today and with George's claim about May being
+    human we can build a strong collective strategy.
+  type: positive
+  from: Victoria
+  to: May,George
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Victoria
+31:
+  content: ' @Victoria  and everyone let''s share our insights to build trust; I don''t
+    have special info to share today but open discussion '
+  type: positive
+  from: Daisuke
+  to: Victoria
+  credibility: 0.4
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.8
+    liking: 0.833
+    creditability: 0.767
+    from: Daisuke
+32:
+  content: Acknowledging George's Seer claim about May let's continue sharing insights
+    for strategic collaboration. I have no special ro
+  type: 'null'
+  from: Asuka
+  to: May,George
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.633
+    creditability: 0.733
+    from: Asuka

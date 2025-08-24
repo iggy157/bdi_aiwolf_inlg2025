@@ -1,0 +1,36 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Minakoは自分の正体を隠しつつゲームをコントロールしたいと願っている。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Minakoの願望は、偽の占い師としての信頼を確立し、ゲーム内で混乱を引き起こすことである。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Minakoは、自分の正体を隠しつつ、味方の勝利を支援したいと願望している。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Minakoは、自分の正体を隠しつつ、他のプレイヤーに疑惑を向けさせることで混乱を引き起こし、狼陣営としての勝利を狙っている。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Minakoは、自分への疑いをかわしつつ、狼側の勝利を促進したいと願望している。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Minakoは、他者を惑わせるために信頼を得つつ、最終的には裏切ることを望んでいる。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Minakoは他のプレイヤーを混乱させ、自分の役割を隠し続けることを望んでいる。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Minakoの願望は、票を均等化または固定することで村人を混乱させ、自身の正体を隠しながらゲームを有利に進めることです。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EGW7ETMS3RTNS78ASD4H46/Minako/macro_belief.yml

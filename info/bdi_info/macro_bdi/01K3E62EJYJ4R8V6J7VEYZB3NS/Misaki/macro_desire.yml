@@ -1,0 +1,42 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Misakiは、効果的な占いによって正確な情報を得て、村の勝利に貢献したいと願っている。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Misaki likely desires to reveal her findings to establish trust and guide
+      the group while ensuring her own safety.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Misakiは、自身の正当性を証明し、村人からの信頼を得ることを願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Misakiは、村の勝利に役立つため、夜に人狼の可能性があるプレイヤーを占うことを願っている。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Misakiは、自分が守られることで安心して占い結果を報告し、村に貢献することを願望しています。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Misakiは村を守るために、黒判定が正しいかどうかを確認し、必要なら情報を訂正したいと願望する。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Misakiは、自分の占い結果を基に村側の信頼を得て、狼を特定し排除することを願っている。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Misakiは自身の占い結果を証明し、他のプレイヤーからの信頼を回復したいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Misakiは自らの情報を最大限に活用してゲーム内での勝利を目指している。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Misakiは他の占い師との情報比較を通じて、自身の予言の信頼性を高め、ゲーム内での信頼を獲得したいと望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Misaki/macro_belief.yml

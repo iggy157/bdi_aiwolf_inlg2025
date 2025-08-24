@@ -1,0 +1,41 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Takumiは、村人チームの勝利のために、潜在的な人狼を早期に発見したいと願望している。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Takumiの願望は、Seerとしての情報を活用し、村人陣営を勝利に導くことです。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Takumiは自身の正当性を証明し、他のプレイヤーに自分を信じさせたいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Takumiは今夜、最も疑わしいプレイヤーを占いたいと考えている。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Takumiは自分自身が騎士によって守られることを望んでいる。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Takumiは村が彼の占い結果を受け入れ、ゲームで勝利することを望んでいる。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Takumiは自身の占い結果を活かして村人陣営の勝利に貢献したいと願っている。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Takumiは、自分の占い結果を証明し、村人の信頼を得たいと考える。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Takumiは他のプレイヤーの正体を早期に見抜くことを願望している。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Takumiは村の利益のために、正確で信頼性の高い情報を提供したいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EGW7ETMS3RTNS78ASD4H46/Takumi/macro_belief.yml

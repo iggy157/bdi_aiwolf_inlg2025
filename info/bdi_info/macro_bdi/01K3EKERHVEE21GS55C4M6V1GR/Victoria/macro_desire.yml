@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Victoriaは狼を見つけるために情報を集め、村人同士の協力を促進したいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Victoriaはseerの主張の信憑性を判断し、村の勝利に貢献する行動を望む。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: ヴィクトリアは村人チームの勝利を目指し、占い結果を基に人狼を特定しようと願望している。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Victoriaは、本物の占い師を見極め、村全体が一致団結するようにサポートしたいと願っている。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Victoriaは、村全体の勝利のために正確な情報を求め、議論をリードすることを望んでいる。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Victoriaの願望は、村の安全を確保するために正確な情報に基づいた投票ターゲットを宣言することである。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Victoriaは正確な情報に基づいて人狼を特定し、村を守るために適切な処刑を望んでいる。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Victoriaは自分の潔白を証明し、他のプレイヤーからの信頼を取り戻したいと願望している。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Victoriaは他のプレイヤーからの信頼を得るために、積極的に情報を共有し、自分の立場を明確にすることを望む。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: VictoriaはSeerの白確認情報を元に村の勝利に貢献したいと願っている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Victoriaは、村を守るために狼を見つけ出し排除することを強く望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EKERHVEE21GS55C4M6V1GR/Victoria/macro_belief.yml

@@ -1,9 +1,0 @@
-macro_desire:
-  description: Toshio aims to subtly disrupt information flow while maintaining stability
-    and forming stable relationships to aid allies without direct communication.
-meta:
-  game_id: 01K3A6042E7XF3DEGT92Y1HBHZ
-  agent: Toshio
-  model: gpt-4o
-  generated_at: '2025-08-23T00:42:06Z'
-  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3A6042E7XF3DEGT92Y1HBHZ/Toshio/macro_belief.yml

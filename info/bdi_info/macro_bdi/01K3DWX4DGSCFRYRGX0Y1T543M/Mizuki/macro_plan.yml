@@ -1,0 +1,33 @@
+macro_plan:
+  strategy_summary: Mizuki aims to blend into the group by adopting an assertive yet
+    adaptable approach, leveraging social approval to maintain cover and coordinate
+    subtly with werewolf allies. Aggressively influence discussions to divert suspicion
+    while carefully balancing assertiveness to avoid drawing unnecessary attention.
+  policies:
+    co_policy: Opt for no_co to maintain flexibility and avoid early exposure. If
+      pressured, consider a strategic fake_co only when credibility can be maintained
+      and it benefits the werewolf agenda.
+    results_policy: Not applicable due to werewolf role; focus on sowing doubt about
+      others' results.
+    analysis_policy: Assess players based on their behavioral tendencies, identifying
+      those who are overly inquisitive or rigid as potential threats. Prioritize analysis
+      of players with high influence within the group.
+    persuasion_policy: Use empathetic and extroverted tendencies to build trust and
+      sway group opinion subtly. Emphasize shared goals and common interests to lead
+      discussions away from werewolf activities.
+    vote_policy: Align voting decisions with werewolf objectives, targeting players
+      who pose a strategic threat. Use social cues and peer influence to guide the
+      group towards favorable outcomes.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Mizuki
+  role_raw: 人狼
+  role_canon: werewolf
+  alignment: werewolf
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Mizuki/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Mizuki/macro_desire.yml
+  format: summary_and_policies_only
+  forbidden_keys_removed: true

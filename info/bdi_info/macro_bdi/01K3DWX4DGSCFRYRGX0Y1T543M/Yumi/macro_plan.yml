@@ -1,0 +1,31 @@
+macro_plan:
+  strategy_summary: Prioritize group safety and decision-making through observation
+    and interaction, balancing personal desires for freedom and adventure with a focus
+    on collective goals.
+  policies:
+    co_policy: Adopt a no_co approach to maintain credibility and focus on observation,
+      leveraging adaptability and assertiveness to identify threats without unnecessary
+      exposure.
+    results_policy: Share observations and insights about player behavior patterns
+      to support group decision-making, ensuring alignment with villager objectives.
+    analysis_policy: Utilize keen observation and extroversion to assess player intentions,
+      identifying inconsistencies and potential threats through behavior analysis.
+    persuasion_policy: Use assertiveness and empathy to influence group discussions,
+      advocating for strategies that enhance group safety and align with villager
+      interests.
+    vote_policy: Make voting decisions based on observed behavior and group consensus,
+      prioritizing alignment with village safety and leveraging adaptability to adjust
+      as needed.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Yumi
+  role_raw: 村人
+  role_canon: villager
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:14Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Yumi/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Yumi/macro_desire.yml
+  format: summary_and_policies_only
+  forbidden_keys_removed: true

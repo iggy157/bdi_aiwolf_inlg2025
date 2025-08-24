@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: ジョージは村を守るために他のプレイヤーと協力し、情報を集めて狼を特定しようとする欲望を抱いている。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Georgeは村の勝利のために、他のプレイヤーの発言を観察し、信用できる情報を集めることを望む。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: ジョージは村人陣営の勝利を目指し、人狼を見つけ出して村を守ることを願望している。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Georgeは、Counter Seerの出現を受けて、村人として真実を見極め、村の勝利に貢献したいと願望している。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: ジョージはMedium result reportを活用して、敵を見つけ出し村の勝利に貢献したいと願っている。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Georgeは村にとって危険なプレイヤーを特定し、積極的にその人物に投票したいと願望している。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Georgeは村の安全を確保するために、提案されたlynchが適切かどうかを慎重に検討したいと願っている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: ジョージの最終的な願望は、自身に対する疑念を晴らし、村人としての信頼を回復することです。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Georgeは他のプレイヤーからの信頼を得るために、正確で有益な情報を提供しようとしている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Georgeは、村人としての役割を全うし、村の勝利に貢献したいと考えている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: ジョージは人狼を見つけ出し、村の生存者を守るためにその情報を次の昼の議論で共有したいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EGW7ETMS3RTNS78ASD4H46/George/macro_belief.yml

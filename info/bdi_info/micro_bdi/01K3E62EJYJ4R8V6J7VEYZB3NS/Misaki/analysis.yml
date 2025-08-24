@@ -1,0 +1,110 @@
+1:
+  content: Hi everyone I'm Takumi. No special results to share today just getting
+    started.
+  type: 'null'
+  from: Takumi
+  to: Takumi
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+2:
+  content: Hello everyone I'm Shizue and I'm looking forward to working together for
+    the good of our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.401
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+3:
+  content: What are your thoughts on today's situation everyone? Let's share insights.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+4:
+  content: Hello I'm Shizue. Let's share our thoughts openly and work together to
+    keep our village safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.523
+  credibility_raw: 0.73
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+5:
+  content: Let's start by sharing any thoughts or suspicions we might have everyone.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+6:
+  content: As Takumi said insights are key so let's all share our thoughts including
+    Daisuke and Minako to help our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.401
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+7:
+  content: I agree with Misaki's plan to analyze and I'm open to sharing thoughts
+    since I have no specific role info to reveal now.
+  type: positive
+  from: Takumi
+  to: Misaki
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Takumi
+8:
+  content: Takumi's right let's all come together and share our insights today for
+    the good of the village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue

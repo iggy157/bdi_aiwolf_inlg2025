@@ -1,0 +1,41 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Georgeの願望は、Night 0において正確な占いを行い、村人陣営の勝利に貢献することである。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Georgeは村人チームの勝利のために自分のSEER能力を活用して、正確な情報を提供したいと願っている。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Georgeは、他のSEERと差別化して自分の信頼性を高め、村人たちを勝利に導きたいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Georgeは次の占いにより、ゲームの進行を有利に導くための重要な情報を得ることを望んでいる。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Georgeは、自身を守りつつ他者をサポートする最適な方法を模索している。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Georgeは、村人側の勝利を確実にするために、さらなる情報提供と戦略的な行動を願望している。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Georgeの願望は、村の勝利に繋がる狼の特定と排除である。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Georgeは自分の信用を回復し、ゲーム内での立場を強化したいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Georgeはゲームを有利に進めるために、得た情報を活用して他のプレイヤーの正体を見抜こうとする願望を抱くだろう。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Georgeは自分の占い結果が他のSEERの報告と一致し、信頼されることを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EKERHVEE21GS55C4M6V1GR/George/macro_belief.yml

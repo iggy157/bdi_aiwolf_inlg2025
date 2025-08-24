@@ -1,0 +1,616 @@
+1:
+  content: Hey everyone I'm Takumi. I'm ready to play smart and help us win together.
+    Let's find the werewolves!
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.486
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+2:
+  content: I'm Minako and I'm looking forward to working together and observing carefully
+    to help us find the truth.
+  type: 'null'
+  from: Minako
+  to: Minako
+  credibility: 0.427
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+3:
+  content: Hi everyone I'm Rin and I'm looking forward to a fun game with all of you!
+    Let's work together and have a great time!
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+4:
+  content: Hey everyone I'm May a villager eager to work together to spot those werewolves.
+    Let's keep our eyes open and trust our insti
+  type: co
+  from: May
+  to: May
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+5:
+  content: I'm Takumi ready to contribute strategically. I'll be observing George
+    May and Minako to see who we can trust.
+  type: question
+  from: Takumi
+  to: George,May,Minako,Takumi
+  credibility: 0.486
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+6:
+  content: Great to see your enthusiasm Takumi. What do you think George May and Rin?
+    Let's share our observations to spot the werewolve
+  type: question
+  from: Minako
+  to: George,May,Rin
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+7:
+  content: Hey George May and Takumi what are your thoughts so far? I'd love to hear
+    what everyone thinks as we get started!
+  type: question
+  from: Rin
+  to: George,May,Takumi
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+8:
+  content: I'm May a villager ready to collaborate. Let's share our thoughts and work
+    together to find the werewolves!
+  type: co
+  from: May
+  to: May
+  credibility: 0.486
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+9:
+  content: I'll focus on analyzing the statements from May George and Minako to understand
+    their credibility and gather insights.
+  type: 'null'
+  from: Takumi
+  to: George,May,Minako
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+10:
+  content: Takumi I'm interested in your thoughts on trustworthiness. Let's all share
+    our insights while I observe quietly.
+  type: question
+  from: Minako
+  to: Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+11:
+  content: Thanks Minako! Let's hear from George and May too. Sharing insights will
+    help us figure out who we can trust.
+  type: positive
+  from: Rin
+  to: George,May
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+12:
+  content: Let's start sharing our thoughts and observations to build trust. I'm here
+    to collaborate so let's hear what everyone thinks.
+  type: question
+  from: May
+  to: all
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+13:
+  content: Minako I appreciate your enthusiasm. Let's focus on analyzing George and
+    May's statements for any insights or credibility.
+  type: 'null'
+  from: Takumi
+  to: Minako
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+14:
+  content: Takumi Rin and everyone let's share our observations openly. I have no
+    special insights yet but I'm keen to hear your thought
+  type: 'null'
+  from: Minako
+  to: all
+  credibility: 0.42
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+15:
+  content: Good point Minako! Let's all share our thoughts on trustworthiness so we
+    can start figuring out who to rely on.
+  type: question
+  from: Rin
+  to: all
+  credibility: 0.514
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+16:
+  content: Great start everyone. Let's hear from May George and Rin to build our understanding.
+    I'm here to help us analyze together.
+  type: 'null'
+  from: May
+  to: George,Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+17:
+  content: I'm the Seer and I've confirmed Minako is HUMAN. Let's use this information
+    to guide our strategy today.
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.486
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+18:
+  content: ' @Minako  what do you think about Takumi''s analysis? Let''s all share
+    our thoughts to better understand and build trust together'
+  type: question
+  from: Rin
+  to: Minako
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+19:
+  content: ' @Rin  and @George could you share your analysis on trustworthiness? I
+    have no special results but let''s work together to find '
+  type: question
+  from: Minako
+  to: Rin,George
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+20:
+  content: ' @Takumi  and @Minako what are your thoughts on George and Rin? Let''s
+    share and build our trust in this group.'
+  type: question
+  from: May
+  to: Takumi,Minako
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+21:
+  content: ' @Minako  is confirmed as HUMAN through my Seer role so let''s focus our
+    discussions elsewhere to find the wolves.'
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.588
+  credibility_raw: 0.75
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+22:
+  content: ' @Takumi  thanks for sharing your Seer result! Let''s discuss how this
+    impacts our trust levels and plan our next steps carefull'
+  type: positive
+  from: Rin
+  to: Takumi
+  credibility: 0.457
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+23:
+  content: Thanks for your analysis Takumi. Let's all share our thoughts for better
+    collective analysis and understanding.
+  type: positive
+  from: Minako
+  to: Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+24:
+  content: I'm a villager and I urge everyone especially Takumi and Minako to share
+    observations on George and Rin for collective insigh
+  type: co
+  from: May
+  to: May
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+25:
+  content: I have confirmed Minako is HUMAN through my Seer insight. Let's use this
+    information to guide our trust discussions today.
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+26:
+  content: ' @Minako  I''ll share my thoughts next on George and May''s recent statements
+    to help us understand trustworthiness better.'
+  type: 'null'
+  from: Rin
+  to: Minako
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+27:
+  content: Takumi confirmed me as HUMAN; let's analyze and share insights on George
+    and Rin together to find more clues.
+  type: positive
+  from: Minako
+  to: George,Rin
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+28:
+  content: '@George and  @Rin  could you share your observations? Open dialogue is
+    key to establishing credibility and trust.'
+  type: question
+  from: May
+  to: George,Rin
+  credibility: 0.486
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+29:
+  content: ' @Minako  is confirmed as HUMAN by my Seer role. Let''s focus on assessing
+    trust among the others now.'
+  type: co
+  from: Takumi
+  to: Minako
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+30:
+  content: Thanks Takumi for confirming Minako as human. Let's all including George
+    and May share insights to build trust together.
+  type: positive
+  from: Rin
+  to: Takumi
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+31:
+  content: ' @Takumi  thanks for confirming me as HUMAN. Let''s discuss everyone''s
+    trustworthiness and work together without revealing roles'
+  type: positive
+  from: Minako
+  to: Takumi
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Minako
+32:
+  content: '@Minako and  @Rin  please share your insights on George to help us enhance
+    our collective analysis and trust-building efforts t'
+  type: question
+  from: May
+  to: Minako,Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+33:
+  content: With Takumi confirming Minako let's focus on analyzing George's actions
+    to understand his role and build trust among us.
+  type: positive
+  from: Rin
+  to: George
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+34:
+  content: I'm the Seer and I've confirmed  @Rin  is a WEREWOLF. @George and @May
+    please share your observations to help us strategize.
+  type: co
+  from: Takumi
+  to: Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+35:
+  content: ' @Rin  and @George let''s discuss who we find trustworthy and why. Collaboration
+    is key so share your thoughts openly without ne'
+  type: question
+  from: May
+  to: Rin,George
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+36:
+  content: With Minako confirmed human let's all focus on analyzing George's behavior
+    to gather insights and build a stronger trust netw
+  type: positive
+  from: Rin
+  to: George
+  credibility: 0.457
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+37:
+  content: I've identified  @Rin  as a WEREWOLF with my Seer ability. @George and
+    @May let's discuss your observations to guide our decisi
+  type: co
+  from: Takumi
+  to: Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+38:
+  content: '@George and  @Rin  could you share your insights on who seems trustworthy?
+    Let''s focus on observations and group analysis today'
+  type: question
+  from: May
+  to: George,Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+39:
+  content: With Takumi's confirmation in mind let's focus on evaluating George's actions
+    to foster open dialogue and build trust.
+  type: positive
+  from: Rin
+  to: George
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+40:
+  content: Rin is a WEREWOLF according to my Seer role. Let's focus on strategic planning
+    to ensure our next moves are effective.
+  type: co
+  from: Takumi
+  to: Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+41:
+  content: '@George and  @Rin  let''s discuss everyone''s trustworthiness. Sharing
+    insights openly will help us build trust and analyze colle'
+  type: 'null'
+  from: May
+  to: George,Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May
+42:
+  content: With Takumi's claim in mind let's focus on analyzing George's behavior
+    to keep our discussions open and constructive.
+  type: 'null'
+  from: Rin
+  to: George,Takumi
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Rin
+43:
+  content: ' @Rin  is confirmed as a WEREWOLF by my Seer role. Let''s use this information
+    to guide our strategy and build trust.'
+  type: co
+  from: Takumi
+  to: Rin
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.767
+    creditability: 0.8
+    from: Takumi
+44:
+  content: ' @George  I appreciate your focus on strategy. Let''s discuss Rin''s actions
+    and share insights to keep our dialogue open and eff'
+  type: positive
+  from: May
+  to: George
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: May

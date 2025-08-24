@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Minakoは村人としての役割を果たすため、他のプレイヤーと協力して信頼を築き、情報を集めることを願望している。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Minakoは他のプレイヤーからの信頼を得て、村人としての信頼性を高めることを望んでいる。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Minakoは占い師の真偽を見極めて村人陣営の勝利に貢献したいと願っている。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: MinakoはSeerの結果を基に人狼を特定し、村を守りたいと願望している。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: ミナコは本物の占い師を見極めて村を守ることを望んでいる。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: MinakoはMediumの真偽を見極め、村人陣営にとって有利な情報を得ることを願っている。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: MinakoはKnight/Guardの主張が正しいかどうかを見極め、村を守るための最良の行動を取りたいと願っている。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Minakoは、自分の無実を証明し、村人としての信頼を回復することを望んでいる。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Minakoは他のプレイヤーとの協力関係を強化し、村の勝利に貢献することを望んでいる。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Minakoは他のプレイヤーと協力し、ゲームを成功に導くことを願望している。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Minakoは他のプレイヤーと協力し、村人チームの勝利を目指すことを願望として抱いている。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Minakoの願望は、村人として人狼を見つけ出し、村を守るために正確な投票ターゲットを宣言することです。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Minakoは、村人陣営の勝利を最優先に考え、慎重に情報を精査した上で正しい処刑を行いたいと願望している。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: Minakoは人狼を見つけ出し、ゲームに勝利することを望んでいる。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Minakoはゲーム内で目立たずに生存することを望む。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Minakoは自分の発言が村人としての信頼を維持し、疑いを避けるために慎重にコミュニケーションを取りたいと願っている。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Minakoは、信頼を得て処刑を回避し、味方と協力してゲームを進めることを望んでいる。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Minakoの願望は、村を守るために正確な情報を判断し、村を勝利に導くことです。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Minakoは村人チームの勝利を願って、最適な投票行動を取ろうとしている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: ミナコは村を守り、狼を見つけ出すことを望んでいる。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Minakoは村人側の勝利を確実にするため、護衛役を特定し、村人の結束を強めることを願望している。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Minakoは村の勝利のために占い結果を元に情報を収集し、人狼を特定したいと願っている。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Minakoは敵を見つけ出し、村を安全にすることを願望とする。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Minakoは影響力のあるスピーカーの真意を見極め、村の安全を確保したいと願っている。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Minakoは他のプレイヤーからの信頼を得て協力関係を築きたいと願望している。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Minakoは他のプレイヤーからの信頼を得て、村の安全を確保することを望んでいる。**
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3E62EJYJ4R8V6J7VEYZB3NS/Minako/macro_belief.yml

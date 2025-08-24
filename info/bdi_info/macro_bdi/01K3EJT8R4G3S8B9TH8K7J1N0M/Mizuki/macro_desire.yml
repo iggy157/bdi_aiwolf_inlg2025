@@ -1,0 +1,35 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: Mizukiは村人陣営を有利に導くために、迅速かつ正確な情報共有を願望している。
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: Mizukiは自分の霊媒師としての役割を正確に果たし、チームに有益な情報を提供したいと望んでいる。
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: Mizukiはゲームの勝利のために、自分の役割を積極的に活用し、チームと協調しようとする。
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: Mizukiの願望は、他者からの信頼を得てゲームを有利に進めることである。
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: Mizukiは自分の役割の信頼性を高め、ゲーム内での地位を守りたいと考えている。
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: Mizukiは、自分が真のMediumであると他のプレイヤーに信じさせたいと強く望んでいる。
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: MizukiはMEDIUMとして村に重要な情報を伝え、貢献したいという願望を抱いていた。
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: Mizukiは、正確な情報を集め他のプレイヤーと協力して結果を共有することを強く望んでいる。
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: Mizukiは自身の役割を公開し、他のプレイヤーとの協力を促進したいと考えている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EJT8R4G3S8B9TH8K7J1N0M/Mizuki/macro_belief.yml

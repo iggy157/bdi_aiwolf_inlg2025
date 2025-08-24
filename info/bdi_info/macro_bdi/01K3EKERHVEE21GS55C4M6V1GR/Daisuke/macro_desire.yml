@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Daisukeは、自分が村人であると信じさせてゲームを進めることを望んでいる。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Daisukeは次の襲撃を成功させるために護衛役の特定と村人の混乱を図ることを望む。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Daisukeは自身の正体を隠しつつ、村人を混乱させる策略を考えるだろう。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Daisukeは自分の直感と判断力に対する自信を深め、他のプレイヤーからの信頼を得てさらなる成功を収めたいと願う。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Daisukeは、自分の処刑を免れ、村人側を欺いて勝利するために、他のプレイヤーを説得し処刑対象を変更しようとするだろう。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Daisukeは自分への疑いを逸らし、生存を確保するために他のプレイヤーに疑惑を向けようとするだろう。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Daisukeは村人を混乱させるために、情報を巧みに操作しようとする願望を抱いている。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Daisukeは村人を混乱させて勝利することを望んでいる。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Daisukeは村人を混乱させることで狼陣営の勝利を目指すことを願望している。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Daisukeは、他のプレイヤーを混乱させつつ、均等またはブロックされた投票で自身の安全を確保し、最終的な勝利を目指している。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EKERHVEE21GS55C4M6V1GR/Daisuke/macro_belief.yml

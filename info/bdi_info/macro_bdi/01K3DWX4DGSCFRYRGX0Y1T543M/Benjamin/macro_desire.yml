@@ -1,0 +1,11 @@
+macro_desire:
+  description: Benjamin aims to ensure the group's safety by leveraging his reasoning
+    and observation skills while seeking stability and self-realization. His social
+    interactions are guided by a balance between maintaining stable relationships
+    and modestly seeking social approval.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Benjamin
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:08Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Benjamin/macro_belief.yml

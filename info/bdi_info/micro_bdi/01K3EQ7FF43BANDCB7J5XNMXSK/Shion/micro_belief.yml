@@ -1,0 +1,33 @@
+Asuka:
+  creditability: 0.733
+  liking: 0.7
+  self_co: null
+  seer_co: null
+  positive_to_Minato: 1
+  positive_to_Mizuki: 1
+  positive_to_Ryuji: 1
+Minato:
+  creditability: 0.767
+  liking: 0.633
+  self_co: null
+  seer_co: null
+  negative_to_Asuka: 1
+  negative_to_Shion: 1
+  positive_to_Asuka: 1
+Mizuki:
+  creditability: 0.633
+  liking: 0.667
+  self_co: null
+  seer_co: werewolf
+Ryuji:
+  creditability: 0.7
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+  positive_to_Mizuki: 1
+  positive_to_Shion: 1
+_meta:
+  game_id: 01K3EQ7FF43BANDCB7J5XNMXSK
+  owner: Shion
+  generated_at: '2025-08-24T19:15:59Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EQ7FF43BANDCB7J5XNMXSK/Shion/analysis.yml

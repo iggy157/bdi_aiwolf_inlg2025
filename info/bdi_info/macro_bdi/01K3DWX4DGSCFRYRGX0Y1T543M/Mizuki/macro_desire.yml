@@ -1,0 +1,10 @@
+macro_desire:
+  description: Mizuki seeks to skillfully navigate social dynamics to maintain the
+    guise of innocence while gaining approval from peers, all the while subtly coordinating
+    with allies to achieve group's covert objectives.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Mizuki
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:08Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Mizuki/macro_belief.yml

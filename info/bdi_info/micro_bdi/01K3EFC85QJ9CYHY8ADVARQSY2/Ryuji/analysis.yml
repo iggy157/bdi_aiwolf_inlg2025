@@ -1,0 +1,110 @@
+1:
+  content: Hello everyone I'm Asuka. I look forward to working with you all to uncover
+    the truth as the game unfolds.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.368
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.567
+    creditability: 0.6
+    from: Asuka
+2:
+  content: Hello everyone I'm Jonathan. Looking forward to a calm and engaging game
+    with all of you.
+  type: 'null'
+  from: Jonathan
+  to: all
+  credibility: 0.413
+  credibility_raw: 0.55
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.767
+    creditability: 0.733
+    from: Jonathan
+3:
+  content: Jonathan what are your thoughts on who we can trust in our group so far?
+  type: question
+  from: Asuka
+  to: Jonathan
+  credibility: 0.292
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.567
+    creditability: 0.6
+    from: Asuka
+4:
+  content: Does anyone have any thoughts or roles they want to share with the group?
+  type: question
+  from: Jonathan
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.767
+    creditability: 0.733
+    from: Jonathan
+5:
+  content: Jonathan and Ryuji how do you both feel about the trust levels within our
+    group right now?
+  type: question
+  from: Asuka
+  to: Jonathan,Ryuji
+  credibility: 0.292
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.567
+    creditability: 0.6
+    from: Asuka
+6:
+  content: ' @Asuka  I appreciate your question. Let''s focus on building trust as
+    we observe the game unfold.'
+  type: positive
+  from: Jonathan
+  to: Asuka
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.767
+    creditability: 0.733
+    from: Jonathan
+7:
+  content: Hi I'm Asuka. Today let's focus on understanding the trust levels of Jonathan
+    Ryuji and Takumi as we move forward.
+  type: 'null'
+  from: Asuka
+  to: Ryuji,Jonathan,Asuka,Takumi
+  credibility: 0.292
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.583
+    liking: 0.567
+    creditability: 0.6
+    from: Asuka
+8:
+  content: Let's focus on open communication today. I'm interested in hearing everyone's
+    thoughts on how we can establish trust.
+  type: question
+  from: Jonathan
+  to: all
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.767
+    creditability: 0.733
+    from: Jonathan

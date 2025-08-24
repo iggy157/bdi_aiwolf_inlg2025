@@ -1,0 +1,41 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Minatoは最初の占いで最も疑わしいプレイヤーを選びたいと考えている。
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Minatoは村人陣営の勝利に貢献することを願望している。
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Minatoは自分が真のSEERであると証明し、他のSEERの信頼性を下げることで、ゲーム内での自身の重要性を確立したいと願望している。
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Minatoの願望は、今夜の予言で最も疑わしいプレイヤーを選び、チームの勝利に貢献することです。
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Minatoは自分を守ってもらうことで安全に役割を果たし、ゲームを有利に進めたいと願望している。
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Minatoは自分の占い結果が信頼され、ゲームの勝利に貢献したいと願望しています。
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Minatoは、他のプレイヤーの正体を見抜き、ゲームを有利に進めるための情報をさらに集めることを望んでいる。
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Minatoは占い結果の矛盾を解消し、仲間に正確で信頼できる情報を提供したいと願望している。
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Minatoは不確実性を解消し、村を勝利に導くための確実な情報を持ちたいと願望している。
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Minatoの願望は、他のSEERとの情報の整合性を確認し、ゲームの進行を有利にするための確実な情報を提供することである。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Minato/macro_belief.yml

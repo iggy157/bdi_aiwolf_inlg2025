@@ -9,6 +9,8 @@
 - intention_log.yml は出力しない（micro_intention.yml のみ append する）
 """
 
+from __future__ import annotations
+
 import hashlib
 import logging
 import os
@@ -167,7 +169,7 @@ def generate_micro_intention_for_agent(
 ) -> Optional[Path]:
     if logger_obj:
         logger_obj.logger.info(f"Generating micro_intention for {agent} (trigger: {trigger})")
-    
+
     agent_micro_dir = base_micro_dir / game_id / agent
     agent_macro_dir = base_macro_dir / game_id / agent
 

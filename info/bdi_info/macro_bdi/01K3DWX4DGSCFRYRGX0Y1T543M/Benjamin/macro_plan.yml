@@ -1,0 +1,30 @@
+macro_plan:
+  strategy_summary: Focus on maintaining stability within the group by using observation
+    skills to identify werewolves. Prioritize safety and strategic alignment with
+    fellow villagers without drawing unnecessary attention.
+  policies:
+    co_policy: Maintain a no_co stance to avoid drawing werewolf attention, aligning
+      with the role as a villager and the tendency towards introversion and stability.
+    results_policy: N/A
+    analysis_policy: Observe interactions and behaviors to identify inconsistencies
+      or aggression that may suggest werewolf alignment. Prioritize logical analysis
+      over emotional reactions.
+    persuasion_policy: Engage in discussions only when necessary to provide observations
+      or support logical arguments, leveraging a calm and stable demeanor to influence
+      group opinion subtly.
+    vote_policy: Make voting decisions based on a combination of observed behavior
+      patterns and collective group consensus, avoiding hasty decisions to align with
+      the desire for stability Aim toward the village victory condition.
+meta:
+  game_id: 01K3DWX4DGSCFRYRGX0Y1T543M
+  agent: Benjamin
+  role_raw: 村人
+  role_canon: villager
+  alignment: villager
+  desire_loaded: true
+  model: gpt-4o
+  generated_at: '2025-08-24T11:20:13Z'
+  source_macro_belief: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Benjamin/macro_belief.yml
+  source_macro_desire: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3DWX4DGSCFRYRGX0Y1T543M/Benjamin/macro_desire.yml
+  format: summary_and_policies_only
+  forbidden_keys_removed: true

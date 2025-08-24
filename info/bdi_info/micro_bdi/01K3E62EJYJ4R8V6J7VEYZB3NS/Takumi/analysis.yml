@@ -1,0 +1,112 @@
+1:
+  content: Hello everyone I'm Shizue and I'm looking forward to working together for
+    the good of our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+2:
+  content: Hello everyone I'm Misaki. I look forward to working with you all and will
+    do my best to be helpful.
+  type: 'null'
+  from: Misaki
+  to: Misaki
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Misaki
+3:
+  content: Hello I'm Shizue. Let's share our thoughts openly and work together to
+    keep our village safe.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.423
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+4:
+  content: Hello I'm Misaki. Today I plan to focus on analyzing Takumi Daisuke and
+    Minako to assess their credibility.
+  type: 'null'
+  from: Misaki
+  to: Takumi,Misaki,Minako,Daisuke
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Misaki
+5:
+  content: As Takumi said insights are key so let's all share our thoughts including
+    Daisuke and Minako to help our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+6:
+  content: I acknowledge Takumi's call for insights and suggest we discuss Daisuke
+    and Minako's reliability based on past behavior.
+  type: 'null'
+  from: Misaki
+  to: Takumi,Minako,Daisuke
+  credibility: 0.41
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Misaki
+7:
+  content: Takumi's right let's all come together and share our insights today for
+    the good of the village.
+  type: positive
+  from: Shizue
+  to: Takumi
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: Shizue
+8:
+  content: It's important to share thoughts so let's discuss Daisuke and Minako's
+    roles based on what we observe.
+  type: question
+  from: Misaki
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Misaki

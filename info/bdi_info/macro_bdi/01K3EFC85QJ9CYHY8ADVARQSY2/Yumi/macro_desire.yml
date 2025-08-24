@@ -1,0 +1,102 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml contains a message with type=='question' addressed
+      to 'all' while INFO.day==0.
+    desire: Yumiの願望は、初日の議論を通じて潜在的な狼を特定し、村人陣営の勝利を導くことです。
+  - title: Villager claim appears (Day 0)
+    derivation_method: analysis.yml has a 'co' message mentioning 'villager', or micro_belief.yml
+      has self_co=='villager'.
+    desire: Yumiは村人としての信頼を得て、村の勝利に貢献したいと願望している。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a non-null seer_co.
+    desire: Yumiは、真のSeerをサポートし、その結果をもとに狼を特定しようとする願望を抱く。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Yumiの願望は、占い師の結果を活用して人狼を特定し、村を安全にすることです。
+  - title: Counter Seer appears
+    derivation_method: Count unique senders whose 'co' mentions 'seer' in analysis.yml;
+      flag if count>=2.
+    desire: Yumiは、本物の占い師を見極めるために他のプレイヤーと協力し、信頼できる情報を集めたいと願っている。
+  - title: Medium claim appears
+    derivation_method: analysis.yml contains a 'co' with 'medium'.
+    desire: Yumiは村人としてMediumの主張を精査し、村の勝利に貢献するために正確な情報を求める。
+  - title: Knight/Guard claim appears
+    derivation_method: analysis.yml contains a 'co' with 'knight' or 'guard'.
+    desire: ユミは騎士やガードの主張を検証し、村人チームの勝利に貢献することを望んでいる。
+  - title: Suspicion concentrates on you
+    derivation_method: Count messages aimed at my_agent with suspicion/vote keywords
+      in analysis.yml; flag if >=2.
+    desire: Yumiは自身の潔白を証明し、信頼を取り戻したいと願っている。
+  - title: Support for you emerges
+    derivation_method: Detect 'positive' messages addressed to my_agent in analysis.yml.
+    desire: Yumiは他のプレイヤーからの信頼と協力を得て、村人としての役割を全うしたいと願っている。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages addressed to my_agent in analysis.yml;
+      flag if >=2.
+    desire: Yumiは、村人としての役割を全うするために、他のプレイヤーと積極的にコミュニケーションを取り、情報を共有したいと願っている。
+  - title: Bandwagon approvals ripple
+    derivation_method: Aggregate 'positive' messages by target in analysis.yml and
+      flag repeating clusters (>=2).
+    desire: Yumiは、集団の意見に同調しつつも自分の立場を強化し、村人チームの勝利を目指したいと願望している。
+  - title: Prompt to declare vote targets
+    derivation_method: Find messages in analysis.yml combining 'vote' with 'declare/decide'.
+    desire: Yumiは投票先を明確にして村人の勝利に貢献したいと考えている。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Yumiは村人陣営の勝利に貢献することを願望として抱いている。
+  - title: Gray-lynch proposal
+    derivation_method: analysis.yml pairs 'gray'/'neutral' with 'lynch/execute'.
+    desire: YumiはGray-lynch proposalを支持し、村の安全を確保したいと願望している。
+  - title: Quiet-player callout
+    derivation_method: Find 'quiet/low talk' mentions or detect talk-count outliers
+      in analysis.yml.
+    desire: Yumiは他のプレイヤーからの疑いを避けるために、より積極的に発言し、貢献したいと望んでいる。
+  - title: Verbose caution
+    derivation_method: Find 'too talkative' mentions or top talk-count outliers in
+      analysis.yml.
+    desire: Yumiは、他のプレイヤーに信頼されるために正確で有益な情報を提供したいと願っている。
+  - title: Evasion claim (claim to avoid lynch)
+    derivation_method: Detect a role-claim near messages pushing to lynch that same
+      speaker.
+    desire: Yumiはリンチを避けるために自分の無実と役割を証明したいと願っている。
+  - title: Line battle begins (Seer vs Seer)
+    derivation_method: Two or more Seer COs plus color results discussed in analysis.yml.
+    desire: Yumiは、正しいSeerを見極めて村の勝利に貢献したいと願望している。
+  - title: Day 1 votes begin to converge
+    derivation_method: INFO.day==1 and multiple explicit vote declarations exist in
+      analysis.yml.
+    desire: Yumiは狼を特定し、村の安全を確保したいと願っている。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops between prev_status_map and INFO.status_map
+      with INFO.day>=2.
+    desire: Yumiは次の夜が来る前に狼を特定して排除したいと願望している。
+  - title: No-kill (Guard success)
+    derivation_method: Alive count unchanged across the night transition while INFO.day>=2.
+    desire: Yumiは村の安全を守りつつ、人狼を特定して排除することを願望している。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Yumiは村人としての使命を果たし、狼を見つけ出して村の勝利に貢献したいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml states a Seer reported 'white' on a named player.
+    desire: Yumiは村人チームの勝利のために、確認された情報を活用して狼を特定することを願望している。
+  - title: High-influence speaker emerges
+    derivation_method: micro_belief.yml shows creditability or liking ≥ 0.75 for any
+      player.
+    desire: Yumiは村を守るために、信用性の高いプレイヤーと協力して人狼を見つけ出したいと願望している。
+  - title: Self-introduction / safety declaration (public)
+    derivation_method: analysis.yml has a post by my_agent stating 'no special info'
+      or equivalent.
+    desire: Yumiは他のプレイヤーからの信頼を得て村人陣営の勝利を目指すことを願望としている。
+  - title: Self-introduction / safety declaration (internal)
+    derivation_method: self_talk.yml contains 'villager' or 'no special'.
+    desire: Yumiは自分の安全と他者からの信頼を確保し、村全体の協力を促進したいと願っている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EFC85QJ9CYHY8ADVARQSY2/Yumi/macro_belief.yml

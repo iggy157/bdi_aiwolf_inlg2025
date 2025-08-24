@@ -1,0 +1,36 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Ryujiの願望は、村人を欺きつつゲームを勝利に導くことである。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Ryujiの願望は、村人陣営を混乱させて自分の正体を隠すことです。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Ryujiの願望は、村人を混乱させて狼陣営を勝利に導くことにある。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: RyujiはSeerとMediumの矛盾を利用して村人を混乱させ、人狼側に有利な状況を作り出したいと願望している。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Ryujiは、村人を欺きながら狼側が有利になるように疑惑をかわすことを願っている。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Ryujiは隊列形成を混乱させ、グループの防御力を低下させることを望んでいる。
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Ryujiは自分の正体を隠しつつ、他者を混乱させるために積極的に偽情報を流し、他者の発言の矛盾を攻撃することを望んでいる。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Ryujiは投票を均等化して混乱を招き、最終的に自分の正体を隠すことを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Ryuji/macro_belief.yml

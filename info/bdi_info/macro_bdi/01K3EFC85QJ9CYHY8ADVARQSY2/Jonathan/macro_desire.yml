@@ -1,0 +1,40 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Jonathanは、自身が村人であると他のプレイヤーに信じ込ませたいと願っている。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: ジョナサンは正体を隠しつつ他のプレイヤーを疑わせる方向に話を進めることを望む。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Jonathan wishes to mislead other players to protect himself and his team.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Jonathanは、他のプレイヤーの信頼を得て自身の生存を確保し、人狼としての勝利を目指すことを願望している。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Jonathanは処刑を免れるために他のプレイヤーを説得しようと望んでいる。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Jonathan's primary desire is to deflect suspicion and reduce votes against
+      him to survive in the game.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Jonathanは複数の占い師COを利用して村人を混乱させ、本物の占い師を吊るすことを望む。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Jonathanは他者の疑念をかわしつつ、戦略的に敵対者を排除したいと願望している。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Jonathanは騎士の死を利用して村人を混乱させ、自分の正体を隠しつつゲームを有利に進めたいと願望している。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Jonathanは村人同士の疑心暗鬼を利用して票を分散させることを望む。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EFC85QJ9CYHY8ADVARQSY2/Jonathan/macro_belief.yml

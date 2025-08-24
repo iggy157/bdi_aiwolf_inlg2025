@@ -1,0 +1,37 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Toshioは自分がPOSSESSEDであることを隠しつつ、最終的には自陣営の勝利を目指している。
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Toshioは他のプレイヤーに自分を信頼させ、村人を混乱に陥れることを願望している。
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Toshioの願望は、偽のMediumとしての立場を保ち、ゲーム内で他のプレイヤーを混乱させ続けることである。
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Toshioは他のプレイヤー間に不信を広め、自分への疑いを避けたいと願う。
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Toshioは他のプレイヤーを誤導して自分の正体を隠しつつ、村人側を敗北に導くことを望んでいる。
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Toshio's ultimate desire is to manipulate alliances to ensure his own
+      survival and success while maintaining his hidden identity.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Toshioの願望は、他のプレイヤーを混乱させ、自分の正体を隠しつつゲームを有利に進めることである。
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Toshioは投票を均等化することでゲームを混乱させ、他のプレイヤーに疑念を抱かせたいと考えている。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EBZ50QG1ET5KMC0RTPXPZV/Toshio/macro_belief.yml

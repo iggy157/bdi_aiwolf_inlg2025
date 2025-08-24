@@ -1,0 +1,29 @@
+Daisuke:
+  creditability: 0.667
+  liking: 0.633
+  self_co: null
+  seer_co: null
+  positive_to_Kenji: 1
+Kenji:
+  creditability: 0.7
+  liking: 0.633
+  self_co: seer
+  seer_co: null
+  positive_to_Daisuke: 1
+  positive_to_Mio: 1
+  positive_to_Toshio: 1
+Mio:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Toshio:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3E75K282ZE7KAV3XFQ868CN
+  owner: Victoria
+  generated_at: '2025-08-24T14:22:23Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3E75K282ZE7KAV3XFQ868CN/Victoria/analysis.yml

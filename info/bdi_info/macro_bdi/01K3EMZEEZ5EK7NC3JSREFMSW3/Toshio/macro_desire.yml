@@ -1,0 +1,46 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Toshioは他のプレイヤーと信頼関係を築き、協力してゲームを進めたいと願望を抱いている。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: ToshioはSeerの主張を慎重に評価し、信頼できるかどうかを見極めることを望む。
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Toshioは預言者の結果を基に狼を特定し、村を勝利に導くことを願望している。
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Toshioは真の預言者を見極め、村の勝利に貢献することを望む。
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Toshioは、村全体の利益のために霊媒師の結果を正確に共有し、人狼を特定したいと考えている。
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Toshioは村の安全を確保するため、確実な情報を基に人狼と疑わしい人物に投票することを望んでいる。
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Toshioは村の勝利と安全を確保するために正確な情報を基にした処刑を望んでいる。
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: トシオは自分に対する疑いを晴らし、他の村人の信頼を得ることを願っている。
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Toshioは村の議論に積極的に関与し、他のプレイヤーに信頼されたいと願望している。
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Toshioは村を守るために、Seerの情報を信じて行動し、疑わしい人物を排除することを望んでいる。
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Toshioは村人陣営の勝利のために狼の特定を急ぎたいと願望している。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EMZEEZ5EK7NC3JSREFMSW3/Toshio/macro_belief.yml

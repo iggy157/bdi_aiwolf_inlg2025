@@ -1,0 +1,39 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Misakiは自身の正体が露見するのを避けるため、他のプレイヤーを混乱させるか説得して自分を白と信じ込ませたいと願う。
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Misakiは村人同士を疑心暗鬼に陥れることを望む。
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Misakiの願望は、村人たちの信頼を得て、最終的にゲームで勝利することです。
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Misakiは自分の判断力をアピールして村人の信頼を得たいと願望している。
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Misakiの願望は、他のプレイヤーを説得して処刑を回避し、生存を確保することである。
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Misakiは他のプレイヤーの投票を変えるために、説得や交渉を試みて自身の生存を確保しようと願望する。
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Misakiは村人を混乱させ、自身の正体を隠しながら村人同士を疑わせることを望む。
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Misakiは他のプレイヤーを混乱させ、村人としての信用を得つつ、効果的な襲撃先を見つけることを望んでいる。
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Misakiは、村側を混乱させつつ、自分の正体を隠しながら村を制圧することを望んでいる。
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Misakiは、自分を守るために投票を均等に分け、他のプレイヤーに疑念を持たせることを望んでいる。
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3EM72RF68TNWCGGT7VJ637B/Misaki/macro_belief.yml

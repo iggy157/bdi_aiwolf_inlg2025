@@ -1,0 +1,25 @@
+Asuka:
+  creditability: 0.667
+  liking: 0.667
+  self_co: null
+  seer_co: null
+Ryuji:
+  creditability: 0.667
+  liking: 0.633
+  self_co: null
+  seer_co: null
+Takumi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Yumi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3EFC85QJ9CYHY8ADVARQSY2
+  owner: Jonathan
+  generated_at: '2025-08-24T16:46:11Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3EFC85QJ9CYHY8ADVARQSY2/Jonathan/analysis.yml
