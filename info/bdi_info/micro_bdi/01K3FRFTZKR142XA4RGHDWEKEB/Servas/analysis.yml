@@ -1,0 +1,420 @@
+1:
+  content: Hello everyone let's work together and keep communication open as we begin
+    our journey in this game.
+  type: 'null'
+  from: Shion
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+2:
+  content: Hello everyone I am just a regular villager and ready to support our town
+    in finding the werewolves.
+  type: co
+  from: Jonathan
+  to: Jonathan
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+3:
+  content: Hello everyone I'm Yumi just a regular villager here to help us find those
+    werewolves. Let's work together!
+  type: co
+  from: Yumi
+  to: Yumi
+  credibility: 0.478
+  credibility_raw: 0.61
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: Yumi
+4:
+  content: Hello everyone I'm Toshio and I'm a villager; let's work together to find
+    the werewolves.
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.435
+  credibility_raw: 0.58
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Toshio
+5:
+  content: Hello everyone I am Benjamin. Looking forward to working together to figure
+    things out and keep our village safe.
+  type: 'null'
+  from: Benjamin
+  to: all
+  credibility: 0.433
+  credibility_raw: 0.59
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Benjamin
+6:
+  content: Hi everyone I am the Medium and I am ready to assist based on future findings.
+  type: co
+  from: Daisuke
+  to: Daisuke
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Daisuke
+7:
+  content: Hi everyone I'm Minato and I'm looking forward to a fun and fair game with
+    all of you.
+  type: 'null'
+  from: Minato
+  to: all
+  credibility: 0.392
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.733
+    creditability: 0.667
+    from: Minato
+8:
+  content: Hello everyone I am Asuka and I look forward to cooperating to find the
+    werewolves.
+  type: 'null'
+  from: Asuka
+  to: all
+  credibility: 0.308
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.617
+    liking: 0.633
+    creditability: 0.6
+    from: Asuka
+9:
+  content: Hello everyone I am a villager and looking forward to working together
+    to find the werewolves.
+  type: co
+  from: Midori
+  to: Midori
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Midori
+10:
+  content: Hello everyone I'm George looking forward to a fair game and hearing from
+    you all as we start this journey together.
+  type: 'null'
+  from: George
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: George
+11:
+  content: Hi everyone I'm Kenji. Let's work together strategically and make smart
+    moves to win this game!
+  type: 'null'
+  from: Kenji
+  to: all
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.667
+    creditability: 0.533
+    from: Kenji
+12:
+  content: Hey everyone I am just a villager eager to work together and build trust
+    to catch those werewolves.
+  type: co
+  from: May
+  to: May
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: May
+13:
+  content: Let's stay alert and share any suspicious observations we make as we move
+    forward.
+  type: 'null'
+  from: Shion
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+14:
+  content: Let's stay calm and observant; every small detail could help us find the
+    werewolves.
+  type: question
+  from: Jonathan
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+15:
+  content: Great to meet you all; let's keep sharing observations and stay united
+    against the werewolves!
+  type: 'null'
+  from: Yumi
+  to: all
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: Yumi
+16:
+  content: Let's focus on observing behaviors and sharing any suspicions to catch
+    the werewolves.
+  type: 'null'
+  from: Toshio
+  to: 'null'
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Toshio
+17:
+  content: Let's keep sharing our thoughts and observations; it will be key to finding
+    the werewolves.
+  type: 'null'
+  from: Benjamin
+  to: 'null'
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Benjamin
+18:
+  content: Let's all stay focused and share any observations we have as we move forward.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Daisuke
+19:
+  content: Let's keep talking and observing; I'm sure we'll find the werewolves together!
+  type: 'null'
+  from: Minato
+  to: all
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.733
+    creditability: 0.667
+    from: Minato
+20:
+  content: Looking forward to our discussion.
+  type: 'null'
+  from: Asuka
+  to: 'null'
+  credibility: 0.308
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.617
+    liking: 0.633
+    creditability: 0.6
+    from: Asuka
+21:
+  content: It's great to see everyone so committed; let's keep our eyes open for any
+    clues.
+  type: 'null'
+  from: Midori
+  to: 'null'
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.7
+    creditability: 0.7
+    from: Midori
+22:
+  content: Let's work together to find the werewolves.
+  type: 'null'
+  from: George
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: George
+23:
+  content: Good morning everyone.
+  type: 'null'
+  from: Kenji
+  to: 'null'
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.667
+    creditability: 0.533
+    from: Kenji
+24:
+  content: Looking forward to our discussion.
+  type: 'null'
+  from: May
+  to: 'null'
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.733
+    creditability: 0.7
+    from: May
+25:
+  content: Let's work together to find the werewolves.
+  type: 'null'
+  from: Shion
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shion
+26:
+  content: Looking forward to our discussion.
+  type: 'null'
+  from: Jonathan
+  to: 'null'
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Jonathan
+27:
+  content: I'm ready to help the village.
+  type: 'null'
+  from: Yumi
+  to: 'null'
+  credibility: 0.392
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.784
+    liking: 0.8
+    creditability: 0.767
+    from: Yumi
+28:
+  content: I'm ready to help the village.
+  type: 'null'
+  from: Toshio
+  to: 'null'
+  credibility: 0.375
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.75
+    liking: 0.733
+    creditability: 0.767
+    from: Toshio
+29:
+  content: Let's work together to find the werewolves.
+  type: 'null'
+  from: Benjamin
+  to: 'null'
+  credibility: 0.367
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.734
+    liking: 0.7
+    creditability: 0.767
+    from: Benjamin
+30:
+  content: Good morning everyone.
+  type: 'null'
+  from: Daisuke
+  to: 'null'
+  credibility: 0.325
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.65
+    liking: 0.633
+    creditability: 0.667
+    from: Daisuke
+31:
+  content: Let's be careful and observant.
+  type: 'null'
+  from: Minato
+  to: 'null'
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.733
+    creditability: 0.667
+    from: Minato

@@ -1,0 +1,47 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: Shion likely desires to protect the most vulnerable or strategically important
+      player in the game.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: Shion desires to continue effectively protecting key players to ensure
+      the team's ongoing success and safety.
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: Shion likely desires to fulfill their role as a protector by defending
+      fellow players in the game.
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: Shion likely desires to make strategic and effective decisions to successfully
+      protect other players in the game.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: Shion likely desires to identify and protect the genuine Knight among
+      the multiple claims to fulfill their role effectively.
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: Shion's desire is to protect the Knight to maintain their influence and
+      strategic advantage in the game.
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: Shion desires to effectively protect and make strategic decisions about
+      guarding a target to ensure the team's success.
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: Shion likely desires to successfully protect key roles like the Knight
+      to strengthen their team's position in the game.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: Shion desires to establish trust and authority within the game by portraying
+      themselves as a successful protector, thereby influencing the game's social
+      dynamics.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Shion/macro_belief.yml

@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Prepare village resources
+  description: Assess current supplies and organize community efforts for restocking
+    and repairs.
+timestamp: '2025-08-25T13:16:23.826762'
+trigger: talk

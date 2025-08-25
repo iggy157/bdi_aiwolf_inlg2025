@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Prepare for harvest
+  description: Coordinate resources and schedules to ensure all villagers are ready
+    for the upcoming harvest season.
+timestamp: '2025-08-25T14:07:05.165064'
+trigger: talk

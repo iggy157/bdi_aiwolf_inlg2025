@@ -1,0 +1,65 @@
+Benjamin:
+  creditability: 0.767
+  liking: 0.733
+  self_co: null
+  seer_co: null
+Daisuke:
+  creditability: 0.667
+  liking: 0.667
+  self_co: medium
+  seer_co: null
+George:
+  creditability: 0.667
+  liking: 0.7
+  self_co: null
+  seer_co: null
+Jonathan:
+  creditability: 0.667
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+Kenji:
+  creditability: 0.667
+  liking: 0.733
+  self_co: null
+  seer_co: null
+May:
+  creditability: 0.667
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+Midori:
+  creditability: 0.7
+  liking: 0.8
+  self_co: villager
+  seer_co: null
+Minato:
+  creditability: 0.733
+  liking: 0.833
+  self_co: null
+  seer_co: null
+Servas:
+  creditability: 0.6
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+Shion:
+  creditability: 0.667
+  liking: 0.7
+  self_co: null
+  seer_co: null
+Toshio:
+  creditability: 0.667
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+Yumi:
+  creditability: 0.667
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+_meta:
+  game_id: 01K3FRFTZKR142XA4RGHDWEKEB
+  owner: Asuka
+  generated_at: '2025-08-25T04:58:10Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Asuka/analysis.yml

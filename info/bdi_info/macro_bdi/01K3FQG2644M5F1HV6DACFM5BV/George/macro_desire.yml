@@ -1,0 +1,44 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: George desires to blend in with the town and avoid suspicion to effectively
+      support the werewolves.
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: George desires to confuse and mislead other players by pretending to be
+      a seer, aligning with his role as a possessed player.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: George desires to mislead the other players by falsely claiming to be
+      a medium, thereby protecting the actual werewolves and advancing their agenda.
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: George desires to exploit the Seer versus Medium contradiction to create
+      confusion and protect the wolves.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: George's desire is to protect the werewolves by diverting suspicion away
+      from them.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: George likely desires to infiltrate the mutual defense group to either
+      gain trust for future betrayals or create divisions within the group.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: George's desire is to create confusion and protect the werewolves by misleading
+      other players about his true role.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: George desires to manipulate the voting process to either equalize or
+      fix votes in favor of the werewolves, particularly in the late game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/George/macro_belief.yml

@@ -1,0 +1,44 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: George likely desires to accurately report the results of executions to
+      help confirm the identities of players for his team.
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: George likely desires to accurately interpret and report the findings
+      associated with his role as a Medium.
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: George desires to strategically influence the game by advocating for a
+      systematic approach to identifying and eliminating threats.
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: George desires to maintain credibility and foster trust by aligning his
+      reports with the Seer's findings.
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: George desires to assert his influence and potentially redirect the game's
+      focus by challenging the Seer's report.
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: George's desire is to prove his legitimacy as the true Medium and expose
+      the other as an imposter.
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: George likely desired to build trust and survive long enough to effectively
+      contribute to his team's success.
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: George desires to fulfill his role as a "MEDIUM" by effectively communicating
+      and submitting the required results.
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: George likely desires to follow the directive and reveal his role as a
+      Medium.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/George/macro_belief.yml

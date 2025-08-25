@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Vote against suspected werewolf
+  description: Cast vote for the player with the most compelling evidence against
+    them being the werewolf.
+timestamp: '2025-08-25T13:03:15.544824'
+trigger: talk

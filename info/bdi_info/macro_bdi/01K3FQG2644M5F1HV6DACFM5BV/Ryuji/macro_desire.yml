@@ -1,0 +1,47 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Ryuji desires to deflect suspicion and protect their identity in the game.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Ryuji's desire is to identify and eliminate the guard to ensure successful
+      night attacks.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Ryuji's desire is to protect the remaining werewolf team by casting doubt
+      on the Seer and Medium or redirecting suspicion onto others.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Ryuji desires to manipulate the game in favor of the werewolf team by
+      gaining trust and eliminating threats.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Ryuji desires to avoid being lynched by deflecting suspicion onto others.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Ryuji desires to deflect suspicion and redirect votes to another player
+      to avoid elimination.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Ryuji's primary desire is to exploit the multiple Seer claims to incite
+      confusion and protect himself and his allies.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Ryuji's desire is to successfully coordinate and execute eliminations
+      without being caught, as indicated by the focus on bite and kill discussions.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Ryuji likely desires to capitalize on the Knight's death to further the
+      Werewolves' agenda and maintain the upper hand in the game.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Ryuji, as a werewolf, desires to push for an equal vote to create confusion
+      and protect their team.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Ryuji/macro_belief.yml

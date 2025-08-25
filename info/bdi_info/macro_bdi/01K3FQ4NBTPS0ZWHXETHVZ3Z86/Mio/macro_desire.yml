@@ -1,0 +1,44 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Mio's desire is to deceive the town by appearing as a helpful town member
+      while secretly aiding the werewolves.
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Mio's desire is to mislead the villagers and protect the werewolves by
+      claiming to be a Seer.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Mio's desire is to mislead and confuse the other players by falsely claiming
+      to be a medium.
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Mio likely desires to exploit the Seer vs Medium contradiction to sow
+      chaos and protect the werewolves.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Mio desires to protect the player identified as "white" from suspicion
+      to aid the wolves' strategy.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Mio likely desires to disrupt the mutual defense strategy by creating
+      confusion or mistrust among other players.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Mio's desire is to cause confusion and distrust among players to benefit
+      their role as POSSESSED.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Mio desires to equalize or fix votes to manipulate the game outcome in
+      favor of the werewolves.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Mio/macro_belief.yml

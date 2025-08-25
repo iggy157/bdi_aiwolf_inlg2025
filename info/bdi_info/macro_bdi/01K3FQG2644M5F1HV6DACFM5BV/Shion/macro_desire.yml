@@ -1,0 +1,57 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Shion likely desires to gather and share information to collaboratively
+      identify potential threats to the village.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Shion likely desires to verify the seer claim to protect the village and
+      strategize against potential threats.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Shion desires to use the Seer's report to identify allies and threats
+      among the players, aiming to protect the village.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Shion likely desires to identify and support the true seer to aid the
+      village in making accurate decisions.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Shion most likely desires to use the medium result report to identify
+      and eliminate threats to the village effectively.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Shion likely desires to declare a vote target that aligns with protecting
+      the village from threats.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Shion desires to support the lynch proposal to eliminate threats and protect
+      the village.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Shion likely desires to clear their name and gain the trust of others
+      to avoid being voted out.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Shion likely desires to prove their innocence and gain trust from other
+      players to effectively contribute to the villagers' success.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Shion's desire is to collaborate with other Town members to identify and
+      eliminate potential threats, particularly Mafia members.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Shion desires to collaborate with other villagers to identify and eliminate
+      the threat responsible for the dawn kill.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Shion/macro_belief.yml

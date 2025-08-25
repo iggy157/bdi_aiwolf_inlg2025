@@ -1,0 +1,103 @@
+micro_desires:
+- content: Briefly introduce myself with a focus on being amicable and engaging, maintaining
+    a tone that aligns with the neutral trust levels observed. Avoid making any claims
+    about my role or intentions to foster a non-threatening image.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T12:57:40.179624'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Minako
+- content: I need to identify potential threats among the villagers.
+  response_to_selected: We should keep an eye on suspicious activities tonight.
+  current_desire: Blend in with the villagers and avoid suspicion.
+  discussion_stage: opening
+  timestamp: '2025-08-25T12:58:23.109932'
+  trigger: talk
+- content: Encourage the group to continue sharing observations and insights; reinforce
+    the importance of collaboration without drawing suspicion.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 0
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:43.082320'
+  trigger: daily_finish
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Minako
+- content: Encourage open sharing of thoughts and observations by others to gather
+    insights and deflect attention from self. Support the idea of teamwork and collective
+    vigilance without committing to any specific stance or suspicion.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 1
+    ctx:
+      day: 1
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: werewolf
+      time_pressure: true
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:56.410854'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Minako
+- content: I need to ensure the villagers don't suspect I'm the werewolf.
+  response_to_selected: I think we should vote for the person who seems the most suspicious.
+  current_desire: Convince others to vote for someone who is not a werewolf.
+  discussion_stage: voting
+  timestamp: '2025-08-25T13:04:27.327031'
+  trigger: talk

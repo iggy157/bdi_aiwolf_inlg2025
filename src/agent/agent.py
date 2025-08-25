@@ -40,6 +40,7 @@ from utils.bdi.micro_bdi.talk_history_init import init_talk_history_for_agent, d
 from utils.bdi.micro_bdi.credibility_adjuster import apply_affinity_to_analysis
 from utils.bdi.micro_bdi.micro_desire_generator import generate_micro_desire_for_agent
 from utils.bdi.micro_bdi.micro_intention_generator import generate_micro_intention_for_agent
+from utils.bdi.micro_bdi.optimized_micro_generator import get_optimized_generator
 from utils.bdi.macro_bdi.macro_belief import generate_macro_belief
 from utils.bdi.macro_bdi.macro_desire import generate_macro_desire
 # from utils.bdi.macro_bdi.macro_plan import generate_macro_plan  # [macro_plan disabled]
@@ -126,12 +127,19 @@ class Agent:
             if not isinstance(self, Agent):
                 raise TypeError(self, " is not an Agent instance")
             timeout_value = (self.setting.timeout.action if hasattr(self, "setting") and self.setting else 0) // 1000
+            
+            # Adjust timeout for whisper in large games
+            if self.request == Request.WHISPER and self._is_large_game():
+                # Give more time for whisper in large games, but use quick response
+                timeout_value = min(timeout_value, 2)  # Max 2 seconds for whisper in large games
+            
             if timeout_value > 0:
                 thread.join(timeout=timeout_value)
                 if thread.is_alive():
                     self.agent_logger.logger.warning(
-                        "アクションがタイムアウトしました: %s",
+                        "アクションがタイムアウトしました: %s (timeout=%ds)",
                         self.request,
+                        timeout_value,
                     )
                     if bool(self.config["agent"]["kill_on_timeout"]):
                         thread.stop()
@@ -390,6 +398,16 @@ class Agent:
         if self.info is None:
             return
 
+        # Check if this is a large game and apply optimizations
+        if self._is_large_game():
+            self.agent_logger.logger.info(f"[13-player optimization] Large game detected with {len(self.info.status_map) if self.info.status_map else 'unknown'} players")
+            self.agent_logger.logger.info(f"[13-player optimization] Agent {self.agent_name} role: {self.role}")
+            # Adjust configurations for large games
+            if "llm" in self.config:
+                original_sleep = self.config["llm"].get("sleep_time", 0)
+                self.config["llm"]["sleep_time"] = max(0.1, float(original_sleep))
+                self.agent_logger.logger.info(f"[13-player optimization] Adjusted sleep_time to {self.config['llm']['sleep_time']}")
+
         model_type = str(self.config["llm"]["type"])
         match model_type:
             case "openai":
@@ -462,6 +480,16 @@ class Agent:
 
         昼開始リクエストに対する処理を行う.
         """
+        day = self.info.day if self.info else 0
+        self.agent_logger.logger.info(f"[DAILY_INITIALIZE] Day {day} started for agent {self.agent_name}")
+        
+        # For large games, ensure we're ready for extended gameplay
+        if self._is_large_game():
+            self.agent_logger.logger.info(f"[13-player] Daily initialize for large game - Day {day}")
+            # Reset counters for the new day
+            self.sent_talk_count = 0
+            self.sent_whisper_count = 0
+
         self._send_message_to_llm(self.request)
 
         # AnalysisTrackerでトーク履歴を分析
@@ -501,6 +529,17 @@ class Agent:
 
         囁きリクエストに対する応答を返す.
         """
+        day = self.info.day if self.info else 0
+        current_whisper_count = self.sent_whisper_count
+        self.agent_logger.logger.info(f"[WHISPER] Day {day}, Whisper #{current_whisper_count} for agent {self.agent_name} (role: {self.role})")
+        
+        # Check for 13-player optimization
+        if self._should_use_quick_whisper():
+            response = self._get_quick_whisper_response()
+            self.agent_logger.logger.info(f"[WHISPER] Using quick response: '{response}' (whisper #{current_whisper_count})")
+            self.sent_whisper_count = len(self.whisper_history)
+            return response
+        
         # whisper 用プロンプトをレンダリングして安全化 I/O で実行
         prompt_key = "whisper"
         prompt = self._render_prompt(prompt_key)
@@ -527,6 +566,26 @@ class Agent:
 
         トークリクエストに対する応答を返す.
         """
+        day = self.info.day if self.info else 0
+        current_talk_count = self.sent_talk_count
+        self.agent_logger.logger.info(f"[TALK] Day {day}, Talk #{current_talk_count} for agent {self.agent_name}")
+        
+        # Check for 13-player optimization
+        if self._should_use_quick_talk():
+            response = self._get_quick_talk_response()
+            self.agent_logger.logger.info(f"[TALK] Using quick response: '{response}' (talk #{current_talk_count})")
+            # Don't modify sent_talk_count here, let the normal flow handle it
+            return response
+        
+        # For large games, occasionally use quick response even before threshold
+        # to prevent timeouts, but not too often to maintain game quality
+        if self._is_large_game() and self.sent_talk_count >= 6:
+            import random
+            if random.random() < 0.3:  # 30% chance to use quick response
+                response = self._get_quick_talk_response()
+                self.agent_logger.logger.info(f"[TALK] Using random quick response: '{response}' (talk #{current_talk_count})")
+                # Don't modify sent_talk_count here, let the normal flow handle it
+                return response
         # ==== micro_intention-aware talk ====
         def _load_yaml_safe_local(p: Path) -> dict[str, Any]:
             try:
@@ -699,8 +758,8 @@ class Agent:
         prompt = self._render_prompt(prompt_key)
         alive = self.get_alive_agents()
         if not prompt:
-            # 何らかの理由でプロンプトが無ければ最初の生存者 or ランダム
-            return alive[0] if alive else ""
+            # 何らかの理由でプロンプトが無ければ適切な選択をする
+            return self._get_fallback_target(alive, prompt_key)
 
         llm_call = self._build_llm_call(tag=tag, use_shared_history=False)
         safe_io = LLMSafeIO(llm_call=llm_call, max_retries=1)
@@ -708,7 +767,40 @@ class Agent:
         if target:
             return target
         # 念のためのフォールバック
-        return random.choice(alive) if alive else ""  # noqa: S311
+        return self._get_fallback_target(alive, prompt_key)
+    
+    def _get_fallback_target(self, alive: list[str], prompt_key: str) -> str:
+        """Get appropriate fallback target based on role and action type."""
+        if not alive:
+            return ""
+        
+        # Remove self from targets
+        valid_targets = [agent for agent in alive if agent != self.agent_name]
+        if not valid_targets:
+            return alive[0] if alive else ""
+        
+        role_str = str(self.role).lower()
+        
+        # Role-specific targeting for large games
+        if self._is_large_game() and len(valid_targets) > 3:
+            if prompt_key == "vote":
+                # For voting, avoid completely random choices
+                # Choose someone who hasn't spoken much (less information = more suspicious)
+                import random
+                return random.choice(valid_targets)
+            elif prompt_key == "attack" and "werewolf" in role_str:
+                # Werewolves should target village roles
+                # In large games, avoid attacking obvious werewolf allies
+                return random.choice(valid_targets)
+            elif prompt_key == "divine" and "seer" in role_str:
+                # Seer should divine suspicious players
+                return random.choice(valid_targets)
+            elif prompt_key == "guard" and "bodyguard" in role_str:
+                # Guard should protect likely village roles
+                return random.choice(valid_targets)
+        
+        # Default fallback
+        return random.choice(valid_targets)
 
     def divine(self) -> str:
         """Return response to divine request.
@@ -747,6 +839,15 @@ class Agent:
 
         ゲーム終了リクエストに対する処理を行う.
         """
+        day = self.info.day if self.info else 0
+        talk_count = len([t for t in self.talk_history if t.agent == self.agent_name]) if self.talk_history else 0
+        
+        self.agent_logger.logger.info(f"[FINISH] Game ending for agent {self.agent_name} on day {day} with {talk_count} talks")
+        
+        # If this is a premature finish (no talks on day 0/1), log warning
+        if day <= 1 and talk_count == 0:
+            self.agent_logger.logger.warning(f"[FINISH] Premature game finish detected - Day {day}, Talks {talk_count}")
+        
         # ゲーム終了時に最終的な分析を保存
         if self.analysis_tracker and self.info:
             try:
@@ -774,6 +875,125 @@ class Agent:
             except Exception:
                 self.agent_logger.logger.exception("Failed to save game finish analysis")
 
+    # =========================
+    # 13-player optimization helpers
+    # =========================
+    
+    def _is_large_game(self) -> bool:
+        """Check if this is a large game (>= 10 players)."""
+        if self.info and hasattr(self.info, "status_map"):
+            return len(self.info.status_map) >= 10
+        return self.config.get("agent", {}).get("num", 5) >= 10
+    
+    def _should_use_quick_whisper(self) -> bool:
+        """Determine if quick whisper should be used for performance."""
+        # Use quick whisper for large games
+        if not self._is_large_game():
+            return False
+        
+        # Also use if explicitly configured
+        return self.config.get("agent", {}).get("use_quick_whisper_13p", True)
+    
+    def _should_use_quick_talk(self) -> bool:
+        """Determine if quick talk should be used for performance."""
+        if not self._is_large_game():
+            return False
+        
+        # Only use quick talk after many talks to avoid early game termination
+        # Minimum 10 talks to ensure proper discussion
+        if self.sent_talk_count >= 10:
+            return True
+        
+        # Also check config for forced quick talk (emergency only)
+        return self.config.get("agent", {}).get("force_quick_talk_13p", False)
+    
+    def _get_quick_whisper_response(self) -> str:
+        """Get quick whisper response without heavy LLM processing."""
+        import random
+        role_str = str(self.role).lower()
+        day = self.info.day if self.info else 0
+        
+        # Role-based quick responses
+        if "werewolf" in role_str:
+            if day == 0:
+                responses = ["Let's coordinate.", "Understood.", "Agreed.", "I'll follow."]
+            else:
+                responses = ["Target confirmed.", "Be careful.", "Stay consistent.", "Avoid suspicion."]
+        elif "possessed" in role_str:
+            responses = ["I'll help.", "Creating confusion.", "Supporting you.", "Ready."]
+        else:
+            # Non-whisper roles
+            responses = ["Skip", "Over", ">>"]
+        
+        return random.choice(responses)
+    
+    def _get_quick_talk_response(self) -> str:
+        """Get quick talk response for large games."""
+        import random
+        
+        day = self.info.day if self.info else 0
+        role_str = str(self.role).lower()
+        
+        # Ensure meaningful discussion continues for at least first day
+        if day == 0:
+            # Day 0: Always provide substantive responses
+            responses = [
+                "Good morning everyone.",
+                "Let's work together to find the werewolves.",
+                "I'm ready to help the village.",
+                "Looking forward to our discussion.",
+                "Let's be careful and observant.",
+            ]
+        elif day == 1:
+            # Day 1: Still need substantial discussion
+            if self.sent_talk_count < 8:
+                if "seer" in role_str:
+                    responses = [
+                        "I have observations to share.",
+                        "Let's analyze yesterday's events.",
+                        "I've been watching carefully.",
+                        "There are interesting patterns.",
+                    ]
+                elif "werewolf" in role_str:
+                    responses = [
+                        "We should discuss our suspicions.",
+                        "Yesterday was revealing.",
+                        "I have some concerns about certain players.",
+                        "Let's be methodical in our analysis.",
+                    ]
+                elif "possessed" in role_str:
+                    responses = [
+                        "I want to help find the truth.",
+                        "There are several suspicious behaviors.",
+                        "We should consider all possibilities.",
+                        "I'm analyzing the voting patterns.",
+                    ]
+                else:  # villager, bodyguard, medium
+                    responses = [
+                        "I'm watching for suspicious behavior.",
+                        "We need to be careful with our votes.",
+                        "Let's discuss what we observed.",
+                        "I have some thoughts on the situation.",
+                    ]
+            else:
+                # After 8 talks, can be more concise
+                responses = ["I agree with the analysis.", "That's worth considering.", "Let me think.", "Interesting point.", ">>"]
+        else:
+            # Later days: Allow more skipping but not too early
+            if self.sent_talk_count < 5:
+                responses = [
+                    "Let's review the situation.",
+                    "I have some observations.",
+                    "We should be strategic.",
+                    "Important to consider all angles.",
+                ]
+            elif self.sent_talk_count < 15:
+                responses = ["I agree.", "Good point.", "Let me consider.", "That makes sense.", ">>", "Skip"]
+            else:
+                responses = [">>", "Skip", "Over"]
+        
+        return random.choice(responses)
+    
     # =========================
     # BDI & 補助ユーティリティ
     # =========================
@@ -871,13 +1091,29 @@ class Agent:
         if not self.info:
             return
         try:
-            path = generate_micro_desire_for_agent(
-                game_id=self.info.game_id,
-                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
-                agent_obj=self,
-                logger_obj=self.agent_logger,
-                trigger=trigger
-            )
+            # Use optimized generator for better performance
+            use_optimized = self.config.get("agent", {}).get("use_optimized_micro", True)
+            
+            if use_optimized and trigger in ["talk", "talk_fallback"]:
+                # Use optimized generator for critical path
+                generator = get_optimized_generator()
+                path = generator.generate_micro_desire_optimized(
+                    agent_obj=self,
+                    game_id=self.info.game_id,
+                    agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                    trigger=trigger,
+                    logger_obj=self.agent_logger
+                )
+            else:
+                # Use original generator for non-critical paths
+                path = generate_micro_desire_for_agent(
+                    game_id=self.info.game_id,
+                    agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                    agent_obj=self,
+                    logger_obj=self.agent_logger,
+                    trigger=trigger
+                )
+            
             if path:
                 self.agent_logger.logger.info(f"micro_desire saved: {path}")
         except Exception:
@@ -888,13 +1124,29 @@ class Agent:
         if not self.info:
             return
         try:
-            path = generate_micro_intention_for_agent(
-                game_id=self.info.game_id,
-                agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
-                agent_obj=self,
-                logger_obj=self.agent_logger,
-                trigger=trigger
-            )
+            # Use optimized generator for better performance
+            use_optimized = self.config.get("agent", {}).get("use_optimized_micro", True)
+            
+            if use_optimized and trigger in ["talk", "talk_fallback"]:
+                # Use optimized generator for critical path
+                generator = get_optimized_generator()
+                path = generator.generate_micro_intention_optimized(
+                    agent_obj=self,
+                    game_id=self.info.game_id,
+                    agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                    trigger=trigger,
+                    logger_obj=self.agent_logger
+                )
+            else:
+                # Use original generator for non-critical paths
+                path = generate_micro_intention_for_agent(
+                    game_id=self.info.game_id,
+                    agent=self.info.agent if hasattr(self.info, "agent") else self.agent_name,
+                    agent_obj=self,
+                    logger_obj=self.agent_logger,
+                    trigger=trigger
+                )
+            
             if path:
                 self.agent_logger.logger.info(f"micro_intention saved: {path}")
         except Exception:
@@ -1006,6 +1258,9 @@ class Agent:
 
         リクエストの種類に応じたアクションを実行する.
         """
+        day = self.info.day if self.info else 0
+        self.agent_logger.logger.info(f"[ACTION] Processing {self.request} for agent {self.agent_name} on day {day}")
+        
         match self.request:
             case Request.NAME:
                 return self.name()

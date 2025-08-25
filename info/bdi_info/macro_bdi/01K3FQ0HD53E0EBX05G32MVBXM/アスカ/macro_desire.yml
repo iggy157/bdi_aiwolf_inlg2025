@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: The player's desire is to perform a divination to gather information about
+      another player's role or alignment.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: The player desires to use their Seer information to identify and guide
+      the village towards targeting potential werewolves.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Asuka likely desires to establish her credibility as the true Seer by
+      convincing other players of her authenticity and discrediting the counter Seer.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: The player's desire is to accurately identify the werewolves through careful
+      selection of divination targets.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: The player desires protection to ensure they can continue providing valuable
+      information to the team as the SEER.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: アスカ likely desires to solidify their credibility as a SEER by supporting
+      the vote convergence on their black result.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: The player, as a SEER, desires to confirm their findings with the Medium
+      to strengthen the town's strategy against the wolves.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: The player desires to prove the accuracy of their seer findings over the
+      Medium's results to maintain credibility.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: The player's primary desire is to quickly gather and reveal information
+      to identify potential threats and gain influence in the game.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: The player likely desires to ensure clear communication and verification
+      of information among Seers to resolve discrepancies.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/アスカ/macro_belief.yml

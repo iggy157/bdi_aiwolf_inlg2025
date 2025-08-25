@@ -1,0 +1,44 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: The player desires to accurately report the execution results from the
+      previous day to help inform the team's strategy.
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: Servas likely desires to accurately interpret and communicate game results
+      to other players.
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: Servas likely desires to propose and follow a logical sequence of actions
+      that will systematically advance the team's goals in the game.
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: Servas desires to build trust and credibility by ensuring consistency
+      with the Seer's findings.
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: Servas desires to assert credibility and influence by either challenging
+      or supporting the Seer's findings based on their role as MEDIUM.
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: Servas likely desires to establish their credibility as the true Medium
+      by differentiating themselves from the counterclaim.
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: Servas desired to leverage their Medium role to confirm player roles and
+      influence the game positively for their team before their untimely death.
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: Servas likely desires to accurately interpret and communicate the results
+      as part of their role as MEDIUM.
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: Servas likely desires to follow the directive to reveal their role, aligning
+      with the strategic expectation in the situation.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Servas/macro_belief.yml

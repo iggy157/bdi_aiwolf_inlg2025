@@ -1,0 +1,44 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Minato's desire is to deceive the town by appearing as a helpful townsperson
+      while secretly working against them.
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Minato's desire is to deceive other players into believing he is a Seer
+      to protect the werewolves and sow confusion among the villagers.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Minato's desire is to protect the werewolves and mislead the villagers
+      by falsely claiming to be a medium.
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Minato's desire is to exploit the Seer vs Medium contradiction to protect
+      the werewolves by casting doubt on the true readings and confusing the villagers.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Minato's desire is to protect the identity of the werewolf by deflecting
+      suspicion onto others.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Minato likely desires to disrupt or manipulate the mutual defense efforts
+      of others while maintaining a facade of cooperation.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Minato's desire is to create confusion and doubt in the truthfulness of
+      others' claims to protect their teammates.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Minato likely desires to manipulate the vote to prevent the elimination
+      of Werewolf allies and sow confusion among the Villagers.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Minato/macro_belief.yml

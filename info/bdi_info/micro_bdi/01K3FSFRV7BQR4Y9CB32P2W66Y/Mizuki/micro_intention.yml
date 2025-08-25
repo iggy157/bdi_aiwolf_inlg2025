@@ -1,0 +1,5 @@
+micro_intention:
+  summary: Monitor village activities
+  description: Observe daily routines and identify any unusual behavior.
+timestamp: '2025-08-25T14:11:27.692631'
+trigger: talk

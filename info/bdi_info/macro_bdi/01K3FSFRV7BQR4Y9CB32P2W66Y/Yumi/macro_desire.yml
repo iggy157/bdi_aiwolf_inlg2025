@@ -1,0 +1,46 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: Yumi desires to protect a player who is deemed most critical to the team's
+      overall success.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: Yumi likely desires to continue effectively protecting other players to
+      ensure the safety of the village.
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: Yumi likely desires to protect key players and maintain their survival
+      in the game.
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: Yumi likely desires to make strategic decisions that optimize the protection
+      of key players in the game.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: Yumi's desire is to determine which Knight claim is genuine in order to
+      protect them effectively.
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: Yumi desires to protect key village roles, such as the Knight, to maintain
+      the village's advantage and ensure their continued survival.
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: Yumi likely desires to make the best strategic decision for protection,
+      ensuring the safety of a key player under pressure.
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: Yumi's desire is to accurately identify and protect genuine Knight claims
+      to avoid further casualties.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: Yumi desires to be seen as trustworthy and effective in her role, aligning
+      her success with the honorable identity of a Knight to reinforce her credibility.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Yumi/macro_belief.yml

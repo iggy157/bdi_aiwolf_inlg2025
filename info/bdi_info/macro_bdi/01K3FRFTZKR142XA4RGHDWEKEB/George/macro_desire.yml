@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: George's desire is to deflect suspicion and avoid being eliminated by
+      sowing doubt about the Seer's claim or targeting other players.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: George desires to find a way to bypass the guard's protection to successfully
+      eliminate villagers on subsequent nights.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: George likely desires to cast doubt on the Seer and Medium's revelations
+      to survive and maintain influence in the game.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: George desires to gain trust and reduce suspicion on himself by contributing
+      to the downfall of a fellow werewolf.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: George's desire is to avoid being lynched by redirecting suspicion onto
+      another player.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: George's desire is likely to avoid elimination by deflecting suspicion
+      and minimizing the number of votes against him.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: George desires to exploit the presence of multiple Seer claims to sow
+      confusion and mistrust among the village players.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: George likely desires to successfully eliminate other players while avoiding
+      detection and overcoming any defenses.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: George likely desired the death of the Knight claimant to weaken the village's
+      defense and advance the werewolf team's objectives.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: George desires to manipulate the voting to create a tie or block, ensuring
+      his survival and increasing his chances of winning as a werewolf.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/George/macro_belief.yml

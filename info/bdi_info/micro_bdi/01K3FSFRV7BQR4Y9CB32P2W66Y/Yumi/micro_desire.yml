@@ -1,0 +1,42 @@
+micro_desires:
+- content: Introduce myself in line with my role as bodyguard without revealing my
+    role or making explicit claims; focus on creating a reliable image to integrate
+    smoothly into the group dynamics.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: bodyguard
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:23.520775'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Yumi
+- content: null
+  response_to_selected: Stay close to me, I'll keep you safe.
+  current_desire: Ensure the safety of my client.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:59:36.623419'
+  trigger: talk
+- content: null
+  response_to_selected: Stay close to me; I've got your back.
+  current_desire: Ensure the client's immediate safety.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:07:55.828678'
+  trigger: talk

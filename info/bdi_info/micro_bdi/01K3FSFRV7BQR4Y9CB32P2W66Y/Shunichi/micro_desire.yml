@@ -1,0 +1,42 @@
+micro_desires:
+- content: Introduce myself as a villager, emphasizing my willingness to work with
+    others to uncover werewolves and maintain village safety, aligning with strategy_summary.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:24.969452'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Shunichi
+- content: null
+  response_to_selected: Let's gather some resources to prepare for the coming days.
+  current_desire: Ensure the village is well-stocked and safe.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:00:29.666662'
+  trigger: talk
+- content: I hope we can identify the werewolves quickly to protect the village.
+  response_to_selected: Let's gather information and figure out who among us might
+    be a werewolf.
+  current_desire: Collaborate with other villagers to identify potential werewolves.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:10:36.388466'
+  trigger: talk

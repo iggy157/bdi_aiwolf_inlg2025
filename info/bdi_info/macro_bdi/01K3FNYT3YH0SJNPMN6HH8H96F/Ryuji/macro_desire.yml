@@ -1,0 +1,43 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: Ryuji desires to convincingly blend in with the town members to avoid
+      detection as the possessed.
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: Ryuji's desire is to deceive the other players by pretending to be a seer
+      to protect the werewolves.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: Ryuji desires to mislead other players by falsely claiming to be a medium,
+      in order to fulfill his role as POSSESSED.
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: Ryuji's desire is to exacerbate the Seer vs Medium contradiction to create
+      confusion and mistrust among the town players, ultimately aiding the wolves.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Ryuji desires to mislead other players and protect the wolves by redirecting
+      suspicion and creating confusion.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: Ryuji likely desires to strengthen alliances and manipulate mutual defense
+      to further his own agenda while maintaining a facade of trustworthiness.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: Ryuji's desire is to create doubt among the players to safeguard the werewolves.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: Ryuji likely desires to manipulate and equalize the vote to create confusion
+      and protect the werewolf team.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FNYT3YH0SJNPMN6HH8H96F/Ryuji/macro_belief.yml

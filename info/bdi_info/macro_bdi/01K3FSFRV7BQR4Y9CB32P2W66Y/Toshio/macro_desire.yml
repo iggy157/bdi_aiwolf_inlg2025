@@ -1,0 +1,57 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Toshio's primary desire is likely to gather information and build trust
+      with fellow villagers to protect the village from threats.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Toshio likely desires to assess the validity of the Seer claim and strategize
+      accordingly to protect the Seer and eliminate the werewolves.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Toshio likely desires to use the Seer’s report to identify and protect
+      fellow villagers from threats.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Toshio desires to determine the authenticity of the seer claims to help
+      the villagers make informed decisions.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Toshio desires to utilize medium results to identify and expose potential
+      threats to the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Toshio likely desires to correctly identify and vote against players posing
+      a threat to the village in order to ensure the safety and victory of the villagers.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Toshio likely desires to support the lynch proposal if it aids in protecting
+      the village by eliminating suspected threats.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Toshio desires to clear their name and avoid elimination to help the village
+      win.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Toshio likely desires to be perceived as trustworthy and influential within
+      the game, prompting others to seek his input.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Toshio likely desires to use the Seer confirmation to strengthen alliances
+      and identify potential threats to the town.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Toshio likely desires to identify and eliminate the players responsible
+      for the dawn kill to protect the village.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Toshio/macro_belief.yml

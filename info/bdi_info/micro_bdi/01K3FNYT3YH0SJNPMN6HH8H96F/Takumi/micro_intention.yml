@@ -1,0 +1,5 @@
+micro_intention:
+  summary: Vote for the suspicious
+  description: Observe villager behavior and vote for the one acting most suspiciously.
+timestamp: '2025-08-25T13:05:00.892745'
+trigger: talk

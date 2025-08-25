@@ -1,0 +1,65 @@
+Asuka:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Daisuke:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+George:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Minako:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Minato:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Mizuki:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Ryuji:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Shion:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Shunichi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Takumi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Toshio:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Yumi:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3FQG2644M5F1HV6DACFM5BV
+  owner: Servas
+  generated_at: '2025-08-25T04:24:47Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Servas/analysis.yml

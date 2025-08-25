@@ -1,0 +1,103 @@
+1:
+  content: Hello everyone I am a Villager and I hope we can work together to find
+    the Werewolves.
+  type: co
+  from: Midori
+  to: Midori
+  credibility: 0.5
+2:
+  content: Hi everyone I'm Yumi and I'm looking forward to working together to keep
+    our village safe!
+  type: 'null'
+  from: Yumi
+  to: all
+  credibility: 0.5
+3:
+  content: Hi everyone. Today I'll focus on logical analysis to identify threats.
+    Let's work together to find the wolves.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.5
+4:
+  content: Hello everyone I am Shizue. I look forward to working together and getting
+    to know each of you as we protect our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.5
+5:
+  content: I'm a villager focused on finding werewolves let's work together to protect
+    our village.
+  type: co
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.5
+6:
+  content: Hello everyone I am Mizuki a villager here to work with you all to find
+    the werewolves.
+  type: co
+  from: Mizuki
+  to: Mizuki
+  credibility: 0.5
+7:
+  content: Hello everyone. I'm Victoria here to observe and cooperate for a better
+    understanding of our situation.
+  type: 'null'
+  from: Victoria
+  to: Victoria
+  credibility: 0.5
+8:
+  content: Good morning everyone I'm George and I'm here to observe and work together
+    to find the truth.
+  type: 'null'
+  from: George
+  to: George
+  credibility: 0.5
+9:
+  content: Hello everyone I'm Ryuji. I'm here to help us figure things out together
+    as an ordinary villager.
+  type: co
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.5
+10:
+  content: Hello everyone I'm Toshio a villager ready to work together and identify
+    the werewolves among us.
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.5
+11:
+  content: I'm Takumi a villager here to work together with everyone to find the werewolves
+    today.
+  type: co
+  from: Takumi
+  to: Takumi
+  credibility: 0.5
+12:
+  content: I am a villager dedicated to helping the village win and I will do my best
+    to support everyone.
+  type: co
+  from: Servas
+  to: Servas
+  credibility: 0.5
+13:
+  content: Let's stay calm and share our observations to identify any suspicious behavior.
+  type: 'null'
+  from: Midori
+  to: 'null'
+  credibility: 0.5
+14:
+  content: Let's keep an open mind and share our thoughts to ensure we make the best
+    decisions.
+  type: 'null'
+  from: Yumi
+  to: 'null'
+  credibility: 0.5
+15:
+  content: Thanks everyone for sharing. Let's stay observant and discuss any suspicions.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.5

@@ -1,0 +1,42 @@
+micro_desires:
+- content: Present self as a dedicated villager committed to the group's safety and
+    careful observation, emphasizing a willingness to collaborate and share insights.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:42:02.022010'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FRFTZKR142XA4RGHDWEKEB
+  agent: Servas
+- content: null
+  response_to_selected: null
+  current_desire: Understand who might be trustworthy in the village.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:44:28.121868'
+  trigger: talk
+- content: I hope we can gather enough resources for the winter.
+  response_to_selected: We should focus on stocking up food and firewood before it
+    gets too cold.
+  current_desire: Ensure the village is well-prepared for the upcoming winter.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:57:20.794811'
+  trigger: talk

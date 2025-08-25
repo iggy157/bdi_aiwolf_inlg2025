@@ -1,0 +1,65 @@
+Daisuke:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+George:
+  creditability: 0.567
+  liking: 0.7
+  self_co: null
+  seer_co: null
+Midori:
+  creditability: 0.7
+  liking: 0.733
+  self_co: villager
+  seer_co: null
+Minako:
+  creditability: 0.7
+  liking: 0.733
+  self_co: null
+  seer_co: null
+Mizuki:
+  creditability: 0.5
+  liking: 0.5
+  self_co: villager
+  seer_co: null
+Ryuji:
+  creditability: 0.667
+  liking: 0.667
+  self_co: villager
+  seer_co: null
+Servas:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+Shizue:
+  creditability: 0.767
+  liking: 0.9
+  self_co: null
+  seer_co: null
+Shunichi:
+  creditability: 0.667
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+Toshio:
+  creditability: 0.5
+  liking: 0.5
+  self_co: villager
+  seer_co: null
+Victoria:
+  creditability: 0.667
+  liking: 0.667
+  self_co: null
+  seer_co: null
+Yumi:
+  creditability: 0.667
+  liking: 0.8
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  owner: Takumi
+  generated_at: '2025-08-25T05:05:09Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Takumi/analysis.yml

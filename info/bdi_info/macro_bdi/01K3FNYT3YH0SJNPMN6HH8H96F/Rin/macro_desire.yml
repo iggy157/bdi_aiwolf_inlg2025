@@ -1,0 +1,50 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Rin desires to use their divination ability to identify the role or alignment
+      of another player during Night 0.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Rin desires to effectively communicate their Seer findings to guide the
+      team's decision-making process.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Rin's desire is to establish their legitimacy as the true Seer to guide
+      the game effectively.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Rin desires to make a strategic choice for tonight's divination to maximize
+      the benefits of their SEER role.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Rin likely desires protection to ensure they can continue their role as
+      Seer without interruption or threat.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Rin desires to confirm her black result on X by ensuring that X is eliminated.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Rin desires to use her SEER abilities effectively to confirm player alignments
+      and support her team in identifying the wolves.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Rin desires to clarify the contradiction with the Medium to ensure accurate
+      information for the town's success.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Rin likely desires to quickly gather and reveal information about other
+      players to guide the game from the start.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Rin desires to establish trust and credibility as a Seer by providing
+      accurate information to their team.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FNYT3YH0SJNPMN6HH8H96F/Rin/macro_belief.yml

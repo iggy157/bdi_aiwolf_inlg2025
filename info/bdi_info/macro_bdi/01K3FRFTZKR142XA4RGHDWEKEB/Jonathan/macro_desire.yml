@@ -1,0 +1,57 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Jonathan likely desires to establish trust and build alliances with fellow
+      players to enhance the villagers' chances of success.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Jonathan desires to protect and verify the Seer claim to ensure the village
+      can effectively identify werewolves.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Jonathan desires to use the seer's results to identify and eliminate werewolves
+      from the game.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Jonathan desires to discern the true Seer from the counterclaims to strengthen
+      the village's chances of identifying and eliminating the Werewolves.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Jonathan desires to gather and analyze information to identify and eliminate
+      potential threats to the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Jonathan likely desires to identify and vote against players he suspects
+      to be werewolves to protect the village.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Jonathan likely desires to make a strategic decision that aligns with
+      the villagers' goal of identifying and executing a potential threat to the village.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Jonathan's desire is to clear his name and reduce suspicion to focus on
+      identifying the real threats to the village.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Jonathan desires to be perceived as a credible and influential member
+      of the village.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Jonathan desires to collaborate with confirmed non-threat players to strengthen
+      the village's defense against adversaries.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Jonathan desires to identify and eliminate the werewolves to protect himself
+      and the village.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Jonathan/macro_belief.yml

@@ -1,0 +1,105 @@
+micro_desires:
+- content: Communicate a straightforward introduction aligning with the role of a
+    villager, ensuring to maintain neutrality and openness to information without
+    making explicit claims or commitments.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T12:57:42.330357'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Daisuke
+- content: I want to find out who might be a threat in the village.
+  response_to_selected: I think we should all share what we know about the happenings
+    in the village.
+  current_desire: Gather information to identify potential threats.
+  discussion_stage: opening
+  timestamp: '2025-08-25T12:58:05.269305'
+  trigger: talk
+- content: Encourage all players to share their observations and insights, emphasizing
+    the importance of collaboration in uncovering potential werewolf behavior.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 0
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:44.446983'
+  trigger: daily_finish
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Daisuke
+- content: Encourage others to share observations and insights to foster a collaborative
+    analysis environment. Highlight the importance of noticing patterns or inconsistencies
+    as a group effort.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 1
+    ctx:
+      day: 1
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: villager
+      time_pressure: true
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:58.442475'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Daisuke
+- content: I need to ensure the safety of the village by voting for someone suspicious.
+  response_to_selected: I think we should vote for the person who has been acting
+    strangely.
+  current_desire: My goal is to vote out the werewolf to protect the village.
+  discussion_stage: voting
+  timestamp: '2025-08-25T13:03:14.249437'
+  trigger: talk

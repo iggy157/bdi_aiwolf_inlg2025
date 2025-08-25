@@ -1,0 +1,38 @@
+micro_desires:
+- content: Introduce self in a manner that is neutral and non-threatening, aligning
+    with the strategy to blend in without drawing suspicion. Avoid making any explicit
+    claims about roles or intentions, focusing instead on a friendly and approachable
+    demeanor.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:16:09.339514'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FQ0HD53E0EBX05G32MVBXM
+  agent: ケンジ
+- content: null
+  response_to_selected: I think we should focus on gathering information before making
+    any accusations.
+  current_desire: Blend in with the villagers and avoid suspicion.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:16:58.231811'
+  trigger: talk

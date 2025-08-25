@@ -1,0 +1,65 @@
+アスカ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ケンジ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+シズエ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ジョージ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ダイスケ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+トシオ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ベンジャミン:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ミオ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ミヅキ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ミナコ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ユミ:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+ヴィクトリア:
+  creditability: 0.5
+  liking: 0.5
+  self_co: null
+  seer_co: null
+_meta:
+  game_id: 01K3FQ0HD53E0EBX05G32MVBXM
+  owner: ミドリ
+  generated_at: '2025-08-25T04:16:10Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ミドリ/analysis.yml

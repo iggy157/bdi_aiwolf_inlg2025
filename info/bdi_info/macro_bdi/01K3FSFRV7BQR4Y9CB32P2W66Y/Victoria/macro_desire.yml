@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Victoria's desire is to avoid being eliminated by casting doubt on the
+      Seer's result and redirecting suspicion away from herself.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Victoria desires to identify and eliminate the guard to prevent further
+      protection and regain the werewolf's advantage.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Victoria desires to deflect suspicion and undermine the credibility of
+      the Seer and Medium's confirmations to protect herself and her werewolf allies.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Victoria desires to gain credibility and reduce suspicion on herself by
+      successfully identifying another werewolf early in the game.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Victoria's primary desire is to avoid being lynched to continue playing
+      her role as a WEREWOLF.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Victoria's desire is to divert suspicion and votes from herself to survive
+      the round.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Victoria desires to exploit the confusion caused by multiple Seer claims
+      to protect her identity as a Werewolf and manipulate the situation to her advantage.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Victoria likely desires to successfully eliminate or deceive other players
+      to secure a win for the werewolf team.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Victoria likely desires to leverage the death of the Knight COer to sow
+      confusion and gain an advantage for the werewolf team.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Victoria likely desires to manipulate the vote to maintain her cover and
+      prevent the werewolves from being outnumbered.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Victoria/macro_belief.yml

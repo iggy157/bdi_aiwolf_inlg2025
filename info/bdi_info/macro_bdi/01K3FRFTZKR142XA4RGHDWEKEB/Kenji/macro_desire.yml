@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Kenji desires to accurately identify the role of another player to determine
+      if they are a threat to the village.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Kenji desires to utilize his Seer role to reveal alignment information
+      to guide his team.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Kenji likely desires to establish their authenticity as the true Seer
+      and expose the counter Seer to protect their role and benefit their team.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Kenji desires to make a strategic divination choice tonight that maximizes
+      information for the team.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Kenji desires to be protected to ensure he can continue performing his
+      role effectively.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Kenji desires the elimination of player X to neutralize the threat and
+      support the Seer's role in the game.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Kenji desires to confirm the alignment of players accurately through consistent
+      investigation results.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Kenji desires to resolve the contradiction with the Medium to uphold the
+      credibility and influence of his role as SEER.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Kenji likely desires to leverage any early information he has to gain
+      an advantage for his team by identifying other players' roles as soon as possible.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Kenji likely desires to accurately validate or corroborate information
+      about the target to ensure the group's strategic advantage.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Kenji/macro_belief.yml

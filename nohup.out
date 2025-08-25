@@ -1,0 +1,427 @@
+INFO: 設定ファイルを読み込みました
+2025-08-25 18:04:13,099 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:04:13,100 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:04:13,100 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:04:28,115 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:04:28,115 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:04:28,115 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:04:43,130 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:04:43,130 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:04:43,130 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:04:58,145 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:04:58,145 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:04:58,145 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:05:13,161 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:05:13,161 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:05:13,161 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:05:28,176 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:05:28,176 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:05:28,176 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:05:43,191 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:05:43,191 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:05:43,191 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:05:58,205 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:05:58,206 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:05:58,206 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:06:13,218 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:06:13,218 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:06:13,218 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:06:28,233 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:06:28,234 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:06:28,234 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:06:43,245 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:06:43,245 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:06:43,245 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:06:58,261 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:06:58,261 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:06:58,261 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:07:13,275 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:07:13,275 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:07:13,275 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:07:28,289 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:07:28,290 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:07:28,290 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:07:43,302 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:07:43,302 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:07:43,302 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:07:58,317 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:07:58,317 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:07:58,317 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:08:13,330 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:08:13,330 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:08:13,330 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:08:28,342 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:08:28,342 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:08:28,342 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:08:43,380 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:08:43,380 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:08:43,380 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:08:58,398 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:08:58,398 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:08:58,398 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:09:13,412 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:09:13,412 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:09:13,412 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:09:28,425 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:09:28,425 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:09:28,425 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:09:43,438 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:09:43,438 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:09:43,438 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:09:58,468 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:09:58,468 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:09:58,468 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:10:13,482 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:10:13,482 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:10:13,482 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:10:28,499 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:10:28,499 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:10:28,499 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:10:43,512 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:10:43,512 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:10:43,512 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:10:58,527 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:10:58,527 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:10:58,527 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:11:13,543 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:11:13,543 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:11:13,543 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:11:28,557 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:11:28,558 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:11:28,558 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:11:43,571 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:11:43,571 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:11:43,571 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:11:58,585 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:11:58,586 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:11:58,586 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:12:13,602 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:12:13,602 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:12:13,603 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:12:28,621 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:12:28,622 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:12:28,622 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:12:43,635 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:12:43,635 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:12:43,635 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:12:58,651 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:12:58,651 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:12:58,651 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:13:13,666 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:13:13,667 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:13:13,667 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:13:28,682 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:13:28,682 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:13:28,682 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:13:43,698 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:13:43,699 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:13:43,699 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:13:58,721 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:13:58,721 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:13:58,721 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:14:13,736 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:14:13,736 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:14:13,736 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:14:28,750 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:14:28,750 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:14:28,750 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:14:43,765 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:14:43,765 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:14:43,765 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:14:58,780 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:14:58,780 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:14:58,780 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:15:13,798 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:15:13,799 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:15:13,799 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:15:28,813 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:15:28,814 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:15:28,814 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:15:43,827 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:15:43,827 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:15:43,827 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:15:58,841 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:15:58,842 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:15:58,842 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:16:13,858 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:16:13,858 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:16:13,858 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:16:28,874 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:16:28,875 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:16:28,875 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:16:43,891 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:16:43,891 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:16:43,891 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:16:58,907 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:16:58,907 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:16:58,907 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:17:13,923 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:17:13,923 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:17:13,923 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:17:28,937 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:17:28,938 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:17:28,938 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:17:43,951 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:17:43,951 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:17:43,951 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:17:58,964 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:17:58,964 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:17:58,964 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:18:13,980 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:18:13,980 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:18:13,980 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:18:28,996 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:18:28,996 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:18:28,996 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:18:44,011 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:18:44,011 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:18:44,011 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:18:59,026 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:18:59,026 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:18:59,026 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:19:14,040 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:19:14,040 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:19:14,040 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:19:29,053 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:19:29,053 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:19:29,053 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:19:44,078 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:19:44,078 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:19:44,078 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:19:59,093 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:19:59,093 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:19:59,093 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:20:14,106 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:20:14,106 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:20:14,106 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:20:29,123 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:20:29,123 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:20:29,123 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:20:44,137 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:20:44,137 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:20:44,137 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:20:59,153 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:20:59,154 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:20:59,154 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:21:14,170 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:21:14,171 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:21:14,171 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:21:29,184 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:21:29,184 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:21:29,184 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます
+2025-08-25 18:21:44,209 - starter - WARNING - エージェント yharada1 がゲームサーバに接続できませんでした
+WARNING: エージェント yharada1 がゲームサーバに接続できませんでした
+2025-08-25 18:21:44,209 - starter - WARNING - [Errno 111] Connection refused
+WARNING: [Errno 111] Connection refused
+2025-08-25 18:21:44,209 - starter - INFO - 再接続を試みます
+INFO: 再接続を試みます

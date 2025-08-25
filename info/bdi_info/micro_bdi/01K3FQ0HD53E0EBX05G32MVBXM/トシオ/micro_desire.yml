@@ -1,0 +1,35 @@
+micro_desires:
+- content: Briefly convey role as villager without making specific claims; express
+    intent to collaborate for village's success.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:16:11.537280'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FQ0HD53E0EBX05G32MVBXM
+  agent: トシオ
+- content: null
+  response_to_selected: I think we should focus on gathering resources for the winter.
+  current_desire: Ensure the village is well-prepared for the upcoming season.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:16:22.596928'
+  trigger: talk

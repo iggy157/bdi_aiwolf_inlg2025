@@ -1,0 +1,58 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Takumi, as a villager, likely desires to establish trust and gather information
+      to strategize against potential threats.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Takumi likely desires to verify the Seer claim to ensure the village targets
+      the real werewolves effectively.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Takumi's desire is to identify and eliminate threats to the village based
+      on the seer's report.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Takumi desires to identify and support the true seer to protect the village
+      and ensure the defeat of the werewolves.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Takumi likely desires to use the information from the medium result report
+      to identify and eliminate the werewolves to protect the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Takumi desires to identify and vote against threats to the village to
+      protect their role as a Villager.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Takumi desires to support a lynch proposal that targets a player deemed
+      most suspicious to protect the village's interests.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Takumi likely desires to clear their name and reduce suspicion to enhance
+      their chances of survival and effectively contribute to the group.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Takumi likely desires to maintain a neutral stance to avoid suspicion
+      while navigating the increasing scrutiny from other players.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Takumi likely desires to use the Seer's confirmation to fortify alliances
+      with other players and enhance the town's ability to identify and eliminate
+      threats.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Takumi desires to identify and eliminate werewolves to protect the village
+      following a night kill.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FNYT3YH0SJNPMN6HH8H96F/Takumi/macro_belief.yml

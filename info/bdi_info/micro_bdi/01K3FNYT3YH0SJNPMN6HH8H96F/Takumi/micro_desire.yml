@@ -1,0 +1,105 @@
+micro_desires:
+- content: Introduce myself as a villager, highlighting my intention to collaborate
+    and build trust with the group. Avoid making any role claims or strategic disclosures
+    at this stage.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T12:57:39.861462'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Takumi
+- content: I want to ensure our village thrives and remains safe.
+  response_to_selected: I think we should focus on improving our crops this season.
+  current_desire: To discuss strategies for a prosperous harvest with fellow villagers.
+  discussion_stage: opening
+  timestamp: '2025-08-25T12:58:40.535498'
+  trigger: talk
+- content: Prompt players to share their observations and thoughts, highlighting the
+    importance of teamwork in identifying werewolves. Suggest focusing on any unusual
+    behaviors noticed during the discussion.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 0
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:39.909835'
+  trigger: daily_finish
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Takumi
+- content: Encourage others to share observations and any gut feelings openly, reinforcing
+    the importance of teamwork in identifying werewolves.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 1
+    ctx:
+      day: 1
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: villager
+      time_pressure: true
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:56.274838'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Takumi
+- content: I need to ensure we choose wisely to protect our village.
+  response_to_selected: I believe we should consider the behavior of those who have
+    been unusually quiet.
+  current_desire: My goal is to vote for someone who seems suspicious to protect the
+    village.
+  discussion_stage: voting
+  timestamp: '2025-08-25T13:05:00.082257'
+  trigger: talk

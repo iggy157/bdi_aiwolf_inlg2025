@@ -1,0 +1,104 @@
+micro_desires:
+- content: Position self neutrally; avoid making explicit claims or strong alignments
+    to not draw attention or suspicion.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: possessed
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T12:57:36.898807'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Ryuji
+- content: I must find a way to communicate with those around me to convey my need
+    for release.
+  response_to_selected: I feel something is not right within me, can you help?
+  current_desire: To alert others to my unusual condition and seek their assistance.
+  discussion_stage: opening
+  timestamp: '2025-08-25T12:57:45.197944'
+  trigger: talk
+- content: Encourage others to share any subtle observations or gut feelings to collectively
+    identify inconsistencies, while subtly guiding attention away from myself.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 0
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: possessed
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:49.202189'
+  trigger: daily_finish
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Ryuji
+- content: Facilitate the flow of information by supporting others' suggestions to
+    share thoughts and insights; ensure consistent engagement without making explicit
+    claims or revealing alignment.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: seer_co_nonnull<=day
+        seer_co_nonnull: 0
+        day: 1
+    ctx:
+      day: 1
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: possessed
+      time_pressure: true
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:03:01.208580'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Ryuji
+- content: null
+  response_to_selected: I feel an overwhelming urge to vote against what I initially
+    intended.
+  current_desire: Influence the decision-making process in an unexpected direction.
+  discussion_stage: voting
+  timestamp: '2025-08-25T13:04:06.336131'
+  trigger: talk

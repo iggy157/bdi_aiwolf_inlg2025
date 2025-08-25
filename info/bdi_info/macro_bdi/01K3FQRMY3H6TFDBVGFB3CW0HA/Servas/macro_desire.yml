@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: The player desires to use their SEER abilities to gain early insights
+      into other players' roles and intentions to inform strategic decisions.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Servas likely desires to share their initial investigation results to
+      influence the group's strategy while maintaining their own safety.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Servas desires to establish their credibility as the true Seer to ensure
+      their information is trusted by the group.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Servas desires to divine a player whose role or alignment would provide
+      strategic insight for their team.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Servas likely desires protection to ensure their survival and ability
+      to continue providing valuable insights to their team.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Servas likely desires confirmation and validation of their Seer role and
+      findings through the group's alignment with their black result.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Servas likely desires to align with the Medium to strengthen their credibility
+      and confirm their findings.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Servas likely desires to resolve the contradiction with the Medium to
+      ensure accurate alignment information is maintained for effective gameplay.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: The player likely desires to quickly gain early insights or information
+      to influence future strategic decisions in the game.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Servas likely desires better coordination among Seers to prevent overlap
+      and maximize the effectiveness of their investigative efforts.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Servas/macro_belief.yml

@@ -1,0 +1,168 @@
+1:
+  content: Hi everyone I'm Yumi and I'm looking forward to working together to keep
+    our village safe!
+  type: 'null'
+  from: Yumi
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Yumi
+2:
+  content: Hi everyone. Today I'll focus on logical analysis to identify threats.
+    Let's work together to find the wolves.
+  type: 'null'
+  from: Daisuke
+  to: all
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Daisuke
+3:
+  content: Hello everyone I am Shizue. I look forward to working together and getting
+    to know each of you as we protect our village.
+  type: 'null'
+  from: Shizue
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Shizue
+4:
+  content: I'm a villager focused on finding werewolves let's work together to protect
+    our village.
+  type: co
+  from: Shunichi
+  to: Shunichi
+  credibility: 0.308
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.617
+    liking: 0.633
+    creditability: 0.6
+    from: Shunichi
+5:
+  content: Hello everyone I am Mizuki a villager here to work with you all to find
+    the werewolves.
+  type: co
+  from: Mizuki
+  to: Mizuki
+  credibility: 0.3
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.6
+    liking: 0.7
+    creditability: 0.5
+    from: Mizuki
+6:
+  content: Hello everyone. I'm Victoria here to observe and cooperate for a better
+    understanding of our situation.
+  type: 'null'
+  from: Victoria
+  to: all
+  credibility: 0.334
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.667
+    liking: 0.667
+    creditability: 0.667
+    from: Victoria
+7:
+  content: Good morning everyone I'm George and I'm here to observe and work together
+    to find the truth.
+  type: 'null'
+  from: George
+  to: all
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: George
+8:
+  content: Hello everyone I'm Ryuji. I'm here to help us figure things out together
+    as an ordinary villager.
+  type: co
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.35
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.7
+    liking: 0.733
+    creditability: 0.667
+    from: Ryuji
+9:
+  content: Hello everyone I am excited to play with you all and look forward to a
+    fair and thrilling game.
+  type: 'null'
+  from: Minako
+  to: all
+  credibility: 0.545
+  credibility_raw: 0.76
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.717
+    liking: 0.767
+    creditability: 0.667
+    from: Minako
+10:
+  content: Hello everyone I'm Toshio a villager ready to work together and identify
+    the werewolves among us.
+  type: co
+  from: Toshio
+  to: Toshio
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: Toshio
+11:
+  content: I'm Takumi a villager here to work together with everyone to find the werewolves
+    today.
+  type: co
+  from: Takumi
+  to: Takumi
+  credibility: 0.308
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.617
+    liking: 0.633
+    creditability: 0.6
+    from: Takumi
+12:
+  content: I am a villager dedicated to helping the village win and I will do my best
+    to support everyone.
+  type: co
+  from: Servas
+  to: Servas
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: Servas

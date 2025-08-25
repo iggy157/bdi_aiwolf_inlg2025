@@ -1,0 +1,52 @@
+micro_desires:
+- content: Briefly introduce myself with a focus on being cooperative and observant,
+    avoiding any explicit claims about my role or intentions to maintain flexibility
+    in future interactions.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:20.471798'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Victoria
+- content: Eager to eliminate the villagers under the guise of innocence.
+  response_to_selected: Let's focus on gathering information for now.
+  current_desire: Identify which villager poses the most immediate threat.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:01:27.629565'
+  trigger: talk
+- content: Analyze discussions to find werewolves
+  response_to_selected: I'm watching for inconsistencies
+  current_desire: Proceed according to opening stage.
+  discussion_stage: opening
+  stage_meta:
+    intelligent_fallback: true
+  timestamp: '2025-08-25T14:19:08.173301'
+  trigger: talk
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Victoria
+- content: I need to blend in with the villagers to avoid suspicion.
+  response_to_selected: Let's hear everyone's thoughts before making a decision.
+  current_desire: Gain the trust of the other players.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:19:08.195116'
+  trigger: talk

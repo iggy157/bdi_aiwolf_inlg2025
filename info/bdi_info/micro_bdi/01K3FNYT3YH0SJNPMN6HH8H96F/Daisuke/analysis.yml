@@ -1,0 +1,401 @@
+1:
+  content: Hello everyone I'm Ryuji. Looking forward to working together.
+  type: 'null'
+  from: Ryuji
+  to: Ryuji
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+2:
+  content: Hi everyone I'm Rin! Let's work together to catch the werewolves and protect
+    our village!
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.511
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+3:
+  content: Hello everyone I'm Minako. Looking forward to working together as we figure
+    this out.
+  type: 'null'
+  from: Minako
+  to: Minako
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+4:
+  content: I'm Takumi just a regular villager here to work with everyone and find
+    those werewolves together.
+  type: co
+  from: Takumi
+  to: Takumi
+  credibility: 0.391
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+5:
+  content: Let's stay focused and gather as much information as we can today.
+  type: question
+  from: Ryuji
+  to: all
+  credibility: 0.451
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+6:
+  content: Let's keep chatting and see if we can spot anything suspicious together
+    today!
+  type: question
+  from: Rin
+  to: all
+  credibility: 0.412
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+7:
+  content: Let's stay observant and share any insights we gather as we go through
+    the day.
+  type: 'null'
+  from: Minako
+  to: 'null'
+  credibility: 0.514
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+8:
+  content: Let's keep our eyes open and share anything strange we notice alright?
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.493
+  credibility_raw: 0.63
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+9:
+  content: I'll keep an eye out for anything odd and share if I notice anything unusual.
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.365
+  credibility_raw: 0.51
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+10:
+  content: Let's all be vigilant and share our thoughts; teamwork will help us find
+    the werewolves!
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.412
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+11:
+  content: I agree Daisuke. Open discussion might help us catch any inconsistencies
+    early.
+  type: positive
+  from: Minako
+  to: Daisuke
+  credibility: 0.465
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+12:
+  content: Let's make sure we listen carefully to each other; every detail could be
+    important.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.54
+  credibility_raw: 0.69
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+13:
+  content: Agreed let's discuss any observations and see if anything stands out to
+    us.
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+14:
+  content: If anyone senses something off don't hesitate to speak up; every clue matters!
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.412
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+15:
+  content: Let's trust our instincts and stay attentive; even small details could
+    be revealing.
+  type: question
+  from: Minako
+  to: all
+  credibility: 0.506
+  credibility_raw: 0.62
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+16:
+  content: Let's keep an eye out for any patterns or inconsistencies that might help
+    us.
+  type: 'null'
+  from: Takumi
+  to: 'null'
+  credibility: 0.391
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+17:
+  content: Good morning everyone. Let's continue working together and share any new
+    observations today.
+  type: 'null'
+  from: Minako
+  to: all
+  credibility: 0.465
+  credibility_raw: 0.57
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+18:
+  content: Let's all share what we observed today and see if anything unusual pops
+    up.
+  type: question
+  from: Takumi
+  to: all
+  credibility: 0.438
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+19:
+  content: I am the Seer and found that Ryuji is HUMAN; let's use this info to guide
+    our discussion!
+  type: co
+  from: Rin
+  to: Ryuji
+  credibility: 0.619
+  credibility_raw: 0.75
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+20:
+  content: Let's start today by sharing any insights or observations we have from
+    yesterday.
+  type: 'null'
+  from: Ryuji
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+21:
+  content: Let's build on Ryuji's focus and keep our discussions open and collaborative
+    today.
+  type: positive
+  from: Minako
+  to: Ryuji
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+22:
+  content: Let's focus on sharing any odd behaviors today and work together to spot
+    the werewolves.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.391
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+23:
+  content: Let's stay alert for any strange actions today and share our thoughts openly
+    with everyone!
+  type: 'null'
+  from: Rin
+  to: all
+  credibility: 0.412
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+24:
+  content: Let's continue being observant and see if any patterns emerge as we discuss
+    today.
+  type: 'null'
+  from: Ryuji
+  to: 'null'
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+25:
+  content: Let's remain attentive and share if we notice anything unusual that could
+    guide us.
+  type: question
+  from: Minako
+  to: all
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako
+26:
+  content: Let's stay focused and share any gut feelings; they might lead us to something
+    important.
+  type: 'null'
+  from: Takumi
+  to: all
+  credibility: 0.391
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.783
+    liking: 0.733
+    creditability: 0.833
+    from: Takumi
+27:
+  content: Let's keep the conversation going and see if we can identify any suspicious
+    behavior today!
+  type: question
+  from: Rin
+  to: all
+  credibility: 0.412
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.825
+    liking: 0.85
+    creditability: 0.8
+    from: Rin
+28:
+  content: Let's keep our discussions going and focus on any details that could help
+    us today.
+  type: question
+  from: Ryuji
+  to: all
+  credibility: 0.358
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: Ryuji
+29:
+  content: Let's keep analyzing our discussions closely; even small details could
+    be significant.
+  type: question
+  from: Minako
+  to: all
+  credibility: 0.408
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.817
+    liking: 0.833
+    creditability: 0.8
+    from: Minako

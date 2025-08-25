@@ -1,0 +1,58 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Daisuke's desire is to collaborate with other villagers to identify and
+      eliminate threats to the village.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Daisuke likely desires to protect the Seer and confirm their claim to
+      strengthen the Village's chances of winning.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Daisuke's desire is to leverage seer results to identify and eliminate
+      werewolves to protect the village.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Daisuke likely desires to determine which Seer claim is genuine to protect
+      the Village from the Werewolves' deception.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Daisuke desires to use the medium's results to identify threats and protect
+      the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Daisuke likely desires to make a strategic and informed voting decision
+      to protect the villagers and ensure their collective success.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Daisuke likely desires to collaborate with other players to reach a consensus
+      on executing a player who poses a threat to the Villagers.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Daisuke likely desires to clear his name and reduce suspicion to survive
+      and help the village win.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Daisuke likely desires to build trust and establish a clear communication
+      channel with other players to secure his position as a reliable villager.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Daisuke is likely to desire the identification and elimination of players
+      who are threats to the village, using the Seer's 'white' report to guide his
+      decisions.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Daisuke's desire is to protect the village by identifying and eliminating
+      the threat responsible for the dawn kill.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Daisuke/macro_belief.yml

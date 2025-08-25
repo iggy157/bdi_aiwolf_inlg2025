@@ -1,0 +1,12 @@
+1:
+  content: I am トシオ a villager and I'm here to work together for the villa
+  type: co
+  from: トシオ
+  to: トシオ
+  credibility: 0.5
+2:
+  content: Hello everyone I am ユミ. I hope to help us find the truth togeth
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.5

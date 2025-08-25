@@ -1,0 +1,57 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Minato desires to gather information and collaborate with other players
+      to identify threats to the village.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Minato likely desires to verify the authenticity of the Seer claim to
+      ensure the village's safety.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Minato's desire is to utilize the Seer result to identify and eliminate
+      threats to the village while ensuring the safety of fellow villagers.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Minato desires to identify the genuine seer among the claimants to protect
+      the village from potential threats.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Minato likely desires to use the Medium results to identify and eliminate
+      potential threats to the villagers.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Minato desires to identify and vote out players who threaten the safety
+      of the villagers.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Minato likely desires to support the execution proposal to eliminate perceived
+      threats and protect the village.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Minato likely desires to clear their name and shift suspicion away from
+      themselves.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Minato likely desires to uphold their credibility and influence as a trusted
+      source of information within the game.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Minato likely desires to use the Seer's confirmation to target unconfirmed
+      players, aiming to eliminate potential threats to the village.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Minato likely desires to identify and eliminate any potential threats
+      to ensure the survival of the village.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Minato/macro_belief.yml

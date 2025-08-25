@@ -1,0 +1,55 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: ミナコの望みは、村人として初日に情報を収集し、他のプレイヤーと協力して信頼を築くことである。
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: ミナコ likely desires to verify the Seer claim to ensure the village's safety.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: ミナコ likely desires to use Seer results to accurately identify and eliminate
+      suspicious players to protect the VILLAGER faction.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: ミナコ likely desires to determine which 'seer' is truthful to protect the
+      village from misinformation.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: The player desires to obtain and disseminate clear and truthful information
+      to support the village's efforts in identifying enemies.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: ミナコ likely desires to cooperate with other villagers to identify and vote
+      out threats to the village.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: ミナコ likely desires to identify and vote for the execution of a player
+      perceived as a threat to the village, such as a werewolf.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: ミナコ's desire is to clear suspicion from themselves to aid the villagers'
+      victory.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: The player desires to maintain trust and clarity to avoid suspicion and
+      contribute to the village's success.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: The player likely desires to collaborate with the confirmed Town member
+      to enhance the town's collective strength and chances of winning.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: ミナコ's desire is to work with other Villagers to identify and eliminate
+      threats in order to survive and win the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ミナコ/macro_belief.yml

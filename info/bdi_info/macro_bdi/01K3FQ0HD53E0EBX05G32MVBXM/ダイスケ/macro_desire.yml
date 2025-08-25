@@ -1,0 +1,44 @@
+macro_desire:
+  role: POSSESSED
+  items:
+  - title: Hidden Mad (no CO, townish talk)
+    derivation_method: micro_belief.yml shows no self_co, and analysis.yml contains
+      town-benefit keywords.
+    desire: ダイスケ likely desires to mislead the villagers by maintaining a town-friendly
+      appearance while secretly aiding the werewolves.
+  - title: Fake Seer CO
+    derivation_method: analysis.yml shows a 'co' claiming seer by the speaker.
+    desire: ダイスケ's true desire is to protect the werewolves and create confusion among
+      the villagers by falsely claiming to be a seer.
+  - title: Fake Medium CO
+    derivation_method: analysis.yml shows a 'co' claiming medium by the speaker.
+    desire: ダイスケ's desire is to deceive the village team by falsely claiming the role
+      of Medium to aid the werewolves.
+  - title: Misfire (Seer vs Medium contradiction)
+    derivation_method: Find any Seer 'white' vs Medium 'wolf' or Seer 'black' vs Medium
+      'town' on the same target.
+    desire: ダイスケ likely desires to exploit the Seer vs Medium contradiction to create
+      confusion and distrust among the villagers, aiding the werewolves' strategy.
+  - title: Cover suspicion (white later flips wolf)
+    derivation_method: Earlier 'white on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: ダイスケ likely desires to protect the identity of the wolves by misleading
+      others and diverting suspicion.
+  - title: Line formation (mutual defense increases)
+    derivation_method: analysis.yml shows clusters of 'positive' support among specific
+      pairs or groups.
+    desire: ダイスケ's desire is to infiltrate and disrupt alliances by creating confusion
+      and distrust among players.
+  - title: Truth battle (CO duel and mutual accusations)
+    derivation_method: Multiple role COs plus frequent 'fake/true/contradiction' language
+      in analysis.yml.
+    desire: ダイスケ's desire is to create confusion and support the werewolves by misleading
+      other players through contradictory and ambiguous claims.
+  - title: PP support (equalize or fix votes)
+    derivation_method: analysis.yml encourages equalized or fixed votes, often late
+      game.
+    desire: ダイスケ likely desires to manipulate the voting process to create confusion
+      and benefit the werewolves.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/possessed.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ダイスケ/macro_belief.yml

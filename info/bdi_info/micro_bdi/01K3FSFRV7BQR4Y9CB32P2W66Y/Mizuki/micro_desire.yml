@@ -1,0 +1,41 @@
+micro_desires:
+- content: State my role as a villager clearly and emphasize a commitment to collaboration
+    in identifying werewolves, setting a tone of cooperation and transparency.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:23.472659'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Mizuki
+- content: I want to ensure our village is safe and prosperous.
+  response_to_selected: We should focus on improving our crop yields this season.
+  current_desire: Encourage the community to work together for a better harvest.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:00:57.316944'
+  trigger: talk
+- content: I hope to establish trust among my fellow villagers.
+  response_to_selected: Good morning, everyone! How can I help the village today?
+  current_desire: Ensure the village is safe and peaceful.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:11:26.467929'
+  trigger: talk

@@ -1,0 +1,57 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Misaki's desire is likely to identify and eliminate werewolves to protect
+      the village.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Misaki's desire is to evaluate the Seer claim to determine its authenticity
+      and guide subsequent village actions.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Misaki desires to utilize the Seer's reports to safeguard the Villagers
+      and neutralize the Werewolf threat.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Misaki desires to identify the genuine seer to eliminate the werewolf
+      posing as a false seer.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Misaki likely desires to use the medium's report to determine which players
+      are allies and which might be enemies.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Misaki likely desires to make a strategic voting choice that benefits
+      the Villager team.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Misaki desires to ensure the safety of the Villagers by supporting the
+      execution of individuals who pose a potential threat.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Misaki likely desires to clear their name and reduce the suspicion to
+      continue participating effectively as a villager.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Misaki likely desires to be viewed as a reliable and influential participant
+      in the game.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Misaki desires to ally with the confirmed 'white' player to strengthen
+      the Villager team.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Misaki likely desires to identify and eliminate the threat to ensure the
+      safety of the villagers.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Misaki/macro_belief.yml

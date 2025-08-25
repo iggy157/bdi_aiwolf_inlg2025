@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Assess immediate safety
+  description: Quickly evaluate the current environment for threats and ensure the
+    client is in a secure location.
+timestamp: '2025-08-25T14:07:57.040197'
+trigger: talk

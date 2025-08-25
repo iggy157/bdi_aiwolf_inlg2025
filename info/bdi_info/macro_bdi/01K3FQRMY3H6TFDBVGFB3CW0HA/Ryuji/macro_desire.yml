@@ -1,0 +1,45 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: Ryuji desires to protect a critical or at-risk teammate to fulfill his
+      role as a BODYGUARD effectively.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: Ryuji likely desires to continue successfully protecting other players
+      and maintaining their safety throughout the game.
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: Ryuji likely desires to fulfill his role as a bodyguard by protecting
+      other players, especially those with critical roles.
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: Ryuji likely desires to strategically protect players who are perceived
+      as valuable or vulnerable, aligning with their role as a BODYGUARD.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: Ryuji desires to identify and protect the true Knight amidst the confusion
+      of multiple claims.
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: Ryuji desires to protect and ensure the safety of critical team members.
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: Ryuji's primary desire is to effectively protect his guard target, aligning
+      with his role as a Bodyguard.
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: Ryuji desires to successfully protect important village roles, like the
+      Knight, to prevent further losses and increase the village's chances of winning.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: Ryuji likely desires to establish credibility and trust within the game
+      to ensure their survival and influence as a Bodyguard.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Ryuji/macro_belief.yml

@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Assess village security
+  description: Conduct a thorough review of current security measures and identify
+    potential vulnerabilities.
+timestamp: '2025-08-25T13:16:43.899141'
+trigger: talk

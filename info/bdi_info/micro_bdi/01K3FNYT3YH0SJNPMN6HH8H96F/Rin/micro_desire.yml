@@ -1,0 +1,106 @@
+micro_desires:
+- content: Introduce self in a manner that aligns with the seer role, focusing on
+    building credibility and trustworthiness among players. Highlight a commitment
+    to transparency and collaboration in future discussions.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: seer
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T12:57:42.943049'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Rin
+- content: null
+  response_to_selected: null
+  current_desire: Understand the context and objective of the conversation.
+  discussion_stage: opening
+  timestamp: '2025-08-25T12:57:52.158366'
+  trigger: talk
+- content: Assess the credibility and insights shared by low_trust_candidates, focusing
+    on Daisuke and Minako's contributions. Plan to guide the group towards examining
+    any emerging patterns or inconsistencies.
+  response_to_selected: null
+  current_desire: Proceed according to reasoning_analysis stage.
+  discussion_stage: reasoning_analysis
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: no_negative_entries
+        neg_total: 0
+    ctx:
+      day: 0
+      alive: 5
+      neg_total: 0
+      has_result: false
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: seer
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:46.231561'
+  trigger: daily_finish
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Rin
+- content: Share the result of my investigation on Ryuji, indicating he is human,
+    to inform others and guide further discussions.
+  response_to_selected: null
+  current_desire: Proceed according to information_sharing stage.
+  discussion_stage: information_sharing
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: has_valid_result
+        role: seer
+        result: 'Judge(day=0, agent=''Rin'', target=''Ryuji'', result=<Species.HUMAN:
+          ''HUMAN''>)'
+    ctx:
+      day: 1
+      alive: 5
+      neg_total: 0
+      has_result: true
+      first_desire: false
+      analysis_items: 16
+      self_talk_count: 4
+      role: seer
+      time_pressure: true
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:02:56.087521'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  agent: Rin
+- content: I need to understand the arguments and perspectives of others to make an
+    informed decision.
+  response_to_selected: I agree with this point because it aligns with the evidence
+    we have.
+  current_desire: To cast a well-informed vote based on the discussion and evidence
+    presented.
+  discussion_stage: voting
+  timestamp: '2025-08-25T13:03:47.287642'
+  trigger: talk

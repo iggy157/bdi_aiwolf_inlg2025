@@ -1,0 +1,5 @@
+micro_intention:
+  summary: Create friendly introduction
+  description: Begin with a warm greeting and an engaging question.
+timestamp: '2025-08-25T14:02:01.232451'
+trigger: talk

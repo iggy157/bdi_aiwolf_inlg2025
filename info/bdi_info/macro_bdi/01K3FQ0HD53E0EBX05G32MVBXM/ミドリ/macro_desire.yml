@@ -1,0 +1,56 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: ミドリ likely desires to gather information and form alliances to protect
+      the village from threats.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: ミドリ likely desires to verify the validity of the seer claim in order to
+      protect the real seer and guide the villagers correctly.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: ミドリ's desire is to use the seer's report to identify and eliminate werewolves.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: ミドリ, as a Villager, desires to identify the true seer among the conflicting
+      claims to make informed decisions and safeguard the village.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: ミドリ likely desires to use the medium's report to identify and eliminate
+      threats to the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: The player likely desires to identify and vote against potential threats
+      to the village.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: ミドリ likely desires to identify and execute a potential threat to the village,
+      such as a werewolf, to ensure the safety of fellow villagers.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: The player desires to clear their name to ensure they can continue supporting
+      the village.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: ミドリ likely desires to continue being a trusted and influential figure
+      within the game, as evidenced by the increased questions directed at them.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: ミドリ likely desires to protect and collaborate with confirmed town members
+      to enhance the village's chances of winning.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: ミドリ likely desires to survive and identify the werewolves to protect the
+      village.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ミドリ/macro_belief.yml

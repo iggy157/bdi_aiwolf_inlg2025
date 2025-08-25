@@ -1,0 +1,44 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: Rin desires to utilize the timing of result reports to strategically influence
+      player decisions and identify threats.
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: The player likely desires to accurately uncover and report hidden truths
+      or information within the game.
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: The player likely desires to maintain a balanced strategic approach that
+      ensures effective decision-making and team progression.
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: Rin desires to maintain consistency with the Seer's findings to build
+      trust and credibility within the game.
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: The player desires to establish their credibility and influence the game's
+      outcome by resolving the inconsistency with the Seer's report.
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: Rin's desire is to assert their credibility as the true Medium amidst
+      multiple Medium claims.
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: Rin likely desired to gain trust and influence in the game by claiming
+      the role of Medium early on.
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: Rin likely desires to achieve a clear and conclusive understanding of
+      outcomes related to their role as a medium.
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: Rin desires to reveal their role and findings in accordance with the game
+      strategy.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Rin/macro_belief.yml

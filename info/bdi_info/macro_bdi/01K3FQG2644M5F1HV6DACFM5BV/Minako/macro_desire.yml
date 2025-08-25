@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Minako desires to use her divination ability to identify a potentially
+      threatening player or confirm an ally for strategic advantage.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Minako likely desires to use their Seer abilities to verify players' alignments
+      and guide their team in making informed decisions.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Minako likely desires to affirm their legitimacy as the true SEER and
+      expose any false claimants to ensure the village's safety.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Minako desires to select the most strategically beneficial target for
+      tonight's divination to help their team gain an advantage.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: The player's desire is likely to ensure their own survival to leverage
+      their SEER abilities for the benefit of their team.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Minako desires to ensure that her findings on the black result are trusted
+      and acted upon, leading to the elimination of player X.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Minako desires to collaborate with the Medium to confirm her findings
+      and strengthen her position as a trustworthy SEER.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Minako likely desires to assert the validity of their findings to maintain
+      credibility and influence the game's direction.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: The player's desire is to uncover and communicate information about other
+      players' roles as early as possible to aid their team.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Minako desires to establish her divination as accurate to maintain credibility
+      and influence in the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Minako/macro_belief.yml

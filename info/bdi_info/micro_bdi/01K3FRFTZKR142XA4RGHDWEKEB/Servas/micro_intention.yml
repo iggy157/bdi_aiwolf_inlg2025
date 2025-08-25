@@ -1,0 +1,5 @@
+micro_intention:
+  summary: Prepare winter supplies
+  description: Conduct inventory and organize supply distribution to meet winter needs.
+timestamp: '2025-08-25T13:57:21.916250'
+trigger: talk

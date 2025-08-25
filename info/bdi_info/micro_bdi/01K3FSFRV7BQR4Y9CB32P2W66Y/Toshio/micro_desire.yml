@@ -1,0 +1,36 @@
+micro_desires:
+- content: Introduce self as a villager focused on collaboration, without making any
+    specific claims or accusations. Emphasize willingness to work with others to identify
+    werewolves.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: villager
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:24.242521'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Toshio
+- content: I hope we can work together to identify the werewolves quickly.
+  response_to_selected: I think we should hear from everyone before making any decisions.
+  current_desire: Encourage open discussion among the villagers.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:04:21.000628'
+  trigger: talk

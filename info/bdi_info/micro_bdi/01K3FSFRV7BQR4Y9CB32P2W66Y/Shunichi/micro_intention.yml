@@ -1,0 +1,5 @@
+micro_intention:
+  summary: Initiate group discussion
+  description: Convene a village meeting to share observations and suspicions.
+timestamp: '2025-08-25T14:10:37.500427'
+trigger: talk

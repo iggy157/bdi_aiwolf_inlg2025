@@ -1,0 +1,44 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: Daisuke likely desires to effectively communicate execution results to
+      support the team in making strategic decisions.
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: Daisuke likely desires to accurately interpret and communicate findings
+      related to their role as MEDIUM.
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: Daisuke desires to systematically analyze players to make informed decisions
+      about who to eliminate in the game.
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: Daisuke likely desires to establish credibility and trust by aligning
+      his findings with the Seer's reports.
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: Daisuke likely desires to clarify the contradiction with the Seer to preserve
+      trust and credibility within the group.
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: Daisuke likely desires to prove his authenticity as the true Medium to
+      maintain trust and influence in the game.
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: Daisuke likely desired to effectively use their role as a Medium to reveal
+      truths and influence the game's outcome positively before being eliminated.
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: Daisuke likely desires to ensure the accurate submission of results in
+      his role as a MEDIUM.
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: Daisuke likely desires to reveal his role as a Medium to align with the
+      directive and potentially gain strategic advantage or trust in the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Daisuke/macro_belief.yml

@@ -1,0 +1,58 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Victoria desires to foster collaboration and gather insights to protect
+      the village from werewolves.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Victoria likely desires to validate the seer claim to ensure the villagers
+      can strategize effectively against potential threats.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Victoria desires to utilize the Seer's report to identify and vote out
+      potential threats, ensuring the safety of the village.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Victoria likely desires to discern the true seer from the counter seer
+      to better her chances of winning as a villager.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Victoria likely desires to leverage the medium's results to identify and
+      eliminate potential threats to the village.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Victoria desires to declare a vote target that aligns with the villagers'
+      goal of identifying and eliminating threats to the village.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Victoria desires to propose a lynch that maximizes the safety of the village
+      by targeting suspected threats.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Victoria likely desires to prove her innocence and redirect suspicion
+      away from herself.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Victoria desires to be recognized as a leader or a reliable source of
+      guidance in the game.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Victoria desires to use the confirmed status of another player to strategically
+      guide the Villagers' efforts towards identifying and eliminating potential threats
+      within the game.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Victoria desires to identify and eliminate threats to ensure the survival
+      of the remaining villagers.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Victoria/macro_belief.yml

@@ -1,0 +1,58 @@
+macro_desire:
+  role: VILLAGER
+  items:
+  - title: Opening agenda (Day 0)
+    derivation_method: analysis.yml has a question to 'all' while INFO.day==0.
+    desire: Kenji's desire is to protect the village by identifying and eliminating
+      potential threats.
+  - title: Seer claim appears (Day 0)
+    derivation_method: analysis.yml contains a 'co' mentioning 'seer', or micro_belief.yml
+      has a seer_co.
+    desire: Kenji likely desires to confirm the authenticity of the Seer claim to
+      protect the Village from threats.
+  - title: Seer result report (Morning Day 1+)
+    derivation_method: INFO.day>=1 and analysis.yml includes 'seer'/'result' plus
+      'white' or 'black'.
+    desire: Kenji desires to use the seer's report to identify and eliminate werewolves
+      to ensure the safety of the village.
+  - title: Counter Seer appears
+    derivation_method: Two or more unique 'seer' COs detected in analysis.yml.
+    desire: Kenji likely desires to identify the true seer to ensure the village can
+      trust their insights and make informed decisions.
+  - title: Medium result report
+    derivation_method: INFO.day>=2 and analysis.yml contains 'medium' + 'result' with
+      a color.
+    desire: Kenji likely desires to leverage the medium's results to identify and
+      eliminate werewolves, thereby ensuring the villagers' safety.
+  - title: Prompt to declare vote targets
+    derivation_method: analysis.yml has messages combining 'vote' with 'declare/decide'.
+    desire: Kenji desires to identify and vote against perceived threats to ensure
+      the safety and success of the village.
+  - title: Designated lynch proposal
+    derivation_method: analysis.yml proposes a named execution (e.g., 'Today we execute
+      NAME').
+    desire: Kenji likely desires to ensure the safety of the village by supporting
+      the execution of perceived threats.
+  - title: Suspicion concentrates on you
+    derivation_method: Count suspicion/vote messages aimed at my_agent in analysis.yml;
+      flag if >=2.
+    desire: Kenji's desire is to prove his innocence and gain the trust of other players
+      to avoid being voted out.
+  - title: Direct questions to you increase
+    derivation_method: Count question-type messages to my_agent in analysis.yml; flag
+      if >=2.
+    desire: Kenji likely desires to be seen as a reliable and influential figure among
+      the players.
+  - title: Confirmed Town (Seer white spreads)
+    derivation_method: analysis.yml notes a Seer reported 'white' on a named player.
+    desire: Kenji likely desires to collaborate with other villagers to identify and
+      eliminate suspected threats, leveraging the Seer's confirmation to guide their
+      strategy.
+  - title: Dawn kill occurs
+    derivation_method: Alive count drops across the night transition with INFO.day>=2.
+    desire: Kenji desires to identify and eliminate the threat to the villagers to
+      ensure their survival.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/villager.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Kenji/macro_belief.yml

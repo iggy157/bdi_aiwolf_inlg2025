@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Takumi desires to deflect suspicion and avoid elimination after being
+      identified as a werewolf.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Takumi desires to successfully eliminate villagers in subsequent nights
+      to advance the werewolf's win condition.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Takumi, as a Werewolf, desires to divert suspicion away from himself and
+      remaining allies to ensure their survival in the game.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Takumi desires to gain the trust of the other players by successfully
+      distancing himself from fellow werewolves and appearing as an ally to the villagers.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Takumi's desire is to avoid being lynched to continue participating in
+      the game.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Takumi's desire is to deflect suspicion and avoid being eliminated by
+      redirecting votes onto other players.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Takumi likely desires to exploit the confusion from multiple Seer claims
+      to divert suspicion away from themselves and mislead the Villagers.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Takumi desires to strategically eliminate human players without being
+      discovered.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Takumi likely desires to eliminate perceived threats to the Werewolves,
+      such as the Knight, to increase his team's chances of winning.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Takumi, as a WEREWOLF, desires to manipulate the vote to either eliminate
+      a non-werewolf or ensure their own survival in this late-game scenario.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Takumi/macro_belief.yml

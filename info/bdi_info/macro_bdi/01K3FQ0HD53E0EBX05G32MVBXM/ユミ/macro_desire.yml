@@ -1,0 +1,44 @@
+macro_desire:
+  role: MEDIUM
+  items:
+  - title: Results timing available (Day ≥2)
+    derivation_method: INFO.day>=2 implies yesterday’s execution can be reported.
+    desire: The player likely desires to effectively report execution results to influence
+      the game's progression strategically.
+  - title: Medium result report
+    derivation_method: analysis.yml includes 'medium' + 'result' with a color.
+    desire: The player's desire is to accurately communicate analysis results to aid
+      their team's strategy.
+  - title: Medium-roller (Rora) proposal
+    derivation_method: analysis.yml contains 'medium' with 'roller/rotate/lynch in
+      order'.
+    desire: The player likely desires to methodically identify and eliminate threats
+      using gathered information as a "MEDIUM".
+  - title: Consistency with Seer
+    derivation_method: Your report matches a Seer’s prior color on the same target.
+    desire: The player's desire is likely to align with the Seer to build trust and
+      maintain consistency within the game's context.
+  - title: Inconsistency with Seer
+    derivation_method: Your report contradicts a Seer’s color on the same target.
+    desire: The player likely desires to influence the game by challenging the Seer's
+      authority and creating strategic ambiguity.
+  - title: Counter Medium appears
+    derivation_method: At least two Medium COs exist in analysis.yml.
+    desire: ユミ likely desires to prove their legitimacy as the true Medium to gain
+      trust and influence in the game.
+  - title: Medium claimant dies next morning
+    derivation_method: A named Medium CO appears and later status becomes DEAD.
+    desire: The player's desire was to actively reveal information and contribute
+      to the team's success, despite knowing the risk of being targeted and eliminated.
+  - title: Prompt to submit results (to you)
+    derivation_method: You receive a question referencing 'medium' and 'result'.
+    desire: The player's likely desire is to accurately gather and present results
+      or information as part of their role's duties.
+  - title: Directive 'Mediums, reveal'
+    derivation_method: analysis.yml contains calls like 'mediums reveal/CO'.
+    desire: The player likely desires to follow the game's strategic directive to
+      reveal their role as a medium to maintain alignment with the team strategy.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/medium.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ユミ/macro_belief.yml

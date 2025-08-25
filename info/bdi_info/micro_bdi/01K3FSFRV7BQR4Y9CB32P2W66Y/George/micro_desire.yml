@@ -1,0 +1,35 @@
+micro_desires:
+- content: Introduce self in a way that is consistent with being a Medium but avoid
+    revealing role or intentions explicitly; focus on fostering trust and cooperation.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: medium
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:16.620803'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: George
+- content: I want to set a positive tone for the interaction.
+  response_to_selected: Hello! How can I assist you today?
+  current_desire: Establish a welcoming and engaging opening.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:02:00.191612'
+  trigger: talk

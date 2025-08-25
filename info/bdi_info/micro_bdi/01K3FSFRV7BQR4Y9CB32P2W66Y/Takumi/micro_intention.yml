@@ -1,0 +1,6 @@
+micro_intention:
+  summary: Organize community gathering
+  description: Arrange a village event to encourage interaction and strengthen bonds
+    among villagers.
+timestamp: '2025-08-25T14:05:11.778822'
+trigger: talk

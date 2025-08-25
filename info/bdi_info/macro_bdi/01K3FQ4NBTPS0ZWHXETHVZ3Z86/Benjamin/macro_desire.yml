@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Benjamin desires to discredit the Seer's claim to avoid being eliminated.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Benjamin desires to successfully eliminate players at night to achieve
+      a Werewolf victory.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Benjamin likely desires to mislead or convince others to doubt the Seer's
+      and Medium's findings to survive the round.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Benjamin's desire is likely to maintain and enhance his credibility to
+      avoid suspicion and continue influencing the game without being targeted.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Benjamin likely desires to avoid being lynched to continue playing and
+      fulfill his role as a WEREWOLF.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Benjamin desires to divert suspicion and avoid elimination by influencing
+      others to vote for a different player.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Benjamin desires to exploit the confusion caused by multiple Seer claims
+      to remain undetected and protect his role as a Werewolf.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Benjamin's desire is to effectively eliminate other players while avoiding
+      detection to win the game as a WEREWOLF.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Benjamin likely desires the continued elimination of threats to the Werewolves,
+      as evidenced by the death of the Knight claimant.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Benjamin likely desires to manipulate the votes to ensure neither he nor
+      his werewolf allies are eliminated by creating a tie or blocking decisive voting
+      outcomes.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Benjamin/macro_belief.yml

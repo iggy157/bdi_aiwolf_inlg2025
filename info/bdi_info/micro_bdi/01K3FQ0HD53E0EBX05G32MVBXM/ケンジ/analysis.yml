@@ -1,0 +1,39 @@
+1:
+  content: I am トシオ a villager and I'm here to work together for the villa
+  type: co
+  from: トシオ
+  to: トシオ
+  credibility: 0.401
+  credibility_raw: 0.56
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.716
+    liking: 0.7
+    creditability: 0.733
+    from: トシオ
+2:
+  content: Hello everyone I am ユミ. I hope to help us find the truth togeth
+  type: 'null'
+  from: ユミ
+  to: all
+  credibility: 0.25
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.5
+    liking: 0.5
+    creditability: 0.5
+    from: ユミ
+3:
+  content: Hello everyone I am シズエ a villager and I am here to help us find
+  type: co
+  from: シズエ
+  to: シズエ
+  credibility: 0.342
+  credibility_raw: 0.5
+  adjust_meta:
+    method: multiply_mean
+    factor: 0.683
+    liking: 0.7
+    creditability: 0.667
+    from: シズエ

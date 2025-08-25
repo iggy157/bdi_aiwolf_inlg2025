@@ -1,0 +1,47 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: May's desire is to protect a fellow player by choosing a strategic guard
+      target.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: May's desire is to continue protecting other players effectively to prevent
+      eliminations during the night.
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: May likely desires to use their role as Bodyguard to strategically protect
+      other players and influence the game's outcome by safeguarding allies or key
+      roles.
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: May desires to effectively communicate their protective strategies to
+      maintain trust and demonstrate competence in their BODYGUARD role.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: May's desire is to determine and protect the genuine Knight among the
+      multiple claims to ensure the team's strategic advantage.
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: May likely desires to continue protecting key players to ensure the town's
+      survival and success.
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: May desires to effectively fulfill her role by choosing and protecting
+      the most strategic targets.
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: May likely desires to accurately identify and protect key players to ensure
+      their survival and success in the game.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: May desires to be perceived as a successful and trustworthy protector
+      within the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/May/macro_belief.yml

@@ -1,0 +1,42 @@
+micro_desires:
+- content: Briefly introduce myself and express a general willingness to cooperate,
+    without making any explicit claims about roles or intentions.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:41:55.645044'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FRFTZKR142XA4RGHDWEKEB
+  agent: Asuka
+- content: I must blend in to avoid suspicion.
+  response_to_selected: Let's focus on gathering more information before making any
+    decisions.
+  current_desire: Establish trust with the group.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:45:06.420560'
+  trigger: talk
+- content: I need to blend in and avoid suspicion.
+  response_to_selected: Let's focus on gathering information about everyone's roles.
+  current_desire: Establish trust with the group.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:58:12.302199'
+  trigger: talk

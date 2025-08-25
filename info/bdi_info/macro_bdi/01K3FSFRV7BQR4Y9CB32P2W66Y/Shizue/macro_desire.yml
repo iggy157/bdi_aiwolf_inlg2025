@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Shizue likely desires to discredit the Seer's claim or shift suspicion
+      elsewhere to avoid elimination.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Shizue desires to successfully eliminate a player in the next opportunity
+      to advance the werewolf team's goals.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Shizue's desire would be to protect her werewolf allies by discrediting
+      the Seer or Medium or redirecting suspicion elsewhere.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Shizue desires to gain trust and credibility among other players by successfully
+      bussing a fellow werewolf early in the game.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Shizue's desire is to avoid being lynched by redirecting suspicion to
+      another player.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Shizue desires to shift suspicion away from themselves to survive the
+      voting round.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Shizue likely desires to exploit the confusion from multiple Seer claims
+      to sow distrust among the villagers and protect her identity as a Werewolf.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Shizue, as a werewolf, desires to strategically execute bites to eliminate
+      other players and secure a victory.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Shizue likely desires to continue eliminating key village roles to secure
+      a win for the Werewolf team.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Shizue likely desires to maintain or create an equal-vote situation to
+      avoid elimination and position the werewolves for a strategic advantage.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Shizue/macro_belief.yml

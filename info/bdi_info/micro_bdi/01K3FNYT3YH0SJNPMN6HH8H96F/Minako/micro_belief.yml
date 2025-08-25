@@ -1,0 +1,26 @@
+Daisuke:
+  creditability: 0.733
+  liking: 0.8
+  self_co: villager
+  seer_co: null
+  positive_to_Rin: 1
+Rin:
+  creditability: 0.833
+  liking: 0.833
+  self_co: null
+  seer_co: null
+Ryuji:
+  creditability: 0.733
+  liking: 0.8
+  self_co: null
+  seer_co: villager_side
+Takumi:
+  creditability: 0.733
+  liking: 0.7
+  self_co: villager
+  seer_co: null
+_meta:
+  game_id: 01K3FNYT3YH0SJNPMN6HH8H96F
+  owner: Minako
+  generated_at: '2025-08-25T04:07:10Z'
+  source_analysis: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/micro_bdi/01K3FNYT3YH0SJNPMN6HH8H96F/Minako/analysis.yml

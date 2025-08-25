@@ -1,0 +1,48 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: ミオ likely desires to undermine the Seer's credibility or divert attention
+      from themselves to survive.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: ミオ desires to conduct successful night kills to weaken the opposition
+      and advance the werewolves' win condition.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: ミオ likely desires to undermine the credibility of the Seer and Medium
+      to protect the werewolf team.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: ミオ's desire is likely to gain trust and reduce suspicion by strategically
+      distancing themselves from fellow werewolves.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: ミオ's desire is to avoid lynching by redirecting suspicion onto others.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: The player's desire is to deflect suspicion and avoid being eliminated
+      by convincing others to vote for a different target.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: ミオ likely desires to exploit the multiple Seer claims to create confusion
+      and direct suspicion away from herself.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: ミオ likely desires to strategically eliminate key players while sowing
+      confusion to protect their identity as a werewolf.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: ミオ desires to eliminate threats to the werewolf faction, such as a Knight,
+      to enhance their team's chances of winning.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: ミオ desires to create an equal-vote scenario to prevent the village team
+      from successfully eliminating a werewolf.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ミオ/macro_belief.yml

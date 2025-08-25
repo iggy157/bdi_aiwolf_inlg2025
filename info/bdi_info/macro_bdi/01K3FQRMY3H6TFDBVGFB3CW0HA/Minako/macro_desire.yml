@@ -1,0 +1,50 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Minako's most likely desire is to discredit the Seer's result or shift
+      suspicion onto another player to ensure their survival in the game.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Minako desires to identify and eliminate the guard to facilitate future
+      werewolf kills.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Minako desires to deflect suspicion and protect her fellow werewolves
+      by undermining the credibility of the Seer and Medium.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Minako likely desires to maintain her cover and gain trust by pushing
+      suspicion onto another werewolf, thus ensuring her continued survival in the
+      game.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Minako's desire is to avoid being lynched to survive and continue fulfilling
+      their role as a werewolf.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Minako desires to deflect suspicion and avoid elimination by shifting
+      votes onto other players.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Minako likely desires to exploit the multiple Seer claims to create confusion
+      and protect her identity as a Werewolf.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Minako's desire is to strategically eliminate other players while avoiding
+      detection to secure a win as a werewolf.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Minako likely desires to eliminate players claiming powerful roles, like
+      the Knight, to ensure the werewolf faction's success.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Minako desires to push for equalized votes to create confusion and avoid
+      being identified as the werewolf.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQRMY3H6TFDBVGFB3CW0HA/Minako/macro_belief.yml

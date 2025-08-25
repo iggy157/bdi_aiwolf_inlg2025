@@ -1,0 +1,49 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Asuka's desire is to deflect suspicion and remain in the game by convincing
+      others they are not a werewolf.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Asuka desires to successfully orchestrate a kill in subsequent nights
+      to maintain the Werewolves' strategic advantage.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Asuka's primary desire is to deflect suspicion and maintain her cover
+      as a werewolf, following the revelation of her ally's identity.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Asuka desires to bolster her credibility and gain trust among other players
+      by having her early suspicions confirmed valid.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Asuka's desire is likely to avoid execution by convincing others to redirect
+      the lynch away from her.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Asuka likely desires to mislead other players and shift votes away from
+      herself to survive in the game.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Asuka likely desires to exploit the confusion from multiple Seer claims
+      to mislead others and protect her identity as a Werewolf.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: The player's desire is likely to eliminate other players while avoiding
+      suspicion and detection, consistent with the typical goals of a Werewolf role.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Asuka likely desires to eliminate high-threat roles like the Knight to
+      protect their identity and increase the Werewolves' chances of winning.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Asuka, as a Werewolf, desires to manipulate the vote to prevent a teammate's
+      elimination and secure a path to victory.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Asuka/macro_belief.yml

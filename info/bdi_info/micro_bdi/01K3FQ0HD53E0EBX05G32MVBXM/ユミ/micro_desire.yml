@@ -1,0 +1,36 @@
+micro_desires:
+- content: Introduce self in a way that aligns with being the Medium without stating
+    it explicitly, focusing on building trust and credibility with others.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: medium
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:16:06.426324'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FQ0HD53E0EBX05G32MVBXM
+  agent: ユミ
+- content: I need to establish a connection with the audience.
+  response_to_selected: Hello everyone, let's dive into today's topic with an open
+    mind.
+  current_desire: Capture the audience's attention and set the tone for the discussion.
+  discussion_stage: opening
+  timestamp: '2025-08-25T13:16:31.407200'
+  trigger: talk

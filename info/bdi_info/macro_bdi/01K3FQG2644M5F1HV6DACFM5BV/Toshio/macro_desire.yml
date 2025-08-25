@@ -1,0 +1,46 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: Toshio likely desires to protect a key player at risk to ensure team success
+      and survival.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: Toshio likely desires to continue successfully protecting teammates to
+      maintain the team's advantage and prevent eliminations.
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: Toshio's desire is likely to assert or confirm the protective role within
+      the game to ensure team security and strategy.
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: Toshio desires to strategically fulfill his role as a Bodyguard by effectively
+      protecting other players in the game.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: Toshio, as a Bodyguard, desires to accurately identify and protect the
+      true Knight among the multiple claims to fulfill his role effectively.
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: Toshio likely desires to continue protecting key players to maintain the
+      village's safety following a peaceful night.
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: Toshio likely desires to effectively prioritize and protect the most strategically
+      important target despite external pressures.
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: Toshio likely desires to improve their protective strategies to prevent
+      critical team members like the Knight from dying.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: Toshio likely desires recognition and validation for successfully fulfilling
+      their protective role in the game.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Toshio/macro_belief.yml

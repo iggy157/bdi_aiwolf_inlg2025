@@ -1,0 +1,36 @@
+micro_desires:
+- content: Introduce myself in a positive light, conveying enthusiasm for the game
+    and fostering a sense of camaraderie with others. Avoid making any role claims
+    at this stage to remain flexible for future strategic moves.
+  response_to_selected: null
+  current_desire: Proceed according to self_introduction stage.
+  discussion_stage: self_introduction
+  stage_meta:
+    selection:
+      source: fallback_only
+      reason:
+        reason: first_micro_desire_entry
+    ctx:
+      day: 0
+      alive: 13
+      neg_total: 0
+      has_result: false
+      first_desire: true
+      analysis_items: 0
+      self_talk_count: 0
+      role: werewolf
+      time_pressure: false
+      seer_co_nonnull: 0
+      exists_self_co_seer_or_medium: false
+    macro_desire_entry_used: false
+  timestamp: '2025-08-25T13:59:19.274114'
+  trigger: daily_initialize
+  model: ChatOpenAI
+  game_id: 01K3FSFRV7BQR4Y9CB32P2W66Y
+  agent: Minako
+- content: I need to blend in with the villagers to avoid suspicion.
+  response_to_selected: I'm just as worried as everyone else about the werewolf attacks.
+  current_desire: Establish trust with the group.
+  discussion_stage: opening
+  timestamp: '2025-08-25T14:03:24.980305'
+  trigger: talk

@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Daisuke's desire is to use his divination ability to identify another
+      player's role on Night 0.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Daisuke likely desires to accurately identify and reveal the alignments
+      of other players to ensure the team's victory.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Daisuke's desire is to establish his legitimacy as the true Seer while
+      discrediting the counter Seer.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Daisuke likely desires to perform an effective divination to uncover crucial
+      information about other players' roles.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Daisuke likely desires to ensure the safety and success of their team
+      through protective measures.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Daisuke desires to leverage the convergence of votes to eliminate the
+      player identified as a threat, thereby confirming his SEER role findings.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Daisuke desires to confirm the accuracy of his role's findings to ensure
+      effective team strategy and alignment verification.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Daisuke desires to resolve the contradiction between his findings and
+      the Medium's report to ensure accurate game progression.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Daisuke likely desires to gain an early strategic advantage by having
+      access to or revealing information prematurely.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Daisuke likely desires to validate information through collaboration with
+      other Seers to ensure accuracy in their role.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FSFRV7BQR4Y9CB32P2W66Y/Daisuke/macro_belief.yml

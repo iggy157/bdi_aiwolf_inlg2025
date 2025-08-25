@@ -1,0 +1,51 @@
+macro_desire:
+  role: SEER
+  items:
+  - title: Night 0 divination (internal)
+    derivation_method: INFO.day==0 and self_talk.yml includes intent like 'divine'
+      or 'check'.
+    desire: Mizuki desires to use their divination ability to gain information on
+      another player's role to aid their team.
+  - title: Day 1 morning result report
+    derivation_method: INFO.day>=1 and analysis.yml contains a Seer result with color.
+    desire: Mizuki likely desires to reveal their investigation results to guide the
+      group in identifying and eliminating potential threats.
+  - title: Counter Seer appears
+    derivation_method: At least two Seer COs detected in analysis.yml.
+    desire: Mizuki likely desires to establish their credibility as the true Seer
+      and discern the accurate identities among the conflicting claims.
+  - title: Asked to choose tonight’s divination
+    derivation_method: A question to my_agent contains 'tonight/next' plus 'divine/inspect'.
+    desire: Mizuki desires to make an informed and strategic choice for tonight's
+      divination to benefit their team.
+  - title: Guard request toward you
+    derivation_method: Messages link 'knight/guard' with my_agent and 'protect' semantics.
+    desire: Mizuki's main desire is to ensure their own protection to continue playing
+      a pivotal role in the game.
+  - title: Votes converge on your black result
+    derivation_method: A 'black on X' exists and multiple votes name X in analysis.yml.
+    desire: Mizuki desires the elimination of player X based on the black result to
+      enhance the team's chances of winning.
+  - title: Result consistent with Medium
+    derivation_method: Your white ↔ Medium town or your black ↔ Medium wolf on the
+      same target.
+    desire: Mizuki desires to verify and corroborate findings with the Medium to ensure
+      accurate information for the town's benefit.
+  - title: Result inconsistent with Medium
+    derivation_method: Your white contradicts Medium wolf or your black contradicts
+      Medium town.
+    desire: Mizuki likely desires to clarify the contradiction with the Medium to
+      ensure the team trusts their insights and makes informed decisions.
+  - title: Premature result on Day 0
+    derivation_method: INFO.day==0 and analysis.yml shows result language tied to
+      'seer'.
+    desire: Mizuki desires to assert influence and establish credibility by providing
+      valuable insights early in the game.
+  - title: Divination overlap across Seers
+    derivation_method: Multiple Seers report on the same target in analysis.yml.
+    desire: Mizuki likely desires to confirm the accuracy of their divinations in
+      collaboration with other SEERs.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/seer.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ4NBTPS0ZWHXETHVZ3Z86/Mizuki/macro_belief.yml

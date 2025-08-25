@@ -1,0 +1,50 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Yumi's desire is to avoid elimination by undermining the Seer's credibility
+      or persuading others of her innocence.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Yumi's desire is to successfully eliminate players during the night phase
+      to advance the werewolf team's agenda.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Yumi's desire is likely to mislead the village and avoid detection to
+      ensure their own survival in the game.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Yumi's primary desire is to gain trust and avoid suspicion by successfully
+      directing attention towards another player, confirmed as a wolf, thus enhancing
+      her chances of survival.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Yumi's desire is to avoid being lynched by deflecting suspicion onto other
+      players.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Yumi desires to deflect suspicion and avoid being voted out to continue
+      playing as a werewolf.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Yumi likely desires to exploit the multiple Seer claims to sow confusion
+      and protect her identity as a werewolf.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Yumi's primary desire is to eliminate other players without raising suspicion
+      or being stopped by protective roles.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Yumi's desire is to eliminate threats such as the Knight to strengthen
+      her position and increase her chances of winning the game as a WEREWOLF.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Yumi would desire to create confusion and avoid werewolf elimination by
+      manipulating votes to maintain an equal or blocked voting situation.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FRFTZKR142XA4RGHDWEKEB/Yumi/macro_belief.yml

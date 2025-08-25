@@ -1,0 +1,41 @@
+macro_desire:
+  role: BODYGUARD
+  items:
+  - title: Choose guard target (internal)
+    derivation_method: self_talk.yml contains guard/protect intent notes.
+    desire: ベンジャミン likely desires to protect a key or high-value player on their team
+      to ensure their safety and the team's overall success.
+  - title: GJ (no-kill) detected
+    derivation_method: Alive count unchanged across the night with INFO.day>=2.
+    desire: ベンジャミンは、村人陣営の勝利を強く望んでいる。
+  - title: Knight CO
+    derivation_method: analysis.yml shows a 'co' with 'knight' or 'guard'.
+    desire: ベンジャミンは、特定のプレイヤーを守ることやゲーム内の安全を確保することを望んでいる。
+  - title: Asked for guard reasoning (to you)
+    derivation_method: You receive question-type messages containing 'guard/protect'
+      and 'why/target'.
+    desire: ベンジャミン likely desires to be seen as a reliable and strategic team member
+      by making well-reasoned protective choices.
+  - title: Multiple Knight COs appear
+    derivation_method: At least two unique Knight COs exist in analysis.yml.
+    desire: ベンジャミンは、複数の騎士COが存在する場合、最も信頼できる騎士を守ることを望んでいる。
+  - title: CO after peaceful night (reveal post-GJ)
+    derivation_method: No-kill is detected and a Knight CO follows in analysis.yml.
+    desire: ベンジャミンの望みは、村人を守るために自分の役割を秘匿しつつ、さらなる安全を確保することである。
+  - title: Pressure to steer guard target
+    derivation_method: analysis.yml uses 'knight/guard' with imperatives about 'this
+      person/role'.
+    desire: ベンジャミンは、チームを守るために最も効果的な対象を選び、守ることを強く望んでいる。
+  - title: Knight claimant dies next morning
+    derivation_method: A named Knight CO appears and then status flips to DEAD.
+    desire: ベンジャミン likely desires to ensure the survival of key players by improving
+      their protective strategy as a Bodyguard.
+  - title: Explicit GJ claim
+    derivation_method: analysis.yml shows self-asserted 'GJ/guard success' tied to
+      a Knight identity.
+    desire: ベンジャミン's primary desire is to be recognized as a successful and trustworthy
+      protector within the game, reinforcing their role as a BODYGUARD.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/bodyguard.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQ0HD53E0EBX05G32MVBXM/ベンジャミン/macro_belief.yml

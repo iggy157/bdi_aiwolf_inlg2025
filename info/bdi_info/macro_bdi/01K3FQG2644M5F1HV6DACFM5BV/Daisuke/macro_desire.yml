@@ -1,0 +1,50 @@
+macro_desire:
+  role: WEREWOLF
+  items:
+  - title: Black result on you
+    derivation_method: analysis.yml shows a Seer result naming my_agent as 'black'.
+    desire: Daisuke likely desires to deflect suspicion and avoid elimination to ensure
+      their survival in the game.
+  - title: No-kill night (Guard success) occurs
+    derivation_method: Alive count unchanged across night in INFO vs prev_status_map
+      with INFO.day>=2.
+    desire: Daisuke likely desires to identify and eliminate the guard to prevent
+      future unsuccessful attacks.
+  - title: Black → Medium confirms wolf (ally revealed)
+    derivation_method: Seer 'black on X' followed by Medium 'wolf on X' in analysis.yml.
+    desire: Daisuke's primary desire would be to manipulate the situation to protect
+      himself and his remaining allies from being identified as werewolves.
+  - title: Bus succeeds (early suspect flips wolf)
+    derivation_method: My early push on X exists, later Medium confirms X as wolf.
+    desire: Daisuke desires to maintain their cover and credibility by pushing suspicion
+      onto another werewolf, thereby reducing personal risk and securing their position
+      in the game.
+  - title: Designated lynch points at you
+    derivation_method: analysis.yml proposes a named execution targeting my_agent.
+    desire: Daisuke most likely desires to divert suspicion and avoid being lynched
+      to continue his role as a werewolf.
+  - title: Votes converge on you
+    derivation_method: Multiple explicit vote declarations name my_agent in analysis.yml.
+    desire: Daisuke's desire is to survive the voting process by deflecting suspicion
+      and avoiding elimination.
+  - title: Multiple Seer claims appear
+    derivation_method: At least two unique Seer COs are present in analysis.yml.
+    desire: Daisuke likely desires to exploit the multiple Seer claims to create confusion
+      and divert suspicion away from himself.
+  - title: Bite-line speculation increases
+    derivation_method: Many mentions of 'bite/kill/GJ/guard' appear in analysis.yml.
+    desire: Daisuke likely desires to strategically manage suspicion and avoid detection
+      while fulfilling his role as a Werewolf.
+  - title: Knight COer dies next morning
+    derivation_method: A named Knight claimant appears and later status flips to DEAD.
+    desire: Daisuke, as a Werewolf, likely desires to eliminate key threats such as
+      the Knight to increase the chances of his team's success.
+  - title: Late-game equal-vote push (PP setup)
+    derivation_method: Alive count ≤5 and analysis.yml urges equalized or blocked
+      votes.
+    desire: Daisuke desires to exploit the equal-vote situation to prevent a decisive
+      vote against the werewolves, thereby increasing their chances of survival.
+meta:
+  source: macro_desire.py
+  conventional_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/conventional_wisdom/werewolf.yml
+  macro_belief_source: /home/bi23056/lab/inlg2025/bdi_aiwolf_inlg2025/info/bdi_info/macro_bdi/01K3FQG2644M5F1HV6DACFM5BV/Daisuke/macro_belief.yml
